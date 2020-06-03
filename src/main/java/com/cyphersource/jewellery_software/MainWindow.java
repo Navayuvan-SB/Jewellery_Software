@@ -59,6 +59,8 @@ public class MainWindow extends javax.swing.JFrame {
         sell_return_button = new javax.swing.JButton();
         sell_confirm_button = new javax.swing.JButton();
         sell_refresh_label = new javax.swing.JLabel();
+        sell_shopeName_label1 = new java.awt.Label();
+        sell_shopeName_label2 = new java.awt.Label();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -66,15 +68,24 @@ public class MainWindow extends javax.swing.JFrame {
         jLayeredPane1.setLayout(new java.awt.CardLayout());
 
         sellPage.setBackground(java.awt.Color.white);
+        sellPage.setAlignmentX(0.0F);
+        sellPage.setAlignmentY(0.0F);
+        sellPage.setDoubleBuffered(false);
 
-        sell_shopeName_label.setFont(new java.awt.Font("Waree", 1, 24)); // NOI18N
-        sell_shopeName_label.setText("      JAJ");
+        sell_shopeName_label.setAlignment(java.awt.Label.CENTER);
+        sell_shopeName_label.setFont(new java.awt.Font("Ubuntu", 1, 50)); // NOI18N
+        sell_shopeName_label.setText("J");
 
+        sell_entryNavigation_label.setAlignment(java.awt.Label.CENTER);
+        sell_entryNavigation_label.setFont(new java.awt.Font("Ubuntu", 0, 19)); // NOI18N
+        sell_entryNavigation_label.setForeground(java.awt.Color.lightGray);
         sell_entryNavigation_label.setText("Entry");
 
+        sell_viewNavigation_label.setFont(new java.awt.Font("Ubuntu", 0, 19)); // NOI18N
+        sell_viewNavigation_label.setForeground(java.awt.Color.lightGray);
         sell_viewNavigation_label.setText("View");
 
-        sell_sellNavigation_label.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        sell_sellNavigation_label.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         sell_sellNavigation_label.setText("Sell");
 
         sell_Welcome_label.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -257,41 +268,53 @@ public class MainWindow extends javax.swing.JFrame {
         sell_refresh_label.setIcon(new javax.swing.ImageIcon("/home/ramya/Downloads/refresh-24px 1.png")); // NOI18N
         sell_refresh_label.setText("jLabel18");
 
+        sell_shopeName_label1.setAlignment(java.awt.Label.CENTER);
+        sell_shopeName_label1.setFont(new java.awt.Font("Ubuntu", 1, 32)); // NOI18N
+        sell_shopeName_label1.setText("A");
+
+        sell_shopeName_label2.setAlignment(java.awt.Label.CENTER);
+        sell_shopeName_label2.setFont(new java.awt.Font("Ubuntu", 1, 50)); // NOI18N
+        sell_shopeName_label2.setText("J");
+
         javax.swing.GroupLayout sellPageLayout = new javax.swing.GroupLayout(sellPage);
         sellPage.setLayout(sellPageLayout);
         sellPageLayout.setHorizontalGroup(
             sellPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sellPageLayout.createSequentialGroup()
-                .addContainerGap(149, Short.MAX_VALUE)
-                .addGroup(sellPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sellPageLayout.createSequentialGroup()
-                        .addComponent(sell_shopeName_label, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(343, 343, 343)
-                        .addComponent(sell_entryNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(56, 56, 56)
-                        .addComponent(sell_viewNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(67, 67, 67)
-                        .addComponent(sell_sellNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(76, 76, 76))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sellPageLayout.createSequentialGroup()
-                        .addComponent(sell_innerWindow_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(125, 125, 125))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sellPageLayout.createSequentialGroup()
                 .addGap(190, 190, 190)
                 .addComponent(sell_return_button, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 684, Short.MAX_VALUE)
                 .addComponent(sell_confirm_button, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(190, 190, 190))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sellPageLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(sellPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sellPageLayout.createSequentialGroup()
+                        .addComponent(sell_shopeName_label, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(sell_shopeName_label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(sell_shopeName_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(280, 280, 280)
+                        .addComponent(sell_entryNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(70, 70, 70)
+                        .addComponent(sell_viewNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(70, 70, 70)
+                        .addComponent(sell_sellNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(80, 80, 80))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sellPageLayout.createSequentialGroup()
+                        .addComponent(sell_innerWindow_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(125, 125, 125))))
             .addGroup(sellPageLayout.createSequentialGroup()
                 .addGroup(sellPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(sellPageLayout.createSequentialGroup()
+                        .addGap(513, 513, 513)
+                        .addComponent(sell_Welcome_label, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(sellPageLayout.createSequentialGroup()
                         .addGap(610, 610, 610)
                         .addComponent(sell_Barcode_label, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(1, 1, 1)
-                        .addComponent(sell_refresh_label, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(sellPageLayout.createSequentialGroup()
-                        .addGap(513, 513, 513)
-                        .addComponent(sell_Welcome_label, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(sell_refresh_label, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         sellPageLayout.setVerticalGroup(
@@ -299,15 +322,18 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(sellPageLayout.createSequentialGroup()
                 .addGroup(sellPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(sellPageLayout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addGroup(sellPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(56, 56, 56)
+                        .addGroup(sellPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(sell_shopeName_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sell_shopeName_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sell_shopeName_label, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                    .addGroup(sellPageLayout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addGroup(sellPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(sell_sellNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sell_viewNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sell_entryNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sellPageLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(sell_shopeName_label, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(43, 43, 43)
+                            .addComponent(sell_viewNavigation_label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(sell_entryNavigation_label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(57, 57, 57)
                 .addComponent(sell_Welcome_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(sellPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -319,7 +345,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(sellPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sell_return_button, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sell_confirm_button, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLayeredPane1.add(sellPage, "sellPage");
@@ -412,6 +438,8 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel sell_semicolon5_label;
     private javax.swing.JLabel sell_semicolon6_label;
     private java.awt.Label sell_shopeName_label;
+    private java.awt.Label sell_shopeName_label1;
+    private java.awt.Label sell_shopeName_label2;
     private javax.swing.JCheckBox sell_verify_checkbox;
     private java.awt.Label sell_viewNavigation_label;
     private javax.swing.JLabel sell_wasDetail_label;
