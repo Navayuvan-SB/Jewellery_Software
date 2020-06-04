@@ -29,18 +29,21 @@ public class MainWindow extends javax.swing.JFrame {
 
         jLayeredPane1 = new javax.swing.JLayeredPane();
         viewPage = new javax.swing.JPanel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        overall = new javax.swing.JPanel();
-        Tot_no_item = new javax.swing.JLabel();
-        item_ip = new javax.swing.JLabel();
-        tot_wt = new javax.swing.JLabel();
-        sel_ornament = new javax.swing.JComboBox<>();
-        wt_ip = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        sold = new javax.swing.JPanel();
-        Balance = new javax.swing.JPanel();
-        Return = new javax.swing.JPanel();
+        view_display_tabbedpane = new javax.swing.JTabbedPane();
+        view_overall_tab = new javax.swing.JPanel();
+        view_totItem_label = new javax.swing.JLabel();
+        view_totItemInp_label = new javax.swing.JLabel();
+        view_totWt_label = new javax.swing.JLabel();
+        view_selOrnament_dropdown = new javax.swing.JComboBox<>();
+        view_totWtInp_label = new javax.swing.JLabel();
+        view_datelimitbox_panel = new javax.swing.JPanel();
+        view_fromDate_dropdown = new javax.swing.JComboBox<>();
+        view_toDate_dropdown = new javax.swing.JComboBox<>();
+        view_tablearea_scrollpane = new javax.swing.JScrollPane();
+        view_tableone_table = new javax.swing.JTable();
+        view_sold_tab = new javax.swing.JPanel();
+        view_Balance_tab = new javax.swing.JPanel();
+        view_return_tab = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -49,37 +52,76 @@ public class MainWindow extends javax.swing.JFrame {
 
         viewPage.setBackground(java.awt.Color.white);
 
-        jTabbedPane1.setBackground(java.awt.Color.white);
-        jTabbedPane1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        view_display_tabbedpane.setBackground(java.awt.Color.white);
+        view_display_tabbedpane.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        view_display_tabbedpane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        overall.setBackground(new java.awt.Color(255, 255, 255));
-        overall.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        overall.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        view_overall_tab.setBackground(new java.awt.Color(255, 255, 255));
+        view_overall_tab.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        view_overall_tab.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
 
-        Tot_no_item.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        Tot_no_item.setText("Total no of Items  :");
+        view_totItem_label.setFont(new java.awt.Font("Ubuntu", 1, 17)); // NOI18N
+        view_totItem_label.setText("Total no of Items  :");
 
-        item_ip.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        item_ip.setText("1454");
+        view_totItemInp_label.setFont(new java.awt.Font("Ubuntu", 1, 17)); // NOI18N
+        view_totItemInp_label.setText("1454");
 
-        tot_wt.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        tot_wt.setText("Total Weight           :");
+        view_totWt_label.setFont(new java.awt.Font("Ubuntu", 1, 17)); // NOI18N
+        view_totWt_label.setText("Total Weight           :");
 
-        sel_ornament.setBackground(new java.awt.Color(211, 211, 211));
-        sel_ornament.setFont(new java.awt.Font("Ubuntu", 1, 17)); // NOI18N
-        sel_ornament.setForeground(new java.awt.Color(128, 128, 128));
-        sel_ornament.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select the Ornament", "Item1", "item2" }));
-        sel_ornament.addActionListener(new java.awt.event.ActionListener() {
+        view_selOrnament_dropdown.setBackground(new java.awt.Color(211, 211, 211));
+        view_selOrnament_dropdown.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
+        view_selOrnament_dropdown.setForeground(new java.awt.Color(128, 128, 128));
+        view_selOrnament_dropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select the Ornament", "Item1", "item2" }));
+        view_selOrnament_dropdown.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sel_ornamentActionPerformed(evt);
+                view_selOrnament_dropdownActionPerformed(evt);
             }
         });
 
-        wt_ip.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        wt_ip.setText("1050");
+        view_totWtInp_label.setFont(new java.awt.Font("Ubuntu", 1, 17)); // NOI18N
+        view_totWtInp_label.setText("1050");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        view_datelimitbox_panel.setBackground(new java.awt.Color(255, 255, 255));
+        view_datelimitbox_panel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        view_datelimitbox_panel.setForeground(new java.awt.Color(0, 0, 0));
+        view_datelimitbox_panel.setName(""); // NOI18N
+
+        view_fromDate_dropdown.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
+        view_fromDate_dropdown.setForeground(new java.awt.Color(0, 0, 0));
+        view_fromDate_dropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "From", "Item 2", "Item 3", "Item 4" }));
+        view_fromDate_dropdown.setToolTipText("");
+
+        view_toDate_dropdown.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
+        view_toDate_dropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "To", "Item 2", "Item 3", "Item 4" }));
+        view_toDate_dropdown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                view_toDate_dropdownActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout view_datelimitbox_panelLayout = new javax.swing.GroupLayout(view_datelimitbox_panel);
+        view_datelimitbox_panel.setLayout(view_datelimitbox_panelLayout);
+        view_datelimitbox_panelLayout.setHorizontalGroup(
+            view_datelimitbox_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(view_datelimitbox_panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(view_fromDate_dropdown, 0, 126, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(view_toDate_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        view_datelimitbox_panelLayout.setVerticalGroup(
+            view_datelimitbox_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(view_datelimitbox_panelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(view_datelimitbox_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(view_fromDate_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(view_toDate_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+
+        view_tableone_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null},
@@ -99,140 +141,139 @@ public class MainWindow extends javax.swing.JFrame {
                 "No", "Date", "Chase No", "Ornamant Name", "WT", "WAS", "MC", "BARCODE", "RP"
             }
         ));
-        jTable1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
-        jTable1.setCellSelectionEnabled(true);
-        jTable1.setRowHeight(37);
-        jTable1.setRowMargin(0);
-        jTable1.setShowGrid(true);
-        jTable1.setShowHorizontalLines(false);
-        jScrollPane1.setViewportView(jTable1);
-        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setMinWidth(45);
-            jTable1.getColumnModel().getColumn(0).setPreferredWidth(45);
-            jTable1.getColumnModel().getColumn(0).setMaxWidth(45);
-            jTable1.getColumnModel().getColumn(1).setMinWidth(70);
-            jTable1.getColumnModel().getColumn(1).setPreferredWidth(70);
-            jTable1.getColumnModel().getColumn(1).setMaxWidth(70);
-            jTable1.getColumnModel().getColumn(2).setMinWidth(100);
-            jTable1.getColumnModel().getColumn(2).setPreferredWidth(100);
-            jTable1.getColumnModel().getColumn(2).setMaxWidth(100);
-            jTable1.getColumnModel().getColumn(3).setMinWidth(160);
-            jTable1.getColumnModel().getColumn(3).setPreferredWidth(160);
-            jTable1.getColumnModel().getColumn(3).setMaxWidth(160);
-            jTable1.getColumnModel().getColumn(4).setMinWidth(60);
-            jTable1.getColumnModel().getColumn(4).setPreferredWidth(60);
-            jTable1.getColumnModel().getColumn(4).setMaxWidth(60);
-            jTable1.getColumnModel().getColumn(5).setMinWidth(60);
-            jTable1.getColumnModel().getColumn(5).setPreferredWidth(60);
-            jTable1.getColumnModel().getColumn(5).setMaxWidth(60);
-            jTable1.getColumnModel().getColumn(6).setMinWidth(60);
-            jTable1.getColumnModel().getColumn(6).setPreferredWidth(60);
-            jTable1.getColumnModel().getColumn(6).setMaxWidth(60);
-            jTable1.getColumnModel().getColumn(7).setMinWidth(140);
-            jTable1.getColumnModel().getColumn(7).setPreferredWidth(140);
-            jTable1.getColumnModel().getColumn(7).setMaxWidth(140);
-            jTable1.getColumnModel().getColumn(8).setMinWidth(60);
-            jTable1.getColumnModel().getColumn(8).setPreferredWidth(60);
-            jTable1.getColumnModel().getColumn(8).setMaxWidth(60);
+        view_tableone_table.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        view_tableone_table.setCellSelectionEnabled(true);
+        view_tableone_table.setRowHeight(40);
+        view_tableone_table.setRowMargin(0);
+        view_tableone_table.setShowGrid(true);
+        view_tableone_table.setShowHorizontalLines(false);
+        view_tablearea_scrollpane.setViewportView(view_tableone_table);
+        view_tableone_table.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        if (view_tableone_table.getColumnModel().getColumnCount() > 0) {
+            view_tableone_table.getColumnModel().getColumn(0).setMinWidth(45);
+            view_tableone_table.getColumnModel().getColumn(0).setPreferredWidth(45);
+            view_tableone_table.getColumnModel().getColumn(0).setMaxWidth(45);
+            view_tableone_table.getColumnModel().getColumn(1).setMinWidth(70);
+            view_tableone_table.getColumnModel().getColumn(1).setPreferredWidth(70);
+            view_tableone_table.getColumnModel().getColumn(1).setMaxWidth(70);
+            view_tableone_table.getColumnModel().getColumn(2).setMinWidth(100);
+            view_tableone_table.getColumnModel().getColumn(2).setPreferredWidth(100);
+            view_tableone_table.getColumnModel().getColumn(2).setMaxWidth(100);
+            view_tableone_table.getColumnModel().getColumn(3).setMinWidth(160);
+            view_tableone_table.getColumnModel().getColumn(3).setPreferredWidth(160);
+            view_tableone_table.getColumnModel().getColumn(3).setMaxWidth(160);
+            view_tableone_table.getColumnModel().getColumn(4).setMinWidth(60);
+            view_tableone_table.getColumnModel().getColumn(4).setPreferredWidth(60);
+            view_tableone_table.getColumnModel().getColumn(4).setMaxWidth(60);
+            view_tableone_table.getColumnModel().getColumn(5).setMinWidth(60);
+            view_tableone_table.getColumnModel().getColumn(5).setPreferredWidth(60);
+            view_tableone_table.getColumnModel().getColumn(5).setMaxWidth(60);
+            view_tableone_table.getColumnModel().getColumn(6).setMinWidth(60);
+            view_tableone_table.getColumnModel().getColumn(6).setPreferredWidth(60);
+            view_tableone_table.getColumnModel().getColumn(6).setMaxWidth(60);
+            view_tableone_table.getColumnModel().getColumn(7).setMinWidth(140);
+            view_tableone_table.getColumnModel().getColumn(7).setPreferredWidth(140);
+            view_tableone_table.getColumnModel().getColumn(7).setMaxWidth(140);
+            view_tableone_table.getColumnModel().getColumn(8).setMinWidth(60);
+            view_tableone_table.getColumnModel().getColumn(8).setPreferredWidth(60);
+            view_tableone_table.getColumnModel().getColumn(8).setMaxWidth(60);
         }
 
-        javax.swing.GroupLayout overallLayout = new javax.swing.GroupLayout(overall);
-        overall.setLayout(overallLayout);
-        overallLayout.setHorizontalGroup(
-            overallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(overallLayout.createSequentialGroup()
+        javax.swing.GroupLayout view_overall_tabLayout = new javax.swing.GroupLayout(view_overall_tab);
+        view_overall_tab.setLayout(view_overall_tabLayout);
+        view_overall_tabLayout.setHorizontalGroup(
+            view_overall_tabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(view_overall_tabLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(overallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(tot_wt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Tot_no_item, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(view_overall_tabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(view_totWt_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(view_totItem_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(overallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(item_ip, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
-                    .addComponent(wt_ip, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(sel_ornament, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(305, Short.MAX_VALUE))
-            .addGroup(overallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(overallLayout.createSequentialGroup()
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 770, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(view_overall_tabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(view_totItemInp_label, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
+                    .addComponent(view_totWtInp_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(4, 4, 4)
+                .addComponent(view_selOrnament_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(view_datelimitbox_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addComponent(view_tablearea_scrollpane, javax.swing.GroupLayout.Alignment.TRAILING)
         );
-        overallLayout.setVerticalGroup(
-            overallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(overallLayout.createSequentialGroup()
-                .addGroup(overallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(overallLayout.createSequentialGroup()
+        view_overall_tabLayout.setVerticalGroup(
+            view_overall_tabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(view_overall_tabLayout.createSequentialGroup()
+                .addGroup(view_overall_tabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(view_overall_tabLayout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(view_selOrnament_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(view_overall_tabLayout.createSequentialGroup()
                         .addGap(57, 57, 57)
-                        .addGroup(overallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Tot_no_item, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(item_ip, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(view_overall_tabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(view_totItem_label, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(view_totItemInp_label, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(overallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tot_wt, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                            .addComponent(wt_ip, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(overallLayout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(sel_ornament, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(446, Short.MAX_VALUE))
-            .addGroup(overallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, overallLayout.createSequentialGroup()
-                    .addGap(151, 151, 151)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)))
+                        .addGroup(view_overall_tabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(view_totWt_label, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                            .addComponent(view_totWtInp_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(view_overall_tabLayout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(view_datelimitbox_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(44, 44, 44)
+                .addComponent(view_tablearea_scrollpane, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Overall", overall);
+        view_display_tabbedpane.addTab("Overall", view_overall_tab);
 
-        javax.swing.GroupLayout soldLayout = new javax.swing.GroupLayout(sold);
-        sold.setLayout(soldLayout);
-        soldLayout.setHorizontalGroup(
-            soldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout view_sold_tabLayout = new javax.swing.GroupLayout(view_sold_tab);
+        view_sold_tab.setLayout(view_sold_tabLayout);
+        view_sold_tabLayout.setHorizontalGroup(
+            view_sold_tabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 772, Short.MAX_VALUE)
         );
-        soldLayout.setVerticalGroup(
-            soldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 568, Short.MAX_VALUE)
+        view_sold_tabLayout.setVerticalGroup(
+            view_sold_tabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 552, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Sold", sold);
+        view_display_tabbedpane.addTab("Sold", view_sold_tab);
 
-        javax.swing.GroupLayout BalanceLayout = new javax.swing.GroupLayout(Balance);
-        Balance.setLayout(BalanceLayout);
-        BalanceLayout.setHorizontalGroup(
-            BalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout view_Balance_tabLayout = new javax.swing.GroupLayout(view_Balance_tab);
+        view_Balance_tab.setLayout(view_Balance_tabLayout);
+        view_Balance_tabLayout.setHorizontalGroup(
+            view_Balance_tabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 772, Short.MAX_VALUE)
         );
-        BalanceLayout.setVerticalGroup(
-            BalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 568, Short.MAX_VALUE)
+        view_Balance_tabLayout.setVerticalGroup(
+            view_Balance_tabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 552, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Balance", Balance);
+        view_display_tabbedpane.addTab("Balance", view_Balance_tab);
 
-        javax.swing.GroupLayout ReturnLayout = new javax.swing.GroupLayout(Return);
-        Return.setLayout(ReturnLayout);
-        ReturnLayout.setHorizontalGroup(
-            ReturnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout view_return_tabLayout = new javax.swing.GroupLayout(view_return_tab);
+        view_return_tab.setLayout(view_return_tabLayout);
+        view_return_tabLayout.setHorizontalGroup(
+            view_return_tabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 772, Short.MAX_VALUE)
         );
-        ReturnLayout.setVerticalGroup(
-            ReturnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 568, Short.MAX_VALUE)
+        view_return_tabLayout.setVerticalGroup(
+            view_return_tabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 552, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Return", Return);
+        view_display_tabbedpane.addTab("Return", view_return_tab);
 
         javax.swing.GroupLayout viewPageLayout = new javax.swing.GroupLayout(viewPage);
         viewPage.setLayout(viewPageLayout);
         viewPageLayout.setHorizontalGroup(
             viewPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(viewPageLayout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 778, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(view_display_tabbedpane, javax.swing.GroupLayout.PREFERRED_SIZE, 778, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         viewPageLayout.setVerticalGroup(
             viewPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(view_display_tabbedpane, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         jLayeredPane1.add(viewPage, "viewPage");
@@ -251,14 +292,20 @@ public class MainWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void sel_ornamentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sel_ornamentActionPerformed
+    private void view_selOrnament_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_selOrnament_dropdownActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_sel_ornamentActionPerformed
+    }//GEN-LAST:event_view_selOrnament_dropdownActionPerformed
+
+    private void view_toDate_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_toDate_dropdownActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_view_toDate_dropdownActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+       
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -291,19 +338,28 @@ public class MainWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Balance;
-    private javax.swing.JPanel Return;
-    private javax.swing.JLabel Tot_no_item;
-    private javax.swing.JLabel item_ip;
     private javax.swing.JLayeredPane jLayeredPane1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JPanel overall;
-    private javax.swing.JComboBox<String> sel_ornament;
-    private javax.swing.JPanel sold;
-    private javax.swing.JLabel tot_wt;
     private javax.swing.JPanel viewPage;
-    private javax.swing.JLabel wt_ip;
+    private javax.swing.JPanel view_Balance_tab;
+    private javax.swing.JPanel view_datelimitbox_panel;
+    private javax.swing.JTabbedPane view_display_tabbedpane;
+    private javax.swing.JComboBox<String> view_fromDate_dropdown;
+    private javax.swing.JPanel view_overall_tab;
+    private javax.swing.JPanel view_return_tab;
+    private javax.swing.JComboBox<String> view_selOrnament_dropdown;
+    private javax.swing.JPanel view_sold_tab;
+    private javax.swing.JScrollPane view_tablearea_scrollpane;
+    private javax.swing.JTable view_tableone_table;
+    private javax.swing.JComboBox<String> view_toDate_dropdown;
+    private javax.swing.JLabel view_totItemInp_label;
+    private javax.swing.JLabel view_totItem_label;
+    private javax.swing.JLabel view_totWtInp_label;
+    private javax.swing.JLabel view_totWt_label;
     // End of variables declaration//GEN-END:variables
+
+  public class Table_header extends javax.swing.JFrame{
+      
+  }
+
+
 }
