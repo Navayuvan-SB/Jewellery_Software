@@ -35,6 +35,8 @@ public class MainWindow extends javax.swing.JFrame {
 
         jLayeredPane1.setLayout(new java.awt.CardLayout());
 
+        entryPage.setBackground(new java.awt.Color(250, 250, 250));
+
         javax.swing.GroupLayout entryPageLayout = new javax.swing.GroupLayout(entryPage);
         entryPage.setLayout(entryPageLayout);
         entryPageLayout.setHorizontalGroup(
@@ -52,11 +54,11 @@ public class MainWindow extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLayeredPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+            .addComponent(jLayeredPane1)
         );
 
         pack();
