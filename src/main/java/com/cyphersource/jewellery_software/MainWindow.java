@@ -35,6 +35,10 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_NavEntry_Label = new javax.swing.JLabel();
         Entry_NavView_Label = new javax.swing.JLabel();
         Entry_NavSell_Label = new javax.swing.JLabel();
+        Entry_ChaseNo_Label = new javax.swing.JLabel();
+        Entry_ChaseNoValue_Label = new javax.swing.JLabel();
+        Entry_Date_Label = new javax.swing.JLabel();
+        Entry_ChaseNoValue_Label1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -73,24 +77,57 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_NavSell_Label.setForeground(new java.awt.Color(98, 98, 98));
         Entry_NavSell_Label.setText("Sell");
 
+        Entry_ChaseNo_Label.setBackground(new java.awt.Color(250, 250, 250));
+        Entry_ChaseNo_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        Entry_ChaseNo_Label.setForeground(new java.awt.Color(98, 98, 98));
+        Entry_ChaseNo_Label.setText("Chase No :");
+
+        Entry_ChaseNoValue_Label.setBackground(new java.awt.Color(250, 250, 250));
+        Entry_ChaseNoValue_Label.setFont(new java.awt.Font("Ubuntu", 1, 27)); // NOI18N
+        Entry_ChaseNoValue_Label.setForeground(new java.awt.Color(0, 0, 0));
+        Entry_ChaseNoValue_Label.setText("CH1234");
+
+        Entry_Date_Label.setBackground(new java.awt.Color(250, 250, 250));
+        Entry_Date_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        Entry_Date_Label.setForeground(new java.awt.Color(98, 98, 98));
+        Entry_Date_Label.setText("Date :");
+
+        Entry_ChaseNoValue_Label1.setBackground(new java.awt.Color(250, 250, 250));
+        Entry_ChaseNoValue_Label1.setFont(new java.awt.Font("Ubuntu", 1, 27)); // NOI18N
+        Entry_ChaseNoValue_Label1.setForeground(new java.awt.Color(0, 0, 0));
+        Entry_ChaseNoValue_Label1.setText("04-06-2020");
+
         javax.swing.GroupLayout entryPageLayout = new javax.swing.GroupLayout(entryPage);
         entryPage.setLayout(entryPageLayout);
         entryPageLayout.setHorizontalGroup(
             entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(entryPageLayout.createSequentialGroup()
-                .addGap(591, 591, 591)
-                .addComponent(Entry_ShopnameJ_Label)
-                .addGap(0, 0, 0)
-                .addComponent(Entry_ShopNameA_Label)
-                .addGap(0, 0, 0)
-                .addComponent(Entry_ShopnameJ2_Label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
-                .addComponent(Entry_NavEntry_Label)
-                .addGap(55, 55, 55)
-                .addComponent(Entry_NavView_Label)
-                .addGap(55, 55, 55)
-                .addComponent(Entry_NavSell_Label)
-                .addGap(73, 73, 73))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, entryPageLayout.createSequentialGroup()
+                .addGroup(entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(entryPageLayout.createSequentialGroup()
+                        .addGap(591, 591, 591)
+                        .addComponent(Entry_ShopnameJ_Label)
+                        .addGap(0, 0, 0)
+                        .addComponent(Entry_ShopNameA_Label)
+                        .addGap(0, 0, 0)
+                        .addComponent(Entry_ShopnameJ2_Label))
+                    .addGroup(entryPageLayout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(Entry_ChaseNo_Label)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Entry_ChaseNoValue_Label)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 252, Short.MAX_VALUE)
+                .addGroup(entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(entryPageLayout.createSequentialGroup()
+                        .addComponent(Entry_NavEntry_Label)
+                        .addGap(55, 55, 55)
+                        .addComponent(Entry_NavView_Label)
+                        .addGap(55, 55, 55)
+                        .addComponent(Entry_NavSell_Label))
+                    .addGroup(entryPageLayout.createSequentialGroup()
+                        .addComponent(Entry_Date_Label)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Entry_ChaseNoValue_Label1)))
+                .addGap(70, 70, 70))
         );
         entryPageLayout.setVerticalGroup(
             entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,7 +145,13 @@ public class MainWindow extends javax.swing.JFrame {
                             .addComponent(Entry_NavSell_Label)
                             .addComponent(Entry_NavView_Label)
                             .addComponent(Entry_NavEntry_Label))))
-                .addContainerGap(839, Short.MAX_VALUE))
+                .addGap(77, 77, 77)
+                .addGroup(entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Entry_ChaseNoValue_Label)
+                    .addComponent(Entry_ChaseNo_Label)
+                    .addComponent(Entry_Date_Label)
+                    .addComponent(Entry_ChaseNoValue_Label1))
+                .addContainerGap(721, Short.MAX_VALUE))
         );
 
         jLayeredPane1.add(entryPage, "entryPage");
@@ -163,6 +206,10 @@ public class MainWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Entry_ChaseNoValue_Label;
+    private javax.swing.JLabel Entry_ChaseNoValue_Label1;
+    private javax.swing.JLabel Entry_ChaseNo_Label;
+    private javax.swing.JLabel Entry_Date_Label;
     private javax.swing.JLabel Entry_NavEntry_Label;
     private javax.swing.JLabel Entry_NavSell_Label;
     private javax.swing.JLabel Entry_NavView_Label;
