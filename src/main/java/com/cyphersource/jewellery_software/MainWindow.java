@@ -32,6 +32,9 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_ShopnameJ_Label = new javax.swing.JLabel();
         Entry_ShopnameJ2_Label = new javax.swing.JLabel();
         Entry_ShopNameA_Label = new javax.swing.JLabel();
+        Entry_NavEntry_Label = new javax.swing.JLabel();
+        Entry_NavView_Label = new javax.swing.JLabel();
+        Entry_NavSell_Label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -55,28 +58,57 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_ShopNameA_Label.setForeground(new java.awt.Color(0, 0, 0));
         Entry_ShopNameA_Label.setText("A");
 
+        Entry_NavEntry_Label.setBackground(new java.awt.Color(250, 250, 250));
+        Entry_NavEntry_Label.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        Entry_NavEntry_Label.setForeground(new java.awt.Color(0, 0, 0));
+        Entry_NavEntry_Label.setText("Entry");
+
+        Entry_NavView_Label.setBackground(new java.awt.Color(250, 250, 250));
+        Entry_NavView_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        Entry_NavView_Label.setForeground(new java.awt.Color(98, 98, 98));
+        Entry_NavView_Label.setText("View");
+
+        Entry_NavSell_Label.setBackground(new java.awt.Color(250, 250, 250));
+        Entry_NavSell_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        Entry_NavSell_Label.setForeground(new java.awt.Color(98, 98, 98));
+        Entry_NavSell_Label.setText("Sell");
+
         javax.swing.GroupLayout entryPageLayout = new javax.swing.GroupLayout(entryPage);
         entryPage.setLayout(entryPageLayout);
         entryPageLayout.setHorizontalGroup(
             entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(entryPageLayout.createSequentialGroup()
-                .addGap(546, 546, 546)
+                .addGap(591, 591, 591)
                 .addComponent(Entry_ShopnameJ_Label)
                 .addGap(0, 0, 0)
                 .addComponent(Entry_ShopNameA_Label)
                 .addGap(0, 0, 0)
                 .addComponent(Entry_ShopnameJ2_Label)
-                .addContainerGap(546, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
+                .addComponent(Entry_NavEntry_Label)
+                .addGap(55, 55, 55)
+                .addComponent(Entry_NavView_Label)
+                .addGap(55, 55, 55)
+                .addComponent(Entry_NavSell_Label)
+                .addGap(73, 73, 73))
         );
         entryPageLayout.setVerticalGroup(
             entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(entryPageLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Entry_ShopNameA_Label)
-                    .addComponent(Entry_ShopnameJ2_Label)
-                    .addComponent(Entry_ShopnameJ_Label))
-                .addContainerGap(596, Short.MAX_VALUE))
+                .addGroup(entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(entryPageLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addGroup(entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Entry_ShopNameA_Label)
+                            .addComponent(Entry_ShopnameJ2_Label)
+                            .addComponent(Entry_ShopnameJ_Label)))
+                    .addGroup(entryPageLayout.createSequentialGroup()
+                        .addGap(74, 74, 74)
+                        .addGroup(entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Entry_NavSell_Label)
+                            .addComponent(Entry_NavView_Label)
+                            .addComponent(Entry_NavEntry_Label))))
+                .addContainerGap(839, Short.MAX_VALUE))
         );
 
         jLayeredPane1.add(entryPage, "entryPage");
@@ -131,6 +163,9 @@ public class MainWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Entry_NavEntry_Label;
+    private javax.swing.JLabel Entry_NavSell_Label;
+    private javax.swing.JLabel Entry_NavView_Label;
     private javax.swing.JLabel Entry_ShopNameA_Label;
     private javax.swing.JLabel Entry_ShopnameJ2_Label;
     private javax.swing.JLabel Entry_ShopnameJ_Label;
