@@ -29,6 +29,9 @@ public class MainWindow extends javax.swing.JFrame {
 
         jLayeredPane1 = new javax.swing.JLayeredPane();
         entryPage = new javax.swing.JPanel();
+        Entry_ShopnameJ_Label = new javax.swing.JLabel();
+        Entry_ShopnameJ2_Label = new javax.swing.JLabel();
+        Entry_ShopNameA_Label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -37,15 +40,43 @@ public class MainWindow extends javax.swing.JFrame {
 
         entryPage.setBackground(new java.awt.Color(250, 250, 250));
 
+        Entry_ShopnameJ_Label.setBackground(new java.awt.Color(250, 250, 250));
+        Entry_ShopnameJ_Label.setFont(new java.awt.Font("Ubuntu", 1, 64)); // NOI18N
+        Entry_ShopnameJ_Label.setForeground(new java.awt.Color(0, 0, 0));
+        Entry_ShopnameJ_Label.setText("J");
+
+        Entry_ShopnameJ2_Label.setBackground(new java.awt.Color(250, 250, 250));
+        Entry_ShopnameJ2_Label.setFont(new java.awt.Font("Ubuntu", 1, 64)); // NOI18N
+        Entry_ShopnameJ2_Label.setForeground(new java.awt.Color(0, 0, 0));
+        Entry_ShopnameJ2_Label.setText("J");
+
+        Entry_ShopNameA_Label.setBackground(new java.awt.Color(250, 250, 250));
+        Entry_ShopNameA_Label.setFont(new java.awt.Font("Ubuntu", 1, 38)); // NOI18N
+        Entry_ShopNameA_Label.setForeground(new java.awt.Color(0, 0, 0));
+        Entry_ShopNameA_Label.setText("A");
+
         javax.swing.GroupLayout entryPageLayout = new javax.swing.GroupLayout(entryPage);
         entryPage.setLayout(entryPageLayout);
         entryPageLayout.setHorizontalGroup(
             entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1200, Short.MAX_VALUE)
+            .addGroup(entryPageLayout.createSequentialGroup()
+                .addGap(546, 546, 546)
+                .addComponent(Entry_ShopnameJ_Label)
+                .addGap(0, 0, 0)
+                .addComponent(Entry_ShopNameA_Label)
+                .addGap(0, 0, 0)
+                .addComponent(Entry_ShopnameJ2_Label)
+                .addContainerGap(546, Short.MAX_VALUE))
         );
         entryPageLayout.setVerticalGroup(
             entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
+            .addGroup(entryPageLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Entry_ShopNameA_Label)
+                    .addComponent(Entry_ShopnameJ2_Label)
+                    .addComponent(Entry_ShopnameJ_Label))
+                .addContainerGap(596, Short.MAX_VALUE))
         );
 
         jLayeredPane1.add(entryPage, "entryPage");
@@ -100,6 +131,9 @@ public class MainWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Entry_ShopNameA_Label;
+    private javax.swing.JLabel Entry_ShopnameJ2_Label;
+    private javax.swing.JLabel Entry_ShopnameJ_Label;
     private javax.swing.JPanel entryPage;
     private javax.swing.JLayeredPane jLayeredPane1;
     // End of variables declaration//GEN-END:variables
