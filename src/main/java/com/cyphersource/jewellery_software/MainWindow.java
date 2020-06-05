@@ -64,7 +64,7 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_QTY_Label1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -83,7 +83,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         Wrapper.setBackground(new java.awt.Color(255, 255, 255));
         Wrapper.setAutoscrolls(true);
-        Wrapper.setPreferredSize(new java.awt.Dimension(1220, 1800));
+        Wrapper.setPreferredSize(new java.awt.Dimension(1220, 1690));
 
         Entry_ShopnameJ_Label1.setBackground(new java.awt.Color(250, 250, 250));
         Entry_ShopnameJ_Label1.setFont(new java.awt.Font("Ubuntu", 1, 64)); // NOI18N
@@ -265,23 +265,16 @@ public class MainWindow extends javax.swing.JFrame {
 
         jCheckBox1.setBorderPainted(true);
         jCheckBox1.setBorderPaintedFlat(true);
+        jCheckBox1.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/CheckBox.png")); // NOI18N
         jCheckBox1.setPreferredSize(new java.awt.Dimension(30, 30));
+        jCheckBox1.setSelectedIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Checked.png")); // NOI18N
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox1ActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Ubuntu", 0, 30)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(4, 130, 2));
-        jButton1.setText("Enter");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(4, 130, 2), new java.awt.Color(4, 130, 2)));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        jLabel2.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/EnterButton.png")); // NOI18N
 
         javax.swing.GroupLayout WrapperLayout = new javax.swing.GroupLayout(Wrapper);
         Wrapper.setLayout(WrapperLayout);
@@ -321,15 +314,14 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGap(70, 70, 70))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WrapperLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WrapperLayout.createSequentialGroup()
-                        .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)
-                        .addGap(350, 350, 350))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WrapperLayout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(567, 567, 567))))
+                .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addGap(376, 376, 376))
+            .addGroup(WrapperLayout.createSequentialGroup()
+                .addGap(508, 508, 508)
+                .addComponent(jLabel2)
+                .addContainerGap(508, Short.MAX_VALUE))
         );
         WrapperLayout.setVerticalGroup(
             WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -354,14 +346,15 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(Entry_Date_Label1)
                     .addComponent(Entry_ChaseNoValue_Label2))
                 .addGap(47, 47, 47)
-                .addComponent(Entry_InputFields_Panel1, javax.swing.GroupLayout.PREFERRED_SIZE, 939, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(56, 56, 56)
-                .addComponent(jButton1)
-                .addContainerGap(421, Short.MAX_VALUE))
+                .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(WrapperLayout.createSequentialGroup()
+                        .addComponent(Entry_InputFields_Panel1, javax.swing.GroupLayout.PREFERRED_SIZE, 939, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52)
+                .addComponent(jLabel2)
+                .addContainerGap(371, Short.MAX_VALUE))
         );
 
         jScrollPane.setViewportView(Wrapper);
@@ -409,10 +402,6 @@ public class MainWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -453,23 +442,15 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JRadioButton Entry_961HM_RadioButton;
     private javax.swing.JLabel Entry_BUY_Label;
     private javax.swing.JTextField Entry_BUY_TextField;
-    private javax.swing.JLabel Entry_ChaseNoValue_Label;
-    private javax.swing.JLabel Entry_ChaseNoValue_Label1;
     private javax.swing.JLabel Entry_ChaseNoValue_Label2;
     private javax.swing.JLabel Entry_ChaseNoValue_Label3;
-    private javax.swing.JLabel Entry_ChaseNo_Label;
     private javax.swing.JLabel Entry_ChaseNo_Label1;
-    private javax.swing.JLabel Entry_Date_Label;
     private javax.swing.JLabel Entry_Date_Label1;
-    private javax.swing.JPanel Entry_InputFields_Panel;
     private javax.swing.JPanel Entry_InputFields_Panel1;
     private javax.swing.JLabel Entry_MC_Label;
     private javax.swing.JTextField Entry_MC_TextField;
-    private javax.swing.JLabel Entry_NavEntry_Label;
     private javax.swing.JLabel Entry_NavEntry_Label1;
-    private javax.swing.JLabel Entry_NavSell_Label;
     private javax.swing.JLabel Entry_NavSell_Label1;
-    private javax.swing.JLabel Entry_NavView_Label;
     private javax.swing.JLabel Entry_NavView_Label1;
     private javax.swing.JLabel Entry_OrnamentName_Label;
     private javax.swing.JLabel Entry_OrnamentName_TextField;
@@ -478,13 +459,9 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel Entry_Quality_Label;
     private javax.swing.JLabel Entry_Quality_TextField;
     private javax.swing.JLabel Entry_SelectInput_Label;
-    private javax.swing.JTextField Entry_Select_TextField;
     private javax.swing.JTextField Entry_Select_TextField1;
-    private javax.swing.JLabel Entry_ShopNameA_Label;
     private javax.swing.JLabel Entry_ShopNameA_Label1;
-    private javax.swing.JLabel Entry_ShopnameJ2_Label;
     private javax.swing.JLabel Entry_ShopnameJ2_Label1;
-    private javax.swing.JLabel Entry_ShopnameJ_Label;
     private javax.swing.JLabel Entry_ShopnameJ_Label1;
     private javax.swing.JLabel Entry_WAS_Label;
     private javax.swing.JTextField Entry_WAS_TextField;
@@ -492,10 +469,9 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JTextField Entry_WT_TextField;
     private javax.swing.JPanel Wrapper;
     private javax.swing.JPanel entryPage;
-    private javax.swing.JPanel entryPage2;
-    private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane;
     // End of variables declaration//GEN-END:variables
