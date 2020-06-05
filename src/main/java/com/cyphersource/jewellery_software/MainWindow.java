@@ -44,24 +44,30 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_Date_Label1 = new javax.swing.JLabel();
         Entry_ChaseNoValue_Label2 = new javax.swing.JLabel();
         Entry_InputFields_Panel1 = new javax.swing.JPanel();
-        Entry_Select_TextField1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
         Entry_SelectInput_Label = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         Entry_OrnamentName_TextField = new javax.swing.JLabel();
         Entry_OrnamentName_Label = new javax.swing.JLabel();
         Entry_Quality_TextField = new javax.swing.JLabel();
         Entry_961HM_RadioButton = new javax.swing.JRadioButton();
         Entry_22CT_RadioButton = new javax.swing.JRadioButton();
         Entry_Quality_Label = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         Entry_MC_TextField = new javax.swing.JTextField();
         Entry_MC_Label = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         Entry_WT_TextField = new javax.swing.JTextField();
         Entry_WT_Label = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         Entry_WAS_TextField = new javax.swing.JTextField();
-        Entry_QTY_TextField = new javax.swing.JTextField();
         Entry_WAS_Label = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        Entry_QTY_TextField = new javax.swing.JTextField();
+        Entry_QTY_Label1 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         Entry_BUY_TextField = new javax.swing.JTextField();
         Entry_BUY_Label = new javax.swing.JLabel();
-        Entry_QTY_Label1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
@@ -139,28 +145,29 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_InputFields_Panel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Entry_InputFields_Panel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Entry_Select_TextField1.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_Select_TextField1.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        Entry_Select_TextField1.setForeground(new java.awt.Color(98, 98, 98));
-        Entry_Select_TextField1.setText("Select The Ornament :");
-        Entry_Select_TextField1.setBorder(null);
-        Entry_Select_TextField1.setCaretColor(new java.awt.Color(250, 250, 250));
-        Entry_Select_TextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Entry_Select_TextField1Entry_Select_TextFieldActionPerformed(evt);
-            }
-        });
-        Entry_InputFields_Panel1.add(Entry_Select_TextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 560, -1));
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(98, 98, 98));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel3.setText("Select Ornament Name :");
+        Entry_InputFields_Panel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, -1));
 
         Entry_SelectInput_Label.setBackground(new java.awt.Color(250, 250, 250));
         Entry_SelectInput_Label.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
         Entry_InputFields_Panel1.add(Entry_SelectInput_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, -1, -1));
 
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField1.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField1.setBorder(null);
+        Entry_InputFields_Panel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, 360, -1));
+
         Entry_OrnamentName_TextField.setBackground(new java.awt.Color(255, 255, 255));
         Entry_OrnamentName_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         Entry_OrnamentName_TextField.setForeground(new java.awt.Color(98, 98, 98));
         Entry_OrnamentName_TextField.setText("Ornament Name :");
-        Entry_InputFields_Panel1.add(Entry_OrnamentName_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 570, -1));
+        Entry_InputFields_Panel1.add(Entry_OrnamentName_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 200, -1));
 
         Entry_OrnamentName_Label.setBackground(new java.awt.Color(255, 255, 255));
         Entry_OrnamentName_Label.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
@@ -183,80 +190,120 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_22CT_RadioButton.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         Entry_22CT_RadioButton.setForeground(new java.awt.Color(98, 98, 98));
         Entry_22CT_RadioButton.setText("22 CT");
+        Entry_22CT_RadioButton.setBorder(null);
         Entry_InputFields_Panel1.add(Entry_22CT_RadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 290, -1, -1));
 
         Entry_Quality_Label.setBackground(new java.awt.Color(255, 255, 255));
         Entry_Quality_Label.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
         Entry_InputFields_Panel1.add(Entry_Quality_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, -1, -1));
 
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(98, 98, 98));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel4.setText("MC :");
+        Entry_InputFields_Panel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
+
         Entry_MC_TextField.setBackground(new java.awt.Color(255, 255, 255));
         Entry_MC_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        Entry_MC_TextField.setForeground(new java.awt.Color(98, 98, 98));
-        Entry_MC_TextField.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
-        Entry_MC_TextField.setText("MC :");
+        Entry_MC_TextField.setForeground(new java.awt.Color(0, 0, 0));
+        Entry_MC_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Entry_MC_TextField.setBorder(null);
-        Entry_InputFields_Panel1.add(Entry_MC_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
+        Entry_InputFields_Panel1.add(Entry_MC_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 510, -1));
 
         Entry_MC_Label.setBackground(new java.awt.Color(255, 255, 255));
         Entry_MC_Label.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
         Entry_InputFields_Panel1.add(Entry_MC_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
 
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(98, 98, 98));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel5.setText("WT :");
+        Entry_InputFields_Panel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 510, -1, -1));
+
         Entry_WT_TextField.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WT_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        Entry_WT_TextField.setForeground(new java.awt.Color(98, 98, 98));
-        Entry_WT_TextField.setText("WT :");
+        Entry_WT_TextField.setForeground(new java.awt.Color(0, 0, 0));
+        Entry_WT_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Entry_WT_TextField.setBorder(null);
-        Entry_InputFields_Panel1.add(Entry_WT_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 510, -1, -1));
+        Entry_InputFields_Panel1.add(Entry_WT_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 510, 510, -1));
 
         Entry_WT_Label.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WT_Label.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
         Entry_InputFields_Panel1.add(Entry_WT_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 490, -1, -1));
 
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(98, 98, 98));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel6.setText("WAS :");
+        Entry_InputFields_Panel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 620, -1, -1));
+
         Entry_WAS_TextField.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WAS_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        Entry_WAS_TextField.setForeground(new java.awt.Color(98, 98, 98));
-        Entry_WAS_TextField.setText(" WAS :");
+        Entry_WAS_TextField.setForeground(new java.awt.Color(0, 0, 0));
+        Entry_WAS_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Entry_WAS_TextField.setBorder(null);
-        Entry_InputFields_Panel1.add(Entry_WAS_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 620, -1, -1));
-
-        Entry_QTY_TextField.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_QTY_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        Entry_QTY_TextField.setForeground(new java.awt.Color(98, 98, 98));
-        Entry_QTY_TextField.setText("QTY :");
-        Entry_QTY_TextField.setBorder(null);
-        Entry_QTY_TextField.addActionListener(new java.awt.event.ActionListener() {
+        Entry_WAS_TextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Entry_QTY_TextFieldActionPerformed(evt);
+                Entry_WAS_TextFieldActionPerformed(evt);
             }
         });
-        Entry_InputFields_Panel1.add(Entry_QTY_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 730, -1, -1));
+        Entry_InputFields_Panel1.add(Entry_WAS_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 620, 500, -1));
 
         Entry_WAS_Label.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WAS_Label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         Entry_WAS_Label.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
         Entry_InputFields_Panel1.add(Entry_WAS_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 600, -1, -1));
 
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(98, 98, 98));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel7.setText("QTY :");
+        Entry_InputFields_Panel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 730, -1, -1));
+
+        Entry_QTY_TextField.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_QTY_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        Entry_QTY_TextField.setForeground(new java.awt.Color(0, 0, 0));
+        Entry_QTY_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        Entry_QTY_TextField.setBorder(null);
+        Entry_QTY_TextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Entry_QTY_TextFieldActionPerformed(evt);
+            }
+        });
+        Entry_InputFields_Panel1.add(Entry_QTY_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 730, 500, -1));
+
+        Entry_QTY_Label1.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_QTY_Label1.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        Entry_QTY_Label1.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
+        Entry_InputFields_Panel1.add(Entry_QTY_Label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 710, -1, -1));
+
+        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel8.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(98, 98, 98));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel8.setText("BUY :");
+        Entry_InputFields_Panel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 840, -1, -1));
+
         Entry_BUY_TextField.setBackground(new java.awt.Color(255, 255, 255));
         Entry_BUY_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        Entry_BUY_TextField.setForeground(new java.awt.Color(98, 98, 98));
-        Entry_BUY_TextField.setText("BUY :");
+        Entry_BUY_TextField.setForeground(new java.awt.Color(0, 0, 0));
+        Entry_BUY_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Entry_BUY_TextField.setBorder(null);
         Entry_BUY_TextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Entry_BUY_TextFieldActionPerformed(evt);
             }
         });
-        Entry_InputFields_Panel1.add(Entry_BUY_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 840, -1, -1));
+        Entry_InputFields_Panel1.add(Entry_BUY_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 840, 500, -1));
 
         Entry_BUY_Label.setBackground(new java.awt.Color(255, 255, 255));
         Entry_BUY_Label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         Entry_BUY_Label.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
         Entry_InputFields_Panel1.add(Entry_BUY_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 820, -1, -1));
-
-        Entry_QTY_Label1.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_QTY_Label1.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        Entry_QTY_Label1.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
-        Entry_InputFields_Panel1.add(Entry_QTY_Label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 710, -1, -1));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
@@ -386,10 +433,6 @@ public class MainWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Entry_Select_TextField1Entry_Select_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_Select_TextField1Entry_Select_TextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Entry_Select_TextField1Entry_Select_TextFieldActionPerformed
-
     private void Entry_QTY_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_QTY_TextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Entry_QTY_TextFieldActionPerformed
@@ -401,6 +444,10 @@ public class MainWindow extends javax.swing.JFrame {
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void Entry_WAS_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_WAS_TextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Entry_WAS_TextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -459,7 +506,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel Entry_Quality_Label;
     private javax.swing.JLabel Entry_Quality_TextField;
     private javax.swing.JLabel Entry_SelectInput_Label;
-    private javax.swing.JTextField Entry_Select_TextField1;
     private javax.swing.JLabel Entry_ShopNameA_Label1;
     private javax.swing.JLabel Entry_ShopnameJ2_Label1;
     private javax.swing.JLabel Entry_ShopnameJ_Label1;
@@ -472,7 +518,14 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
