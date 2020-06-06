@@ -203,7 +203,7 @@ public class MainWindow extends javax.swing.JFrame {
         sell_verify_checkbox.setBackground(java.awt.Color.white);
         sell_verify_checkbox.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         sell_verify_checkbox.setForeground(java.awt.Color.gray);
-        sell_verify_checkbox.setText("Verify  and  Checkout !");
+        sell_verify_checkbox.setText(" Verify  and  Checkout !");
         sell_verify_checkbox.setBorder(null);
         sell_verify_checkbox.setBorderPainted(true);
         sell_verify_checkbox.setBorderPaintedFlat(true);
