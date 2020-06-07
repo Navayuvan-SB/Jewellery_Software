@@ -29,7 +29,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="view_total_panel" alignment="0" max="32767" attributes="0"/>
+          <Component id="view_total_panel" alignment="0" pref="787" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -58,7 +58,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="873" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="886" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -92,7 +92,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="view_contOne_panel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="view_contTwo_panel" pref="463" max="32767" attributes="0"/>
+                      <Component id="view_contTwo_panel" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -101,11 +101,14 @@
             <Container class="javax.swing.JPanel" name="view_contOne_panel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                  <Color blue="f7" green="f7" red="f7" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-                    <EtchetBorder/>
+                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                    <BevelBorder>
+                      <Color PropertyName="shadowOuter" blue="c0" green="c0" id="lightGray" palette="1" red="c0" type="palette"/>
+                      <Color PropertyName="shadowInner" blue="c0" green="c0" id="lightGray" palette="1" red="c0" type="palette"/>
+                    </BevelBorder>
                   </Border>
                 </Property>
               </Properties>
@@ -114,7 +117,7 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                           <Component id="view_overall_panel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="view_sold_panel" min="-2" max="-2" attributes="0"/>
@@ -122,16 +125,16 @@
                           <Component id="view_balance_panel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="view_return_panel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="52" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="view_overall_panel" alignment="0" max="32767" attributes="0"/>
-                      <Component id="view_balance_panel" alignment="1" max="32767" attributes="0"/>
-                      <Component id="view_return_panel" alignment="0" max="32767" attributes="0"/>
+                      <Component id="view_overall_panel" alignment="1" max="32767" attributes="0"/>
                       <Component id="view_sold_panel" alignment="1" max="32767" attributes="0"/>
+                      <Component id="view_balance_panel" alignment="1" max="32767" attributes="0"/>
+                      <Component id="view_return_panel" alignment="1" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -139,28 +142,30 @@
                 <Container class="javax.swing.JPanel" name="view_overall_panel">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                      <Color blue="f7" green="f7" red="f7" type="rgb"/>
                     </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mouseclicked"/>
-                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mouseentered"/>
-                    <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mouseexited"/>
                   </Events>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                              <Component id="view_overall_label" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="73" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace pref="53" max="32767" attributes="0"/>
+                              <Component id="view_overall_label" min="-2" pref="79" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="view_overall_label" alignment="1" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                              <Component id="view_overall_label" min="-2" pref="24" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
@@ -170,9 +175,10 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Ubuntu" size="20" style="0"/>
                         </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Overall"/>
-                        <Property name="autoscrolls" type="boolean" value="true"/>
-                        <Property name="horizontalTextPosition" type="int" value="0"/>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -180,31 +186,29 @@
                 <Container class="javax.swing.JPanel" name="view_sold_panel">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                      <Color blue="f7" green="f7" red="f7" type="rgb"/>
                     </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mouseclicked"/>
-                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mouseentered"/>
-                    <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mouseexited"/>
                   </Events>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                              <Component id="view_sold_label" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="73" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                              <Component id="view_sold_label" min="-2" pref="49" max="-2" attributes="0"/>
+                              <EmptySpace pref="66" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="view_sold_label" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="view_sold_label" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -216,7 +220,7 @@
                           <Font name="Ubuntu" size="20" style="0"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
+                          <Color blue="9a" green="9a" red="9e" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Sold"/>
                       </Properties>
@@ -226,31 +230,29 @@
                 <Container class="javax.swing.JPanel" name="view_balance_panel">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                      <Color blue="f7" green="f7" red="f7" type="rgb"/>
                     </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mouseclicked"/>
-                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mouseentered"/>
-                    <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mouseexited"/>
                   </Events>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                              <Component id="view_balance_label" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="62" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace pref="56" max="32767" attributes="0"/>
+                              <Component id="view_balance_label" min="-2" pref="80" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="view_balance_label" pref="41" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="view_balance_label" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -262,7 +264,7 @@
                           <Font name="Ubuntu" size="20" style="0"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
+                          <Color blue="9a" green="9a" red="9e" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Balance"/>
                       </Properties>
@@ -272,31 +274,29 @@
                 <Container class="javax.swing.JPanel" name="view_return_panel">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                      <Color blue="f7" green="f7" red="f7" type="rgb"/>
                     </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mouseclicked"/>
-                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mouseentered"/>
-                    <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mouseexited"/>
                   </Events>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="68" max="32767" attributes="0"/>
-                              <Component id="view_return_label" min="-2" pref="65" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                              <EmptySpace pref="54" max="32767" attributes="0"/>
+                              <Component id="view_return_label" min="-2" pref="72" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="view_return_label" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="view_return_label" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="22" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -308,7 +308,7 @@
                           <Font name="Ubuntu" size="20" style="0"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
+                          <Color blue="9a" green="9a" red="9e" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Return"/>
                       </Properties>
@@ -324,7 +324,7 @@
                 </Property>
               </Properties>
 
-              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
               <SubComponents>
                 <Container class="javax.swing.JPanel" name="view_overallCont_panel">
                   <Properties>
@@ -332,34 +332,41 @@
                       <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
                     </Property>
                   </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                      <CardConstraints cardName="card2"/>
+                    </Constraint>
+                  </Constraints>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="view_totItem_label7" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="view_tablearea1_scrollpane" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="view_totItem1_label" pref="160" max="32767" attributes="0"/>
+                                          <Component id="view_totWt1_label" max="32767" attributes="0"/>
+                                      </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="view_totItemInp_label8" min="-2" pref="53" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="view_totWt_label8" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="view_colon11_label" min="-2" pref="11" max="-2" attributes="0"/>
+                                          <Component id="view_colon12_label" max="32767" attributes="0"/>
+                                      </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="view_totWtInp_label8" min="-2" pref="53" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="view_totItemInp1_label" pref="71" max="32767" attributes="0"/>
+                                          <Component id="view_totWtInp1_label" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="view_selOrnament1_dropdown" min="-2" pref="227" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="view_datelimitbox1_panel" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="view_selOrnament_dropdown8" min="-2" pref="213" max="-2" attributes="0"/>
-                              <EmptySpace pref="43" max="32767" attributes="0"/>
-                              <Component id="view_datelimitbox_panel8" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="view_tablearea_scrollpane1" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -367,74 +374,76 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                                      <Component id="view_selOrnament_dropdown8" min="-2" pref="43" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="view_datelimitbox_panel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="view_totWt_label8" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                                  <Component id="view_totWtInp_label8" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                                                  <Component id="view_totWt1_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="view_colon11_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="view_totWtInp1_label" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="view_totItem_label7" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                                  <Component id="view_totItemInp_label8" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                                  <Component id="view_totItem1_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="view_colon12_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="view_totItemInp1_label" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
+                                          <Component id="view_selOrnament1_dropdown" alignment="1" min="-2" pref="43" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                      <Component id="view_datelimitbox1_panel" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="view_tablearea_scrollpane1" pref="356" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                              <Component id="view_tablearea1_scrollpane" pref="487" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="view_totItem_label7">
+                    <Component class="javax.swing.JLabel" name="view_totItem1_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="18" style="1"/>
+                          <Font name="Ubuntu" size="19" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Total no of Items  :"/>
+                        <Property name="text" type="java.lang.String" value="Total Weight    "/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="view_totItemInp_label8">
+                    <Component class="javax.swing.JLabel" name="view_totItemInp1_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="18" style="1"/>
+                          <Font name="Ubuntu" size="19" style="1"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="1454"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="view_totWt_label8">
+                    <Component class="javax.swing.JLabel" name="view_totWt1_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="18" style="1"/>
+                          <Font name="Ubuntu" size="19" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Total Weight          :"/>
+                        <Property name="text" type="java.lang.String" value="Total no of Items"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="view_totWtInp_label8">
+                    <Component class="javax.swing.JLabel" name="view_totWtInp1_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="18" style="1"/>
+                          <Font name="Ubuntu" size="19" style="1"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="1050"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="view_selOrnament_dropdown8">
+                    <Component class="javax.swing.JComboBox" name="view_selOrnament1_dropdown">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="d3" green="d3" red="d3" type="rgb"/>
@@ -454,13 +463,13 @@
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="view_selOrnament_dropdown8view_selOrnament_dropdownActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="view_selOrnament1_dropdownview_selOrnament_dropdownActionPerformed"/>
                       </Events>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
                     </Component>
-                    <Container class="javax.swing.JPanel" name="view_datelimitbox_panel8">
+                    <Container class="javax.swing.JPanel" name="view_datelimitbox1_panel">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -496,7 +505,7 @@
                                       <Component id="view_fromDate_dropdown8" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                                       <Component id="view_toDate_dropdown8" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="24" max="32767" attributes="0"/>
+                                  <EmptySpace pref="32" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -550,18 +559,37 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="javax.swing.JScrollPane" name="view_tablearea_scrollpane1">
+                    <Component class="javax.swing.JLabel" name="view_colon11_label">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Ubuntu" size="19" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value=":"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="view_colon12_label">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Ubuntu" size="19" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value=":"/>
+                      </Properties>
+                    </Component>
+                    <Container class="javax.swing.JScrollPane" name="view_tablearea1_scrollpane">
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTable" name="view_tableone_table1">
+                        <Component class="javax.swing.JTable" name="view_table1_table">
                           <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Ubuntu" size="20" style="1"/>
+                            </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="10" rowCount="13">
                                 <Column editable="true" title="No" type="java.lang.Object"/>
                                 <Column editable="true" title="Date" type="java.lang.Object"/>
                                 <Column editable="true" title="Chase No" type="java.lang.Object"/>
-                                <Column editable="true" title="Ornamant Name" type="java.lang.Object"/>
+                                <Column editable="true" title="Ornament Name" type="java.lang.Object"/>
                                 <Column editable="true" title="WT" type="java.lang.Object"/>
                                 <Column editable="true" title="WAS" type="java.lang.Object"/>
                                 <Column editable="true" title="MC" type="java.lang.Object"/>
@@ -570,41 +598,39 @@
                                 <Column editable="true" title="BUY" type="java.lang.Object"/>
                               </Table>
                             </Property>
-                            <Property name="autoResizeMode" type="int" value="4"/>
-                            <Property name="cellSelectionEnabled" type="boolean" value="true"/>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                              <TableColumnModel selectionModel="2">
+                              <TableColumnModel selectionModel="0">
                                 <Column maxWidth="50" minWidth="50" prefWidth="50" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="80" minWidth="80" prefWidth="80" resizable="true">
+                                <Column maxWidth="70" minWidth="70" prefWidth="70" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="115" minWidth="115" prefWidth="115" resizable="true">
+                                <Column maxWidth="100" minWidth="100" prefWidth="100" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="145" minWidth="145" prefWidth="145" resizable="true">
+                                <Column maxWidth="160" minWidth="160" prefWidth="160" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="60" minWidth="60" prefWidth="60" resizable="true">
+                                <Column maxWidth="55" minWidth="55" prefWidth="55" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="60" minWidth="60" prefWidth="60" resizable="true">
+                                <Column maxWidth="55" minWidth="55" prefWidth="55" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="60" minWidth="60" prefWidth="60" resizable="true">
+                                <Column maxWidth="55" minWidth="55" prefWidth="55" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
@@ -626,7 +652,8 @@
                                 </Column>
                               </TableColumnModel>
                             </Property>
-                            <Property name="rowHeight" type="int" value="40"/>
+                            <Property name="requestFocusEnabled" type="boolean" value="false"/>
+                            <Property name="rowHeight" type="int" value="45"/>
                             <Property name="rowMargin" type="int" value="0"/>
                             <Property name="showGrid" type="boolean" value="true"/>
                             <Property name="showHorizontalLines" type="boolean" value="false"/>
@@ -645,34 +672,44 @@
                       <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
                     </Property>
                   </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                      <CardConstraints cardName="card2"/>
+                    </Constraint>
+                  </Constraints>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="view_totItem_label8" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="27" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="view_tablearea2_scrollpane" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="view_totItem2_label" max="32767" attributes="0"/>
+                                          <Component id="view_totWt2_label" pref="170" max="32767" attributes="0"/>
+                                      </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="view_totItemInp_label9" min="-2" pref="53" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="view_totWt_label9" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="view_colon22_label" min="-2" pref="11" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="view_totItemInp2_label" min="-2" pref="71" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="view_colon21_label" min="-2" pref="11" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="view_totWtInp2_label" min="-2" pref="71" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="view_totWtInp_label9" min="-2" pref="53" max="-2" attributes="0"/>
+                                      <Component id="view_selOrnament2_dropdown" min="-2" pref="227" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                      <Component id="view_datelimitbox2_panel" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="view_selOrnament_dropdown9" min="-2" pref="213" max="-2" attributes="0"/>
-                              <EmptySpace pref="43" max="32767" attributes="0"/>
-                              <Component id="view_datelimitbox_panel9" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="view_tablearea_scrollpane2" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -681,73 +718,76 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                                      <Component id="view_selOrnament_dropdown9" min="-2" pref="43" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="view_datelimitbox_panel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
                                               <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="view_totWt_label9" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                                  <Component id="view_totWtInp_label9" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                                                  <Component id="view_totWt2_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="view_colon21_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="view_totWtInp2_label" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="view_totItem_label8" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                                  <Component id="view_totItemInp_label9" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                                  <Component id="view_totItem2_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="view_colon22_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="view_totItemInp2_label" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
+                                          <Component id="view_selOrnament2_dropdown" alignment="1" min="-2" pref="43" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                      <Component id="view_datelimitbox2_panel" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="view_tablearea_scrollpane2" pref="356" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                              <Component id="view_tablearea2_scrollpane" min="-2" pref="493" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="view_totItem_label8">
+                    <Component class="javax.swing.JLabel" name="view_totItem2_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="18" style="1"/>
+                          <Font name="Ubuntu" size="19" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Total no of Items  :"/>
+                        <Property name="text" type="java.lang.String" value="Total Weight    "/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="view_totItemInp_label9">
+                    <Component class="javax.swing.JLabel" name="view_totItemInp2_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="18" style="1"/>
+                          <Font name="Ubuntu" size="19" style="1"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="1454"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="view_totWt_label9">
+                    <Component class="javax.swing.JLabel" name="view_totWt2_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="18" style="1"/>
+                          <Font name="Ubuntu" size="19" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Total Weight          :"/>
+                        <Property name="text" type="java.lang.String" value="Total no of Items"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="view_totWtInp_label9">
+                    <Component class="javax.swing.JLabel" name="view_totWtInp2_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="18" style="1"/>
+                          <Font name="Ubuntu" size="19" style="1"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="1050"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="view_selOrnament_dropdown9">
+                    <Component class="javax.swing.JComboBox" name="view_selOrnament2_dropdown">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="d3" green="d3" red="d3" type="rgb"/>
@@ -767,13 +807,13 @@
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="view_selOrnament_dropdown9view_selOrnament_dropdownActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="view_selOrnament2_dropdownview_selOrnament_dropdownActionPerformed"/>
                       </Events>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
                     </Component>
-                    <Container class="javax.swing.JPanel" name="view_datelimitbox_panel9">
+                    <Container class="javax.swing.JPanel" name="view_datelimitbox2_panel">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -794,10 +834,10 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="view_fromDate_dropdown9" min="-2" pref="133" max="-2" attributes="0"/>
+                                  <Component id="view_fromDate_dropdown10" min="-2" pref="133" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                  <Component id="view_toDate_dropdown9" min="-2" pref="123" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="view_toDate_dropdown10" min="-2" pref="123" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -806,16 +846,16 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="view_fromDate_dropdown9" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
-                                      <Component id="view_toDate_dropdown9" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                                      <Component id="view_fromDate_dropdown10" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                                      <Component id="view_toDate_dropdown10" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="24" max="32767" attributes="0"/>
+                                  <EmptySpace pref="32" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JComboBox" name="view_fromDate_dropdown9">
+                        <Component class="javax.swing.JComboBox" name="view_fromDate_dropdown10">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Ubuntu" size="16" style="1"/>
@@ -837,7 +877,7 @@
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="view_toDate_dropdown9">
+                        <Component class="javax.swing.JComboBox" name="view_toDate_dropdown10">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Ubuntu" size="16" style="1"/>
@@ -855,7 +895,7 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="view_toDate_dropdown9view_toDate_dropdownActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="view_toDate_dropdown10view_toDate_dropdownActionPerformed"/>
                           </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -863,16 +903,32 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="javax.swing.JScrollPane" name="view_tablearea_scrollpane2">
+                    <Component class="javax.swing.JLabel" name="view_colon21_label">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Ubuntu" size="19" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value=":"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="view_colon22_label">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Ubuntu" size="19" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value=":"/>
+                      </Properties>
+                    </Component>
+                    <Container class="javax.swing.JScrollPane" name="view_tablearea2_scrollpane">
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTable" name="view_tableone_table2">
+                        <Component class="javax.swing.JTable" name="view_table2_table">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="8" rowCount="13">
                                 <Column editable="true" title="No" type="java.lang.Object"/>
-                                <Column editable="true" title="Date" type="java.lang.Object"/>
+                                <Column editable="true" title="Dattte" type="java.lang.Object"/>
                                 <Column editable="true" title="Chase No" type="java.lang.Object"/>
                                 <Column editable="true" title="Ornamant Name" type="java.lang.Object"/>
                                 <Column editable="true" title="WT" type="java.lang.Object"/>
@@ -890,17 +946,17 @@
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="95" minWidth="95" prefWidth="95" resizable="true">
+                                <Column maxWidth="90" minWidth="90" prefWidth="90" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="130" minWidth="130" prefWidth="130" resizable="true">
+                                <Column maxWidth="120" minWidth="120" prefWidth="120" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="175" minWidth="175" prefWidth="175" resizable="true">
+                                <Column maxWidth="160" minWidth="160" prefWidth="160" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
@@ -927,8 +983,10 @@
                                 </Column>
                               </TableColumnModel>
                             </Property>
-                            <Property name="rowHeight" type="int" value="40"/>
-                            <Property name="rowMargin" type="int" value="0"/>
+                            <Property name="intercellSpacing" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[0, 0]"/>
+                            </Property>
+                            <Property name="rowHeight" type="int" value="45"/>
                             <Property name="showGrid" type="boolean" value="true"/>
                             <Property name="showHorizontalLines" type="boolean" value="false"/>
                             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
@@ -946,109 +1004,123 @@
                       <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
                     </Property>
                   </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                      <CardConstraints cardName="card5"/>
+                    </Constraint>
+                  </Constraints>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="view_tablearea3_scrollpane" max="32767" attributes="0"/>
                                   <Group type="102" attributes="0">
-                                      <Component id="view_totItem_label3" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="view_totItem3_label" max="32767" attributes="0"/>
+                                          <Component id="view_totWt3_label" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="view_colon31_label" min="-2" pref="11" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                              <Component id="view_colon32_label" min="-2" pref="11" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="view_totItemInp_label6" min="-2" pref="53" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="view_totWt_label6" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="view_totWtInp_label6" min="-2" pref="53" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="view_totItemInp3_label" min="-2" max="-2" attributes="0"/>
+                                          <Component id="view_totWtInp3_label" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                                      <Component id="view_selOrnament3_dropdown" min="-2" pref="227" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                      <Component id="view_datelimitbox3_panel" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="view_selOrnament_dropdown6" min="-2" pref="213" max="-2" attributes="0"/>
-                              <EmptySpace pref="43" max="32767" attributes="0"/>
-                              <Component id="view_datelimitbox_panel6" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="view_tablearea_scrollpane" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace pref="28" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                                      <Component id="view_selOrnament_dropdown6" min="-2" pref="43" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                                      <Component id="view_selOrnament3_dropdown" min="-2" pref="43" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="view_datelimitbox_panel6" min="-2" max="-2" attributes="0"/>
+                                          <Component id="view_datelimitbox3_panel" min="-2" max="-2" attributes="0"/>
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="view_totWt_label6" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                                  <Component id="view_totWtInp_label6" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                                                  <Component id="view_totWt3_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="view_colon31_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="view_totWtInp3_label" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="view_totItem_label3" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                                  <Component id="view_totItemInp_label6" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                                  <Component id="view_totItem3_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="view_colon32_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="view_totItemInp3_label" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="view_tablearea_scrollpane" pref="356" max="32767" attributes="0"/>
+                              <EmptySpace pref="49" max="32767" attributes="0"/>
+                              <Component id="view_tablearea3_scrollpane" min="-2" pref="495" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="view_totItem_label3">
+                    <Component class="javax.swing.JLabel" name="view_totItem3_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="18" style="1"/>
+                          <Font name="Ubuntu" size="19" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Total no of Items  :"/>
+                        <Property name="text" type="java.lang.String" value="Total Weight    "/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="view_totItemInp_label6">
+                    <Component class="javax.swing.JLabel" name="view_totItemInp3_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="18" style="1"/>
+                          <Font name="Ubuntu" size="19" style="1"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="1454"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="view_totWt_label6">
+                    <Component class="javax.swing.JLabel" name="view_totWt3_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="18" style="1"/>
+                          <Font name="Ubuntu" size="19" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Total Weight          :"/>
+                        <Property name="text" type="java.lang.String" value="Total no of Items"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="view_totWtInp_label6">
+                    <Component class="javax.swing.JLabel" name="view_totWtInp3_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="18" style="1"/>
+                          <Font name="Ubuntu" size="19" style="1"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="1050"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="view_selOrnament_dropdown6">
+                    <Component class="javax.swing.JComboBox" name="view_selOrnament3_dropdown">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="d3" green="d3" red="d3" type="rgb"/>
@@ -1068,13 +1140,13 @@
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="view_selOrnament_dropdown6view_selOrnament_dropdownActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="view_selOrnament3_dropdownview_selOrnament_dropdownActionPerformed"/>
                       </Events>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
                     </Component>
-                    <Container class="javax.swing.JPanel" name="view_datelimitbox_panel6">
+                    <Container class="javax.swing.JPanel" name="view_datelimitbox3_panel">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1095,10 +1167,10 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="view_fromDate_dropdown6" min="-2" pref="133" max="-2" attributes="0"/>
+                                  <Component id="view_fromDate_dropdown12" min="-2" pref="133" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                  <Component id="view_toDate_dropdown6" min="-2" pref="123" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="view_toDate_dropdown12" min="-2" pref="123" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1107,16 +1179,16 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="view_fromDate_dropdown6" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
-                                      <Component id="view_toDate_dropdown6" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                                      <Component id="view_fromDate_dropdown12" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                                      <Component id="view_toDate_dropdown12" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="24" max="32767" attributes="0"/>
+                                  <EmptySpace pref="32" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JComboBox" name="view_fromDate_dropdown6">
+                        <Component class="javax.swing.JComboBox" name="view_fromDate_dropdown12">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Ubuntu" size="16" style="1"/>
@@ -1138,7 +1210,7 @@
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="view_toDate_dropdown6">
+                        <Component class="javax.swing.JComboBox" name="view_toDate_dropdown12">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Ubuntu" size="16" style="1"/>
@@ -1156,7 +1228,7 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="view_toDate_dropdown6view_toDate_dropdownActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="view_toDate_dropdown12view_toDate_dropdownActionPerformed"/>
                           </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -1164,11 +1236,27 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="javax.swing.JScrollPane" name="view_tablearea_scrollpane">
+                    <Component class="javax.swing.JLabel" name="view_colon31_label">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Ubuntu" size="19" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value=":"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="view_colon32_label">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Ubuntu" size="19" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value=":"/>
+                      </Properties>
+                    </Component>
+                    <Container class="javax.swing.JScrollPane" name="view_tablearea3_scrollpane">
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTable" name="view_tableone_table">
+                        <Component class="javax.swing.JTable" name="view_table3_table">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="8" rowCount="13">
@@ -1191,17 +1279,17 @@
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="95" minWidth="95" prefWidth="95" resizable="true">
+                                <Column maxWidth="90" minWidth="90" prefWidth="90" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="130" minWidth="130" prefWidth="130" resizable="true">
+                                <Column maxWidth="120" minWidth="120" prefWidth="120" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="175" minWidth="175" prefWidth="175" resizable="true">
+                                <Column maxWidth="160" minWidth="160" prefWidth="160" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
@@ -1228,8 +1316,10 @@
                                 </Column>
                               </TableColumnModel>
                             </Property>
-                            <Property name="rowHeight" type="int" value="40"/>
-                            <Property name="rowMargin" type="int" value="0"/>
+                            <Property name="intercellSpacing" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[0, 0]"/>
+                            </Property>
+                            <Property name="rowHeight" type="int" value="45"/>
                             <Property name="showGrid" type="boolean" value="true"/>
                             <Property name="showHorizontalLines" type="boolean" value="false"/>
                             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
@@ -1247,34 +1337,41 @@
                       <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
                     </Property>
                   </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                      <CardConstraints cardName="card5"/>
+                    </Constraint>
+                  </Constraints>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="view_totItem_label10" min="-2" max="-2" attributes="0"/>
+                                  <Component id="view_tablearea4_scrollpane" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="view_totItem4_label" max="32767" attributes="0"/>
+                                          <Component id="view_totWt4_label" max="32767" attributes="0"/>
+                                      </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="view_totItemInp_label11" min="-2" pref="53" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="view_totWt_label11" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="view_totWtInp_label11" min="-2" pref="53" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="view_totWtInp4_label" min="-2" pref="53" max="-2" attributes="0"/>
+                                          <Component id="view_totItemInp4_label" min="-2" pref="53" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                      <Component id="view_selOrnament4_dropdown" min="-2" pref="213" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="view_datelimitbox4_panel" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="view_selOrnament_dropdown11" min="-2" pref="213" max="-2" attributes="0"/>
-                              <EmptySpace pref="43" max="32767" attributes="0"/>
-                              <Component id="view_datelimitbox_panel11" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="view_tablearea_scrollpane4" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1283,73 +1380,76 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                                      <Component id="view_selOrnament_dropdown11" min="-2" pref="43" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="view_datelimitbox_panel11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
+                                          <Component id="view_datelimitbox4_panel" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="view_totWt_label11" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                                  <Component id="view_totWtInp_label11" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                                                  <Component id="view_totWt4_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="view_totWtInp4_label" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                                                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="view_totItem_label10" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                                  <Component id="view_totItemInp_label11" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="view_totItemInp4_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="view_totItem4_label" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
                                   </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                                      <Component id="view_selOrnament4_dropdown" min="-2" pref="43" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="view_tablearea_scrollpane4" pref="356" max="32767" attributes="0"/>
+                              <EmptySpace pref="52" max="32767" attributes="0"/>
+                              <Component id="view_tablearea4_scrollpane" min="-2" pref="500" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="view_totItem_label10">
+                    <Component class="javax.swing.JLabel" name="view_totItem4_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="18" style="1"/>
+                          <Font name="Ubuntu" size="19" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Total no of Items  :"/>
+                        <Property name="text" type="java.lang.String" value="Total Weight"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="view_totItemInp_label11">
+                    <Component class="javax.swing.JLabel" name="view_totItemInp4_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="18" style="1"/>
+                          <Font name="Ubuntu" size="19" style="1"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="1454"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="view_totWt_label11">
+                    <Component class="javax.swing.JLabel" name="view_totWt4_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="18" style="1"/>
+                          <Font name="Ubuntu" size="19" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Total Weight          :"/>
+                        <Property name="text" type="java.lang.String" value="Total no of Items"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="view_totWtInp_label11">
+                    <Component class="javax.swing.JLabel" name="view_totWtInp4_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="18" style="1"/>
+                          <Font name="Ubuntu" size="19" style="1"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="1050"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="view_selOrnament_dropdown11">
+                    <Component class="javax.swing.JComboBox" name="view_selOrnament4_dropdown">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="d3" green="d3" red="d3" type="rgb"/>
@@ -1369,13 +1469,13 @@
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="view_selOrnament_dropdown11view_selOrnament_dropdownActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="view_selOrnament4_dropdownview_selOrnament_dropdownActionPerformed"/>
                       </Events>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
                     </Component>
-                    <Container class="javax.swing.JPanel" name="view_datelimitbox_panel11">
+                    <Container class="javax.swing.JPanel" name="view_datelimitbox4_panel">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1465,11 +1565,11 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="javax.swing.JScrollPane" name="view_tablearea_scrollpane4">
+                    <Container class="javax.swing.JScrollPane" name="view_tablearea4_scrollpane">
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTable" name="view_tableone_table4">
+                        <Component class="javax.swing.JTable" name="view_table4_table">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="7" rowCount="13">
@@ -1534,6 +1634,22 @@
                         </Component>
                       </SubComponents>
                     </Container>
+                    <Component class="javax.swing.JLabel" name="jLabel1">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Ubuntu" size="20" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value=":"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel2">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Ubuntu" size="20" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value=":"/>
+                      </Properties>
+                    </Component>
                   </SubComponents>
                 </Container>
               </SubComponents>
