@@ -6,11 +6,15 @@
 package com.cyphersource.jewellery_software;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
+import javax.swing.BorderFactory;
 import javax.swing.table.JTableHeader;
 import javax.swing.JLabel;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableCellRenderer;
 
 /**
  *
@@ -26,32 +30,60 @@ public class MainWindow extends javax.swing.JFrame {
         setVisible(true);
         setLocationRelativeTo(null);
         
+   
+        
+        
+        // To change the tableheader bg color and thickness of borders
+        
+        view_table1_table.getTableHeader().setDefaultRenderer(new HeaderColor());
+        view_table2_table.getTableHeader().setDefaultRenderer(new HeaderColor());
+        view_table3_table.getTableHeader().setDefaultRenderer(new HeaderColor());
+        view_table4_table.getTableHeader().setDefaultRenderer(new HeaderColor());
+        
+        //To change the color of the vertical gridlines of tables
+        
+        view_table1_table.setShowVerticalLines(true);
+        view_table1_table.setGridColor(Color.LIGHT_GRAY);
+        
+        view_table2_table.setShowVerticalLines(true);
+        view_table2_table.setGridColor(Color.LIGHT_GRAY);
+        
+        view_table3_table.setShowVerticalLines(true);
+        view_table3_table.setGridColor(Color.LIGHT_GRAY);
+        
+        view_table4_table.setShowVerticalLines(true);
+        view_table4_table.setGridColor(Color.LIGHT_GRAY);
+        
+        
+        //Tableheader styling for table1
         
         JTableHeader Theader=view_table1_table.getTableHeader();
-        Theader.setFont(new Font("Ubuntu",Font.BOLD,18));
         Theader.setForeground(Color.black);
-        Theader.setBackground(new Color(247,247,247));
         Theader.setPreferredSize(new Dimension(50,50));
         ((DefaultTableCellRenderer)Theader.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
+        Theader.setFont(new Font("Ubuntu",Font.BOLD,18));
+
+        //Tableheader styling for table2
         
         JTableHeader Theaderone=view_table2_table.getTableHeader();
         Theaderone.setFont(new Font("Ubuntu",Font.BOLD,18));
         Theaderone.setForeground(Color.black);
-        Theaderone.setBackground(new Color(247,247,247));
         Theaderone.setPreferredSize(new Dimension(50,50));
         ((DefaultTableCellRenderer)Theaderone.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
+        
+        //Tableheader styling for table3
         
         JTableHeader Theadertwo=view_table3_table.getTableHeader();
         Theadertwo.setFont(new Font("Ubuntu",Font.BOLD,18));
         Theadertwo.setForeground(Color.black);
-        Theadertwo.setBackground(new Color(247,247,247));
         Theadertwo.setPreferredSize(new Dimension(50,50));
         ((DefaultTableCellRenderer)Theadertwo.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
+        
+        //Tableheader styling for table4
         
         JTableHeader Theaderthree=view_table4_table.getTableHeader();
         Theaderthree.setFont(new Font("Ubuntu",Font.BOLD,18));
         Theaderthree.setForeground(Color.black);
-        Theaderthree.setBackground(new Color(247,247,247));
         Theaderthree.setPreferredSize(new Dimension(50,50));
         ((DefaultTableCellRenderer)Theaderthree.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
         
@@ -332,7 +364,8 @@ public class MainWindow extends javax.swing.JFrame {
         view_colon12_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
         view_colon12_label.setText(":");
 
-        view_table1_table.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
+        view_table1_table.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        view_table1_table.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         view_table1_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null},
@@ -489,7 +522,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         view_totItem2_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
         view_totItem2_label.setForeground(java.awt.Color.gray);
-        view_totItem2_label.setText("Total Weight    ");
+        view_totItem2_label.setText("Total Weight");
 
         view_totItemInp2_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
         view_totItemInp2_label.setText("1454");
@@ -517,6 +550,7 @@ public class MainWindow extends javax.swing.JFrame {
         view_colon22_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
         view_colon22_label.setText(":");
 
+        view_table2_table.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         view_table2_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -616,30 +650,30 @@ public class MainWindow extends javax.swing.JFrame {
         view_soldCont_panelLayout.setHorizontalGroup(
             view_soldCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(view_soldCont_panelLayout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
-                .addGroup(view_soldCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(view_totWt2_label, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(view_totItem2_label, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(view_soldCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGap(48, 48, 48)
+                .addGroup(view_soldCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(view_soldCont_panelLayout.createSequentialGroup()
-                        .addComponent(view_colon21_label, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(view_totItem2_label, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(view_totWtInp2_label, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(view_colon22_label, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(view_totItemInp2_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(view_soldCont_panelLayout.createSequentialGroup()
-                        .addComponent(view_colon22_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(view_totWt2_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(view_totItemInp2_label, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(view_colon21_label)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(view_totWtInp2_label, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(12, 12, 12)
                 .addComponent(view_selOrnament2_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(view_datelimit2_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32))
             .addGroup(view_soldCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, view_soldCont_panelLayout.createSequentialGroup()
-                    .addContainerGap(38, Short.MAX_VALUE)
-                    .addComponent(view_tablearea2_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 811, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(37, Short.MAX_VALUE)))
+                    .addContainerGap(44, Short.MAX_VALUE)
+                    .addComponent(view_tablearea2_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 807, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(39, Short.MAX_VALUE)))
         );
         view_soldCont_panelLayout.setVerticalGroup(
             view_soldCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -703,6 +737,7 @@ public class MainWindow extends javax.swing.JFrame {
         view_colon32_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
         view_colon32_label.setText(":");
 
+        view_table3_table.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         view_table3_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -720,7 +755,7 @@ public class MainWindow extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "No", "Date", "Chase No", "Ornamant Name", "WT", "QTY", "BARCODE", "RT"
+                "No", "Date", "Chase No", "Ornamant Name", "WT", "QTY", "BARCODE", "RP"
             }
         ));
         view_table3_table.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
@@ -875,6 +910,7 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
+        view_table4_table.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         view_table4_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -1032,7 +1068,7 @@ public class MainWindow extends javax.swing.JFrame {
         view_areaTwo_panelLayout.setHorizontalGroup(
             view_areaTwo_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(view_contOne_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(view_contTwo_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(view_contTwo_panel, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
         );
         view_areaTwo_panelLayout.setVerticalGroup(
             view_areaTwo_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1066,7 +1102,12 @@ public class MainWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_view_selOrnament4_dropdownview_selOrnament_dropdownActionPerformed
 
+    //mouseclick event for switching between panels
     private void mouseclicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mouseclicked
+        
+        // Clicked panel visibility true and others are displayed false
+        // When switched to next panel, previous panel label color change
+        
         if(evt.getSource()==view_overall_panel){
             view_overallCont_panel.setVisible(true);
             view_soldCont_panel.setVisible(false);
@@ -1232,7 +1273,20 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JPanel view_total_panel;
     // End of variables declaration//GEN-END:variables
   
-     
+    //common class for changing tableheader bg color and border thickness
+    
+    static public class HeaderColor extends DefaultTableCellRenderer{
+        public HeaderColor(){
+            setOpaque(true);
+        }
+        public Component getTableCellRendererComponent(JTable table,Object value,boolean selected,boolean focused,int row,int column){
+            super.getTableCellRendererComponent(table, value, selected, focused, row, column);
+            setBackground(new Color(247,247,247));
+            setBorder(BorderFactory.createMatteBorder(0,0,1,1,Color.LIGHT_GRAY));
+            return this;
+        }
+        
+    }
 
 }
 
