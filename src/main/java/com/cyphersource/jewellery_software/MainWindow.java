@@ -85,52 +85,56 @@ public class MainWindow extends javax.swing.JFrame {
         view_totWt1_label = new javax.swing.JLabel();
         view_totWtInp1_label = new javax.swing.JLabel();
         view_selOrnament1_dropdown = new javax.swing.JComboBox<>();
-        view_datelimitbox1_panel = new javax.swing.JPanel();
-        view_fromDate_dropdown8 = new javax.swing.JComboBox<>();
-        view_toDate_dropdown8 = new javax.swing.JComboBox<>();
         view_colon11_label = new javax.swing.JLabel();
         view_colon12_label = new javax.swing.JLabel();
         view_tablearea1_scrollpane = new javax.swing.JScrollPane();
         view_table1_table = new javax.swing.JTable();
+        view_datelimit1_panel = new javax.swing.JPanel();
+        view_datelimitIcon1_label = new javax.swing.JLabel();
+        view_fromDate1_dropdown = new javax.swing.JComboBox<>();
+        view_toDate1_dropdown = new javax.swing.JComboBox<>();
         view_soldCont_panel = new javax.swing.JPanel();
         view_totItem2_label = new javax.swing.JLabel();
         view_totItemInp2_label = new javax.swing.JLabel();
         view_totWt2_label = new javax.swing.JLabel();
         view_totWtInp2_label = new javax.swing.JLabel();
         view_selOrnament2_dropdown = new javax.swing.JComboBox<>();
-        view_datelimitbox2_panel = new javax.swing.JPanel();
-        view_fromDate_dropdown10 = new javax.swing.JComboBox<>();
-        view_toDate_dropdown10 = new javax.swing.JComboBox<>();
         view_colon21_label = new javax.swing.JLabel();
         view_colon22_label = new javax.swing.JLabel();
         view_tablearea2_scrollpane = new javax.swing.JScrollPane();
         view_table2_table = new javax.swing.JTable();
+        view_datelimit2_panel = new javax.swing.JPanel();
+        view_datelimitIcon2_label = new javax.swing.JLabel();
+        view_fromDate2_dropdown = new javax.swing.JComboBox<>();
+        view_toDate2_dropdown = new javax.swing.JComboBox<>();
         view_balanceCont_panel = new javax.swing.JPanel();
         view_totItem3_label = new javax.swing.JLabel();
         view_totItemInp3_label = new javax.swing.JLabel();
         view_totWt3_label = new javax.swing.JLabel();
         view_totWtInp3_label = new javax.swing.JLabel();
         view_selOrnament3_dropdown = new javax.swing.JComboBox<>();
-        view_datelimitbox3_panel = new javax.swing.JPanel();
-        view_fromDate_dropdown12 = new javax.swing.JComboBox<>();
-        view_toDate_dropdown12 = new javax.swing.JComboBox<>();
         view_colon31_label = new javax.swing.JLabel();
         view_colon32_label = new javax.swing.JLabel();
         view_tablearea3_scrollpane = new javax.swing.JScrollPane();
         view_table3_table = new javax.swing.JTable();
+        view_datelimit3_panel = new javax.swing.JPanel();
+        view_datelimitIcon3_label = new javax.swing.JLabel();
+        view_fromDate3_dropdown = new javax.swing.JComboBox<>();
+        view_toDate3_dropdown = new javax.swing.JComboBox<>();
         view_returnCont_panel = new javax.swing.JPanel();
         view_totItem4_label = new javax.swing.JLabel();
         view_totItemInp4_label = new javax.swing.JLabel();
         view_totWt4_label = new javax.swing.JLabel();
         view_totWtInp4_label = new javax.swing.JLabel();
         view_selOrnament4_dropdown = new javax.swing.JComboBox<>();
-        view_datelimitbox4_panel = new javax.swing.JPanel();
-        view_fromDate_dropdown11 = new javax.swing.JComboBox<>();
-        view_toDate_dropdown11 = new javax.swing.JComboBox<>();
         view_tablearea4_scrollpane = new javax.swing.JScrollPane();
         view_table4_table = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        view_colon41_label = new javax.swing.JLabel();
+        view_colon42_label = new javax.swing.JLabel();
+        view_datelimit4_panel = new javax.swing.JPanel();
+        view_datelimitIcon4_label = new javax.swing.JLabel();
+        view_fromDate4_dropdown = new javax.swing.JComboBox<>();
+        view_toDate4_dropdown = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -313,7 +317,7 @@ public class MainWindow extends javax.swing.JFrame {
         view_totWtInp1_label.setText("1050");
 
         view_selOrnament1_dropdown.setBackground(new java.awt.Color(211, 211, 211));
-        view_selOrnament1_dropdown.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
+        view_selOrnament1_dropdown.setFont(new java.awt.Font("Ubuntu", 1, 17)); // NOI18N
         view_selOrnament1_dropdown.setForeground(java.awt.Color.gray);
         view_selOrnament1_dropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select the Ornament", "Item1", "item2" }));
         view_selOrnament1_dropdown.addActionListener(new java.awt.event.ActionListener() {
@@ -321,46 +325,6 @@ public class MainWindow extends javax.swing.JFrame {
                 view_selOrnament1_dropdownview_selOrnament_dropdownActionPerformed(evt);
             }
         });
-
-        view_datelimitbox1_panel.setBackground(new java.awt.Color(255, 255, 255));
-        view_datelimitbox1_panel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        view_datelimitbox1_panel.setForeground(new java.awt.Color(0, 0, 0));
-        view_datelimitbox1_panel.setName(""); // NOI18N
-
-        view_fromDate_dropdown8.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
-        view_fromDate_dropdown8.setForeground(java.awt.Color.gray);
-        view_fromDate_dropdown8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "From", "Item 2", "Item 3", "Item 4" }));
-        view_fromDate_dropdown8.setToolTipText("");
-
-        view_toDate_dropdown8.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
-        view_toDate_dropdown8.setForeground(java.awt.Color.gray);
-        view_toDate_dropdown8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "To", "Item 2", "Item 3", "Item 4" }));
-        view_toDate_dropdown8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                view_toDate_dropdown8view_toDate_dropdownActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout view_datelimitbox1_panelLayout = new javax.swing.GroupLayout(view_datelimitbox1_panel);
-        view_datelimitbox1_panel.setLayout(view_datelimitbox1_panelLayout);
-        view_datelimitbox1_panelLayout.setHorizontalGroup(
-            view_datelimitbox1_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(view_datelimitbox1_panelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(view_fromDate_dropdown8, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17)
-                .addComponent(view_toDate_dropdown8, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        view_datelimitbox1_panelLayout.setVerticalGroup(
-            view_datelimitbox1_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(view_datelimitbox1_panelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(view_datelimitbox1_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(view_fromDate_dropdown8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(view_toDate_dropdown8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
 
         view_colon11_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
         view_colon11_label.setText(":");
@@ -425,14 +389,56 @@ public class MainWindow extends javax.swing.JFrame {
             view_table1_table.getColumnModel().getColumn(8).setMaxWidth(70);
         }
 
+        view_datelimit1_panel.setBackground(java.awt.Color.white);
+
+        view_datelimitIcon1_label.setIcon(new javax.swing.ImageIcon("/home/logida/Documents/Rectangle 26 (1).png")); // NOI18N
+        view_datelimitIcon1_label.setText("jLabel6");
+
+        view_fromDate1_dropdown.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
+        view_fromDate1_dropdown.setForeground(java.awt.Color.gray);
+        view_fromDate1_dropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "From", "Item 2", "Item 3", "Item 4" }));
+        view_fromDate1_dropdown.setToolTipText("");
+
+        view_toDate1_dropdown.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
+        view_toDate1_dropdown.setForeground(java.awt.Color.gray);
+        view_toDate1_dropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "To", "Item 2", "Item 3", "Item 4" }));
+
+        javax.swing.GroupLayout view_datelimit1_panelLayout = new javax.swing.GroupLayout(view_datelimit1_panel);
+        view_datelimit1_panel.setLayout(view_datelimit1_panelLayout);
+        view_datelimit1_panelLayout.setHorizontalGroup(
+            view_datelimit1_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, view_datelimit1_panelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(view_datelimit1_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(view_datelimit1_panelLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(view_fromDate1_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(view_toDate1_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(view_datelimitIcon1_label, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        view_datelimit1_panelLayout.setVerticalGroup(
+            view_datelimit1_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(view_datelimit1_panelLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(view_datelimitIcon1_label))
+            .addGroup(view_datelimit1_panelLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(view_fromDate1_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(view_datelimit1_panelLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(view_toDate1_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
         javax.swing.GroupLayout view_overallCont_panelLayout = new javax.swing.GroupLayout(view_overallCont_panel);
         view_overallCont_panel.setLayout(view_overallCont_panelLayout);
         view_overallCont_panelLayout.setHorizontalGroup(
             view_overallCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(view_overallCont_panelLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addGroup(view_overallCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(view_tablearea1_scrollpane)
+                .addGroup(view_overallCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(view_tablearea1_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 809, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(view_overallCont_panelLayout.createSequentialGroup()
                         .addGroup(view_overallCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(view_totItem1_label, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
@@ -443,13 +449,13 @@ public class MainWindow extends javax.swing.JFrame {
                             .addComponent(view_colon12_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(view_overallCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(view_totItemInp1_label, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
-                            .addComponent(view_totWtInp1_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(view_totWtInp1_label, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
+                            .addComponent(view_totItemInp1_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(6, 6, 6)
                         .addComponent(view_selOrnament1_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(view_datelimitbox1_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(view_datelimit1_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         view_overallCont_panelLayout.setVerticalGroup(
             view_overallCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -457,23 +463,24 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(view_overallCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(view_overallCont_panelLayout.createSequentialGroup()
                         .addGap(45, 45, 45)
-                        .addGroup(view_overallCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(view_overallCont_panelLayout.createSequentialGroup()
-                                .addGroup(view_overallCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(view_totWt1_label)
-                                    .addComponent(view_colon11_label)
-                                    .addComponent(view_totWtInp1_label, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(view_overallCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(view_totItem1_label)
-                                    .addComponent(view_colon12_label)
-                                    .addComponent(view_totItemInp1_label)))
-                            .addComponent(view_selOrnament1_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(view_overallCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(view_totWt1_label)
+                            .addComponent(view_colon11_label)
+                            .addComponent(view_totWtInp1_label, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(view_overallCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(view_totItem1_label)
+                            .addComponent(view_colon12_label)
+                            .addComponent(view_totItemInp1_label)))
                     .addGroup(view_overallCont_panelLayout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(view_datelimitbox1_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(57, 57, 57)
-                .addComponent(view_tablearea1_scrollpane, javax.swing.GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE))
+                        .addGap(23, 23, 23)
+                        .addComponent(view_datelimit1_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(view_overallCont_panelLayout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(view_selOrnament1_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addComponent(view_tablearea1_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         view_contTwo_panel.add(view_overallCont_panel, "card2");
@@ -495,7 +502,7 @@ public class MainWindow extends javax.swing.JFrame {
         view_totWtInp2_label.setText("1050");
 
         view_selOrnament2_dropdown.setBackground(new java.awt.Color(211, 211, 211));
-        view_selOrnament2_dropdown.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
+        view_selOrnament2_dropdown.setFont(new java.awt.Font("Ubuntu", 1, 17)); // NOI18N
         view_selOrnament2_dropdown.setForeground(java.awt.Color.gray);
         view_selOrnament2_dropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select the Ornament", "Item1", "item2" }));
         view_selOrnament2_dropdown.addActionListener(new java.awt.event.ActionListener() {
@@ -503,46 +510,6 @@ public class MainWindow extends javax.swing.JFrame {
                 view_selOrnament2_dropdownview_selOrnament_dropdownActionPerformed(evt);
             }
         });
-
-        view_datelimitbox2_panel.setBackground(new java.awt.Color(255, 255, 255));
-        view_datelimitbox2_panel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        view_datelimitbox2_panel.setForeground(new java.awt.Color(0, 0, 0));
-        view_datelimitbox2_panel.setName(""); // NOI18N
-
-        view_fromDate_dropdown10.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
-        view_fromDate_dropdown10.setForeground(java.awt.Color.gray);
-        view_fromDate_dropdown10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "From", "Item 2", "Item 3", "Item 4" }));
-        view_fromDate_dropdown10.setToolTipText("");
-
-        view_toDate_dropdown10.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
-        view_toDate_dropdown10.setForeground(java.awt.Color.gray);
-        view_toDate_dropdown10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "To", "Item 2", "Item 3", "Item 4" }));
-        view_toDate_dropdown10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                view_toDate_dropdown10view_toDate_dropdownActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout view_datelimitbox2_panelLayout = new javax.swing.GroupLayout(view_datelimitbox2_panel);
-        view_datelimitbox2_panel.setLayout(view_datelimitbox2_panelLayout);
-        view_datelimitbox2_panelLayout.setHorizontalGroup(
-            view_datelimitbox2_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(view_datelimitbox2_panelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(view_fromDate_dropdown10, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17)
-                .addComponent(view_toDate_dropdown10, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        view_datelimitbox2_panelLayout.setVerticalGroup(
-            view_datelimitbox2_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(view_datelimitbox2_panelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(view_datelimitbox2_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(view_fromDate_dropdown10, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(view_toDate_dropdown10, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
 
         view_colon21_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
         view_colon21_label.setText(":");
@@ -602,33 +569,77 @@ public class MainWindow extends javax.swing.JFrame {
             view_table2_table.getColumnModel().getColumn(6).setMaxWidth(130);
         }
 
+        view_datelimit2_panel.setBackground(java.awt.Color.white);
+
+        view_datelimitIcon2_label.setIcon(new javax.swing.ImageIcon("/home/logida/Documents/Rectangle 26 (1).png")); // NOI18N
+        view_datelimitIcon2_label.setText("jLabel6");
+
+        view_fromDate2_dropdown.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
+        view_fromDate2_dropdown.setForeground(java.awt.Color.gray);
+        view_fromDate2_dropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "From", "Item 2", "Item 3", "Item 4" }));
+        view_fromDate2_dropdown.setToolTipText("");
+
+        view_toDate2_dropdown.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
+        view_toDate2_dropdown.setForeground(java.awt.Color.gray);
+        view_toDate2_dropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "To", "Item 2", "Item 3", "Item 4" }));
+
+        javax.swing.GroupLayout view_datelimit2_panelLayout = new javax.swing.GroupLayout(view_datelimit2_panel);
+        view_datelimit2_panel.setLayout(view_datelimit2_panelLayout);
+        view_datelimit2_panelLayout.setHorizontalGroup(
+            view_datelimit2_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(view_datelimit2_panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(view_datelimit2_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(view_datelimit2_panelLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(view_fromDate2_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(view_toDate2_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(view_datelimitIcon2_label, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        view_datelimit2_panelLayout.setVerticalGroup(
+            view_datelimit2_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(view_datelimit2_panelLayout.createSequentialGroup()
+                .addGroup(view_datelimit2_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(view_datelimitIcon2_label)
+                    .addGroup(view_datelimit2_panelLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(view_datelimit2_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(view_fromDate2_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(view_toDate2_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 12, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout view_soldCont_panelLayout = new javax.swing.GroupLayout(view_soldCont_panel);
         view_soldCont_panel.setLayout(view_soldCont_panelLayout);
         view_soldCont_panelLayout.setHorizontalGroup(
             view_soldCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, view_soldCont_panelLayout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+            .addGroup(view_soldCont_panelLayout.createSequentialGroup()
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addGroup(view_soldCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(view_totWt2_label, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(view_totItem2_label, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(view_soldCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(view_tablearea2_scrollpane)
                     .addGroup(view_soldCont_panelLayout.createSequentialGroup()
-                        .addGroup(view_soldCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(view_totItem2_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(view_totWt2_label, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE))
+                        .addComponent(view_colon21_label, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(view_soldCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(view_soldCont_panelLayout.createSequentialGroup()
-                                .addComponent(view_colon22_label, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(view_totItemInp2_label, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(view_soldCont_panelLayout.createSequentialGroup()
-                                .addComponent(view_colon21_label, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(view_totWtInp2_label, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(view_totWtInp2_label, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(view_soldCont_panelLayout.createSequentialGroup()
+                        .addComponent(view_colon22_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(view_selOrnament2_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(view_datelimitbox2_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(35, 35, 35))
+                        .addComponent(view_totItemInp2_label, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(view_selOrnament2_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(view_datelimit2_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
+            .addGroup(view_soldCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, view_soldCont_panelLayout.createSequentialGroup()
+                    .addContainerGap(38, Short.MAX_VALUE)
+                    .addComponent(view_tablearea2_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 811, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(37, Short.MAX_VALUE)))
         );
         view_soldCont_panelLayout.setVerticalGroup(
             view_soldCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -649,11 +660,13 @@ public class MainWindow extends javax.swing.JFrame {
                                     .addComponent(view_totItemInp2_label)))
                             .addComponent(view_selOrnament2_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(view_soldCont_panelLayout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(view_datelimitbox2_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(51, 51, 51)
-                .addComponent(view_tablearea2_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                        .addGap(35, 35, 35)
+                        .addComponent(view_datelimit2_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(444, 444, 444))
+            .addGroup(view_soldCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, view_soldCont_panelLayout.createSequentialGroup()
+                    .addGap(0, 182, Short.MAX_VALUE)
+                    .addComponent(view_tablearea2_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         view_contTwo_panel.add(view_soldCont_panel, "card2");
@@ -675,7 +688,7 @@ public class MainWindow extends javax.swing.JFrame {
         view_totWtInp3_label.setText("1050");
 
         view_selOrnament3_dropdown.setBackground(new java.awt.Color(211, 211, 211));
-        view_selOrnament3_dropdown.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
+        view_selOrnament3_dropdown.setFont(new java.awt.Font("Ubuntu", 1, 17)); // NOI18N
         view_selOrnament3_dropdown.setForeground(java.awt.Color.gray);
         view_selOrnament3_dropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select the Ornament", "Item1", "item2" }));
         view_selOrnament3_dropdown.addActionListener(new java.awt.event.ActionListener() {
@@ -683,46 +696,6 @@ public class MainWindow extends javax.swing.JFrame {
                 view_selOrnament3_dropdownview_selOrnament_dropdownActionPerformed(evt);
             }
         });
-
-        view_datelimitbox3_panel.setBackground(new java.awt.Color(255, 255, 255));
-        view_datelimitbox3_panel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        view_datelimitbox3_panel.setForeground(new java.awt.Color(0, 0, 0));
-        view_datelimitbox3_panel.setName(""); // NOI18N
-
-        view_fromDate_dropdown12.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
-        view_fromDate_dropdown12.setForeground(java.awt.Color.gray);
-        view_fromDate_dropdown12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "From", "Item 2", "Item 3", "Item 4" }));
-        view_fromDate_dropdown12.setToolTipText("");
-
-        view_toDate_dropdown12.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
-        view_toDate_dropdown12.setForeground(java.awt.Color.gray);
-        view_toDate_dropdown12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "To", "Item 2", "Item 3", "Item 4" }));
-        view_toDate_dropdown12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                view_toDate_dropdown12view_toDate_dropdownActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout view_datelimitbox3_panelLayout = new javax.swing.GroupLayout(view_datelimitbox3_panel);
-        view_datelimitbox3_panel.setLayout(view_datelimitbox3_panelLayout);
-        view_datelimitbox3_panelLayout.setHorizontalGroup(
-            view_datelimitbox3_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(view_datelimitbox3_panelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(view_fromDate_dropdown12, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17)
-                .addComponent(view_toDate_dropdown12, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        view_datelimitbox3_panelLayout.setVerticalGroup(
-            view_datelimitbox3_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(view_datelimitbox3_panelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(view_datelimitbox3_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(view_fromDate_dropdown12, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(view_toDate_dropdown12, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
 
         view_colon31_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
         view_colon31_label.setText(":");
@@ -782,14 +755,51 @@ public class MainWindow extends javax.swing.JFrame {
             view_table3_table.getColumnModel().getColumn(6).setMaxWidth(130);
         }
 
+        view_datelimit3_panel.setBackground(java.awt.Color.white);
+
+        view_datelimitIcon3_label.setIcon(new javax.swing.ImageIcon("/home/logida/Documents/Rectangle 26 (1).png")); // NOI18N
+        view_datelimitIcon3_label.setText("jLabel6");
+
+        view_fromDate3_dropdown.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
+        view_fromDate3_dropdown.setForeground(java.awt.Color.gray);
+        view_fromDate3_dropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "From", "Item 2", "Item 3", "Item 4" }));
+        view_fromDate3_dropdown.setToolTipText("");
+
+        view_toDate3_dropdown.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
+        view_toDate3_dropdown.setForeground(java.awt.Color.gray);
+        view_toDate3_dropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "To", "Item 2", "Item 3", "Item 4" }));
+
+        javax.swing.GroupLayout view_datelimit3_panelLayout = new javax.swing.GroupLayout(view_datelimit3_panel);
+        view_datelimit3_panel.setLayout(view_datelimit3_panelLayout);
+        view_datelimit3_panelLayout.setHorizontalGroup(
+            view_datelimit3_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(view_datelimit3_panelLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(view_fromDate3_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(view_toDate3_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(view_datelimitIcon3_label, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        view_datelimit3_panelLayout.setVerticalGroup(
+            view_datelimit3_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(view_datelimit3_panelLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(view_datelimitIcon3_label))
+            .addGroup(view_datelimit3_panelLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(view_fromDate3_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(view_datelimit3_panelLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(view_toDate3_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
         javax.swing.GroupLayout view_balanceCont_panelLayout = new javax.swing.GroupLayout(view_balanceCont_panel);
         view_balanceCont_panel.setLayout(view_balanceCont_panelLayout);
         view_balanceCont_panelLayout.setHorizontalGroup(
             view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(view_balanceCont_panelLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addGroup(view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(view_tablearea3_scrollpane)
+                .addGroup(view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(view_balanceCont_panelLayout.createSequentialGroup()
                         .addGroup(view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(view_totItem3_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -805,35 +815,36 @@ public class MainWindow extends javax.swing.JFrame {
                         .addGroup(view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(view_totItemInp3_label)
                             .addComponent(view_totWtInp3_label, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(22, 22, 22)
-                        .addComponent(view_selOrnament3_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(view_datelimitbox3_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(view_selOrnament3_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(view_tablearea3_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 808, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(view_datelimit3_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         view_balanceCont_panelLayout.setVerticalGroup(
             view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(view_balanceCont_panelLayout.createSequentialGroup()
                 .addGroup(view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(view_balanceCont_panelLayout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addGroup(view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(view_totWt3_label)
+                            .addComponent(view_colon31_label)
+                            .addComponent(view_totWtInp3_label, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(view_totItem3_label)
+                            .addComponent(view_colon32_label)
+                            .addComponent(view_totItemInp3_label)))
+                    .addGroup(view_balanceCont_panelLayout.createSequentialGroup()
                         .addGap(58, 58, 58)
                         .addComponent(view_selOrnament3_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(view_balanceCont_panelLayout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addGroup(view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(view_datelimitbox3_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(view_balanceCont_panelLayout.createSequentialGroup()
-                                .addGroup(view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(view_totWt3_label)
-                                    .addComponent(view_colon31_label)
-                                    .addComponent(view_totWtInp3_label, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(view_totItem3_label)
-                                    .addComponent(view_colon32_label)
-                                    .addComponent(view_totItemInp3_label))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                .addComponent(view_tablearea3_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26)
+                        .addComponent(view_datelimit3_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addComponent(view_tablearea3_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         view_contTwo_panel.add(view_balanceCont_panel, "card5");
@@ -855,7 +866,7 @@ public class MainWindow extends javax.swing.JFrame {
         view_totWtInp4_label.setText("1050");
 
         view_selOrnament4_dropdown.setBackground(new java.awt.Color(211, 211, 211));
-        view_selOrnament4_dropdown.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
+        view_selOrnament4_dropdown.setFont(new java.awt.Font("Ubuntu", 1, 17)); // NOI18N
         view_selOrnament4_dropdown.setForeground(java.awt.Color.gray);
         view_selOrnament4_dropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select the Ornament", "Item1", "item2" }));
         view_selOrnament4_dropdown.addActionListener(new java.awt.event.ActionListener() {
@@ -863,46 +874,6 @@ public class MainWindow extends javax.swing.JFrame {
                 view_selOrnament4_dropdownview_selOrnament_dropdownActionPerformed(evt);
             }
         });
-
-        view_datelimitbox4_panel.setBackground(new java.awt.Color(255, 255, 255));
-        view_datelimitbox4_panel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        view_datelimitbox4_panel.setForeground(new java.awt.Color(0, 0, 0));
-        view_datelimitbox4_panel.setName(""); // NOI18N
-
-        view_fromDate_dropdown11.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
-        view_fromDate_dropdown11.setForeground(java.awt.Color.gray);
-        view_fromDate_dropdown11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "From", "Item 2", "Item 3", "Item 4" }));
-        view_fromDate_dropdown11.setToolTipText("");
-
-        view_toDate_dropdown11.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
-        view_toDate_dropdown11.setForeground(java.awt.Color.gray);
-        view_toDate_dropdown11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "To", "Item 2", "Item 3", "Item 4" }));
-        view_toDate_dropdown11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                view_toDate_dropdown11view_toDate_dropdownActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout view_datelimitbox4_panelLayout = new javax.swing.GroupLayout(view_datelimitbox4_panel);
-        view_datelimitbox4_panel.setLayout(view_datelimitbox4_panelLayout);
-        view_datelimitbox4_panelLayout.setHorizontalGroup(
-            view_datelimitbox4_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(view_datelimitbox4_panelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(view_fromDate_dropdown11, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17)
-                .addComponent(view_toDate_dropdown11, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        view_datelimitbox4_panelLayout.setVerticalGroup(
-            view_datelimitbox4_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(view_datelimitbox4_panelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(view_datelimitbox4_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(view_fromDate_dropdown11, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(view_toDate_dropdown11, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
 
         view_table4_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -953,11 +924,53 @@ public class MainWindow extends javax.swing.JFrame {
             view_table4_table.getColumnModel().getColumn(5).setMaxWidth(93);
         }
 
-        jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
-        jLabel1.setText(":");
+        view_colon41_label.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
+        view_colon41_label.setText(":");
 
-        jLabel2.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
-        jLabel2.setText(":");
+        view_colon42_label.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
+        view_colon42_label.setText(":");
+
+        view_datelimit4_panel.setBackground(java.awt.Color.white);
+
+        view_datelimitIcon4_label.setIcon(new javax.swing.ImageIcon("/home/logida/Documents/Rectangle 26 (1).png")); // NOI18N
+        view_datelimitIcon4_label.setText("jLabel6");
+
+        view_fromDate4_dropdown.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
+        view_fromDate4_dropdown.setForeground(java.awt.Color.gray);
+        view_fromDate4_dropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "From", "Item 2", "Item 3", "Item 4" }));
+        view_fromDate4_dropdown.setToolTipText("");
+
+        view_toDate4_dropdown.setFont(new java.awt.Font("Ubuntu", 1, 16)); // NOI18N
+        view_toDate4_dropdown.setForeground(java.awt.Color.gray);
+        view_toDate4_dropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "To", "Item 2", "Item 3", "Item 4" }));
+
+        javax.swing.GroupLayout view_datelimit4_panelLayout = new javax.swing.GroupLayout(view_datelimit4_panel);
+        view_datelimit4_panel.setLayout(view_datelimit4_panelLayout);
+        view_datelimit4_panelLayout.setHorizontalGroup(
+            view_datelimit4_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, view_datelimit4_panelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(view_datelimit4_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(view_datelimit4_panelLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(view_fromDate4_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(view_toDate4_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(view_datelimitIcon4_label, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        view_datelimit4_panelLayout.setVerticalGroup(
+            view_datelimit4_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(view_datelimit4_panelLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(view_datelimitIcon4_label))
+            .addGroup(view_datelimit4_panelLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(view_fromDate4_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(view_datelimit4_panelLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(view_toDate4_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         javax.swing.GroupLayout view_returnCont_panelLayout = new javax.swing.GroupLayout(view_returnCont_panel);
         view_returnCont_panel.setLayout(view_returnCont_panelLayout);
@@ -966,49 +979,50 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, view_returnCont_panelLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(view_returnCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(view_tablearea4_scrollpane)
+                    .addGroup(view_returnCont_panelLayout.createSequentialGroup()
+                        .addComponent(view_tablearea4_scrollpane)
+                        .addGap(36, 36, 36))
                     .addGroup(view_returnCont_panelLayout.createSequentialGroup()
                         .addGroup(view_returnCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(view_totItem4_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(view_totWt4_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(view_returnCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(view_colon41_label)
+                            .addComponent(view_colon42_label, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(view_returnCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(view_totWtInp4_label, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(view_totItemInp4_label, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(29, 29, 29)
-                        .addComponent(view_selOrnament4_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(view_datelimitbox4_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(36, 36, 36))
+                        .addGap(18, 18, 18)
+                        .addComponent(view_selOrnament4_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(view_datelimit4_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28))))
         );
         view_returnCont_panelLayout.setVerticalGroup(
             view_returnCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(view_returnCont_panelLayout.createSequentialGroup()
                 .addGroup(view_returnCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(view_returnCont_panelLayout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addGroup(view_returnCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(view_datelimitbox4_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(view_returnCont_panelLayout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addGroup(view_returnCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(view_totWt4_label)
-                                    .addComponent(view_totWtInp4_label, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel1))
-                                .addGap(7, 7, 7)
-                                .addGroup(view_returnCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel2)
-                                    .addComponent(view_totItemInp4_label)
-                                    .addComponent(view_totItem4_label)))))
+                        .addGap(53, 53, 53)
+                        .addGroup(view_returnCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(view_totWt4_label)
+                            .addComponent(view_totWtInp4_label, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(view_colon41_label))
+                        .addGap(7, 7, 7)
+                        .addGroup(view_returnCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(view_colon42_label)
+                            .addComponent(view_totItemInp4_label)
+                            .addComponent(view_totItem4_label)))
                     .addGroup(view_returnCont_panelLayout.createSequentialGroup()
                         .addGap(68, 68, 68)
-                        .addComponent(view_selOrnament4_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                .addComponent(view_tablearea4_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(view_selOrnament4_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(view_returnCont_panelLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(view_datelimit4_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(view_tablearea4_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         view_contTwo_panel.add(view_returnCont_panel, "card5");
@@ -1018,7 +1032,7 @@ public class MainWindow extends javax.swing.JFrame {
         view_areaTwo_panelLayout.setHorizontalGroup(
             view_areaTwo_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(view_contOne_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(view_contTwo_panel, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(view_contTwo_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         view_areaTwo_panelLayout.setVerticalGroup(
             view_areaTwo_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1038,7 +1052,7 @@ public class MainWindow extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(view_total_panel, javax.swing.GroupLayout.DEFAULT_SIZE, 787, Short.MAX_VALUE)
+            .addComponent(view_total_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -1048,17 +1062,9 @@ public class MainWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_view_selOrnament1_dropdownview_selOrnament_dropdownActionPerformed
 
-    private void view_toDate_dropdown8view_toDate_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_toDate_dropdown8view_toDate_dropdownActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_view_toDate_dropdown8view_toDate_dropdownActionPerformed
-
     private void view_selOrnament4_dropdownview_selOrnament_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_selOrnament4_dropdownview_selOrnament_dropdownActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_view_selOrnament4_dropdownview_selOrnament_dropdownActionPerformed
-
-    private void view_toDate_dropdown11view_toDate_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_toDate_dropdown11view_toDate_dropdownActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_view_toDate_dropdown11view_toDate_dropdownActionPerformed
 
     private void mouseclicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mouseclicked
         if(evt.getSource()==view_overall_panel){
@@ -1107,17 +1113,9 @@ public class MainWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_view_selOrnament2_dropdownview_selOrnament_dropdownActionPerformed
 
-    private void view_toDate_dropdown10view_toDate_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_toDate_dropdown10view_toDate_dropdownActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_view_toDate_dropdown10view_toDate_dropdownActionPerformed
-
     private void view_selOrnament3_dropdownview_selOrnament_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_selOrnament3_dropdownview_selOrnament_dropdownActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_view_selOrnament3_dropdownview_selOrnament_dropdownActionPerformed
-
-    private void view_toDate_dropdown12view_toDate_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_toDate_dropdown12view_toDate_dropdownActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_view_toDate_dropdown12view_toDate_dropdownActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1163,8 +1161,6 @@ public class MainWindow extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel view_areaOne_panel;
     private javax.swing.JPanel view_areaTwo_panel;
     private javax.swing.JPanel view_balanceCont_panel;
@@ -1176,16 +1172,22 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel view_colon22_label;
     private javax.swing.JLabel view_colon31_label;
     private javax.swing.JLabel view_colon32_label;
+    private javax.swing.JLabel view_colon41_label;
+    private javax.swing.JLabel view_colon42_label;
     private javax.swing.JPanel view_contOne_panel;
     private javax.swing.JPanel view_contTwo_panel;
-    private javax.swing.JPanel view_datelimitbox1_panel;
-    private javax.swing.JPanel view_datelimitbox2_panel;
-    private javax.swing.JPanel view_datelimitbox3_panel;
-    private javax.swing.JPanel view_datelimitbox4_panel;
-    private javax.swing.JComboBox<String> view_fromDate_dropdown10;
-    private javax.swing.JComboBox<String> view_fromDate_dropdown11;
-    private javax.swing.JComboBox<String> view_fromDate_dropdown12;
-    private javax.swing.JComboBox<String> view_fromDate_dropdown8;
+    private javax.swing.JPanel view_datelimit1_panel;
+    private javax.swing.JPanel view_datelimit2_panel;
+    private javax.swing.JPanel view_datelimit3_panel;
+    private javax.swing.JPanel view_datelimit4_panel;
+    private javax.swing.JLabel view_datelimitIcon1_label;
+    private javax.swing.JLabel view_datelimitIcon2_label;
+    private javax.swing.JLabel view_datelimitIcon3_label;
+    private javax.swing.JLabel view_datelimitIcon4_label;
+    private javax.swing.JComboBox<String> view_fromDate1_dropdown;
+    private javax.swing.JComboBox<String> view_fromDate2_dropdown;
+    private javax.swing.JComboBox<String> view_fromDate3_dropdown;
+    private javax.swing.JComboBox<String> view_fromDate4_dropdown;
     private javax.swing.JPanel view_overallCont_panel;
     private javax.swing.JLabel view_overall_label;
     private javax.swing.JPanel view_overall_panel;
@@ -1207,10 +1209,10 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JScrollPane view_tablearea2_scrollpane;
     private javax.swing.JScrollPane view_tablearea3_scrollpane;
     private javax.swing.JScrollPane view_tablearea4_scrollpane;
-    private javax.swing.JComboBox<String> view_toDate_dropdown10;
-    private javax.swing.JComboBox<String> view_toDate_dropdown11;
-    private javax.swing.JComboBox<String> view_toDate_dropdown12;
-    private javax.swing.JComboBox<String> view_toDate_dropdown8;
+    private javax.swing.JComboBox<String> view_toDate1_dropdown;
+    private javax.swing.JComboBox<String> view_toDate2_dropdown;
+    private javax.swing.JComboBox<String> view_toDate3_dropdown;
+    private javax.swing.JComboBox<String> view_toDate4_dropdown;
     private javax.swing.JLabel view_totItem1_label;
     private javax.swing.JLabel view_totItem2_label;
     private javax.swing.JLabel view_totItem3_label;
