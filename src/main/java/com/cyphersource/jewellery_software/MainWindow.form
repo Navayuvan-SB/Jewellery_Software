@@ -397,7 +397,7 @@
                                       <Component id="view_selOrnament1_dropdown" min="-2" pref="43" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="29" max="32767" attributes="0"/>
+                              <EmptySpace pref="49" max="32767" attributes="0"/>
                               <Component id="view_tablearea1_scrollpane" min="-2" pref="397" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -515,47 +515,47 @@
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                               <TableColumnModel selectionModel="0">
-                                <Column maxWidth="50" minWidth="50" prefWidth="50" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="50" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="70" minWidth="70" prefWidth="70" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="70" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="100" minWidth="100" prefWidth="100" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="100" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="160" minWidth="160" prefWidth="160" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="160" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="55" minWidth="55" prefWidth="55" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="55" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="55" minWidth="55" prefWidth="55" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="55" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="55" minWidth="55" prefWidth="55" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="55" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="70" minWidth="70" prefWidth="70" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="70" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="70" minWidth="70" prefWidth="70" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="70" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
@@ -683,35 +683,36 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="view_totItem2_label" min="-2" pref="158" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="view_colon22_label" min="-2" pref="6" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="view_totItemInp2_label" max="32767" attributes="0"/>
+                                      <Component id="view_tablearea2_scrollpane" min="-2" pref="797" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="view_totWt2_label" max="32767" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="view_colon21_label" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="view_totWtInp2_label" min="-2" pref="52" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="view_totItem2_label" min="-2" pref="158" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="view_colon22_label" min="-2" pref="6" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="view_totItemInp2_label" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="view_totWt2_label" max="32767" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="view_colon21_label" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="view_totWtInp2_label" min="-2" pref="52" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                      <Component id="view_selOrnament2_dropdown" min="-2" pref="227" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="view_datelimit2_panel" min="-2" pref="325" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                   </Group>
-                              </Group>
-                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                              <Component id="view_selOrnament2_dropdown" min="-2" pref="227" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="view_datelimit2_panel" min="-2" pref="325" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="44" max="32767" attributes="0"/>
-                                  <Component id="view_tablearea2_scrollpane" min="-2" pref="807" max="-2" attributes="0"/>
-                                  <EmptySpace pref="39" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -744,13 +745,8 @@
                                       <Component id="view_datelimit2_panel" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="444" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="182" max="32767" attributes="0"/>
-                                  <Component id="view_tablearea2_scrollpane" min="-2" pref="405" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace pref="56" max="32767" attributes="0"/>
+                              <Component id="view_tablearea2_scrollpane" min="-2" pref="400" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -836,93 +832,6 @@
                         <Property name="text" type="java.lang.String" value=":"/>
                       </Properties>
                     </Component>
-                    <Container class="javax.swing.JScrollPane" name="view_tablearea2_scrollpane">
-                      <Properties>
-                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-                            <EtchetBorder/>
-                          </Border>
-                        </Property>
-                      </Properties>
-
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                      <SubComponents>
-                        <Component class="javax.swing.JTable" name="view_table2_table">
-                          <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Ubuntu" size="18" style="1"/>
-                            </Property>
-                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="8" rowCount="13">
-                                <Column editable="true" title="No" type="java.lang.Object"/>
-                                <Column editable="true" title="Dattte" type="java.lang.Object"/>
-                                <Column editable="true" title="Chase No" type="java.lang.Object"/>
-                                <Column editable="true" title="Ornamant Name" type="java.lang.Object"/>
-                                <Column editable="true" title="WT" type="java.lang.Object"/>
-                                <Column editable="true" title="QTY" type="java.lang.Object"/>
-                                <Column editable="true" title="BARCODE" type="java.lang.Object"/>
-                                <Column editable="true" title="RT" type="java.lang.Object"/>
-                              </Table>
-                            </Property>
-                            <Property name="autoResizeMode" type="int" value="4"/>
-                            <Property name="cellSelectionEnabled" type="boolean" value="true"/>
-                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                              <TableColumnModel selectionModel="2">
-                                <Column maxWidth="60" minWidth="60" prefWidth="60" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="90" minWidth="90" prefWidth="90" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="120" minWidth="120" prefWidth="120" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="160" minWidth="160" prefWidth="160" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="75" minWidth="75" prefWidth="75" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="75" minWidth="75" prefWidth="75" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="130" minWidth="130" prefWidth="130" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                              </TableColumnModel>
-                            </Property>
-                            <Property name="intercellSpacing" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                              <Dimension value="[0, 0]"/>
-                            </Property>
-                            <Property name="rowHeight" type="int" value="45"/>
-                            <Property name="showGrid" type="boolean" value="true"/>
-                            <Property name="showHorizontalLines" type="boolean" value="false"/>
-                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
-                            </Property>
-                          </Properties>
-                        </Component>
-                      </SubComponents>
-                    </Container>
                     <Container class="javax.swing.JPanel" name="view_datelimit2_panel">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1007,6 +916,86 @@
                               <AbsoluteConstraints x="0" y="0" width="314" height="-1"/>
                             </Constraint>
                           </Constraints>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Container class="javax.swing.JScrollPane" name="view_tablearea2_scrollpane">
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="view_table2_table">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Ubuntu" size="18" style="1"/>
+                            </Property>
+                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                              <Table columnCount="8" rowCount="13">
+                                <Column editable="true" title="No" type="java.lang.Object"/>
+                                <Column editable="true" title="Date" type="java.lang.Object"/>
+                                <Column editable="true" title="Chase No" type="java.lang.Object"/>
+                                <Column editable="true" title="Ornamant Name" type="java.lang.Object"/>
+                                <Column editable="true" title="WT" type="java.lang.Object"/>
+                                <Column editable="true" title="QTY" type="java.lang.Object"/>
+                                <Column editable="true" title="BARCODE" type="java.lang.Object"/>
+                                <Column editable="true" title="RT" type="java.lang.Object"/>
+                              </Table>
+                            </Property>
+                            <Property name="autoResizeMode" type="int" value="4"/>
+                            <Property name="cellSelectionEnabled" type="boolean" value="true"/>
+                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                              <TableColumnModel selectionModel="2">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="60" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="90" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="120" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="160" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="75" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="75" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="130" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                              </TableColumnModel>
+                            </Property>
+                            <Property name="intercellSpacing" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[0, 0]"/>
+                            </Property>
+                            <Property name="rowHeight" type="int" value="45"/>
+                            <Property name="showGrid" type="boolean" value="true"/>
+                            <Property name="showHorizontalLines" type="boolean" value="false"/>
+                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                            </Property>
+                          </Properties>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1201,37 +1190,37 @@
                             <Property name="cellSelectionEnabled" type="boolean" value="true"/>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                               <TableColumnModel selectionModel="2">
-                                <Column maxWidth="60" minWidth="60" prefWidth="60" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="60" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="90" minWidth="90" prefWidth="90" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="90" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="120" minWidth="120" prefWidth="120" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="120" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="160" minWidth="160" prefWidth="160" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="160" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="75" minWidth="75" prefWidth="75" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="75" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="75" minWidth="75" prefWidth="75" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="75" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="130" minWidth="130" prefWidth="130" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="130" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
@@ -1514,32 +1503,32 @@
                             <Property name="cellSelectionEnabled" type="boolean" value="true"/>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                               <TableColumnModel selectionModel="3">
-                                <Column maxWidth="70" minWidth="70" prefWidth="70" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="70" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="110" minWidth="110" prefWidth="110" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="100" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="135" minWidth="135" prefWidth="135" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="130" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="195" minWidth="195" prefWidth="195" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="195" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="93" minWidth="9" prefWidth="93" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="93" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="93" minWidth="93" prefWidth="93" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="93" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>

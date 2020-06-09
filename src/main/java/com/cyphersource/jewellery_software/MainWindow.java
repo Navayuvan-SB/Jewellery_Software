@@ -14,7 +14,8 @@ import javax.swing.table.JTableHeader;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.TableCellRenderer;
+
+
 
 /**
  *
@@ -30,19 +31,6 @@ public class MainWindow extends javax.swing.JFrame {
         setVisible(true);
         setLocationRelativeTo(null);
       
-   
-//        view_tablearea2_scrollpane.getVerticalScrollBar().setPreferredSize(
-//                new Dimension(width, Integer.MAX_VALUE));
-//        scrollpane.getHorizontalScrollBar().setPreferredSize(
-//                new Dimension(Integer.MAX_VALUE, width));
-        
-        // To change the tableheader bg color and thickness of borders
-        
-        view_table1_table.getTableHeader().setDefaultRenderer(new HeaderColor());
-        view_table2_table.getTableHeader().setDefaultRenderer(new HeaderColor());
-        view_table3_table.getTableHeader().setDefaultRenderer(new HeaderColor());
-        view_table4_table.getTableHeader().setDefaultRenderer(new HeaderColor());
-        
         //To change the color of the vertical gridlines of tables
         
         view_table1_table.setShowVerticalLines(true);
@@ -57,36 +45,64 @@ public class MainWindow extends javax.swing.JFrame {
         view_table4_table.setShowVerticalLines(true);
         view_table4_table.setGridColor(Color.LIGHT_GRAY);
         
+        // T0 scroll the table contents without using scrollbar for tables
         
-        //Tableheader styling for table1
+        view_tablearea1_scrollpane.getVerticalScrollBar().setPreferredSize(
+                new Dimension(0,0));
+        view_tablearea1_scrollpane.getHorizontalScrollBar().setPreferredSize(
+                new Dimension(0,0));
+        
+        view_tablearea2_scrollpane.getVerticalScrollBar().setPreferredSize(
+                new Dimension(0,0));
+        view_tablearea2_scrollpane.getHorizontalScrollBar().setPreferredSize(
+                new Dimension(0,0));
+        
+        view_tablearea3_scrollpane.getVerticalScrollBar().setPreferredSize(
+                new Dimension(0,0));
+        view_tablearea3_scrollpane.getHorizontalScrollBar().setPreferredSize(
+                new Dimension(0,0));
+        
+        view_tablearea4_scrollpane.getVerticalScrollBar().setPreferredSize(
+                new Dimension(0,0));
+        view_tablearea4_scrollpane.getHorizontalScrollBar().setPreferredSize(
+                new Dimension(0,0));
+        
+        //Styling table header
         
         JTableHeader Theader=view_table1_table.getTableHeader();
+        JTableHeader Theaderone=view_table2_table.getTableHeader();
+        JTableHeader Theadertwo=view_table3_table.getTableHeader();
+        JTableHeader Theaderthree=view_table4_table.getTableHeader();
+        
+        //Tableheader font styling
+        
+        Theader.setFont(new Font("Ubuntu",Font.BOLD,18));
+        Theaderone.setFont(new Font("Ubuntu",Font.BOLD,18));
+        Theadertwo.setFont(new Font("Ubuntu",Font.BOLD,18));
+        Theaderthree.setFont(new Font("Ubuntu",Font.BOLD,18));
+         
+        //tableheader text color
+        
         Theader.setForeground(Color.black);
+        Theaderone.setForeground(Color.black);
+        Theadertwo.setForeground(Color.black);
+        Theaderthree.setForeground(Color.black);
+         
+        //Tableheader bg color,header thickness, dimension ( ht& wth ), text alignment
+        
+        Theader.setDefaultRenderer(new HeaderColor());
         Theader.setPreferredSize(new Dimension(50,50));
         ((DefaultTableCellRenderer)Theader.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
-        Theader.setFont(new Font("Ubuntu",Font.BOLD,18));
-
-        //Tableheader styling for table2
-        
-        JTableHeader Theaderone=view_table2_table.getTableHeader();
-        Theaderone.setFont(new Font("Ubuntu",Font.BOLD,18));
-        Theaderone.setForeground(Color.black);
+   
+        Theaderone.setDefaultRenderer(new HeaderColor());
         Theaderone.setPreferredSize(new Dimension(50,50));
         ((DefaultTableCellRenderer)Theaderone.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
-        
-        //Tableheader styling for table3
-        
-        JTableHeader Theadertwo=view_table3_table.getTableHeader();
-        Theadertwo.setFont(new Font("Ubuntu",Font.BOLD,18));
-        Theadertwo.setForeground(Color.black);
+  
+        Theadertwo.setDefaultRenderer(new HeaderColor());
         Theadertwo.setPreferredSize(new Dimension(50,50));
         ((DefaultTableCellRenderer)Theadertwo.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
         
-        //Tableheader styling for table4
-        
-        JTableHeader Theaderthree=view_table4_table.getTableHeader();
-        Theaderthree.setFont(new Font("Ubuntu",Font.BOLD,18));
-        Theaderthree.setForeground(Color.black);
+        Theaderthree.setDefaultRenderer(new HeaderColor());
         Theaderthree.setPreferredSize(new Dimension(50,50));
         ((DefaultTableCellRenderer)Theaderthree.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
         
@@ -138,14 +154,14 @@ public class MainWindow extends javax.swing.JFrame {
         view_selOrnament2_dropdown = new javax.swing.JComboBox<>();
         view_colon21_label = new javax.swing.JLabel();
         view_colon22_label = new javax.swing.JLabel();
-        view_tablearea2_scrollpane = new javax.swing.JScrollPane();
-        view_table2_table = new javax.swing.JTable();
         view_datelimit2_panel = new javax.swing.JPanel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jLabel1 = new javax.swing.JLabel();
         jDateChooser2 = new com.toedter.calendar.JDateChooser();
         jLabel3 = new javax.swing.JLabel();
         view_datelimitIcon2_label = new javax.swing.JLabel();
+        view_tablearea2_scrollpane = new javax.swing.JScrollPane();
+        view_table2_table = new javax.swing.JTable();
         view_balanceCont_panel = new javax.swing.JPanel();
         view_totItem3_label = new javax.swing.JLabel();
         view_totItemInp3_label = new javax.swing.JLabel();
@@ -404,33 +420,15 @@ public class MainWindow extends javax.swing.JFrame {
         view_table1_table.setShowHorizontalLines(false);
         view_tablearea1_scrollpane.setViewportView(view_table1_table);
         if (view_table1_table.getColumnModel().getColumnCount() > 0) {
-            view_table1_table.getColumnModel().getColumn(0).setMinWidth(50);
             view_table1_table.getColumnModel().getColumn(0).setPreferredWidth(50);
-            view_table1_table.getColumnModel().getColumn(0).setMaxWidth(50);
-            view_table1_table.getColumnModel().getColumn(1).setMinWidth(70);
             view_table1_table.getColumnModel().getColumn(1).setPreferredWidth(70);
-            view_table1_table.getColumnModel().getColumn(1).setMaxWidth(70);
-            view_table1_table.getColumnModel().getColumn(2).setMinWidth(100);
             view_table1_table.getColumnModel().getColumn(2).setPreferredWidth(100);
-            view_table1_table.getColumnModel().getColumn(2).setMaxWidth(100);
-            view_table1_table.getColumnModel().getColumn(3).setMinWidth(160);
             view_table1_table.getColumnModel().getColumn(3).setPreferredWidth(160);
-            view_table1_table.getColumnModel().getColumn(3).setMaxWidth(160);
-            view_table1_table.getColumnModel().getColumn(4).setMinWidth(55);
             view_table1_table.getColumnModel().getColumn(4).setPreferredWidth(55);
-            view_table1_table.getColumnModel().getColumn(4).setMaxWidth(55);
-            view_table1_table.getColumnModel().getColumn(5).setMinWidth(55);
             view_table1_table.getColumnModel().getColumn(5).setPreferredWidth(55);
-            view_table1_table.getColumnModel().getColumn(5).setMaxWidth(55);
-            view_table1_table.getColumnModel().getColumn(6).setMinWidth(55);
             view_table1_table.getColumnModel().getColumn(6).setPreferredWidth(55);
-            view_table1_table.getColumnModel().getColumn(6).setMaxWidth(55);
-            view_table1_table.getColumnModel().getColumn(7).setMinWidth(70);
             view_table1_table.getColumnModel().getColumn(7).setPreferredWidth(70);
-            view_table1_table.getColumnModel().getColumn(7).setMaxWidth(70);
-            view_table1_table.getColumnModel().getColumn(8).setMinWidth(70);
             view_table1_table.getColumnModel().getColumn(8).setPreferredWidth(70);
-            view_table1_table.getColumnModel().getColumn(8).setMaxWidth(70);
         }
 
         view_datelimit1_panel.setBackground(java.awt.Color.white);
@@ -506,7 +504,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(view_overallCont_panelLayout.createSequentialGroup()
                         .addGap(57, 57, 57)
                         .addComponent(view_selOrnament1_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(view_tablearea1_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -545,61 +543,6 @@ public class MainWindow extends javax.swing.JFrame {
         view_colon22_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
         view_colon22_label.setText(":");
 
-        view_tablearea2_scrollpane.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        view_table2_table.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        view_table2_table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "No", "Dattte", "Chase No", "Ornamant Name", "WT", "QTY", "BARCODE", "RT"
-            }
-        ));
-        view_table2_table.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
-        view_table2_table.setCellSelectionEnabled(true);
-        view_table2_table.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        view_table2_table.setRowHeight(45);
-        view_table2_table.setShowGrid(true);
-        view_table2_table.setShowHorizontalLines(false);
-        view_tablearea2_scrollpane.setViewportView(view_table2_table);
-        view_table2_table.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-        if (view_table2_table.getColumnModel().getColumnCount() > 0) {
-            view_table2_table.getColumnModel().getColumn(0).setMinWidth(60);
-            view_table2_table.getColumnModel().getColumn(0).setPreferredWidth(60);
-            view_table2_table.getColumnModel().getColumn(0).setMaxWidth(60);
-            view_table2_table.getColumnModel().getColumn(1).setMinWidth(90);
-            view_table2_table.getColumnModel().getColumn(1).setPreferredWidth(90);
-            view_table2_table.getColumnModel().getColumn(1).setMaxWidth(90);
-            view_table2_table.getColumnModel().getColumn(2).setMinWidth(120);
-            view_table2_table.getColumnModel().getColumn(2).setPreferredWidth(120);
-            view_table2_table.getColumnModel().getColumn(2).setMaxWidth(120);
-            view_table2_table.getColumnModel().getColumn(3).setMinWidth(160);
-            view_table2_table.getColumnModel().getColumn(3).setPreferredWidth(160);
-            view_table2_table.getColumnModel().getColumn(3).setMaxWidth(160);
-            view_table2_table.getColumnModel().getColumn(4).setMinWidth(75);
-            view_table2_table.getColumnModel().getColumn(4).setPreferredWidth(75);
-            view_table2_table.getColumnModel().getColumn(4).setMaxWidth(75);
-            view_table2_table.getColumnModel().getColumn(5).setMinWidth(75);
-            view_table2_table.getColumnModel().getColumn(5).setPreferredWidth(75);
-            view_table2_table.getColumnModel().getColumn(5).setMaxWidth(75);
-            view_table2_table.getColumnModel().getColumn(6).setMinWidth(130);
-            view_table2_table.getColumnModel().getColumn(6).setPreferredWidth(130);
-            view_table2_table.getColumnModel().getColumn(6).setMaxWidth(130);
-        }
-
         view_datelimit2_panel.setBackground(java.awt.Color.white);
         view_datelimit2_panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -626,6 +569,45 @@ public class MainWindow extends javax.swing.JFrame {
         view_datelimitIcon2_label.setText("jLabel6");
         view_datelimit2_panel.add(view_datelimitIcon2_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 314, -1));
 
+        view_table2_table.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        view_table2_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "No", "Date", "Chase No", "Ornamant Name", "WT", "QTY", "BARCODE", "RT"
+            }
+        ));
+        view_table2_table.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        view_table2_table.setCellSelectionEnabled(true);
+        view_table2_table.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        view_table2_table.setRowHeight(45);
+        view_table2_table.setShowGrid(true);
+        view_table2_table.setShowHorizontalLines(false);
+        view_tablearea2_scrollpane.setViewportView(view_table2_table);
+        view_table2_table.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        if (view_table2_table.getColumnModel().getColumnCount() > 0) {
+            view_table2_table.getColumnModel().getColumn(0).setPreferredWidth(60);
+            view_table2_table.getColumnModel().getColumn(1).setPreferredWidth(90);
+            view_table2_table.getColumnModel().getColumn(2).setPreferredWidth(120);
+            view_table2_table.getColumnModel().getColumn(3).setPreferredWidth(160);
+            view_table2_table.getColumnModel().getColumn(4).setPreferredWidth(75);
+            view_table2_table.getColumnModel().getColumn(5).setPreferredWidth(75);
+            view_table2_table.getColumnModel().getColumn(6).setPreferredWidth(130);
+        }
+
         javax.swing.GroupLayout view_soldCont_panelLayout = new javax.swing.GroupLayout(view_soldCont_panel);
         view_soldCont_panel.setLayout(view_soldCont_panelLayout);
         view_soldCont_panelLayout.setHorizontalGroup(
@@ -634,27 +616,27 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addGroup(view_soldCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(view_soldCont_panelLayout.createSequentialGroup()
-                        .addComponent(view_totItem2_label, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(view_colon22_label, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(view_totItemInp2_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(view_tablearea2_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 797, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(view_soldCont_panelLayout.createSequentialGroup()
-                        .addComponent(view_totWt2_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(view_colon21_label)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(view_totWtInp2_label, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(12, 12, 12)
-                .addComponent(view_selOrnament2_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(view_datelimit2_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
-            .addGroup(view_soldCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, view_soldCont_panelLayout.createSequentialGroup()
-                    .addContainerGap(44, Short.MAX_VALUE)
-                    .addComponent(view_tablearea2_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 807, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(39, Short.MAX_VALUE)))
+                        .addGroup(view_soldCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(view_soldCont_panelLayout.createSequentialGroup()
+                                .addComponent(view_totItem2_label, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(view_colon22_label, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(view_totItemInp2_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(view_soldCont_panelLayout.createSequentialGroup()
+                                .addComponent(view_totWt2_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(view_colon21_label)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(view_totWtInp2_label, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(12, 12, 12)
+                        .addComponent(view_selOrnament2_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(view_datelimit2_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32))))
         );
         view_soldCont_panelLayout.setVerticalGroup(
             view_soldCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -677,11 +659,8 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(view_soldCont_panelLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(view_datelimit2_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(444, 444, 444))
-            .addGroup(view_soldCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, view_soldCont_panelLayout.createSequentialGroup()
-                    .addGap(0, 182, Short.MAX_VALUE)
-                    .addComponent(view_tablearea2_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addComponent(view_tablearea2_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         view_contTwo_panel.add(view_soldCont_panel, "card2");
@@ -748,27 +727,13 @@ public class MainWindow extends javax.swing.JFrame {
         view_tablearea3_scrollpane.setViewportView(view_table3_table);
         view_table3_table.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
         if (view_table3_table.getColumnModel().getColumnCount() > 0) {
-            view_table3_table.getColumnModel().getColumn(0).setMinWidth(60);
             view_table3_table.getColumnModel().getColumn(0).setPreferredWidth(60);
-            view_table3_table.getColumnModel().getColumn(0).setMaxWidth(60);
-            view_table3_table.getColumnModel().getColumn(1).setMinWidth(90);
             view_table3_table.getColumnModel().getColumn(1).setPreferredWidth(90);
-            view_table3_table.getColumnModel().getColumn(1).setMaxWidth(90);
-            view_table3_table.getColumnModel().getColumn(2).setMinWidth(120);
             view_table3_table.getColumnModel().getColumn(2).setPreferredWidth(120);
-            view_table3_table.getColumnModel().getColumn(2).setMaxWidth(120);
-            view_table3_table.getColumnModel().getColumn(3).setMinWidth(160);
             view_table3_table.getColumnModel().getColumn(3).setPreferredWidth(160);
-            view_table3_table.getColumnModel().getColumn(3).setMaxWidth(160);
-            view_table3_table.getColumnModel().getColumn(4).setMinWidth(75);
             view_table3_table.getColumnModel().getColumn(4).setPreferredWidth(75);
-            view_table3_table.getColumnModel().getColumn(4).setMaxWidth(75);
-            view_table3_table.getColumnModel().getColumn(5).setMinWidth(75);
             view_table3_table.getColumnModel().getColumn(5).setPreferredWidth(75);
-            view_table3_table.getColumnModel().getColumn(5).setMaxWidth(75);
-            view_table3_table.getColumnModel().getColumn(6).setMinWidth(130);
             view_table3_table.getColumnModel().getColumn(6).setPreferredWidth(130);
-            view_table3_table.getColumnModel().getColumn(6).setMaxWidth(130);
         }
 
         view_datelimit3_panel.setBackground(java.awt.Color.white);
@@ -909,24 +874,12 @@ public class MainWindow extends javax.swing.JFrame {
         view_tablearea4_scrollpane.setViewportView(view_table4_table);
         view_table4_table.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         if (view_table4_table.getColumnModel().getColumnCount() > 0) {
-            view_table4_table.getColumnModel().getColumn(0).setMinWidth(70);
             view_table4_table.getColumnModel().getColumn(0).setPreferredWidth(70);
-            view_table4_table.getColumnModel().getColumn(0).setMaxWidth(70);
-            view_table4_table.getColumnModel().getColumn(1).setMinWidth(110);
-            view_table4_table.getColumnModel().getColumn(1).setPreferredWidth(110);
-            view_table4_table.getColumnModel().getColumn(1).setMaxWidth(110);
-            view_table4_table.getColumnModel().getColumn(2).setMinWidth(135);
-            view_table4_table.getColumnModel().getColumn(2).setPreferredWidth(135);
-            view_table4_table.getColumnModel().getColumn(2).setMaxWidth(135);
-            view_table4_table.getColumnModel().getColumn(3).setMinWidth(195);
+            view_table4_table.getColumnModel().getColumn(1).setPreferredWidth(100);
+            view_table4_table.getColumnModel().getColumn(2).setPreferredWidth(130);
             view_table4_table.getColumnModel().getColumn(3).setPreferredWidth(195);
-            view_table4_table.getColumnModel().getColumn(3).setMaxWidth(195);
-            view_table4_table.getColumnModel().getColumn(4).setMinWidth(9);
             view_table4_table.getColumnModel().getColumn(4).setPreferredWidth(93);
-            view_table4_table.getColumnModel().getColumn(4).setMaxWidth(93);
-            view_table4_table.getColumnModel().getColumn(5).setMinWidth(93);
             view_table4_table.getColumnModel().getColumn(5).setPreferredWidth(93);
-            view_table4_table.getColumnModel().getColumn(5).setMaxWidth(93);
         }
 
         view_colon41_label.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
@@ -1142,8 +1095,6 @@ public class MainWindow extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
-        MainWindow th = new MainWindow();
-        th.setVisible(true);
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -1234,7 +1185,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JPanel view_total_panel;
     // End of variables declaration//GEN-END:variables
   
-    //common class for changing tableheader bg color and border thickness
+    //common class for changing TableHeader bg color and border thickness
     
     static public class HeaderColor extends DefaultTableCellRenderer{
         public HeaderColor(){
