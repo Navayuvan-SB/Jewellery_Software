@@ -33,44 +33,44 @@ public class MainWindow extends javax.swing.JFrame {
         entryPage = new javax.swing.JPanel();
         jScrollPane = new javax.swing.JScrollPane();
         Wrapper = new javax.swing.JPanel();
-        Entry_ShopnameJ_Label1 = new javax.swing.JLabel();
-        Entry_ShopnameJ2_Label1 = new javax.swing.JLabel();
-        Entry_ShopNameA_Label1 = new javax.swing.JLabel();
-        Entry_NavEntry_Label1 = new javax.swing.JLabel();
-        Entry_NavView_Label1 = new javax.swing.JLabel();
-        Entry_NavSell_Label1 = new javax.swing.JLabel();
-        Entry_ChaseNo_Label1 = new javax.swing.JLabel();
-        Entry_ChaseNoValue_Label3 = new javax.swing.JLabel();
-        Entry_Date_Label1 = new javax.swing.JLabel();
-        Entry_ChaseNoValue_Label2 = new javax.swing.JLabel();
-        Entry_InputFields_Panel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        Entry_SelectInput_Label = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        Entry_OrnamentName_TextField = new javax.swing.JLabel();
-        Entry_OrnamentName_Label = new javax.swing.JLabel();
+        Entry_ShopnameJ_Label = new javax.swing.JLabel();
+        Entry_ShopnameJ2_Label = new javax.swing.JLabel();
+        Entry_ShopNameA_Label = new javax.swing.JLabel();
+        Entry_NavEntry_Label = new javax.swing.JLabel();
+        Entry_NavView_Label = new javax.swing.JLabel();
+        Entry_NavSell_Label = new javax.swing.JLabel();
+        Entry_ChaseNo_Label = new javax.swing.JLabel();
+        Entry_ChaseNoValue_Label = new javax.swing.JLabel();
+        Entry_Date_Label = new javax.swing.JLabel();
+        Entry_DateNoValue_Label2 = new javax.swing.JLabel();
+        Entry_InputFields_Panel = new javax.swing.JPanel();
+        Entry_SelectOrnament_Label = new javax.swing.JLabel();
+        Entry_SelectOrnament_Label_Icon = new javax.swing.JLabel();
+        Entry_Ornament_TextField = new javax.swing.JTextField();
+        Entry_Ornament_Label = new javax.swing.JLabel();
+        Entry_Ornament_Label_Icon = new javax.swing.JLabel();
         Entry_Quality_TextField = new javax.swing.JLabel();
         Entry_961HM_RadioButton = new javax.swing.JRadioButton();
         Entry_22CT_RadioButton = new javax.swing.JRadioButton();
         Entry_Quality_Label = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        Entry_MC_TextField = new javax.swing.JTextField();
         Entry_MC_Label = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        Entry_MC_TextField = new javax.swing.JTextField();
+        Entry_MC_Label_Icon = new javax.swing.JLabel();
+        Entry_WT_Lable = new javax.swing.JLabel();
         Entry_WT_TextField = new javax.swing.JTextField();
-        Entry_WT_Label = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        Entry_WAS_TextField = new javax.swing.JTextField();
+        Entry_WT_Label_Icon = new javax.swing.JLabel();
         Entry_WAS_Label = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        Entry_WAS_TextField = new javax.swing.JTextField();
+        Entry_WAS_Label_Icon = new javax.swing.JLabel();
+        Entry_QTY_Label = new javax.swing.JLabel();
         Entry_QTY_TextField = new javax.swing.JTextField();
-        Entry_QTY_Label1 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        Entry_BUY_TextField = new javax.swing.JTextField();
+        Entry_QTY_Label_Icon = new javax.swing.JLabel();
         Entry_BUY_Label = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jLabel2 = new javax.swing.JLabel();
+        Entry_BUY_TextField = new javax.swing.JTextField();
+        Entry_BUY_Label_Icon = new javax.swing.JLabel();
+        Entry_CheckText_Label = new javax.swing.JLabel();
+        Entry_CheckBox_CheckBox = new javax.swing.JCheckBox();
+        Entry_Enter_Label_Icon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -91,154 +91,154 @@ public class MainWindow extends javax.swing.JFrame {
         Wrapper.setAutoscrolls(true);
         Wrapper.setPreferredSize(new java.awt.Dimension(1220, 1690));
 
-        Entry_ShopnameJ_Label1.setBackground(new java.awt.Color(250, 250, 250));
-        Entry_ShopnameJ_Label1.setFont(new java.awt.Font("Ubuntu", 1, 64)); // NOI18N
-        Entry_ShopnameJ_Label1.setForeground(new java.awt.Color(0, 0, 0));
-        Entry_ShopnameJ_Label1.setText("J");
+        Entry_ShopnameJ_Label.setBackground(new java.awt.Color(250, 250, 250));
+        Entry_ShopnameJ_Label.setFont(new java.awt.Font("Ubuntu", 1, 64)); // NOI18N
+        Entry_ShopnameJ_Label.setForeground(new java.awt.Color(0, 0, 0));
+        Entry_ShopnameJ_Label.setText("J");
 
-        Entry_ShopnameJ2_Label1.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_ShopnameJ2_Label1.setFont(new java.awt.Font("Ubuntu", 1, 64)); // NOI18N
-        Entry_ShopnameJ2_Label1.setForeground(new java.awt.Color(0, 0, 0));
-        Entry_ShopnameJ2_Label1.setText("J");
+        Entry_ShopnameJ2_Label.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_ShopnameJ2_Label.setFont(new java.awt.Font("Ubuntu", 1, 64)); // NOI18N
+        Entry_ShopnameJ2_Label.setForeground(new java.awt.Color(0, 0, 0));
+        Entry_ShopnameJ2_Label.setText("J");
 
-        Entry_ShopNameA_Label1.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_ShopNameA_Label1.setFont(new java.awt.Font("Ubuntu", 1, 38)); // NOI18N
-        Entry_ShopNameA_Label1.setForeground(new java.awt.Color(0, 0, 0));
-        Entry_ShopNameA_Label1.setText("A");
+        Entry_ShopNameA_Label.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_ShopNameA_Label.setFont(new java.awt.Font("Ubuntu", 1, 38)); // NOI18N
+        Entry_ShopNameA_Label.setForeground(new java.awt.Color(0, 0, 0));
+        Entry_ShopNameA_Label.setText("A");
 
-        Entry_NavEntry_Label1.setBackground(new java.awt.Color(250, 250, 250));
-        Entry_NavEntry_Label1.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
-        Entry_NavEntry_Label1.setForeground(new java.awt.Color(0, 0, 0));
-        Entry_NavEntry_Label1.setText("Entry");
+        Entry_NavEntry_Label.setBackground(new java.awt.Color(250, 250, 250));
+        Entry_NavEntry_Label.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        Entry_NavEntry_Label.setForeground(new java.awt.Color(0, 0, 0));
+        Entry_NavEntry_Label.setText("Entry");
 
-        Entry_NavView_Label1.setBackground(new java.awt.Color(250, 250, 250));
-        Entry_NavView_Label1.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        Entry_NavView_Label1.setForeground(new java.awt.Color(98, 98, 98));
-        Entry_NavView_Label1.setText("View");
+        Entry_NavView_Label.setBackground(new java.awt.Color(250, 250, 250));
+        Entry_NavView_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        Entry_NavView_Label.setForeground(new java.awt.Color(98, 98, 98));
+        Entry_NavView_Label.setText("View");
 
-        Entry_NavSell_Label1.setBackground(new java.awt.Color(250, 250, 250));
-        Entry_NavSell_Label1.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        Entry_NavSell_Label1.setForeground(new java.awt.Color(98, 98, 98));
-        Entry_NavSell_Label1.setText("Sell");
+        Entry_NavSell_Label.setBackground(new java.awt.Color(250, 250, 250));
+        Entry_NavSell_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        Entry_NavSell_Label.setForeground(new java.awt.Color(98, 98, 98));
+        Entry_NavSell_Label.setText("Sell");
 
-        Entry_ChaseNo_Label1.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_ChaseNo_Label1.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        Entry_ChaseNo_Label1.setForeground(new java.awt.Color(98, 98, 98));
-        Entry_ChaseNo_Label1.setText("Chase No :");
+        Entry_ChaseNo_Label.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_ChaseNo_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        Entry_ChaseNo_Label.setForeground(new java.awt.Color(98, 98, 98));
+        Entry_ChaseNo_Label.setText("Chase No :");
 
-        Entry_ChaseNoValue_Label3.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_ChaseNoValue_Label3.setFont(new java.awt.Font("Ubuntu", 1, 27)); // NOI18N
-        Entry_ChaseNoValue_Label3.setForeground(new java.awt.Color(0, 0, 0));
-        Entry_ChaseNoValue_Label3.setText("CH1234");
+        Entry_ChaseNoValue_Label.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_ChaseNoValue_Label.setFont(new java.awt.Font("Ubuntu", 1, 27)); // NOI18N
+        Entry_ChaseNoValue_Label.setForeground(new java.awt.Color(0, 0, 0));
+        Entry_ChaseNoValue_Label.setText("CH1234");
 
-        Entry_Date_Label1.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_Date_Label1.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        Entry_Date_Label1.setForeground(new java.awt.Color(98, 98, 98));
-        Entry_Date_Label1.setText("Date :");
+        Entry_Date_Label.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_Date_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        Entry_Date_Label.setForeground(new java.awt.Color(98, 98, 98));
+        Entry_Date_Label.setText("Date :");
 
-        Entry_ChaseNoValue_Label2.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_ChaseNoValue_Label2.setFont(new java.awt.Font("Ubuntu", 1, 27)); // NOI18N
-        Entry_ChaseNoValue_Label2.setForeground(new java.awt.Color(0, 0, 0));
-        Entry_ChaseNoValue_Label2.setText("04-06-2020");
+        Entry_DateNoValue_Label2.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_DateNoValue_Label2.setFont(new java.awt.Font("Ubuntu", 1, 27)); // NOI18N
+        Entry_DateNoValue_Label2.setForeground(new java.awt.Color(0, 0, 0));
+        Entry_DateNoValue_Label2.setText("04-06-2020");
 
-        Entry_InputFields_Panel1.setBackground(new java.awt.Color(251, 251, 251));
-        Entry_InputFields_Panel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Entry_InputFields_Panel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Entry_InputFields_Panel.setBackground(new java.awt.Color(251, 251, 251));
+        Entry_InputFields_Panel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Entry_InputFields_Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(98, 98, 98));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel3.setText("Select Ornament Name :");
-        Entry_InputFields_Panel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, -1));
+        Entry_SelectOrnament_Label.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_SelectOrnament_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        Entry_SelectOrnament_Label.setForeground(new java.awt.Color(98, 98, 98));
+        Entry_SelectOrnament_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Entry_SelectOrnament_Label.setText("Select Ornament Name :");
+        Entry_InputFields_Panel.add(Entry_SelectOrnament_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, -1));
 
-        Entry_SelectInput_Label.setBackground(new java.awt.Color(250, 250, 250));
-        Entry_SelectInput_Label.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
-        Entry_InputFields_Panel1.add(Entry_SelectInput_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, -1, -1));
+        Entry_SelectOrnament_Label_Icon.setBackground(new java.awt.Color(250, 250, 250));
+        Entry_SelectOrnament_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
+        Entry_InputFields_Panel.add(Entry_SelectOrnament_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, -1, -1));
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField1.setBorder(null);
-        Entry_InputFields_Panel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, 360, -1));
+        Entry_Ornament_TextField.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_Ornament_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        Entry_Ornament_TextField.setForeground(new java.awt.Color(0, 0, 0));
+        Entry_Ornament_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        Entry_Ornament_TextField.setBorder(null);
+        Entry_InputFields_Panel.add(Entry_Ornament_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, 360, -1));
 
-        Entry_OrnamentName_TextField.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_OrnamentName_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        Entry_OrnamentName_TextField.setForeground(new java.awt.Color(98, 98, 98));
-        Entry_OrnamentName_TextField.setText("Ornament Name :");
-        Entry_InputFields_Panel1.add(Entry_OrnamentName_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 200, -1));
+        Entry_Ornament_Label.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_Ornament_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        Entry_Ornament_Label.setForeground(new java.awt.Color(98, 98, 98));
+        Entry_Ornament_Label.setText("Ornament Name :");
+        Entry_InputFields_Panel.add(Entry_Ornament_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 200, -1));
 
-        Entry_OrnamentName_Label.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_OrnamentName_Label.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
-        Entry_InputFields_Panel1.add(Entry_OrnamentName_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, -1, -1));
+        Entry_Ornament_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_Ornament_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
+        Entry_InputFields_Panel.add(Entry_Ornament_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, -1, -1));
 
         Entry_Quality_TextField.setBackground(new java.awt.Color(255, 255, 255));
         Entry_Quality_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         Entry_Quality_TextField.setForeground(new java.awt.Color(98, 98, 98));
         Entry_Quality_TextField.setText("Quality :");
-        Entry_InputFields_Panel1.add(Entry_Quality_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, -1));
+        Entry_InputFields_Panel.add(Entry_Quality_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, -1));
 
         Entry_961HM_RadioButton.setBackground(new java.awt.Color(255, 255, 255));
         Entry_961HM_RadioButton.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         Entry_961HM_RadioButton.setForeground(new java.awt.Color(98, 98, 98));
         Entry_961HM_RadioButton.setText("961 HM");
         Entry_961HM_RadioButton.setToolTipText("");
-        Entry_InputFields_Panel1.add(Entry_961HM_RadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, -1, -1));
+        Entry_InputFields_Panel.add(Entry_961HM_RadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, -1, -1));
 
         Entry_22CT_RadioButton.setBackground(new java.awt.Color(255, 255, 255));
         Entry_22CT_RadioButton.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         Entry_22CT_RadioButton.setForeground(new java.awt.Color(98, 98, 98));
         Entry_22CT_RadioButton.setText("22 CT");
         Entry_22CT_RadioButton.setBorder(null);
-        Entry_InputFields_Panel1.add(Entry_22CT_RadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 290, -1, -1));
+        Entry_InputFields_Panel.add(Entry_22CT_RadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 290, -1, -1));
 
         Entry_Quality_Label.setBackground(new java.awt.Color(255, 255, 255));
         Entry_Quality_Label.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
-        Entry_InputFields_Panel1.add(Entry_Quality_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, -1, -1));
+        Entry_InputFields_Panel.add(Entry_Quality_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, -1, -1));
 
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(98, 98, 98));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel4.setText("MC :");
-        Entry_InputFields_Panel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
+        Entry_MC_Label.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_MC_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        Entry_MC_Label.setForeground(new java.awt.Color(98, 98, 98));
+        Entry_MC_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Entry_MC_Label.setText("MC :");
+        Entry_InputFields_Panel.add(Entry_MC_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
 
         Entry_MC_TextField.setBackground(new java.awt.Color(255, 255, 255));
         Entry_MC_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         Entry_MC_TextField.setForeground(new java.awt.Color(0, 0, 0));
         Entry_MC_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Entry_MC_TextField.setBorder(null);
-        Entry_InputFields_Panel1.add(Entry_MC_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 510, -1));
+        Entry_InputFields_Panel.add(Entry_MC_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 510, -1));
 
-        Entry_MC_Label.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_MC_Label.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
-        Entry_InputFields_Panel1.add(Entry_MC_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
+        Entry_MC_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_MC_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
+        Entry_InputFields_Panel.add(Entry_MC_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
 
-        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(98, 98, 98));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel5.setText("WT :");
-        Entry_InputFields_Panel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 510, -1, -1));
+        Entry_WT_Lable.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_WT_Lable.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        Entry_WT_Lable.setForeground(new java.awt.Color(98, 98, 98));
+        Entry_WT_Lable.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Entry_WT_Lable.setText("WT :");
+        Entry_InputFields_Panel.add(Entry_WT_Lable, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 510, -1, -1));
 
         Entry_WT_TextField.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WT_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         Entry_WT_TextField.setForeground(new java.awt.Color(0, 0, 0));
         Entry_WT_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Entry_WT_TextField.setBorder(null);
-        Entry_InputFields_Panel1.add(Entry_WT_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 510, 510, -1));
+        Entry_InputFields_Panel.add(Entry_WT_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 510, 510, -1));
 
-        Entry_WT_Label.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_WT_Label.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
-        Entry_InputFields_Panel1.add(Entry_WT_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 490, -1, -1));
+        Entry_WT_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_WT_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
+        Entry_InputFields_Panel.add(Entry_WT_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 490, -1, -1));
 
-        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(98, 98, 98));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel6.setText("WAS :");
-        Entry_InputFields_Panel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 620, -1, -1));
+        Entry_WAS_Label.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_WAS_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        Entry_WAS_Label.setForeground(new java.awt.Color(98, 98, 98));
+        Entry_WAS_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Entry_WAS_Label.setText("WAS :");
+        Entry_InputFields_Panel.add(Entry_WAS_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 620, -1, -1));
 
         Entry_WAS_TextField.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WAS_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
@@ -250,19 +250,19 @@ public class MainWindow extends javax.swing.JFrame {
                 Entry_WAS_TextFieldActionPerformed(evt);
             }
         });
-        Entry_InputFields_Panel1.add(Entry_WAS_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 620, 500, -1));
+        Entry_InputFields_Panel.add(Entry_WAS_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 620, 500, -1));
 
-        Entry_WAS_Label.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_WAS_Label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        Entry_WAS_Label.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
-        Entry_InputFields_Panel1.add(Entry_WAS_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 600, -1, -1));
+        Entry_WAS_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_WAS_Label_Icon.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        Entry_WAS_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
+        Entry_InputFields_Panel.add(Entry_WAS_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 600, -1, -1));
 
-        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel7.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(98, 98, 98));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel7.setText("QTY :");
-        Entry_InputFields_Panel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 730, -1, -1));
+        Entry_QTY_Label.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_QTY_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        Entry_QTY_Label.setForeground(new java.awt.Color(98, 98, 98));
+        Entry_QTY_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Entry_QTY_Label.setText("QTY :");
+        Entry_InputFields_Panel.add(Entry_QTY_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 730, -1, -1));
 
         Entry_QTY_TextField.setBackground(new java.awt.Color(255, 255, 255));
         Entry_QTY_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
@@ -274,19 +274,19 @@ public class MainWindow extends javax.swing.JFrame {
                 Entry_QTY_TextFieldActionPerformed(evt);
             }
         });
-        Entry_InputFields_Panel1.add(Entry_QTY_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 730, 500, -1));
+        Entry_InputFields_Panel.add(Entry_QTY_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 730, 500, -1));
 
-        Entry_QTY_Label1.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_QTY_Label1.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        Entry_QTY_Label1.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
-        Entry_InputFields_Panel1.add(Entry_QTY_Label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 710, -1, -1));
+        Entry_QTY_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_QTY_Label_Icon.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        Entry_QTY_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
+        Entry_InputFields_Panel.add(Entry_QTY_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 710, -1, -1));
 
-        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel8.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(98, 98, 98));
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel8.setText("BUY :");
-        Entry_InputFields_Panel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 840, -1, -1));
+        Entry_BUY_Label.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_BUY_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        Entry_BUY_Label.setForeground(new java.awt.Color(98, 98, 98));
+        Entry_BUY_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Entry_BUY_Label.setText("BUY :");
+        Entry_InputFields_Panel.add(Entry_BUY_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 840, -1, -1));
 
         Entry_BUY_TextField.setBackground(new java.awt.Color(255, 255, 255));
         Entry_BUY_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
@@ -298,77 +298,77 @@ public class MainWindow extends javax.swing.JFrame {
                 Entry_BUY_TextFieldActionPerformed(evt);
             }
         });
-        Entry_InputFields_Panel1.add(Entry_BUY_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 840, 500, -1));
+        Entry_InputFields_Panel.add(Entry_BUY_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 840, 500, -1));
 
-        Entry_BUY_Label.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_BUY_Label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        Entry_BUY_Label.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
-        Entry_InputFields_Panel1.add(Entry_BUY_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 820, -1, -1));
+        Entry_BUY_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_BUY_Label_Icon.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        Entry_BUY_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
+        Entry_InputFields_Panel.add(Entry_BUY_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 820, -1, -1));
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Click to Generate BarCode and Print");
+        Entry_CheckText_Label.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_CheckText_Label.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        Entry_CheckText_Label.setForeground(new java.awt.Color(0, 0, 0));
+        Entry_CheckText_Label.setText("Click to Generate BarCode and Print");
 
-        jCheckBox1.setBorderPainted(true);
-        jCheckBox1.setBorderPaintedFlat(true);
-        jCheckBox1.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/CheckBox.png")); // NOI18N
-        jCheckBox1.setPreferredSize(new java.awt.Dimension(30, 30));
-        jCheckBox1.setSelectedIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Checked.png")); // NOI18N
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        Entry_CheckBox_CheckBox.setBorderPainted(true);
+        Entry_CheckBox_CheckBox.setBorderPaintedFlat(true);
+        Entry_CheckBox_CheckBox.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/CheckBox.png")); // NOI18N
+        Entry_CheckBox_CheckBox.setPreferredSize(new java.awt.Dimension(30, 30));
+        Entry_CheckBox_CheckBox.setSelectedIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Checked.png")); // NOI18N
+        Entry_CheckBox_CheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                Entry_CheckBox_CheckBoxActionPerformed(evt);
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/EnterButton.png")); // NOI18N
+        Entry_Enter_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/EnterButton.png")); // NOI18N
 
         javax.swing.GroupLayout WrapperLayout = new javax.swing.GroupLayout(Wrapper);
         Wrapper.setLayout(WrapperLayout);
         WrapperLayout.setHorizontalGroup(
             WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WrapperLayout.createSequentialGroup()
+                .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(WrapperLayout.createSequentialGroup()
+                        .addGap(591, 591, 591)
+                        .addComponent(Entry_ShopnameJ_Label)
+                        .addGap(0, 0, 0)
+                        .addComponent(Entry_ShopNameA_Label)
+                        .addGap(0, 0, 0)
+                        .addComponent(Entry_ShopnameJ2_Label))
+                    .addGroup(WrapperLayout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(Entry_ChaseNo_Label)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Entry_ChaseNoValue_Label)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(WrapperLayout.createSequentialGroup()
-                        .addGap(0, 70, Short.MAX_VALUE)
-                        .addComponent(Entry_InputFields_Panel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Entry_NavEntry_Label)
+                        .addGap(55, 55, 55)
+                        .addComponent(Entry_NavView_Label)
+                        .addGap(55, 55, 55)
+                        .addComponent(Entry_NavSell_Label))
                     .addGroup(WrapperLayout.createSequentialGroup()
-                        .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(WrapperLayout.createSequentialGroup()
-                                .addGap(591, 591, 591)
-                                .addComponent(Entry_ShopnameJ_Label1)
-                                .addGap(0, 0, 0)
-                                .addComponent(Entry_ShopNameA_Label1)
-                                .addGap(0, 0, 0)
-                                .addComponent(Entry_ShopnameJ2_Label1))
-                            .addGroup(WrapperLayout.createSequentialGroup()
-                                .addGap(70, 70, 70)
-                                .addComponent(Entry_ChaseNo_Label1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Entry_ChaseNoValue_Label3)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(WrapperLayout.createSequentialGroup()
-                                .addComponent(Entry_NavEntry_Label1)
-                                .addGap(55, 55, 55)
-                                .addComponent(Entry_NavView_Label1)
-                                .addGap(55, 55, 55)
-                                .addComponent(Entry_NavSell_Label1))
-                            .addGroup(WrapperLayout.createSequentialGroup()
-                                .addComponent(Entry_Date_Label1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Entry_ChaseNoValue_Label2)))))
+                        .addComponent(Entry_Date_Label)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Entry_DateNoValue_Label2)))
                 .addGap(70, 70, 70))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WrapperLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Entry_CheckBox_CheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addGap(376, 376, 376))
+                .addComponent(Entry_CheckText_Label)
+                .addGap(377, 377, 377))
             .addGroup(WrapperLayout.createSequentialGroup()
-                .addGap(508, 508, 508)
-                .addComponent(jLabel2)
-                .addContainerGap(508, Short.MAX_VALUE))
+                .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(WrapperLayout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(Entry_InputFields_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(WrapperLayout.createSequentialGroup()
+                        .addGap(508, 508, 508)
+                        .addComponent(Entry_Enter_Label_Icon)))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
         WrapperLayout.setVerticalGroup(
             WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -377,31 +377,30 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(WrapperLayout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Entry_ShopNameA_Label1)
-                            .addComponent(Entry_ShopnameJ2_Label1)
-                            .addComponent(Entry_ShopnameJ_Label1)))
+                            .addComponent(Entry_ShopNameA_Label)
+                            .addComponent(Entry_ShopnameJ2_Label)
+                            .addComponent(Entry_ShopnameJ_Label)))
                     .addGroup(WrapperLayout.createSequentialGroup()
                         .addGap(74, 74, 74)
                         .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Entry_NavSell_Label1)
-                            .addComponent(Entry_NavView_Label1)
-                            .addComponent(Entry_NavEntry_Label1))))
+                            .addComponent(Entry_NavSell_Label)
+                            .addComponent(Entry_NavView_Label)
+                            .addComponent(Entry_NavEntry_Label))))
                 .addGap(77, 77, 77)
                 .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Entry_ChaseNoValue_Label3)
-                    .addComponent(Entry_ChaseNo_Label1)
-                    .addComponent(Entry_Date_Label1)
-                    .addComponent(Entry_ChaseNoValue_Label2))
-                .addGap(47, 47, 47)
-                .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(WrapperLayout.createSequentialGroup()
-                        .addComponent(Entry_InputFields_Panel1, javax.swing.GroupLayout.PREFERRED_SIZE, 939, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52)
-                .addComponent(jLabel2)
-                .addContainerGap(371, Short.MAX_VALUE))
+                    .addComponent(Entry_ChaseNoValue_Label)
+                    .addComponent(Entry_ChaseNo_Label)
+                    .addComponent(Entry_Date_Label)
+                    .addComponent(Entry_DateNoValue_Label2))
+                .addGap(49, 49, 49)
+                .addComponent(Entry_InputFields_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 939, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
+                .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Entry_CheckText_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Entry_CheckBox_CheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
+                .addComponent(Entry_Enter_Label_Icon)
+                .addContainerGap(260, Short.MAX_VALUE))
         );
 
         jScrollPane.setViewportView(Wrapper);
@@ -410,7 +409,7 @@ public class MainWindow extends javax.swing.JFrame {
         entryPage.setLayout(entryPageLayout);
         entryPageLayout.setHorizontalGroup(
             entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1220, Short.MAX_VALUE)
+            .addComponent(jScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1280, Short.MAX_VALUE)
         );
         entryPageLayout.setVerticalGroup(
             entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -441,9 +440,9 @@ public class MainWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Entry_BUY_TextFieldActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void Entry_CheckBox_CheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_CheckBox_CheckBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_Entry_CheckBox_CheckBoxActionPerformed
 
     private void Entry_WAS_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_WAS_TextFieldActionPerformed
         // TODO add your handling code here:
@@ -488,44 +487,44 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JRadioButton Entry_22CT_RadioButton;
     private javax.swing.JRadioButton Entry_961HM_RadioButton;
     private javax.swing.JLabel Entry_BUY_Label;
+    private javax.swing.JLabel Entry_BUY_Label_Icon;
     private javax.swing.JTextField Entry_BUY_TextField;
-    private javax.swing.JLabel Entry_ChaseNoValue_Label2;
-    private javax.swing.JLabel Entry_ChaseNoValue_Label3;
-    private javax.swing.JLabel Entry_ChaseNo_Label1;
-    private javax.swing.JLabel Entry_Date_Label1;
-    private javax.swing.JPanel Entry_InputFields_Panel1;
+    private javax.swing.JLabel Entry_ChaseNoValue_Label;
+    private javax.swing.JLabel Entry_ChaseNo_Label;
+    private javax.swing.JCheckBox Entry_CheckBox_CheckBox;
+    private javax.swing.JLabel Entry_CheckText_Label;
+    private javax.swing.JLabel Entry_DateNoValue_Label2;
+    private javax.swing.JLabel Entry_Date_Label;
+    private javax.swing.JLabel Entry_Enter_Label_Icon;
+    private javax.swing.JPanel Entry_InputFields_Panel;
     private javax.swing.JLabel Entry_MC_Label;
+    private javax.swing.JLabel Entry_MC_Label_Icon;
     private javax.swing.JTextField Entry_MC_TextField;
-    private javax.swing.JLabel Entry_NavEntry_Label1;
-    private javax.swing.JLabel Entry_NavSell_Label1;
-    private javax.swing.JLabel Entry_NavView_Label1;
-    private javax.swing.JLabel Entry_OrnamentName_Label;
-    private javax.swing.JLabel Entry_OrnamentName_TextField;
-    private javax.swing.JLabel Entry_QTY_Label1;
+    private javax.swing.JLabel Entry_NavEntry_Label;
+    private javax.swing.JLabel Entry_NavSell_Label;
+    private javax.swing.JLabel Entry_NavView_Label;
+    private javax.swing.JLabel Entry_Ornament_Label;
+    private javax.swing.JLabel Entry_Ornament_Label_Icon;
+    private javax.swing.JTextField Entry_Ornament_TextField;
+    private javax.swing.JLabel Entry_QTY_Label;
+    private javax.swing.JLabel Entry_QTY_Label_Icon;
     private javax.swing.JTextField Entry_QTY_TextField;
     private javax.swing.JLabel Entry_Quality_Label;
     private javax.swing.JLabel Entry_Quality_TextField;
-    private javax.swing.JLabel Entry_SelectInput_Label;
-    private javax.swing.JLabel Entry_ShopNameA_Label1;
-    private javax.swing.JLabel Entry_ShopnameJ2_Label1;
-    private javax.swing.JLabel Entry_ShopnameJ_Label1;
+    private javax.swing.JLabel Entry_SelectOrnament_Label;
+    private javax.swing.JLabel Entry_SelectOrnament_Label_Icon;
+    private javax.swing.JLabel Entry_ShopNameA_Label;
+    private javax.swing.JLabel Entry_ShopnameJ2_Label;
+    private javax.swing.JLabel Entry_ShopnameJ_Label;
     private javax.swing.JLabel Entry_WAS_Label;
+    private javax.swing.JLabel Entry_WAS_Label_Icon;
     private javax.swing.JTextField Entry_WAS_TextField;
-    private javax.swing.JLabel Entry_WT_Label;
+    private javax.swing.JLabel Entry_WT_Label_Icon;
+    private javax.swing.JLabel Entry_WT_Lable;
     private javax.swing.JTextField Entry_WT_TextField;
     private javax.swing.JPanel Wrapper;
     private javax.swing.JPanel entryPage;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

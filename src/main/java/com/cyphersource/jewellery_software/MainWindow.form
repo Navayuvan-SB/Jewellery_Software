@@ -57,7 +57,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane" alignment="1" pref="1220" max="32767" attributes="0"/>
+                  <Component id="jScrollPane" alignment="1" pref="1280" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -89,58 +89,58 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="591" max="-2" attributes="0"/>
+                                      <Component id="Entry_ShopnameJ_Label" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                      <Component id="Entry_ShopNameA_Label" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                      <Component id="Entry_ShopnameJ2_Label" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                                      <Component id="Entry_ChaseNo_Label" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="Entry_ChaseNoValue_Label" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="0" pref="70" max="32767" attributes="0"/>
-                                      <Component id="Entry_InputFields_Panel1" min="-2" pref="1080" max="-2" attributes="0"/>
+                                      <Component id="Entry_NavEntry_Label" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                                      <Component id="Entry_NavView_Label" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                                      <Component id="Entry_NavSell_Label" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="591" max="-2" attributes="0"/>
-                                              <Component id="Entry_ShopnameJ_Label1" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                              <Component id="Entry_ShopNameA_Label1" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                              <Component id="Entry_ShopnameJ2_Label1" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                                              <Component id="Entry_ChaseNo_Label1" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="Entry_ChaseNoValue_Label3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="Entry_NavEntry_Label1" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                                              <Component id="Entry_NavView_Label1" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                                              <Component id="Entry_NavSell_Label1" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="Entry_Date_Label1" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="Entry_ChaseNoValue_Label2" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                      <Component id="Entry_Date_Label" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="Entry_DateNoValue_Label2" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="Entry_CheckBox_CheckBox" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="376" max="-2" attributes="0"/>
+                              <Component id="Entry_CheckText_Label" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="377" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="508" max="-2" attributes="0"/>
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="508" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                                      <Component id="Entry_InputFields_Panel" min="-2" pref="1080" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="508" max="-2" attributes="0"/>
+                                      <Component id="Entry_Enter_Label_Icon" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace pref="115" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -151,45 +151,43 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="Entry_ShopNameA_Label1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Entry_ShopnameJ2_Label1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Entry_ShopnameJ_Label1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Entry_ShopNameA_Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Entry_ShopnameJ2_Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Entry_ShopnameJ_Label" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="Entry_NavSell_Label1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Entry_NavView_Label1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Entry_NavEntry_Label1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Entry_NavSell_Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Entry_NavView_Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Entry_NavEntry_Label" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="Entry_ChaseNoValue_Label3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Entry_ChaseNo_Label1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Entry_Date_Label1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Entry_ChaseNoValue_Label2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Entry_ChaseNoValue_Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Entry_ChaseNo_Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Entry_Date_Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Entry_DateNoValue_Label2" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="Entry_InputFields_Panel1" min="-2" pref="939" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                                      <Component id="jLabel1" min="-2" pref="30" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jCheckBox1" min="-2" pref="30" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                              <Component id="Entry_InputFields_Panel" min="-2" pref="939" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="Entry_CheckText_Label" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="Entry_CheckBox_CheckBox" min="-2" pref="30" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="371" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="Entry_Enter_Label_Icon" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="260" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="Entry_ShopnameJ_Label1">
+                    <Component class="javax.swing.JLabel" name="Entry_ShopnameJ_Label">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="fa" green="fa" red="fa" type="rgb"/>
@@ -203,7 +201,7 @@
                         <Property name="text" type="java.lang.String" value="J"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="Entry_ShopnameJ2_Label1">
+                    <Component class="javax.swing.JLabel" name="Entry_ShopnameJ2_Label">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -217,7 +215,7 @@
                         <Property name="text" type="java.lang.String" value="J"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="Entry_ShopNameA_Label1">
+                    <Component class="javax.swing.JLabel" name="Entry_ShopNameA_Label">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -231,7 +229,7 @@
                         <Property name="text" type="java.lang.String" value="A"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="Entry_NavEntry_Label1">
+                    <Component class="javax.swing.JLabel" name="Entry_NavEntry_Label">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="fa" green="fa" red="fa" type="rgb"/>
@@ -245,7 +243,7 @@
                         <Property name="text" type="java.lang.String" value="Entry"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="Entry_NavView_Label1">
+                    <Component class="javax.swing.JLabel" name="Entry_NavView_Label">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="fa" green="fa" red="fa" type="rgb"/>
@@ -259,7 +257,7 @@
                         <Property name="text" type="java.lang.String" value="View"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="Entry_NavSell_Label1">
+                    <Component class="javax.swing.JLabel" name="Entry_NavSell_Label">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="fa" green="fa" red="fa" type="rgb"/>
@@ -273,7 +271,7 @@
                         <Property name="text" type="java.lang.String" value="Sell"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="Entry_ChaseNo_Label1">
+                    <Component class="javax.swing.JLabel" name="Entry_ChaseNo_Label">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -287,7 +285,7 @@
                         <Property name="text" type="java.lang.String" value="Chase No :"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="Entry_ChaseNoValue_Label3">
+                    <Component class="javax.swing.JLabel" name="Entry_ChaseNoValue_Label">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -301,7 +299,7 @@
                         <Property name="text" type="java.lang.String" value="CH1234"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="Entry_Date_Label1">
+                    <Component class="javax.swing.JLabel" name="Entry_Date_Label">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -315,7 +313,7 @@
                         <Property name="text" type="java.lang.String" value="Date :"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="Entry_ChaseNoValue_Label2">
+                    <Component class="javax.swing.JLabel" name="Entry_DateNoValue_Label2">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -329,7 +327,7 @@
                         <Property name="text" type="java.lang.String" value="04-06-2020"/>
                       </Properties>
                     </Component>
-                    <Container class="javax.swing.JPanel" name="Entry_InputFields_Panel1">
+                    <Container class="javax.swing.JPanel" name="Entry_InputFields_Panel">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="fb" green="fb" red="fb" type="rgb"/>
@@ -345,7 +343,7 @@
                         <Property name="useNullLayout" type="boolean" value="false"/>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JLabel" name="jLabel3">
+                        <Component class="javax.swing.JLabel" name="Entry_SelectOrnament_Label">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -365,7 +363,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="Entry_SelectInput_Label">
+                        <Component class="javax.swing.JLabel" name="Entry_SelectOrnament_Label_Icon">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="fa" green="fa" red="fa" type="rgb"/>
@@ -380,7 +378,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField1">
+                        <Component class="javax.swing.JTextField" name="Entry_Ornament_TextField">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -402,7 +400,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="Entry_OrnamentName_TextField">
+                        <Component class="javax.swing.JLabel" name="Entry_Ornament_Label">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -421,7 +419,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="Entry_OrnamentName_Label">
+                        <Component class="javax.swing.JLabel" name="Entry_Ornament_Label_Icon">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -512,7 +510,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel4">
+                        <Component class="javax.swing.JLabel" name="Entry_MC_Label">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -554,7 +552,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="Entry_MC_Label">
+                        <Component class="javax.swing.JLabel" name="Entry_MC_Label_Icon">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -569,7 +567,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel5">
+                        <Component class="javax.swing.JLabel" name="Entry_WT_Lable">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -611,7 +609,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="Entry_WT_Label">
+                        <Component class="javax.swing.JLabel" name="Entry_WT_Label_Icon">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -626,7 +624,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel6">
+                        <Component class="javax.swing.JLabel" name="Entry_WAS_Label">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -671,7 +669,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="Entry_WAS_Label">
+                        <Component class="javax.swing.JLabel" name="Entry_WAS_Label_Icon">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -689,7 +687,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel7">
+                        <Component class="javax.swing.JLabel" name="Entry_QTY_Label">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -734,7 +732,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="Entry_QTY_Label1">
+                        <Component class="javax.swing.JLabel" name="Entry_QTY_Label_Icon">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -752,7 +750,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel8">
+                        <Component class="javax.swing.JLabel" name="Entry_BUY_Label">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -797,7 +795,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="Entry_BUY_Label">
+                        <Component class="javax.swing.JLabel" name="Entry_BUY_Label_Icon">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -817,7 +815,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JLabel" name="jLabel1">
+                    <Component class="javax.swing.JLabel" name="Entry_CheckText_Label">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -831,7 +829,7 @@
                         <Property name="text" type="java.lang.String" value="Click to Generate BarCode and Print"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+                    <Component class="javax.swing.JCheckBox" name="Entry_CheckBox_CheckBox">
                       <Properties>
                         <Property name="borderPainted" type="boolean" value="true"/>
                         <Property name="borderPaintedFlat" type="boolean" value="true"/>
@@ -846,10 +844,10 @@
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox1ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Entry_CheckBox_CheckBoxActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel2">
+                    <Component class="javax.swing.JLabel" name="Entry_Enter_Label_Icon">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="2" name="/home/poorvasha/Downloads/EnterButton.png"/>
