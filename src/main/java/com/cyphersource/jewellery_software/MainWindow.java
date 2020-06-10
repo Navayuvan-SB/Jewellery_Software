@@ -141,11 +141,11 @@ public class MainWindow extends javax.swing.JFrame {
         view_tablearea1_scrollpane = new javax.swing.JScrollPane();
         view_table1_table = new javax.swing.JTable();
         view_datelimit1_panel = new javax.swing.JPanel();
-        jDateChooser3 = new com.toedter.calendar.JDateChooser();
-        jLabel2 = new javax.swing.JLabel();
-        jDateChooser4 = new com.toedter.calendar.JDateChooser();
-        jLabel4 = new javax.swing.JLabel();
-        view_datelimitIcon2_label1 = new javax.swing.JLabel();
+        view_from1_datechooser = new com.toedter.calendar.JDateChooser();
+        view_from1_label = new javax.swing.JLabel();
+        view_to1_datechooser = new com.toedter.calendar.JDateChooser();
+        view_to1_label = new javax.swing.JLabel();
+        view_datelimitIcon1_label = new javax.swing.JLabel();
         view_soldCont_panel = new javax.swing.JPanel();
         view_totItem2_label = new javax.swing.JLabel();
         view_totItemInp2_label = new javax.swing.JLabel();
@@ -155,10 +155,10 @@ public class MainWindow extends javax.swing.JFrame {
         view_colon21_label = new javax.swing.JLabel();
         view_colon22_label = new javax.swing.JLabel();
         view_datelimit2_panel = new javax.swing.JPanel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jLabel1 = new javax.swing.JLabel();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
-        jLabel3 = new javax.swing.JLabel();
+        view_from2_datechooser = new com.toedter.calendar.JDateChooser();
+        view_from2_label = new javax.swing.JLabel();
+        view_to2_datechooser = new com.toedter.calendar.JDateChooser();
+        view_to2_label = new javax.swing.JLabel();
         view_datelimitIcon2_label = new javax.swing.JLabel();
         view_tablearea2_scrollpane = new javax.swing.JScrollPane();
         view_table2_table = new javax.swing.JTable();
@@ -173,11 +173,11 @@ public class MainWindow extends javax.swing.JFrame {
         view_tablearea3_scrollpane = new javax.swing.JScrollPane();
         view_table3_table = new javax.swing.JTable();
         view_datelimit3_panel = new javax.swing.JPanel();
-        jDateChooser5 = new com.toedter.calendar.JDateChooser();
-        jLabel5 = new javax.swing.JLabel();
-        jDateChooser6 = new com.toedter.calendar.JDateChooser();
-        jLabel6 = new javax.swing.JLabel();
-        view_datelimitIcon2_label2 = new javax.swing.JLabel();
+        view_from3_datechooser = new com.toedter.calendar.JDateChooser();
+        view_from3_label = new javax.swing.JLabel();
+        view_to3_datechooser = new com.toedter.calendar.JDateChooser();
+        view_to3_label = new javax.swing.JLabel();
+        view_datelimitIcon3_label = new javax.swing.JLabel();
         view_returnCont_panel = new javax.swing.JPanel();
         view_totItem4_label = new javax.swing.JLabel();
         view_totItemInp4_label = new javax.swing.JLabel();
@@ -189,10 +189,10 @@ public class MainWindow extends javax.swing.JFrame {
         view_colon41_label = new javax.swing.JLabel();
         view_colon42_label = new javax.swing.JLabel();
         view_datelimit4_panel = new javax.swing.JPanel();
-        jDateChooser7 = new com.toedter.calendar.JDateChooser();
-        jLabel7 = new javax.swing.JLabel();
-        jDateChooser8 = new com.toedter.calendar.JDateChooser();
-        jLabel8 = new javax.swing.JLabel();
+        view_from4_datechooser = new com.toedter.calendar.JDateChooser();
+        view_from4_label = new javax.swing.JLabel();
+        view_to4_datechooser = new com.toedter.calendar.JDateChooser();
+        view_to4_label = new javax.swing.JLabel();
         view_datelimitIcon2_label3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -434,28 +434,28 @@ public class MainWindow extends javax.swing.JFrame {
         view_datelimit1_panel.setBackground(java.awt.Color.white);
         view_datelimit1_panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jDateChooser3.setBackground(java.awt.Color.lightGray);
-        jDateChooser3.setDateFormatString("dd-MM-yyyy");
-        jDateChooser3.setFont(new java.awt.Font("Ubuntu", 0, 13)); // NOI18N
-        view_datelimit1_panel.add(jDateChooser3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 130, 30));
+        view_from1_datechooser.setBackground(java.awt.Color.white);
+        view_from1_datechooser.setDateFormatString("dd-MM-yyyy");
+        view_from1_datechooser.setFont(new java.awt.Font("Ubuntu", 0, 13)); // NOI18N
+        view_datelimit1_panel.add(view_from1_datechooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 130, 30));
 
-        jLabel2.setBackground(java.awt.Color.white);
-        jLabel2.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
-        jLabel2.setText("From");
-        view_datelimit1_panel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 30));
+        view_from1_label.setBackground(java.awt.Color.white);
+        view_from1_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
+        view_from1_label.setText("From");
+        view_datelimit1_panel.add(view_from1_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 30));
 
-        jDateChooser4.setBackground(java.awt.Color.lightGray);
-        jDateChooser4.setDateFormatString("dd-MM-yyyy");
-        jDateChooser4.setFont(new java.awt.Font("Ubuntu", 0, 13)); // NOI18N
-        view_datelimit1_panel.add(jDateChooser4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 130, 30));
+        view_to1_datechooser.setBackground(java.awt.Color.white);
+        view_to1_datechooser.setDateFormatString("dd-MM-yyyy");
+        view_to1_datechooser.setFont(new java.awt.Font("Ubuntu", 0, 13)); // NOI18N
+        view_datelimit1_panel.add(view_to1_datechooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 130, 30));
 
-        jLabel4.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
-        jLabel4.setText("To");
-        view_datelimit1_panel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, 30));
+        view_to1_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
+        view_to1_label.setText("To");
+        view_datelimit1_panel.add(view_to1_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, 30));
 
-        view_datelimitIcon2_label1.setIcon(new javax.swing.ImageIcon("/home/logida/Documents/Rectangle 26 (1).png")); // NOI18N
-        view_datelimitIcon2_label1.setText("jLabel6");
-        view_datelimit1_panel.add(view_datelimitIcon2_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 314, -1));
+        view_datelimitIcon1_label.setIcon(new javax.swing.ImageIcon("/home/logida/Documents/Rectangle 26 (1).png")); // NOI18N
+        view_datelimitIcon1_label.setText("jLabel6");
+        view_datelimit1_panel.add(view_datelimitIcon1_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 314, -1));
 
         javax.swing.GroupLayout view_overallCont_panelLayout = new javax.swing.GroupLayout(view_overallCont_panel);
         view_overallCont_panel.setLayout(view_overallCont_panelLayout);
@@ -546,24 +546,24 @@ public class MainWindow extends javax.swing.JFrame {
         view_datelimit2_panel.setBackground(java.awt.Color.white);
         view_datelimit2_panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jDateChooser1.setBackground(java.awt.Color.lightGray);
-        jDateChooser1.setDateFormatString("dd-MM-yyyy");
-        jDateChooser1.setFont(new java.awt.Font("Ubuntu", 0, 13)); // NOI18N
-        view_datelimit2_panel.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 130, 30));
+        view_from2_datechooser.setBackground(java.awt.Color.white);
+        view_from2_datechooser.setDateFormatString("dd-MM-yyyy");
+        view_from2_datechooser.setFont(new java.awt.Font("Ubuntu", 0, 13)); // NOI18N
+        view_datelimit2_panel.add(view_from2_datechooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 130, 30));
 
-        jLabel1.setBackground(java.awt.Color.white);
-        jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
-        jLabel1.setText("From");
-        view_datelimit2_panel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 30));
+        view_from2_label.setBackground(java.awt.Color.white);
+        view_from2_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
+        view_from2_label.setText("From");
+        view_datelimit2_panel.add(view_from2_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 30));
 
-        jDateChooser2.setBackground(java.awt.Color.lightGray);
-        jDateChooser2.setDateFormatString("dd-MM-yyyy");
-        jDateChooser2.setFont(new java.awt.Font("Ubuntu", 0, 13)); // NOI18N
-        view_datelimit2_panel.add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 130, 30));
+        view_to2_datechooser.setBackground(java.awt.Color.white);
+        view_to2_datechooser.setDateFormatString("dd-MM-yyyy");
+        view_to2_datechooser.setFont(new java.awt.Font("Ubuntu", 0, 13)); // NOI18N
+        view_datelimit2_panel.add(view_to2_datechooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 130, 30));
 
-        jLabel3.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
-        jLabel3.setText("To");
-        view_datelimit2_panel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, 30));
+        view_to2_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
+        view_to2_label.setText("To");
+        view_datelimit2_panel.add(view_to2_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, 30));
 
         view_datelimitIcon2_label.setIcon(new javax.swing.ImageIcon("/home/logida/Documents/Rectangle 26 (1).png")); // NOI18N
         view_datelimitIcon2_label.setText("jLabel6");
@@ -739,28 +739,28 @@ public class MainWindow extends javax.swing.JFrame {
         view_datelimit3_panel.setBackground(java.awt.Color.white);
         view_datelimit3_panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jDateChooser5.setBackground(java.awt.Color.lightGray);
-        jDateChooser5.setDateFormatString("dd-MM-yyyy");
-        jDateChooser5.setFont(new java.awt.Font("Ubuntu", 0, 13)); // NOI18N
-        view_datelimit3_panel.add(jDateChooser5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 130, 30));
+        view_from3_datechooser.setBackground(java.awt.Color.white);
+        view_from3_datechooser.setDateFormatString("dd-MM-yyyy");
+        view_from3_datechooser.setFont(new java.awt.Font("Ubuntu", 0, 13)); // NOI18N
+        view_datelimit3_panel.add(view_from3_datechooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 130, 30));
 
-        jLabel5.setBackground(java.awt.Color.white);
-        jLabel5.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
-        jLabel5.setText("From");
-        view_datelimit3_panel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 30));
+        view_from3_label.setBackground(java.awt.Color.white);
+        view_from3_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
+        view_from3_label.setText("From");
+        view_datelimit3_panel.add(view_from3_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 30));
 
-        jDateChooser6.setBackground(java.awt.Color.lightGray);
-        jDateChooser6.setDateFormatString("dd-MM-yyyy");
-        jDateChooser6.setFont(new java.awt.Font("Ubuntu", 0, 13)); // NOI18N
-        view_datelimit3_panel.add(jDateChooser6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 130, 30));
+        view_to3_datechooser.setBackground(java.awt.Color.white);
+        view_to3_datechooser.setDateFormatString("dd-MM-yyyy");
+        view_to3_datechooser.setFont(new java.awt.Font("Ubuntu", 0, 13)); // NOI18N
+        view_datelimit3_panel.add(view_to3_datechooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 130, 30));
 
-        jLabel6.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
-        jLabel6.setText("To");
-        view_datelimit3_panel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, 30));
+        view_to3_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
+        view_to3_label.setText("To");
+        view_datelimit3_panel.add(view_to3_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, 30));
 
-        view_datelimitIcon2_label2.setIcon(new javax.swing.ImageIcon("/home/logida/Documents/Rectangle 26 (1).png")); // NOI18N
-        view_datelimitIcon2_label2.setText("jLabel6");
-        view_datelimit3_panel.add(view_datelimitIcon2_label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 314, -1));
+        view_datelimitIcon3_label.setIcon(new javax.swing.ImageIcon("/home/logida/Documents/Rectangle 26 (1).png")); // NOI18N
+        view_datelimitIcon3_label.setText("jLabel6");
+        view_datelimit3_panel.add(view_datelimitIcon3_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 314, -1));
 
         javax.swing.GroupLayout view_balanceCont_panelLayout = new javax.swing.GroupLayout(view_balanceCont_panel);
         view_balanceCont_panel.setLayout(view_balanceCont_panelLayout);
@@ -891,24 +891,24 @@ public class MainWindow extends javax.swing.JFrame {
         view_datelimit4_panel.setBackground(java.awt.Color.white);
         view_datelimit4_panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jDateChooser7.setBackground(java.awt.Color.lightGray);
-        jDateChooser7.setDateFormatString("dd-MM-yyyy");
-        jDateChooser7.setFont(new java.awt.Font("Ubuntu", 0, 13)); // NOI18N
-        view_datelimit4_panel.add(jDateChooser7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 130, 30));
+        view_from4_datechooser.setBackground(java.awt.Color.white);
+        view_from4_datechooser.setDateFormatString("dd-MM-yyyy");
+        view_from4_datechooser.setFont(new java.awt.Font("Ubuntu", 0, 13)); // NOI18N
+        view_datelimit4_panel.add(view_from4_datechooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 130, 30));
 
-        jLabel7.setBackground(java.awt.Color.white);
-        jLabel7.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
-        jLabel7.setText("From");
-        view_datelimit4_panel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 30));
+        view_from4_label.setBackground(java.awt.Color.white);
+        view_from4_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
+        view_from4_label.setText("From");
+        view_datelimit4_panel.add(view_from4_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 30));
 
-        jDateChooser8.setBackground(java.awt.Color.lightGray);
-        jDateChooser8.setDateFormatString("dd-MM-yyyy");
-        jDateChooser8.setFont(new java.awt.Font("Ubuntu", 0, 13)); // NOI18N
-        view_datelimit4_panel.add(jDateChooser8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 130, 30));
+        view_to4_datechooser.setBackground(java.awt.Color.white);
+        view_to4_datechooser.setDateFormatString("dd-MM-yyyy");
+        view_to4_datechooser.setFont(new java.awt.Font("Ubuntu", 0, 13)); // NOI18N
+        view_datelimit4_panel.add(view_to4_datechooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 130, 30));
 
-        jLabel8.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
-        jLabel8.setText("To");
-        view_datelimit4_panel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, 30));
+        view_to4_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
+        view_to4_label.setText("To");
+        view_datelimit4_panel.add(view_to4_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, 30));
 
         view_datelimitIcon2_label3.setIcon(new javax.swing.ImageIcon("/home/logida/Documents/Rectangle 26 (1).png")); // NOI18N
         view_datelimitIcon2_label3.setText("jLabel6");
@@ -1106,22 +1106,6 @@ public class MainWindow extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
-    private com.toedter.calendar.JDateChooser jDateChooser3;
-    private com.toedter.calendar.JDateChooser jDateChooser4;
-    private com.toedter.calendar.JDateChooser jDateChooser5;
-    private com.toedter.calendar.JDateChooser jDateChooser6;
-    private com.toedter.calendar.JDateChooser jDateChooser7;
-    private com.toedter.calendar.JDateChooser jDateChooser8;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel view_areaOne_panel;
     private javax.swing.JPanel view_areaTwo_panel;
     private javax.swing.JPanel view_balanceCont_panel;
@@ -1141,10 +1125,18 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JPanel view_datelimit2_panel;
     private javax.swing.JPanel view_datelimit3_panel;
     private javax.swing.JPanel view_datelimit4_panel;
+    private javax.swing.JLabel view_datelimitIcon1_label;
     private javax.swing.JLabel view_datelimitIcon2_label;
-    private javax.swing.JLabel view_datelimitIcon2_label1;
-    private javax.swing.JLabel view_datelimitIcon2_label2;
     private javax.swing.JLabel view_datelimitIcon2_label3;
+    private javax.swing.JLabel view_datelimitIcon3_label;
+    private com.toedter.calendar.JDateChooser view_from1_datechooser;
+    private javax.swing.JLabel view_from1_label;
+    private com.toedter.calendar.JDateChooser view_from2_datechooser;
+    private javax.swing.JLabel view_from2_label;
+    private com.toedter.calendar.JDateChooser view_from3_datechooser;
+    private javax.swing.JLabel view_from3_label;
+    private com.toedter.calendar.JDateChooser view_from4_datechooser;
+    private javax.swing.JLabel view_from4_label;
     private javax.swing.JPanel view_overallCont_panel;
     private javax.swing.JLabel view_overall_label;
     private javax.swing.JPanel view_overall_panel;
@@ -1166,6 +1158,14 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JScrollPane view_tablearea2_scrollpane;
     private javax.swing.JScrollPane view_tablearea3_scrollpane;
     private javax.swing.JScrollPane view_tablearea4_scrollpane;
+    private com.toedter.calendar.JDateChooser view_to1_datechooser;
+    private javax.swing.JLabel view_to1_label;
+    private com.toedter.calendar.JDateChooser view_to2_datechooser;
+    private javax.swing.JLabel view_to2_label;
+    private com.toedter.calendar.JDateChooser view_to3_datechooser;
+    private javax.swing.JLabel view_to3_label;
+    private com.toedter.calendar.JDateChooser view_to4_datechooser;
+    private javax.swing.JLabel view_to4_label;
     private javax.swing.JLabel view_totItem1_label;
     private javax.swing.JLabel view_totItem2_label;
     private javax.swing.JLabel view_totItem3_label;
