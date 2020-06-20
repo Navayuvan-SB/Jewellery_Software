@@ -9,12 +9,20 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.table.JTableHeader;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
-
+import javax.swing.table.DefaultTableModel;
 
 
 /**
@@ -22,6 +30,11 @@ import javax.swing.table.DefaultTableCellRenderer;
  * @author ghost
  */
 public class MainWindow extends javax.swing.JFrame {
+     Connection con=null;
+    PreparedStatement pat = null;
+    Statement stmt=null;
+    ResultSet rs = null;
+    String ornament_type_sample;
 
     /**
      * Creates new form MainWindow
@@ -30,6 +43,10 @@ public class MainWindow extends javax.swing.JFrame {
         initComponents();
         setVisible(true);
         setLocationRelativeTo(null);
+        
+        dropdown_display();
+        default_table_display();
+        item_weight_display();
       
         //To change the color of the vertical gridlines of tables
         
@@ -105,6 +122,10 @@ public class MainWindow extends javax.swing.JFrame {
         Theaderthree.setDefaultRenderer(new HeaderColor());
         Theaderthree.setPreferredSize(new Dimension(50,50));
         ((DefaultTableCellRenderer)Theaderthree.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
+        
+       ImageIcon icon = new ImageIcon("image/p2.jpg");
+        view_table2_table.setValueAt(icon, 1, 8);
+    
         
     }
   
@@ -378,7 +399,7 @@ public class MainWindow extends javax.swing.JFrame {
         view_selOrnament1_dropdown.setBackground(new java.awt.Color(211, 211, 211));
         view_selOrnament1_dropdown.setFont(new java.awt.Font("Ubuntu", 1, 17)); // NOI18N
         view_selOrnament1_dropdown.setForeground(java.awt.Color.gray);
-        view_selOrnament1_dropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select the Ornament", "Item1", "item2" }));
+        view_selOrnament1_dropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select the Ornament" }));
         view_selOrnament1_dropdown.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 view_selOrnament1_dropdownview_selOrnament_dropdownActionPerformed(evt);
@@ -437,25 +458,25 @@ public class MainWindow extends javax.swing.JFrame {
         view_from1_datechooser.setBackground(java.awt.Color.white);
         view_from1_datechooser.setDateFormatString("dd-MM-yyyy");
         view_from1_datechooser.setFont(new java.awt.Font("Ubuntu", 0, 13)); // NOI18N
-        view_datelimit1_panel.add(view_from1_datechooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 130, 30));
+        view_datelimit1_panel.add(view_from1_datechooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 130, 30));
 
         view_from1_label.setBackground(java.awt.Color.white);
         view_from1_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
         view_from1_label.setText("From");
-        view_datelimit1_panel.add(view_from1_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 30));
+        view_datelimit1_panel.add(view_from1_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 60, 30));
 
         view_to1_datechooser.setBackground(java.awt.Color.white);
         view_to1_datechooser.setDateFormatString("dd-MM-yyyy");
         view_to1_datechooser.setFont(new java.awt.Font("Ubuntu", 0, 13)); // NOI18N
-        view_datelimit1_panel.add(view_to1_datechooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 130, 30));
+        view_datelimit1_panel.add(view_to1_datechooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 130, 30));
 
         view_to1_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
         view_to1_label.setText("To");
-        view_datelimit1_panel.add(view_to1_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, 30));
+        view_datelimit1_panel.add(view_to1_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, 30));
 
         view_datelimitIcon1_label.setIcon(new javax.swing.ImageIcon("/home/logida/Documents/Rectangle 26 (1).png")); // NOI18N
         view_datelimitIcon1_label.setText("jLabel6");
-        view_datelimit1_panel.add(view_datelimitIcon1_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 314, -1));
+        view_datelimit1_panel.add(view_datelimitIcon1_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 314, -1));
 
         javax.swing.GroupLayout view_overallCont_panelLayout = new javax.swing.GroupLayout(view_overallCont_panel);
         view_overallCont_panel.setLayout(view_overallCont_panelLayout);
@@ -477,9 +498,9 @@ public class MainWindow extends javax.swing.JFrame {
                         .addGroup(view_overallCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(view_totWtInp1_label, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
                             .addComponent(view_totItemInp1_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(6, 6, 6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(view_selOrnament1_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(view_datelimit1_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
@@ -499,12 +520,12 @@ public class MainWindow extends javax.swing.JFrame {
                             .addComponent(view_colon12_label)
                             .addComponent(view_totItemInp1_label)))
                     .addGroup(view_overallCont_panelLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(view_datelimit1_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(55, 55, 55)
+                        .addComponent(view_selOrnament1_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(view_overallCont_panelLayout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(view_selOrnament1_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                        .addGap(35, 35, 35)
+                        .addComponent(view_datelimit1_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addComponent(view_tablearea1_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -659,7 +680,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(view_soldCont_panelLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(view_datelimit2_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addComponent(view_tablearea2_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -812,7 +833,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(view_balanceCont_panelLayout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(view_datelimit3_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                 .addComponent(view_tablearea3_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -963,7 +984,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(view_returnCont_panelLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addComponent(view_datelimit4_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                 .addComponent(view_tablearea4_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -974,7 +995,7 @@ public class MainWindow extends javax.swing.JFrame {
         view_areaTwo_panelLayout.setHorizontalGroup(
             view_areaTwo_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(view_contOne_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(view_contTwo_panel, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(view_contTwo_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         view_areaTwo_panelLayout.setVerticalGroup(
             view_areaTwo_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1002,6 +1023,28 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void view_selOrnament1_dropdownview_selOrnament_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_selOrnament1_dropdownview_selOrnament_dropdownActionPerformed
         // TODO add your handling code here:
+        ornament_type_sample=view_selOrnament1_dropdown.getSelectedItem().toString();
+         try{
+          String sql="SELECT id, date, chase_no, ornament_type, ornament_name, quality,\n" +
+            "making_charge, weight, wastage, quantity,buy, barcode, status FROM overall\n" +
+            "WHERE ornament_type ='chain'";
+          con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+          pat=con.prepareStatement(sql);
+          rs=pat.executeQuery();
+          DefaultTableModel tm=(DefaultTableModel)view_table1_table.getModel();
+          tm.setRowCount(0);
+        
+          
+          while(rs.next()){
+              Object o[]={rs.getInt("id"),rs.getString("date"),rs.getString("chase_no"),rs.getString("ornament_name"),rs.getString("weight"),rs.getString("wastage"),rs.getString("making_charge"),rs.getString("quantity"),rs.getString("quality"),rs.getString("buy")};
+              tm.addRow(o);
+          }
+          
+      }
+      catch(Exception e){
+          JOptionPane.showMessageDialog(null,e);
+      }
+        
     }//GEN-LAST:event_view_selOrnament1_dropdownview_selOrnament_dropdownActionPerformed
 
     private void view_selOrnament4_dropdownview_selOrnament_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_selOrnament4_dropdownview_selOrnament_dropdownActionPerformed
@@ -1067,8 +1110,10 @@ public class MainWindow extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+   
     public static void main(String args[]) {
         
+       
        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1199,7 +1244,54 @@ public class MainWindow extends javax.swing.JFrame {
         }
         
     }
-
+    
+    private void default_table_display(){
+        try{
+            String sql="SELECT id, date, chase_no, ornament_type, ornament_name, quality,\n" +
+            "making_charge, weight, wastage, quantity,buy, barcode, status FROM overall\n" ;
+          con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+          pat=con.prepareStatement(sql);
+          rs=pat.executeQuery();
+          DefaultTableModel tm=(DefaultTableModel)view_table1_table.getModel();
+          tm.setRowCount(0);
+        
+          
+          while(rs.next()){
+              Object o[]={rs.getInt("id"),rs.getString("date"),rs.getString("chase_no"),rs.getString("ornament_name"),rs.getString("weight"),rs.getString("wastage"),rs.getString("making_charge"),rs.getString("quantity"),rs.getString("quality"),rs.getString("buy")};
+              tm.addRow(o);
+            }
+        } catch(Exception e){
+          JOptionPane.showMessageDialog(null,e);
+          }
+     
+    } 
+    private void dropdown_display(){
+        try{
+            String sql="SELECT type FROM Ornament_type";
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+            stmt=con.createStatement();
+            rs=stmt.executeQuery(sql);
+            
+            while(rs.next()){
+             view_selOrnament1_dropdown.addItem(rs.getString("type"));
+            }
+  
+        }catch(Exception e){
+          JOptionPane.showMessageDialog(null,e);
+          }
+    
+    }
+    private void item_weight_display(){
+//        try{
+//              String sql="SELECT MAX(id) FROM overall";
+//            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+//            pat=con.prepareStatement(sql);
+//            rs=pat.executeQuery();
+//            view_totWtInp1_label.setText(Integer.toString(rs.getInt("id")));
+//        }catch(Exception e){
+//             JOptionPane.showMessageDialog(null,e);
+//        }
+}
 }
 
 

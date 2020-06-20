@@ -360,9 +360,9 @@
                                           <Component id="view_totWtInp1_label" pref="59" max="32767" attributes="0"/>
                                           <Component id="view_totItemInp1_label" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                       <Component id="view_selOrnament1_dropdown" min="-2" pref="227" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="view_datelimit1_panel" min="-2" pref="327" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -374,7 +374,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="view_totWt1_label" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -389,15 +389,15 @@
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                      <Component id="view_datelimit1_panel" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                                       <Component id="view_selOrnament1_dropdown" min="-2" pref="43" max="-2" attributes="0"/>
                                   </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="view_datelimit1_panel" min="-2" pref="106" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace pref="49" max="32767" attributes="0"/>
+                              <EmptySpace pref="61" max="32767" attributes="0"/>
                               <Component id="view_tablearea1_scrollpane" min="-2" pref="397" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -455,10 +455,8 @@
                           <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="3">
+                          <StringArray count="1">
                             <StringItem index="0" value="Select the Ornament"/>
-                            <StringItem index="1" value="Item1"/>
-                            <StringItem index="2" value="item2"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -602,7 +600,7 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="20" y="40" width="130" height="30"/>
+                              <AbsoluteConstraints x="30" y="40" width="130" height="30"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -618,7 +616,7 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="20" y="10" width="60" height="30"/>
+                              <AbsoluteConstraints x="30" y="10" width="60" height="30"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -634,7 +632,7 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="160" y="40" width="130" height="30"/>
+                              <AbsoluteConstraints x="170" y="40" width="130" height="30"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -647,7 +645,7 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="160" y="10" width="-1" height="30"/>
+                              <AbsoluteConstraints x="170" y="10" width="-1" height="30"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -660,7 +658,7 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="0" y="0" width="314" height="-1"/>
+                              <AbsoluteConstraints x="10" y="0" width="314" height="-1"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -745,7 +743,7 @@
                                       <Component id="view_datelimit2_panel" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="56" max="32767" attributes="0"/>
+                              <EmptySpace pref="80" max="32767" attributes="0"/>
                               <Component id="view_tablearea2_scrollpane" min="-2" pref="400" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -1078,7 +1076,7 @@
                                       <Component id="view_datelimit3_panel" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="55" max="32767" attributes="0"/>
+                              <EmptySpace pref="89" max="32767" attributes="0"/>
                               <Component id="view_tablearea3_scrollpane" min="-2" pref="400" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -1408,7 +1406,7 @@
                                       <Component id="view_datelimit4_panel" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="54" max="32767" attributes="0"/>
+                              <EmptySpace pref="88" max="32767" attributes="0"/>
                               <Component id="view_tablearea4_scrollpane" min="-2" pref="393" max="-2" attributes="0"/>
                           </Group>
                       </Group>
