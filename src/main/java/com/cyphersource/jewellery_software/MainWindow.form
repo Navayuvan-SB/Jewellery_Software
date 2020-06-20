@@ -90,7 +90,7 @@
                 </Property>
               </Properties>
               <AccessibilityProperties>
-                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
+                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="" postCode="sell_scroll_scrollpanel.getVerticalScrollBar().setPreferredSize(new Dimension(0, Integer.MAX_VALUE));&#xa;sell_scroll_scrollpanel.getHorizontalScrollBar().setPreferredSize(new Dimension(Integer.MAX_VALUE, 0));"/>
               </AccessibilityProperties>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
@@ -252,11 +252,6 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="sell_refresh_label">
-                      <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="/home/ramya/Desktop/Jewellery project/refresh-24px 1 (1).png"/>
-                        </Property>
-                      </Properties>
                     </Component>
                     <Container class="javax.swing.JPanel" name="sell_innerWindow_panel">
                       <Properties>
@@ -311,21 +306,14 @@
                                           </Group>
                                       </Group>
                                   </Group>
+                                  <EmptySpace min="130" pref="130" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="sell_chaseNoDetail_label" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                              <Component id="sell_ornamentNameDetail_label" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                              <Component id="sell_wtDetail_label" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                              <Component id="sell_wasDetail_label" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                              <Component id="sell_mcDetail_label" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
-                                          <Component id="sell_qtyInput_panel" min="-2" pref="140" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="sell_chaseNoDetail_label" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
+                                      <Component id="sell_ornamentNameDetail_label" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
+                                      <Component id="sell_wtDetail_label" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
+                                      <Component id="sell_wasDetail_label" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
+                                      <Component id="sell_mcDetail_label" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
+                                      <Component id="sell_qtyInput_panel" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="231" max="32767" attributes="0"/>
                               </Group>
@@ -375,18 +363,13 @@
                                           <Component id="sell_semicolon4_label" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
+                                  <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="sell_was_label" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                                              <Component id="sell_semicolon5_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                          <Component id="sell_was_label" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                                          <Component id="sell_semicolon5_label" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                          <Component id="sell_wasDetail_label" min="-2" pref="33" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="sell_wasDetail_label" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -622,11 +605,14 @@
                             <Property name="borderPainted" type="boolean" value="true"/>
                             <Property name="borderPaintedFlat" type="boolean" value="true"/>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="2" name="/home/ramya/Desktop/Jewellery project/sell_unChecked_checkbox.jpg"/>
+                            </Property>
                             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                               <Dimension value="[205, 25]"/>
                             </Property>
                             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="/home/ramya/Desktop/Jewellery project/Rectangle 22 (1).png"/>
+                              <Image iconType="2" name="/home/ramya/Desktop/Jewellery project/sell_Checked_checkbox.jpg"/>
                             </Property>
                           </Properties>
                           <Events>
@@ -685,9 +671,6 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
                                 </Property>
-                                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                  <Image iconType="2" name="/home/ramya/Desktop/Jewellery project/Rectangle 19 (1).png"/>
-                                </Property>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -718,19 +701,11 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="sell_confirm_label">
-                      <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="/home/ramya/Desktop/Jewellery project/Group 29.png"/>
-                        </Property>
-                      </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="sell_return_label1">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
-                        </Property>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="/home/ramya/Desktop/Jewellery project/Group 28.png"/>
                         </Property>
                       </Properties>
                     </Component>
@@ -783,9 +758,6 @@
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
-                            </Property>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="/home/ramya/Desktop/Jewellery project/Rectangle 18 (2).png"/>
                             </Property>
                           </Properties>
                           <Constraints>
