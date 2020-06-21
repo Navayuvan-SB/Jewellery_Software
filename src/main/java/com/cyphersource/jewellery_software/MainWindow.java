@@ -45,9 +45,8 @@ public class MainWindow extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         
         dropdown_display();
-        default_table_display();
-        item_weight_display();
-      
+        default_display();
+     
         //To change the color of the vertical gridlines of tables
         
         view_table1_table.setShowVerticalLines(true);
@@ -152,10 +151,10 @@ public class MainWindow extends javax.swing.JFrame {
         view_return_label = new javax.swing.JLabel();
         view_contTwo_panel = new javax.swing.JPanel();
         view_overallCont_panel = new javax.swing.JPanel();
-        view_totItem1_label = new javax.swing.JLabel();
-        view_totItemInp1_label = new javax.swing.JLabel();
         view_totWt1_label = new javax.swing.JLabel();
         view_totWtInp1_label = new javax.swing.JLabel();
+        view_totItem1_label = new javax.swing.JLabel();
+        view_totItemInp1_label = new javax.swing.JLabel();
         view_selOrnament1_dropdown = new javax.swing.JComboBox<>();
         view_colon11_label = new javax.swing.JLabel();
         view_colon12_label = new javax.swing.JLabel();
@@ -382,19 +381,17 @@ public class MainWindow extends javax.swing.JFrame {
 
         view_overallCont_panel.setBackground(java.awt.Color.white);
 
-        view_totItem1_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
-        view_totItem1_label.setForeground(java.awt.Color.gray);
-        view_totItem1_label.setText("Total Weight    ");
-
-        view_totItemInp1_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
-        view_totItemInp1_label.setText("1454");
-
         view_totWt1_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
         view_totWt1_label.setForeground(java.awt.Color.gray);
-        view_totWt1_label.setText("Total no of Items");
+        view_totWt1_label.setText("Total Weight    ");
 
         view_totWtInp1_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
-        view_totWtInp1_label.setText("1050");
+
+        view_totItem1_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
+        view_totItem1_label.setForeground(java.awt.Color.gray);
+        view_totItem1_label.setText("Total no of Items");
+
+        view_totItemInp1_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
 
         view_selOrnament1_dropdown.setBackground(new java.awt.Color(211, 211, 211));
         view_selOrnament1_dropdown.setFont(new java.awt.Font("Ubuntu", 1, 17)); // NOI18N
@@ -456,7 +453,7 @@ public class MainWindow extends javax.swing.JFrame {
         view_datelimit1_panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         view_from1_datechooser.setBackground(java.awt.Color.white);
-        view_from1_datechooser.setDateFormatString("dd-MM-yyyy");
+        view_from1_datechooser.setDateFormatString("yyyy-MM-dd");
         view_from1_datechooser.setFont(new java.awt.Font("Ubuntu", 0, 13)); // NOI18N
         view_datelimit1_panel.add(view_from1_datechooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 130, 30));
 
@@ -466,7 +463,7 @@ public class MainWindow extends javax.swing.JFrame {
         view_datelimit1_panel.add(view_from1_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 60, 30));
 
         view_to1_datechooser.setBackground(java.awt.Color.white);
-        view_to1_datechooser.setDateFormatString("dd-MM-yyyy");
+        view_to1_datechooser.setDateFormatString("yyyy-MM-dd");
         view_to1_datechooser.setFont(new java.awt.Font("Ubuntu", 0, 13)); // NOI18N
         view_datelimit1_panel.add(view_to1_datechooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 130, 30));
 
@@ -488,16 +485,16 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(view_tablearea1_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 809, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(view_overallCont_panelLayout.createSequentialGroup()
                         .addGroup(view_overallCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(view_totItem1_label, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-                            .addComponent(view_totWt1_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(view_totWt1_label, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                            .addComponent(view_totItem1_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(view_overallCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(view_colon11_label, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(view_colon12_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(view_overallCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(view_totWtInp1_label, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
-                            .addComponent(view_totItemInp1_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(view_totItemInp1_label, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
+                            .addComponent(view_totWtInp1_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(view_selOrnament1_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -511,14 +508,14 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(view_overallCont_panelLayout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addGroup(view_overallCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(view_totWt1_label)
+                            .addComponent(view_totItem1_label)
                             .addComponent(view_colon11_label)
-                            .addComponent(view_totWtInp1_label, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(view_totItemInp1_label, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(view_overallCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(view_totItem1_label)
+                            .addComponent(view_totWt1_label)
                             .addComponent(view_colon12_label)
-                            .addComponent(view_totItemInp1_label)))
+                            .addComponent(view_totWtInp1_label)))
                     .addGroup(view_overallCont_panelLayout.createSequentialGroup()
                         .addGap(55, 55, 55)
                         .addComponent(view_selOrnament1_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1022,28 +1019,45 @@ public class MainWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void view_selOrnament1_dropdownview_selOrnament_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_selOrnament1_dropdownview_selOrnament_dropdownActionPerformed
-        // TODO add your handling code here:
-        ornament_type_sample=view_selOrnament1_dropdown.getSelectedItem().toString();
-         try{
-          String sql="SELECT id, date, chase_no, ornament_type, ornament_name, quality,\n" +
-            "making_charge, weight, wastage, quantity,buy, barcode, status FROM overall\n" +
-            "WHERE ornament_type ='chain'";
-          con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-          pat=con.prepareStatement(sql);
-          rs=pat.executeQuery();
-          DefaultTableModel tm=(DefaultTableModel)view_table1_table.getModel();
-          tm.setRowCount(0);
-        
-          
-          while(rs.next()){
-              Object o[]={rs.getInt("id"),rs.getString("date"),rs.getString("chase_no"),rs.getString("ornament_name"),rs.getString("weight"),rs.getString("wastage"),rs.getString("making_charge"),rs.getString("quantity"),rs.getString("quality"),rs.getString("buy")};
-              tm.addRow(o);
-          }
-          
-      }
-      catch(Exception e){
-          JOptionPane.showMessageDialog(null,e);
-      }
+       // TODO add your handling code here:
+            ornament_type_sample=view_selOrnament1_dropdown.getSelectedItem().toString();
+         
+            try{
+                    //Getting table values acc. to selOrnament
+                    String sql="SELECT id, date, chase_no, ornament_type, ornament_name, quality,\n" +
+                    "making_charge, weight, wastage, quantity,buy, barcode, status FROM overall\n" +
+                    "WHERE ornament_type ='chain'";
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    pat=con.prepareStatement(sql);
+                    rs=pat.executeQuery();
+                    DefaultTableModel tm=(DefaultTableModel)view_table1_table.getModel();
+                    tm.setRowCount(0);
+                    while(rs.next()){
+                        Object o[]={rs.getInt("id"),rs.getString("date"),rs.getString("chase_no"),rs.getString("ornament_name"),rs.getString("weight"),rs.getString("wastage"),rs.getString("making_charge"),rs.getString("quantity"),rs.getString("quality"),rs.getString("buy")};
+                        tm.addRow(o);
+                    }
+
+                   //Getting total weight of items acc. to selOrnament.
+                   String sql1="SELECT SUM(weight) FROM overall WHERE ornament_type ='chain'";
+                   con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                   PreparedStatement pat1=con.prepareStatement(sql1);
+                   ResultSet rs1=pat1.executeQuery();
+                   while(rs1.next()){
+                       view_totWtInp1_label.setText(rs1.getString(1)); 
+                   }  
+                   
+                   //Getting total number of items acc. to selOrnament.
+                   String sql2="SELECT COUNT(id) FROM overall WHERE ornament_type ='chain'";
+                   con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                   PreparedStatement pat2=con.prepareStatement(sql2);
+                   ResultSet rs2=pat2.executeQuery();
+                   while(rs2.next()){
+                       view_totItemInp1_label.setText(rs2.getString(1)); 
+                   }
+            }
+            catch(Exception e){
+                    JOptionPane.showMessageDialog(null,e);
+            }
         
     }//GEN-LAST:event_view_selOrnament1_dropdownview_selOrnament_dropdownActionPerformed
 
@@ -1245,53 +1259,62 @@ public class MainWindow extends javax.swing.JFrame {
         
     }
     
-    private void default_table_display(){
-        try{
-            String sql="SELECT id, date, chase_no, ornament_type, ornament_name, quality,\n" +
-            "making_charge, weight, wastage, quantity,buy, barcode, status FROM overall\n" ;
-          con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-          pat=con.prepareStatement(sql);
-          rs=pat.executeQuery();
-          DefaultTableModel tm=(DefaultTableModel)view_table1_table.getModel();
-          tm.setRowCount(0);
-        
-          
-          while(rs.next()){
-              Object o[]={rs.getInt("id"),rs.getString("date"),rs.getString("chase_no"),rs.getString("ornament_name"),rs.getString("weight"),rs.getString("wastage"),rs.getString("making_charge"),rs.getString("quantity"),rs.getString("quality"),rs.getString("buy")};
-              tm.addRow(o);
-            }
-        } catch(Exception e){
-          JOptionPane.showMessageDialog(null,e);
-          }
-     
-    } 
+  
     private void dropdown_display(){
         try{
             String sql="SELECT type FROM Ornament_type";
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
             stmt=con.createStatement();
             rs=stmt.executeQuery(sql);
-            
             while(rs.next()){
              view_selOrnament1_dropdown.addItem(rs.getString("type"));
             }
+                 
   
         }catch(Exception e){
           JOptionPane.showMessageDialog(null,e);
           }
     
     }
-    private void item_weight_display(){
-//        try{
-//              String sql="SELECT MAX(id) FROM overall";
-//            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-//            pat=con.prepareStatement(sql);
-//            rs=pat.executeQuery();
-//            view_totWtInp1_label.setText(Integer.toString(rs.getInt("id")));
-//        }catch(Exception e){
-//             JOptionPane.showMessageDialog(null,e);
-//        }
-}
+    private void default_display(){
+        try{
+                
+                //Getting default total weight of items.
+                String sql1="SELECT SUM(weight) FROM overall";
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                PreparedStatement pat1=con.prepareStatement(sql1);
+                ResultSet rs1=pat1.executeQuery();
+                while(rs1.next()){
+                    view_totWtInp1_label.setText(rs1.getString(1)); 
+                }
+                
+                //Getting default overall table values. 
+                String sql2="SELECT id, date, chase_no, ornament_type, ornament_name, quality,\n" +
+               "making_charge, weight, wastage, quantity,buy, barcode, status FROM overall\n" ;
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                PreparedStatement pat2=con.prepareStatement(sql2);
+                ResultSet rs2=pat2.executeQuery();
+                DefaultTableModel tm=(DefaultTableModel)view_table1_table.getModel();
+                tm.setRowCount(0);
+                while(rs2.next()){
+                    Object o[]={rs2.getInt("id"),rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_name"),rs2.getString("weight"),rs2.getString("wastage"),rs2.getString("making_charge"),rs2.getString("quantity"),rs2.getString("quality"),rs2.getString("buy")};
+                    tm.addRow(o);
+                }
+                
+                //Getting default total number of items.
+                String sql3="SELECT COUNT(id) FROM overall";
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                PreparedStatement pat3=con.prepareStatement(sql3);
+                ResultSet rs3=pat3.executeQuery();
+                while(rs3.next()){
+                    view_totItemInp1_label.setText(rs3.getString(1)); 
+                }
+                      
+        }catch(Exception e){
+             JOptionPane.showMessageDialog(null,e);
+        }
+    }
+  
 }
 
 
