@@ -5,6 +5,9 @@
  */
 package com.cyphersource.jewellery_software;
 import java.awt.Dimension;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 /**
  *
@@ -17,6 +20,8 @@ public class MainWindow extends javax.swing.JFrame {
      */
     public MainWindow() {
         initComponents();
+        sell_confirm_label.setEnabled(false);
+        sell_return_label1.setEnabled(false);
     }
 
     /**
@@ -135,7 +140,6 @@ public class MainWindow extends javax.swing.JFrame {
         sell_barcodeInput_textField.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
         sell_barcodeInput_textField.setForeground(java.awt.Color.black);
         sell_barcodeInput_textField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        sell_barcodeInput_textField.setText("893712");
         sell_barcodeInput_textField.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         sell_barcodeInput_textField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,6 +149,9 @@ public class MainWindow extends javax.swing.JFrame {
         sell_barcodeInput_textField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 sell_barcodeInput_textFieldKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                sell_barcodeInput_textFieldKeyTyped(evt);
             }
         });
         sell_barcodeInput_panel.add(sell_barcodeInput_textField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 150, 40));
@@ -215,26 +222,21 @@ public class MainWindow extends javax.swing.JFrame {
         sell_chaseNoDetail_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         sell_chaseNoDetail_label.setForeground(java.awt.Color.black);
         sell_chaseNoDetail_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        sell_chaseNoDetail_label.setText("CH123456");
 
         sell_ornamentNameDetail_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         sell_ornamentNameDetail_label.setForeground(java.awt.Color.black);
         sell_ornamentNameDetail_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        sell_ornamentNameDetail_label.setText("Chain");
 
         sell_wtDetail_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         sell_wtDetail_label.setForeground(java.awt.Color.black);
         sell_wtDetail_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        sell_wtDetail_label.setText("12.170");
 
         sell_wasDetail_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         sell_wasDetail_label.setForeground(java.awt.Color.black);
         sell_wasDetail_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        sell_wasDetail_label.setText("13.00 %");
 
         sell_mcDetail_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         sell_mcDetail_label.setForeground(java.awt.Color.black);
-        sell_mcDetail_label.setText("50.00 /G");
 
         sell_semicolon4_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         sell_semicolon4_label.setForeground(java.awt.Color.gray);
@@ -345,11 +347,10 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(sell_chaseNo_label, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sell_chaseNoDetail_label, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
-                .addGroup(sell_innerWindow_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(sell_innerWindow_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(sell_semicolon3_label)
-                        .addComponent(sell_ornamentNameDetail_label, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(sell_ornamentName_label, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(sell_innerWindow_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(sell_semicolon3_label)
+                    .addComponent(sell_ornamentName_label, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(sell_ornamentNameDetail_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(25, 25, 25)
                 .addGroup(sell_innerWindow_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sell_wtDetail_label, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -365,7 +366,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(sell_innerWindow_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sell_mc_label, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sell_semicolon6_label)
-                    .addComponent(sell_mcDetail_label, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sell_mcDetail_label, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addComponent(sell_verify_checkbox, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(40, Short.MAX_VALUE))
@@ -478,12 +479,37 @@ public class MainWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+     Connection con = null;
+     PreparedStatement st = null;
+     ResultSet rs = null;
+    
     private void sell_verify_checkboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sell_verify_checkboxActionPerformed
-        // TODO add your handling code here:
+      sell_confirm_label.setEnabled(true);
+      sell_return_label1.setEnabled(true);
     }//GEN-LAST:event_sell_verify_checkboxActionPerformed
-
+    
     private void sell_barcodeInput_textFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sell_barcodeInput_textFieldActionPerformed
-        // TODO add your handling code here:
+//        try {
+//            Class.forName("com.mysql.cj.jdbc.Driver");     
+//            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+//            st = con.prepareStatement("SELECT chase_no, ornament_name, making_charge, weight, wastage FROM balance WHERE barcode = ?");
+//            rs = st.executeQuery(); 
+//            
+//            while(rs.next()){
+//                sell_chaseNoDetail_label.setText(rs.getString("chase_no"));
+//                sell_ornamentNameDetail_label.setText(rs.getString("chase_no"));
+//                sell_wtDetail_label.setText(rs.getString("ornament_name"));
+//                sell_wtDetail_label.setText(rs.getString("weight"));
+//                sell_wasDetail_label.setText(rs.getString("wastage"));
+//                sell_mcDetail_label.setText(rs.getString("making_charge"));
+//            }
+//        }
+//        catch (ClassNotFoundException ex) {
+//            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+//        } 
+//        catch (SQLException ex) {
+//            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }//GEN-LAST:event_sell_barcodeInput_textFieldActionPerformed
 
     private void sell_qtyInput_textFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sell_qtyInput_textFieldActionPerformed
@@ -523,6 +549,33 @@ public class MainWindow extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_sell_barcodeInput_textFieldKeyPressed
+
+    //KeyTyped Event for Barcode Text Field
+    private void sell_barcodeInput_textFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sell_barcodeInput_textFieldKeyTyped
+           
+//        try {
+//            Class.forName("com.mysql.cj.jdbc.Driver");     
+//            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+//            st = con.prepareStatement("SELECT chase_no, ornament_name, making_charge, weight, wastage FROM balance WHERE barcode = ?");
+//            rs = st.executeQuery(); 
+//            
+//            while(rs.next()){
+//                sell_chaseNoDetail_label.setText(rs.getString("chase_no"));
+//                sell_ornamentNameDetail_label.setText(rs.getString("chase_no"));
+//                sell_wtDetail_label.setText(rs.getString("ornament_name"));
+//                sell_wtDetail_label.setText(rs.getString("weight"));
+//                sell_wasDetail_label.setText(rs.getString("wastage"));
+//                sell_mcDetail_label.setText(rs.getString("making_charge"));
+//            }
+//        }
+//        catch (ClassNotFoundException ex) {
+//            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+//        } 
+//        catch (SQLException ex) {
+//            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+
+    }//GEN-LAST:event_sell_barcodeInput_textFieldKeyTyped
 
     /**
      * @param args the command line arguments

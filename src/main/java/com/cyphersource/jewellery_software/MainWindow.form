@@ -315,7 +315,6 @@
                               <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="0"/>
-                            <Property name="text" type="java.lang.String" value="893712"/>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
                                 <EmptyBorder bottom="0" left="0" right="0" top="0"/>
@@ -325,6 +324,7 @@
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sell_barcodeInput_textFieldActionPerformed"/>
                             <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="sell_barcodeInput_textFieldKeyPressed"/>
+                            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="sell_barcodeInput_textFieldKeyTyped"/>
                           </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -447,12 +447,10 @@
                                       <Component id="sell_chaseNoDetail_label" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                          <Component id="sell_semicolon3_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="sell_ornamentNameDetail_label" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="sell_ornamentName_label" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="sell_semicolon3_label" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="sell_ornamentName_label" alignment="0" pref="32" max="32767" attributes="0"/>
+                                      <Component id="sell_ornamentNameDetail_label" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -472,7 +470,7 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="sell_mc_label" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                       <Component id="sell_semicolon6_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="sell_mcDetail_label" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
+                                      <Component id="sell_mcDetail_label" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                   <Component id="sell_verify_checkbox" min="-2" pref="31" max="-2" attributes="0"/>
@@ -622,7 +620,6 @@
                               <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
-                            <Property name="text" type="java.lang.String" value="CH123456"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="sell_ornamentNameDetail_label">
@@ -634,7 +631,6 @@
                               <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
-                            <Property name="text" type="java.lang.String" value="Chain"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="sell_wtDetail_label">
@@ -646,7 +642,6 @@
                               <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
-                            <Property name="text" type="java.lang.String" value="12.170"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="sell_wasDetail_label">
@@ -658,7 +653,6 @@
                               <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
-                            <Property name="text" type="java.lang.String" value="13.00 %"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="sell_mcDetail_label">
@@ -669,7 +663,6 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="50.00 /G"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="sell_semicolon4_label">
