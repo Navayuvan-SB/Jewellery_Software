@@ -5,6 +5,7 @@
  */
 package com.cyphersource.jewellery_software;
 import java.awt.Dimension;
+import javax.swing.JOptionPane;
 /**
  *
  * @author ghost
@@ -141,6 +142,11 @@ public class MainWindow extends javax.swing.JFrame {
                 sell_barcodeInput_textFieldActionPerformed(evt);
             }
         });
+        sell_barcodeInput_textField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                sell_barcodeInput_textFieldKeyPressed(evt);
+            }
+        });
         sell_barcodeInput_panel.add(sell_barcodeInput_textField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 150, 40));
 
         sell_barcodeInput_label.setBackground(java.awt.Color.white);
@@ -264,6 +270,11 @@ public class MainWindow extends javax.swing.JFrame {
         sell_qtyInput_textField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sell_qtyInput_textFieldActionPerformed(evt);
+            }
+        });
+        sell_qtyInput_textField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                sell_qtyInput_textFieldKeyPressed(evt);
             }
         });
         sell_qtyInput_panel.add(sell_qtyInput_textField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 120, 30));
@@ -478,6 +489,40 @@ public class MainWindow extends javax.swing.JFrame {
     private void sell_qtyInput_textFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sell_qtyInput_textFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_sell_qtyInput_textFieldActionPerformed
+
+    //KeyPressed Event for Quantity Text Field
+    private void sell_qtyInput_textFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sell_qtyInput_textFieldKeyPressed
+        
+        char c = evt.getKeyChar();
+        
+        if(Character.isLetter(c)){
+            //Can't type as it is a character
+            sell_qtyInput_textField.setEditable(false);
+           //Error Message
+           JOptionPane.showMessageDialog(null, "Please Enter Number Only");
+        }
+        else{
+            sell_qtyInput_textField.setEditable(true);
+        }
+        
+    }//GEN-LAST:event_sell_qtyInput_textFieldKeyPressed
+
+    //KeyPressed Event for Barcode Text Field
+    private void sell_barcodeInput_textFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sell_barcodeInput_textFieldKeyPressed
+     
+        char c = evt.getKeyChar();
+        
+        if(Character.isLetter(c)){
+            //Can't type as it is a character
+            sell_barcodeInput_textField.setEditable(false);
+           //Error Message
+           JOptionPane.showMessageDialog(null, "Please Enter Number Only");
+        }
+        else{
+            sell_barcodeInput_textField.setEditable(true);
+        }
+        
+    }//GEN-LAST:event_sell_barcodeInput_textFieldKeyPressed
 
     /**
      * @param args the command line arguments
