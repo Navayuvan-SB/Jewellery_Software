@@ -69,8 +69,8 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_BUY_TextField = new javax.swing.JTextField();
         Entry_BUY_Label_Icon = new javax.swing.JLabel();
         Entry_CheckText_Label = new javax.swing.JLabel();
-        Entry_CheckBox_CheckBox = new javax.swing.JCheckBox();
-        Entry_Enter_Label_Icon = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -227,6 +227,11 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_WT_TextField.setForeground(new java.awt.Color(0, 0, 0));
         Entry_WT_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Entry_WT_TextField.setBorder(null);
+        Entry_WT_TextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Entry_WT_TextFieldActionPerformed(evt);
+            }
+        });
         Entry_InputFields_Panel.add(Entry_WT_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 510, 510, -1));
 
         Entry_WT_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
@@ -310,18 +315,10 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_CheckText_Label.setForeground(new java.awt.Color(0, 0, 0));
         Entry_CheckText_Label.setText("Click to Generate BarCode and Print");
 
-        Entry_CheckBox_CheckBox.setBorderPainted(true);
-        Entry_CheckBox_CheckBox.setBorderPaintedFlat(true);
-        Entry_CheckBox_CheckBox.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/CheckBox.png")); // NOI18N
-        Entry_CheckBox_CheckBox.setPreferredSize(new java.awt.Dimension(30, 30));
-        Entry_CheckBox_CheckBox.setSelectedIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Checked.png")); // NOI18N
-        Entry_CheckBox_CheckBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Entry_CheckBox_CheckBoxActionPerformed(evt);
-            }
-        });
+        jLabel1.setIcon(new javax.swing.ImageIcon("/home/poorvasha/NetBeans_Projects/Jewellery_Software/src/main/java/Images/EnterButton.png")); // NOI18N
 
-        Entry_Enter_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/EnterButton.png")); // NOI18N
+        jCheckBox1.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/checkbox.png")); // NOI18N
+        jCheckBox1.setSelectedIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Checked.png")); // NOI18N
 
         javax.swing.GroupLayout WrapperLayout = new javax.swing.GroupLayout(Wrapper);
         Wrapper.setLayout(WrapperLayout);
@@ -356,7 +353,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGap(70, 70, 70))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WrapperLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Entry_CheckBox_CheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Entry_CheckText_Label)
                 .addGap(377, 377, 377))
@@ -366,9 +363,9 @@ public class MainWindow extends javax.swing.JFrame {
                         .addGap(70, 70, 70)
                         .addComponent(Entry_InputFields_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(WrapperLayout.createSequentialGroup()
-                        .addGap(508, 508, 508)
-                        .addComponent(Entry_Enter_Label_Icon)))
-                .addContainerGap(115, Short.MAX_VALUE))
+                        .addGap(505, 505, 505)
+                        .addComponent(jLabel1)))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
         WrapperLayout.setVerticalGroup(
             WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -394,13 +391,13 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(Entry_DateNoValue_Label2))
                 .addGap(49, 49, 49)
                 .addComponent(Entry_InputFields_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 939, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
-                .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Entry_CheckText_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Entry_CheckBox_CheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
-                .addComponent(Entry_Enter_Label_Icon)
-                .addContainerGap(260, Short.MAX_VALUE))
+                .addGap(10, 10, 10)
+                .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(Entry_CheckText_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                .addGap(66, 66, 66)
+                .addComponent(jLabel1)
+                .addContainerGap(288, Short.MAX_VALUE))
         );
 
         jScrollPane.setViewportView(Wrapper);
@@ -440,13 +437,13 @@ public class MainWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Entry_BUY_TextFieldActionPerformed
 
-    private void Entry_CheckBox_CheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_CheckBox_CheckBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Entry_CheckBox_CheckBoxActionPerformed
-
     private void Entry_WAS_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_WAS_TextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Entry_WAS_TextFieldActionPerformed
+
+    private void Entry_WT_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_WT_TextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Entry_WT_TextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -491,11 +488,9 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JTextField Entry_BUY_TextField;
     private javax.swing.JLabel Entry_ChaseNoValue_Label;
     private javax.swing.JLabel Entry_ChaseNo_Label;
-    private javax.swing.JCheckBox Entry_CheckBox_CheckBox;
     private javax.swing.JLabel Entry_CheckText_Label;
     private javax.swing.JLabel Entry_DateNoValue_Label2;
     private javax.swing.JLabel Entry_Date_Label;
-    private javax.swing.JLabel Entry_Enter_Label_Icon;
     private javax.swing.JPanel Entry_InputFields_Panel;
     private javax.swing.JLabel Entry_MC_Label;
     private javax.swing.JLabel Entry_MC_Label_Icon;
@@ -524,6 +519,8 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JTextField Entry_WT_TextField;
     private javax.swing.JPanel Wrapper;
     private javax.swing.JPanel entryPage;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane;
     // End of variables declaration//GEN-END:variables
