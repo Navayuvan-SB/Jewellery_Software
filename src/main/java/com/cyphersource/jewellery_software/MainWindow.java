@@ -6,16 +6,27 @@
 package com.cyphersource.jewellery_software;
 
 import java.awt.Dimension;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
-/**
- *
- * @author ghost
- */
+
+
 public class MainWindow extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MainWindow
-     */
+    Connection con;
+    String date = null, 
+           chase_no = null,
+           ornament_type = null,
+           ornament_name = null,
+           quality = null,
+           mc = null,
+           wt = null,
+           was = null,
+           qty = null,
+           buy = null,
+           barcode = null;
+    
     public MainWindow() {
         initComponents();
     }
@@ -149,7 +160,7 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_SelectOrnament_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         Entry_SelectOrnament_Label.setForeground(new java.awt.Color(98, 98, 98));
         Entry_SelectOrnament_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Entry_SelectOrnament_Label.setText("Select Ornament Name :");
+        Entry_SelectOrnament_Label.setText("Select Ornament Type :");
         Entry_InputFields_Panel.add(Entry_SelectOrnament_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, -1));
 
         Entry_SelectOrnament_Label_Icon.setBackground(new java.awt.Color(250, 250, 250));
@@ -227,11 +238,6 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_WT_TextField.setForeground(new java.awt.Color(0, 0, 0));
         Entry_WT_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Entry_WT_TextField.setBorder(null);
-        Entry_WT_TextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Entry_WT_TextFieldActionPerformed(evt);
-            }
-        });
         Entry_InputFields_Panel.add(Entry_WT_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 510, 510, -1));
 
         Entry_WT_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
@@ -250,11 +256,6 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_WAS_TextField.setForeground(new java.awt.Color(0, 0, 0));
         Entry_WAS_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Entry_WAS_TextField.setBorder(null);
-        Entry_WAS_TextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Entry_WAS_TextFieldActionPerformed(evt);
-            }
-        });
         Entry_InputFields_Panel.add(Entry_WAS_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 620, 500, -1));
 
         Entry_WAS_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
@@ -274,11 +275,6 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_QTY_TextField.setForeground(new java.awt.Color(0, 0, 0));
         Entry_QTY_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Entry_QTY_TextField.setBorder(null);
-        Entry_QTY_TextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Entry_QTY_TextFieldActionPerformed(evt);
-            }
-        });
         Entry_InputFields_Panel.add(Entry_QTY_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 730, 500, -1));
 
         Entry_QTY_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
@@ -298,11 +294,6 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_BUY_TextField.setForeground(new java.awt.Color(0, 0, 0));
         Entry_BUY_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Entry_BUY_TextField.setBorder(null);
-        Entry_BUY_TextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Entry_BUY_TextFieldActionPerformed(evt);
-            }
-        });
         Entry_InputFields_Panel.add(Entry_BUY_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 840, 500, -1));
 
         Entry_BUY_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
@@ -316,6 +307,11 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_CheckText_Label.setText("Click to Generate BarCode and Print");
 
         jLabel1.setIcon(new javax.swing.ImageIcon("/home/poorvasha/NetBeans_Projects/Jewellery_Software/src/main/java/Images/EnterButton.png")); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         jCheckBox1.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/checkbox.png")); // NOI18N
         jCheckBox1.setSelectedIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Checked.png")); // NOI18N
@@ -429,21 +425,52 @@ public class MainWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Entry_QTY_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_QTY_TextFieldActionPerformed
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_Entry_QTY_TextFieldActionPerformed
+        barcode = "837283";
+        date = "2020-03-02";
+        chase_no = "ch01";
+        ornament_type = "ye";
+        ornament_name = "ee";
+        quality = "23k";
+        mc = Entry_MC_TextField.getText();
+        wt = Entry_WT_TextField.getText();
+        was = Entry_WAS_TextField.getText();
+        qty = Entry_QTY_TextField.getText();
+        buy = Entry_BUY_TextField.getText();
+        
+        try{
+            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+            System.out.println("success");
+            
+            // Query
+            String sql = "INSERT INTO jewellery_entry (date, chase_no, ornament_type, ornament_name, quality, making_charge, weight, wastage, quantity, buy, barcode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+ 
+            PreparedStatement statement = con.prepareStatement(sql);
+            statement.setString(1, date);
+            statement.setString(2, chase_no);
+            statement.setString(3, ornament_type);
+            statement.setString(4, ornament_name);
+            statement.setString(5, quality);
+            statement.setString(6, mc);
+            statement.setString(7, wt);
+            statement.setString(8, was);
+            statement.setString(9, qty);
+            statement.setString(10, buy);
+            statement.setString(11, barcode);
+ 
+            int rowsInserted = statement.executeUpdate();
+            if (rowsInserted > 0) {
+                System.out.println("A new user was inserted successfully!");
+            }            
+        }
+        
+        catch(Exception e){
+           System.out.println(e);
+        }              
+        
 
-    private void Entry_BUY_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_BUY_TextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Entry_BUY_TextFieldActionPerformed
-
-    private void Entry_WAS_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_WAS_TextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Entry_WAS_TextFieldActionPerformed
-
-    private void Entry_WT_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_WT_TextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Entry_WT_TextFieldActionPerformed
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -455,6 +482,7 @@ public class MainWindow extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -469,8 +497,12 @@ public class MainWindow extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MainWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MainWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }catch(Exception e){
+           System.out.println(e);
         }
         //</editor-fold>
+        
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
