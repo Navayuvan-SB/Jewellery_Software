@@ -9,6 +9,7 @@ import java.awt.Dimension;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 
@@ -17,6 +18,8 @@ import javax.swing.JOptionPane;
 public class MainWindow extends javax.swing.JFrame {
 
     Connection con;
+    PreparedStatement ps=null;
+    ResultSet rs=null;
     String date = null, 
            chase_no = null,
            ornament_type = null,
@@ -32,6 +35,7 @@ public class MainWindow extends javax.swing.JFrame {
     public MainWindow() {
         initComponents();
         groupButton();
+        Combo();
     }
     
     // button group
@@ -42,6 +46,23 @@ public class MainWindow extends javax.swing.JFrame {
         bg.add(Entry_22CT_RadioButton);
         bg.add(Entry_961HM_RadioButton);
    }
+    
+    private void Combo(){
+        try{
+            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+            String sql = "select * from Ornament_type";
+            PreparedStatement ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                String type = rs.getString("type");
+                Entry_OrnamentType_jComboBox.addItem(type);
+            }
+        }
+        catch(Exception e){
+               System.out.println(e);
+            }              
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -67,8 +88,6 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_Date_Label = new javax.swing.JLabel();
         Entry_DateNoValue_Label2 = new javax.swing.JLabel();
         Entry_InputFields_Panel = new javax.swing.JPanel();
-        Entry_SelectOrnament_Label = new javax.swing.JLabel();
-        Entry_SelectOrnament_Label_Icon = new javax.swing.JLabel();
         Entry_Ornament_TextField = new javax.swing.JTextField();
         Entry_Ornament_Label = new javax.swing.JLabel();
         Entry_Ornament_Label_Icon = new javax.swing.JLabel();
@@ -91,8 +110,9 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_BUY_Label = new javax.swing.JLabel();
         Entry_BUY_TextField = new javax.swing.JTextField();
         Entry_BUY_Label_Icon = new javax.swing.JLabel();
+        Entry_OrnamentType_jComboBox = new javax.swing.JComboBox<>();
         Entry_CheckText_Label = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        Entry_EnterButton_Label = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -167,17 +187,6 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_InputFields_Panel.setBackground(new java.awt.Color(251, 251, 251));
         Entry_InputFields_Panel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Entry_InputFields_Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Entry_SelectOrnament_Label.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_SelectOrnament_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        Entry_SelectOrnament_Label.setForeground(new java.awt.Color(98, 98, 98));
-        Entry_SelectOrnament_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Entry_SelectOrnament_Label.setText("Select Ornament Type :");
-        Entry_InputFields_Panel.add(Entry_SelectOrnament_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, -1));
-
-        Entry_SelectOrnament_Label_Icon.setBackground(new java.awt.Color(250, 250, 250));
-        Entry_SelectOrnament_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
-        Entry_InputFields_Panel.add(Entry_SelectOrnament_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, -1, -1));
 
         Entry_Ornament_TextField.setBackground(new java.awt.Color(255, 255, 255));
         Entry_Ornament_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
@@ -313,15 +322,26 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_BUY_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
         Entry_InputFields_Panel.add(Entry_BUY_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 820, -1, -1));
 
+        Entry_OrnamentType_jComboBox.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_OrnamentType_jComboBox.setForeground(new java.awt.Color(0, 0, 0));
+        Entry_OrnamentType_jComboBox.setMaximumRowCount(30);
+        Entry_OrnamentType_jComboBox.setBorder(null);
+        Entry_OrnamentType_jComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Entry_OrnamentType_jComboBoxActionPerformed(evt);
+            }
+        });
+        Entry_InputFields_Panel.add(Entry_OrnamentType_jComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 580, 60));
+
         Entry_CheckText_Label.setBackground(new java.awt.Color(255, 255, 255));
         Entry_CheckText_Label.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         Entry_CheckText_Label.setForeground(new java.awt.Color(0, 0, 0));
         Entry_CheckText_Label.setText("Click to Generate BarCode and Print");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/home/poorvasha/NetBeans_Projects/Jewellery_Software/src/main/java/Images/EnterButton.png")); // NOI18N
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        Entry_EnterButton_Label.setIcon(new javax.swing.ImageIcon("/home/poorvasha/NetBeans_Projects/Jewellery_Software/src/main/java/Images/EnterButton.png")); // NOI18N
+        Entry_EnterButton_Label.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                Entry_EnterButton_LabelMouseClicked(evt);
             }
         });
 
@@ -359,21 +379,21 @@ public class MainWindow extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Entry_DateNoValue_Label2)))
                 .addGap(70, 70, 70))
+            .addGroup(WrapperLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(Entry_InputFields_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(70, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WrapperLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Entry_CheckText_Label)
-                .addGap(377, 377, 377))
-            .addGroup(WrapperLayout.createSequentialGroup()
                 .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(WrapperLayout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(Entry_InputFields_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(WrapperLayout.createSequentialGroup()
-                        .addGap(505, 505, 505)
-                        .addComponent(jLabel1)))
-                .addContainerGap(70, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WrapperLayout.createSequentialGroup()
+                        .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Entry_CheckText_Label)
+                        .addGap(376, 376, 376))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WrapperLayout.createSequentialGroup()
+                        .addComponent(Entry_EnterButton_Label)
+                        .addGap(505, 505, 505))))
         );
         WrapperLayout.setVerticalGroup(
             WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -398,14 +418,15 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(Entry_Date_Label)
                     .addComponent(Entry_DateNoValue_Label2))
                 .addGap(49, 49, 49)
-                .addComponent(Entry_InputFields_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 939, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(Entry_CheckText_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(WrapperLayout.createSequentialGroup()
+                        .addComponent(Entry_InputFields_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 939, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(Entry_CheckText_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(66, 66, 66)
-                .addComponent(jLabel1)
-                .addContainerGap(288, Short.MAX_VALUE))
+                .addComponent(Entry_EnterButton_Label)
+                .addContainerGap(248, Short.MAX_VALUE))
         );
 
         jScrollPane.setViewportView(Wrapper);
@@ -437,7 +458,7 @@ public class MainWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    private void Entry_EnterButton_LabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Entry_EnterButton_LabelMouseClicked
         
         // to store Radiobutton text
         if(Entry_22CT_RadioButton.isSelected()){
@@ -451,7 +472,7 @@ public class MainWindow extends javax.swing.JFrame {
         barcode = "837283";
         date = "2020-03-02";
         chase_no = "ch01";
-        ornament_type = "ye";
+        ornament_type = (String) Entry_OrnamentType_jComboBox.getSelectedItem();
         ornament_name = Entry_Ornament_TextField.getText();
         mc = Entry_MC_TextField.getText();
         wt = Entry_WT_TextField.getText();
@@ -497,7 +518,11 @@ public class MainWindow extends javax.swing.JFrame {
             }              
        }
 
-    }//GEN-LAST:event_jLabel1MouseClicked
+    }//GEN-LAST:event_Entry_EnterButton_LabelMouseClicked
+
+    private void Entry_OrnamentType_jComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_OrnamentType_jComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Entry_OrnamentType_jComboBoxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -553,6 +578,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel Entry_CheckText_Label;
     private javax.swing.JLabel Entry_DateNoValue_Label2;
     private javax.swing.JLabel Entry_Date_Label;
+    private javax.swing.JLabel Entry_EnterButton_Label;
     private javax.swing.JPanel Entry_InputFields_Panel;
     private javax.swing.JLabel Entry_MC_Label;
     private javax.swing.JLabel Entry_MC_Label_Icon;
@@ -560,6 +586,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel Entry_NavEntry_Label;
     private javax.swing.JLabel Entry_NavSell_Label;
     private javax.swing.JLabel Entry_NavView_Label;
+    private javax.swing.JComboBox<String> Entry_OrnamentType_jComboBox;
     private javax.swing.JLabel Entry_Ornament_Label;
     private javax.swing.JLabel Entry_Ornament_Label_Icon;
     private javax.swing.JTextField Entry_Ornament_TextField;
@@ -568,8 +595,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JTextField Entry_QTY_TextField;
     private javax.swing.JLabel Entry_Quality_Label;
     private javax.swing.JLabel Entry_Quality_TextField;
-    private javax.swing.JLabel Entry_SelectOrnament_Label;
-    private javax.swing.JLabel Entry_SelectOrnament_Label_Icon;
     private javax.swing.JLabel Entry_ShopNameA_Label;
     private javax.swing.JLabel Entry_ShopnameJ2_Label;
     private javax.swing.JLabel Entry_ShopnameJ_Label;
@@ -582,7 +607,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JPanel Wrapper;
     private javax.swing.JPanel entryPage;
     private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane;
     // End of variables declaration//GEN-END:variables
