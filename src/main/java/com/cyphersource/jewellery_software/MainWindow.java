@@ -9,6 +9,8 @@ import java.awt.Dimension;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import javax.swing.ButtonGroup;
+import javax.swing.JOptionPane;
 
 
 
@@ -29,7 +31,17 @@ public class MainWindow extends javax.swing.JFrame {
     
     public MainWindow() {
         initComponents();
+        groupButton();
     }
+    
+    // button group
+    private void groupButton( ) {
+
+        ButtonGroup bg = new ButtonGroup( );
+
+        bg.add(Entry_22CT_RadioButton);
+        bg.add(Entry_961HM_RadioButton);
+   }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -424,51 +436,66 @@ public class MainWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        // TODO add your handling code here:
+        
+        // to store Radiobutton text
+        if(Entry_22CT_RadioButton.isSelected()){
+            quality = Entry_22CT_RadioButton.getText();
+        }
+        else{
+            quality = Entry_961HM_RadioButton.getText();
+        }
+        
+        
         barcode = "837283";
         date = "2020-03-02";
         chase_no = "ch01";
         ornament_type = "ye";
-        ornament_name = "ee";
-        quality = "23k";
+        ornament_name = Entry_Ornament_TextField.getText();
         mc = Entry_MC_TextField.getText();
         wt = Entry_WT_TextField.getText();
         was = Entry_WAS_TextField.getText();
         qty = Entry_QTY_TextField.getText();
         buy = Entry_BUY_TextField.getText();
         
-        try{
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-            System.out.println("success");
-            
-            // Query
-            String sql = "INSERT INTO jewellery_entry (date, chase_no, ornament_type, ornament_name, quality, making_charge, weight, wastage, quantity, buy, barcode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
- 
-            PreparedStatement statement = con.prepareStatement(sql);
-            statement.setString(1, date);
-            statement.setString(2, chase_no);
-            statement.setString(3, ornament_type);
-            statement.setString(4, ornament_name);
-            statement.setString(5, quality);
-            statement.setString(6, mc);
-            statement.setString(7, wt);
-            statement.setString(8, was);
-            statement.setString(9, qty);
-            statement.setString(10, buy);
-            statement.setString(11, barcode);
- 
-            int rowsInserted = statement.executeUpdate();
-            if (rowsInserted > 0) {
-                System.out.println("A new user was inserted successfully!");
-            }            
+        // if else to display message box
+        if("".equals(mc) || "".equals(barcode) || "".equals(date) || "".equals(chase_no) || "".equals(ornament_type) || "".equals(ornament_name) ||"".equals(quality) || "".equals(wt) || "".equals(was) || "".equals(qty) || "".equals(buy) ){
+            System.out.println("enter all");
+            JOptionPane.showMessageDialog(null, "Please Fill all the fields");
         }
-        
-        catch(Exception e){
-           System.out.println(e);
-        }              
-        
+        else{
+            try{
+                
+                con=DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                System.out.println("success");
+
+                // Query
+                String sql = "INSERT INTO jewellery_entry (date, chase_no, ornament_type, ornament_name, quality, making_charge, weight, wastage, quantity, buy, barcode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+                PreparedStatement statement = con.prepareStatement(sql);
+                statement.setString(1, date);
+                statement.setString(2, chase_no);
+                statement.setString(3, ornament_type);
+                statement.setString(4, ornament_name);
+                statement.setString(5, quality);
+                statement.setString(6, mc);
+                statement.setString(7, wt);
+                statement.setString(8, was);
+                statement.setString(9, qty);
+                statement.setString(10, buy);
+                statement.setString(11, barcode);
+
+                int rowsInserted = statement.executeUpdate();
+                if (rowsInserted > 0) {
+                    JOptionPane.showMessageDialog(null, " updation successful!");
+                }            
+            }
+
+            catch(Exception e){
+               System.out.println(e);
+            }              
+       }
 
     }//GEN-LAST:event_jLabel1MouseClicked
 
@@ -482,7 +509,10 @@ public class MainWindow extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
+            
+            // Database Connection class
             Class.forName("com.mysql.cj.jdbc.Driver");
+            
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
