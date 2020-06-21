@@ -34,7 +34,7 @@ public class MainWindow extends javax.swing.JFrame {
     PreparedStatement pat = null;
     Statement stmt=null;
     ResultSet rs = null;
-    String ornament_type_sample;
+    String view_ornament_type_data;
 
     /**
      * Creates new form MainWindow
@@ -46,6 +46,7 @@ public class MainWindow extends javax.swing.JFrame {
         
         dropdown_display();
         default_display();
+        date_display();
      
         //To change the color of the vertical gridlines of tables
         
@@ -1020,13 +1021,15 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void view_selOrnament1_dropdownview_selOrnament_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_selOrnament1_dropdownview_selOrnament_dropdownActionPerformed
        // TODO add your handling code here:
-            ornament_type_sample=view_selOrnament1_dropdown.getSelectedItem().toString();
+           
          
-            try{
+            try{ 
+                    view_ornament_type_data=view_selOrnament1_dropdown.getSelectedItem().toString();
+                    
                     //Getting table values acc. to selOrnament
                     String sql="SELECT id, date, chase_no, ornament_type, ornament_name, quality,\n" +
                     "making_charge, weight, wastage, quantity,buy, barcode, status FROM overall\n" +
-                    "WHERE ornament_type ='chain'";
+                    "WHERE ornament_type =" + "'"+  view_ornament_type_data + "'";
                     con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
                     pat=con.prepareStatement(sql);
                     rs=pat.executeQuery();
@@ -1038,7 +1041,7 @@ public class MainWindow extends javax.swing.JFrame {
                     }
 
                    //Getting total weight of items acc. to selOrnament.
-                   String sql1="SELECT SUM(weight) FROM overall WHERE ornament_type ='chain'";
+                   String sql1="SELECT SUM(weight) FROM overall WHERE ornament_type = " + "'"+  view_ornament_type_data + "'";
                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
                    PreparedStatement pat1=con.prepareStatement(sql1);
                    ResultSet rs1=pat1.executeQuery();
@@ -1047,7 +1050,7 @@ public class MainWindow extends javax.swing.JFrame {
                    }  
                    
                    //Getting total number of items acc. to selOrnament.
-                   String sql2="SELECT COUNT(id) FROM overall WHERE ornament_type ='chain'";
+                   String sql2="SELECT COUNT(id) FROM overall WHERE ornament_type = " + "'"+  view_ornament_type_data + "'";
                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
                    PreparedStatement pat2=con.prepareStatement(sql2);
                    ResultSet rs2=pat2.executeQuery();
@@ -1313,6 +1316,25 @@ public class MainWindow extends javax.swing.JFrame {
         }catch(Exception e){
              JOptionPane.showMessageDialog(null,e);
         }
+    }
+    
+    private void date_display(){
+//            try{
+//                
+//                String sql1="SELECT * FROM overall WHERE date >= '2014-01-01' AND date <= '2015-01-01'";
+//                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+//                PreparedStatement pat1=con.prepareStatement(sql1);
+//                ResultSet rs1=pat1.executeQuery();
+//                DefaultTableModel tm=(DefaultTableModel)view_table1_table.getModel();
+//                tm.setRowCount(0);
+//                while(rs1.next()){
+//                    Object o[]={rs1.getInt("id"),rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("weight"),rs1.getString("wastage"),rs1.getString("making_charge"),rs1.getString("quantity"),rs1.getString("quality"),rs1.getString("buy")};
+//                    tm.addRow(o);
+//                } 
+//            }
+//                catch(Exception e){
+//                    JOptionPane.showMessageDialog(null,e);
+//        }
     }
   
 }
