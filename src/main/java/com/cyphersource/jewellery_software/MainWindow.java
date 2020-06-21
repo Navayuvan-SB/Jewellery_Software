@@ -486,6 +486,11 @@ public class MainWindow extends javax.swing.JFrame {
     private void sell_verify_checkboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sell_verify_checkboxActionPerformed
       sell_confirm_label.setEnabled(true);
       sell_return_label1.setEnabled(true);
+      
+      String input = sell_qtyInput_textField.getText();
+      if(input.trim().isEmpty()){
+          JOptionPane.showMessageDialog(null, "Enter the Quantity needed");
+      }
     }//GEN-LAST:event_sell_verify_checkboxActionPerformed
     
     private void sell_barcodeInput_textFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sell_barcodeInput_textFieldActionPerformed
