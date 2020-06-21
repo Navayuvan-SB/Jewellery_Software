@@ -36,6 +36,7 @@ public class MainWindow extends javax.swing.JFrame {
         initComponents();
         groupButton();
         Combo();
+        //Chase();
     }
     
     // button group
@@ -61,8 +62,32 @@ public class MainWindow extends javax.swing.JFrame {
         }
         catch(Exception e){
                System.out.println(e);
-            }              
+            }  
+        
     }
+    
+//    private void Chase(){
+//       //generate chasevalue
+//        try{
+//                
+//            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+//            String sql = "select * from Ornament_type where type=?";
+//            PreparedStatement ps = con.prepareStatement(sql);
+//            ps.setString(1, ornament_type);
+//            rs = ps.executeQuery();
+//            
+//            while(rs.next()){
+//                this.chase_no = rs.getString(3)+""+rs.getInt(4)+1;
+//                System.out.println(this.chase_no);
+//            }
+//                         
+//            }
+//
+//            catch(Exception e){
+//               System.out.println(e);
+//            }        
+//        this.Entry_ChaseNoValue_Label.setText(this.chase_no);
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -214,7 +239,7 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_961HM_RadioButton.setBackground(new java.awt.Color(255, 255, 255));
         Entry_961HM_RadioButton.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         Entry_961HM_RadioButton.setForeground(new java.awt.Color(98, 98, 98));
-        Entry_961HM_RadioButton.setText("961 HM");
+        Entry_961HM_RadioButton.setText("916 HM");
         Entry_961HM_RadioButton.setToolTipText("");
         Entry_InputFields_Panel.add(Entry_961HM_RadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, -1, -1));
 
@@ -326,11 +351,6 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_OrnamentType_jComboBox.setForeground(new java.awt.Color(0, 0, 0));
         Entry_OrnamentType_jComboBox.setMaximumRowCount(30);
         Entry_OrnamentType_jComboBox.setBorder(null);
-        Entry_OrnamentType_jComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Entry_OrnamentType_jComboBoxActionPerformed(evt);
-            }
-        });
         Entry_InputFields_Panel.add(Entry_OrnamentType_jComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 580, 60));
 
         Entry_CheckText_Label.setBackground(new java.awt.Color(255, 255, 255));
@@ -458,6 +478,7 @@ public class MainWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
+    
     private void Entry_EnterButton_LabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Entry_EnterButton_LabelMouseClicked
         
         // to store Radiobutton text
@@ -479,6 +500,33 @@ public class MainWindow extends javax.swing.JFrame {
         was = Entry_WAS_TextField.getText();
         qty = Entry_QTY_TextField.getText();
         buy = Entry_BUY_TextField.getText();
+        
+//        //generate chasevalue
+//        try{
+//                
+//            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+//            String sql = "select * from Ornament_type where type=?";
+//            PreparedStatement ps = con.prepareStatement(sql);
+//            ps.setString(1, ornament_type);
+//            rs = ps.executeQuery();
+//            
+//            while(rs.next()){
+//                chase_no = rs.getString(3)+""+rs.getInt(4);
+//                System.out.println("helooo");
+//            }
+//                         
+//            }
+//
+//            catch(Exception e){
+//               System.out.println(e);
+//            }        
+        
+        
+        
+        
+        
+        
+        
         
         // if else to display message box
         if("".equals(mc) || "".equals(barcode) || "".equals(date) || "".equals(chase_no) || "".equals(ornament_type) || "".equals(ornament_name) ||"".equals(quality) || "".equals(wt) || "".equals(was) || "".equals(qty) || "".equals(buy) ){
@@ -519,10 +567,6 @@ public class MainWindow extends javax.swing.JFrame {
        }
 
     }//GEN-LAST:event_Entry_EnterButton_LabelMouseClicked
-
-    private void Entry_OrnamentType_jComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_OrnamentType_jComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Entry_OrnamentType_jComboBoxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -610,4 +654,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane;
     // End of variables declaration//GEN-END:variables
+
+    
 }
