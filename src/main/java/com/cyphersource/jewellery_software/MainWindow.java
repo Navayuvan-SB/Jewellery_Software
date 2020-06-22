@@ -11,6 +11,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 
@@ -21,7 +23,8 @@ public class MainWindow extends javax.swing.JFrame {
     Connection con;
     PreparedStatement ps=null;
     ResultSet rs=null;
-    String date = null,
+    String date_UI = null,
+           dateDB = null,
            chase_no = null,
            ornament_type = null,
            ornament_name = null,
@@ -46,10 +49,12 @@ public class MainWindow extends javax.swing.JFrame {
         Combo();
     }
     
+    // to get current date
     private void getLocalDate() {
         LocalDate l_date = LocalDate.now();
-        date = l_date.toString();
-        this.Entry_DateNoValue_Label.setText(this.date);
+        dateDB = l_date.toString();
+        date_UI = l_date.format(DateTimeFormatter.ofPattern("dd-MM-yy"));
+        this.Entry_DateNoValue_Label.setText(this.date_UI);
 }
     
     // button group
@@ -527,7 +532,6 @@ public class MainWindow extends javax.swing.JFrame {
         // quality 
         QualityRadioBTN();
         
-        
         ornament_name = Entry_Ornament_TextField.getText();
         mc = Entry_MC_TextField.getText();
         wt = Entry_WT_TextField.getText();
@@ -537,7 +541,7 @@ public class MainWindow extends javax.swing.JFrame {
           
         
         // if else to display message box
-        if("".equals(mc) || "".equals(date) || "".equals(chase_no) || "".equals(ornament_type) || "".equals(ornament_name) ||"".equals(quality) || "".equals(wt) || "".equals(was) || "".equals(qty) || "".equals(buy) ){
+        if("".equals(mc) || "".equals(dateDB) || "".equals(chase_no) || "".equals(ornament_type) || "".equals(ornament_name) ||"".equals(quality) || "".equals(wt) || "".equals(was) || "".equals(qty) || "".equals(buy) ){
             System.out.println("enter all");
             JOptionPane.showMessageDialog(null, "Sry, You missed some fields, Please do fill it");
         }
@@ -549,7 +553,7 @@ public class MainWindow extends javax.swing.JFrame {
                 String sql = "INSERT INTO jewellery_entry (date, chase_no, ornament_type, ornament_name, quality, making_charge, weight, wastage, quantity, buy, barcode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
                 PreparedStatement statement = con.prepareStatement(sql);
-                statement.setString(1, date);
+                statement.setString(1, dateDB);
                 statement.setString(2, chase_no);
                 statement.setString(3, ornament_type);
                 statement.setString(4, ornament_name);
