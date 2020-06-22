@@ -51,9 +51,8 @@ public class MainWindow extends javax.swing.JFrame {
         setVisible(true);
         setLocationRelativeTo(null);
         
-        dropdown_display();
-        default_display();
-        //date_display();
+        view_dropdown_display();
+        view_default_display();
      
         //To change the color of the vertical gridlines of tables
         
@@ -1100,7 +1099,7 @@ public class MainWindow extends javax.swing.JFrame {
             catch(Exception e){
                     JOptionPane.showMessageDialog(null,e);
             }
- 
+            view_combined_display();
     }//GEN-LAST:event_view_selOrnament1_dropdownview_selOrnament_dropdownActionPerformed
 
     private void view_selOrnament4_dropdownview_selOrnament_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_selOrnament4_dropdownview_selOrnament_dropdownActionPerformed
@@ -1172,7 +1171,7 @@ public class MainWindow extends javax.swing.JFrame {
                     catch(Exception e){
                         e.printStackTrace();
                     } 
-                    date_display();        
+                    view_date_display();        
     }//GEN-LAST:event_view_fromDate_propertyChange
 
     private void view_todate_propertChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_view_todate_propertChange
@@ -1184,7 +1183,7 @@ public class MainWindow extends javax.swing.JFrame {
                     catch(Exception e){
                         e.printStackTrace();
                     }
-                    date_display();
+                    view_date_display();
     }//GEN-LAST:event_view_todate_propertChange
 
     /**
@@ -1325,7 +1324,7 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
   
-    private void dropdown_display(){
+    private void view_dropdown_display(){
         try{
             String sql="SELECT type FROM Ornament_type";
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
@@ -1340,7 +1339,7 @@ public class MainWindow extends javax.swing.JFrame {
         }  
     }
     
-    private void default_display(){
+    private void view_default_display(){
         try{
                 try{
                     //Getting default total weight of items.
@@ -1396,7 +1395,7 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }
 
-    private void date_display(){
+    private void view_date_display(){
                 view_from1_date= view_from1_dateformat;
                 view_to1_date= view_to1_dateformat;
                 if((view_from1_date!=null) && (view_to1_date!=null)){
@@ -1447,7 +1446,60 @@ public class MainWindow extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null,e);
                     }
                 }
+                view_combined_display();
     }
-          
+    
+    private void view_combined_display(){
+        if((view_ornament_type_data!=null) &&(view_from1_date!=null) && (view_to1_date!=null)){
+                try{ 
+                        
+                        //Displaying table according to selOrnament and dates
+                        String sql1="SELECT * FROM overall WHERE ornament_type = " + "'"+  view_ornament_type_data + "' AND date >=" + "'"+  view_from1_date + "'  AND date <= " + "'"+  view_to1_date + "'";
+                        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                        PreparedStatement pat1=con.prepareStatement(sql1);
+                        ResultSet rs1=pat1.executeQuery();
+                        DefaultTableModel tm=(DefaultTableModel)view_table1_table.getModel();
+                        tm.setRowCount(0);
+                        while(rs1.next()){
+                            Object o[]={rs1.getInt("id"),rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("weight"),rs1.getString("wastage"),rs1.getString("making_charge"),rs1.getString("quantity"),rs1.getString("quality"),rs1.getString("buy")};
+                            tm.addRow(o);
+                        } 
+                }
+                catch(Exception e){
+                        JOptionPane.showMessageDialog(null,e);
+                }
+                
+                try{
+                        
+                        //Getting total weight of items acc. to selOrnament and dates.
+                        String sql1="SELECT SUM(weight) FROM overall WHERE ornament_type = " + "'"+  view_ornament_type_data + "' AND date >=" + "'"+  view_from1_date + "'  AND date <= " + "'"+  view_to1_date + "'";
+                        con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                        PreparedStatement pat1=con1.prepareStatement(sql1);
+                        ResultSet rs1=pat1.executeQuery();
+                        while(rs1.next()){
+                            view_totWtInp1_label.setText(rs1.getString(1)); 
+                        }  
+                }
+                catch(Exception e){
+                         JOptionPane.showMessageDialog(null,e);
+                }
+                
+                try{
+                        
+                        //Getting total number of items acc. to selOrnament and dates.
+                        String sql2="SELECT COUNT(id) FROM overall WHERE ornament_type = " + "'"+  view_ornament_type_data + "' AND date >=" + "'"+  view_from1_date + "'  AND date <= " + "'"+  view_to1_date + "'";
+                        con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                        PreparedStatement pat2=con2.prepareStatement(sql2);
+                        ResultSet rs2=pat2.executeQuery();
+                        while(rs2.next()){
+                            view_totItemInp1_label.setText(rs2.getString(1)); 
+                        }
+                } 
+                catch(Exception e){
+                        JOptionPane.showMessageDialog(null,e);
+                }
+                 
+        }
+    }    
 }
 
