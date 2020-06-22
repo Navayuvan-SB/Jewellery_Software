@@ -5,6 +5,7 @@
  */
 package com.cyphersource.jewellery_software;
 
+import com.toedter.calendar.JDateChooser;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -14,6 +15,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -30,12 +33,16 @@ import javax.swing.table.DefaultTableModel;
  * @author ghost
  */
 public class MainWindow extends javax.swing.JFrame {
-     Connection con=null;
+    Connection con=null,con1=null,con2=null;
     PreparedStatement pat = null;
     Statement stmt=null;
     ResultSet rs = null;
     String view_ornament_type_data;
-
+    String view_from1_dateformat;
+    String view_to1_dateformat;
+    String view_from1_date;
+    String view_to1_date;
+    
     /**
      * Creates new form MainWindow
      */
@@ -46,7 +53,7 @@ public class MainWindow extends javax.swing.JFrame {
         
         dropdown_display();
         default_display();
-        date_display();
+        //date_display();
      
         //To change the color of the vertical gridlines of tables
         
@@ -123,8 +130,6 @@ public class MainWindow extends javax.swing.JFrame {
         Theaderthree.setPreferredSize(new Dimension(50,50));
         ((DefaultTableCellRenderer)Theaderthree.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
         
-       ImageIcon icon = new ImageIcon("image/p2.jpg");
-        view_table2_table.setValueAt(icon, 1, 8);
     
         
     }
@@ -387,6 +392,7 @@ public class MainWindow extends javax.swing.JFrame {
         view_totWt1_label.setText("Total Weight    ");
 
         view_totWtInp1_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
+        view_totWtInp1_label.setName(""); // NOI18N
 
         view_totItem1_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
         view_totItem1_label.setForeground(java.awt.Color.gray);
@@ -454,8 +460,13 @@ public class MainWindow extends javax.swing.JFrame {
         view_datelimit1_panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         view_from1_datechooser.setBackground(java.awt.Color.white);
-        view_from1_datechooser.setDateFormatString("yyyy-MM-dd");
+        view_from1_datechooser.setDateFormatString("dd-MM-yyyy");
         view_from1_datechooser.setFont(new java.awt.Font("Ubuntu", 0, 13)); // NOI18N
+        view_from1_datechooser.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                view_fromDate_propertyChange(evt);
+            }
+        });
         view_datelimit1_panel.add(view_from1_datechooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 130, 30));
 
         view_from1_label.setBackground(java.awt.Color.white);
@@ -464,8 +475,13 @@ public class MainWindow extends javax.swing.JFrame {
         view_datelimit1_panel.add(view_from1_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 60, 30));
 
         view_to1_datechooser.setBackground(java.awt.Color.white);
-        view_to1_datechooser.setDateFormatString("yyyy-MM-dd");
+        view_to1_datechooser.setDateFormatString("dd-MM-yyyy");
         view_to1_datechooser.setFont(new java.awt.Font("Ubuntu", 0, 13)); // NOI18N
+        view_to1_datechooser.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                view_todate_propertChange(evt);
+            }
+        });
         view_datelimit1_panel.add(view_to1_datechooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 130, 30));
 
         view_to1_label.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
@@ -523,9 +539,8 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(view_overallCont_panelLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(view_datelimit1_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
-                .addComponent(view_tablearea1_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(view_tablearea1_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         view_contTwo_panel.add(view_overallCont_panel, "card2");
@@ -678,8 +693,8 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(view_soldCont_panelLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(view_datelimit2_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
-                .addComponent(view_tablearea2_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addComponent(view_tablearea2_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         view_contTwo_panel.add(view_soldCont_panel, "card2");
@@ -787,27 +802,29 @@ public class MainWindow extends javax.swing.JFrame {
             view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(view_balanceCont_panelLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addGroup(view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(view_balanceCont_panelLayout.createSequentialGroup()
-                        .addGroup(view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(view_totItem3_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(view_totWt3_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(view_balanceCont_panelLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(view_colon31_label, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, view_balanceCont_panelLayout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(view_colon32_label, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(view_totItemInp3_label)
-                            .addComponent(view_totWtInp3_label, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(view_selOrnament3_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(view_tablearea3_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 808, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(view_datelimit3_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(view_tablearea3_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 808, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(view_balanceCont_panelLayout.createSequentialGroup()
+                            .addGroup(view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(view_totItem3_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(view_totWt3_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(view_balanceCont_panelLayout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(view_colon31_label, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, view_balanceCont_panelLayout.createSequentialGroup()
+                                    .addGap(2, 2, 2)
+                                    .addComponent(view_colon32_label, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(view_totItemInp3_label)
+                                .addComponent(view_totWtInp3_label, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(view_selOrnament3_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(view_balanceCont_panelLayout.createSequentialGroup()
+                            .addGap(497, 497, 497)
+                            .addComponent(view_datelimit3_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
         view_balanceCont_panelLayout.setVerticalGroup(
@@ -831,8 +848,9 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(view_balanceCont_panelLayout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(view_datelimit3_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
-                .addComponent(view_tablearea3_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(view_tablearea3_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         view_contTwo_panel.add(view_balanceCont_panel, "card5");
@@ -982,8 +1000,8 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(view_returnCont_panelLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addComponent(view_datelimit4_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
-                .addComponent(view_tablearea4_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addComponent(view_tablearea4_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         view_contTwo_panel.add(view_returnCont_panel, "card5");
@@ -1024,6 +1042,7 @@ public class MainWindow extends javax.swing.JFrame {
            
          
             try{ 
+                try{
                     view_ornament_type_data=view_selOrnament1_dropdown.getSelectedItem().toString();
                     
                     //Getting table values acc. to selOrnament
@@ -1039,29 +1058,49 @@ public class MainWindow extends javax.swing.JFrame {
                         Object o[]={rs.getInt("id"),rs.getString("date"),rs.getString("chase_no"),rs.getString("ornament_name"),rs.getString("weight"),rs.getString("wastage"),rs.getString("making_charge"),rs.getString("quantity"),rs.getString("quality"),rs.getString("buy")};
                         tm.addRow(o);
                     }
-
+                    
+                } 
+                catch(Exception e){
+                    JOptionPane.showMessageDialog(null,e);
+                }
+                
+                try{
+                    
                    //Getting total weight of items acc. to selOrnament.
                    String sql1="SELECT SUM(weight) FROM overall WHERE ornament_type = " + "'"+  view_ornament_type_data + "'";
-                   con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                   PreparedStatement pat1=con.prepareStatement(sql1);
+                   con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                   PreparedStatement pat1=con1.prepareStatement(sql1);
                    ResultSet rs1=pat1.executeQuery();
                    while(rs1.next()){
                        view_totWtInp1_label.setText(rs1.getString(1)); 
                    }  
-                   
+                } 
+                catch(Exception e){
+                    JOptionPane.showMessageDialog(null,e);
+                } 
+                
+                try{
+                    
                    //Getting total number of items acc. to selOrnament.
                    String sql2="SELECT COUNT(id) FROM overall WHERE ornament_type = " + "'"+  view_ornament_type_data + "'";
-                   con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                   PreparedStatement pat2=con.prepareStatement(sql2);
+                   con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                   PreparedStatement pat2=con2.prepareStatement(sql2);
                    ResultSet rs2=pat2.executeQuery();
                    while(rs2.next()){
                        view_totItemInp1_label.setText(rs2.getString(1)); 
                    }
+                } 
+                catch(Exception e){
+                    JOptionPane.showMessageDialog(null,e);
+                }
+                con.close();
+                con1.close();
+                con2.close();
             }
             catch(Exception e){
                     JOptionPane.showMessageDialog(null,e);
             }
-        
+ 
     }//GEN-LAST:event_view_selOrnament1_dropdownview_selOrnament_dropdownActionPerformed
 
     private void view_selOrnament4_dropdownview_selOrnament_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_selOrnament4_dropdownview_selOrnament_dropdownActionPerformed
@@ -1123,6 +1162,30 @@ public class MainWindow extends javax.swing.JFrame {
     private void view_selOrnament3_dropdownview_selOrnament_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_selOrnament3_dropdownview_selOrnament_dropdownActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_view_selOrnament3_dropdownview_selOrnament_dropdownActionPerformed
+
+    private void view_fromDate_propertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_view_fromDate_propertyChange
+
+                    try{
+                         SimpleDateFormat df =  new SimpleDateFormat("yyyy-MM-dd");
+                         view_from1_dateformat=df.format(view_from1_datechooser.getDate());
+                    }
+                    catch(Exception e){
+                        e.printStackTrace();
+                    } 
+                    date_display();        
+    }//GEN-LAST:event_view_fromDate_propertyChange
+
+    private void view_todate_propertChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_view_todate_propertChange
+
+                    try{
+                         SimpleDateFormat df =  new SimpleDateFormat("yyyy-MM-dd");
+                         view_to1_dateformat=df.format(view_to1_datechooser.getDate());
+                    }
+                    catch(Exception e){
+                        e.printStackTrace();
+                    }
+                    date_display();
+    }//GEN-LAST:event_view_todate_propertChange
 
     /**
      * @param args the command line arguments
@@ -1258,8 +1321,7 @@ public class MainWindow extends javax.swing.JFrame {
             setBackground(new Color(247,247,247));
             setBorder(BorderFactory.createMatteBorder(0,0,1,1,Color.LIGHT_GRAY));
             return this;
-        }
-        
+        }   
     }
     
   
@@ -1272,71 +1334,120 @@ public class MainWindow extends javax.swing.JFrame {
             while(rs.next()){
              view_selOrnament1_dropdown.addItem(rs.getString("type"));
             }
-                 
-  
-        }catch(Exception e){
-          JOptionPane.showMessageDialog(null,e);
-          }
-    
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }  
     }
+    
     private void default_display(){
         try{
-                
-                //Getting default total weight of items.
-                String sql1="SELECT SUM(weight) FROM overall";
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                PreparedStatement pat1=con.prepareStatement(sql1);
-                ResultSet rs1=pat1.executeQuery();
-                while(rs1.next()){
-                    view_totWtInp1_label.setText(rs1.getString(1)); 
+                try{
+                    //Getting default total weight of items.
+                    String sql1="SELECT SUM(weight) FROM overall";
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    PreparedStatement pat1=con.prepareStatement(sql1);
+                    ResultSet rs1=pat1.executeQuery();
+                    while(rs1.next()){
+                        view_totWtInp1_label.setText(rs1.getString(1)); 
+                    }
+                }
+                catch(Exception e){
+                    JOptionPane.showMessageDialog(null,e);
                 }
                 
-                //Getting default overall table values. 
-                String sql2="SELECT id, date, chase_no, ornament_type, ornament_name, quality,\n" +
-               "making_charge, weight, wastage, quantity,buy, barcode, status FROM overall\n" ;
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                PreparedStatement pat2=con.prepareStatement(sql2);
-                ResultSet rs2=pat2.executeQuery();
-                DefaultTableModel tm=(DefaultTableModel)view_table1_table.getModel();
-                tm.setRowCount(0);
-                while(rs2.next()){
-                    Object o[]={rs2.getInt("id"),rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_name"),rs2.getString("weight"),rs2.getString("wastage"),rs2.getString("making_charge"),rs2.getString("quantity"),rs2.getString("quality"),rs2.getString("buy")};
-                    tm.addRow(o);
+                try{
+                    //Getting default overall table values. 
+                    String sql2="SELECT id, date, chase_no, ornament_type, ornament_name, quality,\n" +
+                   "making_charge, weight, wastage, quantity,buy, barcode, status FROM overall\n" ;
+                    con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    PreparedStatement pat2=con1.prepareStatement(sql2);
+                    ResultSet rs2=pat2.executeQuery();
+                    DefaultTableModel tm=(DefaultTableModel)view_table1_table.getModel();
+                    tm.setRowCount(0);
+                    while(rs2.next()){
+                        Object o[]={rs2.getInt("id"),rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_name"),rs2.getString("weight"),rs2.getString("wastage"),rs2.getString("making_charge"),rs2.getString("quantity"),rs2.getString("quality"),rs2.getString("buy")};
+                        tm.addRow(o);
+                    }
+                }
+                catch(Exception e){
+                    JOptionPane.showMessageDialog(null,e);
                 }
                 
-                //Getting default total number of items.
-                String sql3="SELECT COUNT(id) FROM overall";
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                PreparedStatement pat3=con.prepareStatement(sql3);
-                ResultSet rs3=pat3.executeQuery();
-                while(rs3.next()){
-                    view_totItemInp1_label.setText(rs3.getString(1)); 
+                try{
+                    //Getting default total number of items.
+                    String sql3="SELECT COUNT(id) FROM overall";
+                    con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    PreparedStatement pat3=con2.prepareStatement(sql3);
+                    ResultSet rs3=pat3.executeQuery();
+                    while(rs3.next()){
+                        view_totItemInp1_label.setText(rs3.getString(1)); 
+                    }
                 }
-                      
-        }catch(Exception e){
+                catch(Exception e){
+                    JOptionPane.showMessageDialog(null,e);
+                }
+                con.close(); 
+                con1.close(); 
+                con2.close(); 
+        }
+        catch(Exception e){
              JOptionPane.showMessageDialog(null,e);
         }
     }
-    
-    private void date_display(){
-//            try{
-//                
-//                String sql1="SELECT * FROM overall WHERE date >= '2014-01-01' AND date <= '2015-01-01'";
-//                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-//                PreparedStatement pat1=con.prepareStatement(sql1);
-//                ResultSet rs1=pat1.executeQuery();
-//                DefaultTableModel tm=(DefaultTableModel)view_table1_table.getModel();
-//                tm.setRowCount(0);
-//                while(rs1.next()){
-//                    Object o[]={rs1.getInt("id"),rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("weight"),rs1.getString("wastage"),rs1.getString("making_charge"),rs1.getString("quantity"),rs1.getString("quality"),rs1.getString("buy")};
-//                    tm.addRow(o);
-//                } 
-//            }
-//                catch(Exception e){
-//                    JOptionPane.showMessageDialog(null,e);
-//        }
-    }
-  
-}
 
+    private void date_display(){
+                view_from1_date= view_from1_dateformat;
+                view_to1_date= view_to1_dateformat;
+                if((view_from1_date!=null) && (view_to1_date!=null)){
+                    try{ 
+                        
+                        //Displaying table according to dates
+                        String sql1="SELECT * FROM overall WHERE date >=" + "'"+  view_from1_date + "'  AND date <= " + "'"+  view_to1_date + "'";
+                        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                        PreparedStatement pat1=con.prepareStatement(sql1);
+                        ResultSet rs1=pat1.executeQuery();
+                        DefaultTableModel tm=(DefaultTableModel)view_table1_table.getModel();
+                        tm.setRowCount(0);
+                        while(rs1.next()){
+                            Object o[]={rs1.getInt("id"),rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("weight"),rs1.getString("wastage"),rs1.getString("making_charge"),rs1.getString("quantity"),rs1.getString("quality"),rs1.getString("buy")};
+                            tm.addRow(o);
+                        } 
+                    }
+                    catch(Exception e){
+                        JOptionPane.showMessageDialog(null,e);
+                    }
+                    try{
+                        
+                        //Getting total weight of items acc. to dates.
+                        String sql1="SELECT SUM(weight) FROM overall WHERE date >=" + "'"+  view_from1_date + "'  AND date <= " + "'"+  view_to1_date + "'";
+                        con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                        PreparedStatement pat1=con1.prepareStatement(sql1);
+                        ResultSet rs1=pat1.executeQuery();
+                        while(rs1.next()){
+                            view_totWtInp1_label.setText(rs1.getString(1)); 
+                        }  
+                    }
+                    catch(Exception e){
+                         JOptionPane.showMessageDialog(null,e);
+                    }
+                    
+                    try{
+                        
+                        //Getting total number of items acc. to dates.
+                        String sql2="SELECT COUNT(id) FROM overall WHERE date >=" + "'"+  view_from1_date + "'  AND date <= " + "'"+  view_to1_date + "'";
+                        con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                        PreparedStatement pat2=con2.prepareStatement(sql2);
+                        ResultSet rs2=pat2.executeQuery();
+                        while(rs2.next()){
+                            view_totItemInp1_label.setText(rs2.getString(1)); 
+                        }
+                    } 
+                    catch(Exception e){
+                        JOptionPane.showMessageDialog(null,e);
+                    }
+                }
+    }
+          
+}
 
