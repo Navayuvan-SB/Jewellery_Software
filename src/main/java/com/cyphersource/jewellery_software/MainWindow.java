@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDate;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 
@@ -20,7 +21,7 @@ public class MainWindow extends javax.swing.JFrame {
     Connection con;
     PreparedStatement ps=null;
     ResultSet rs=null;
-    String date = null, 
+    String date = null,
            chase_no = null,
            ornament_type = null,
            ornament_name = null,
@@ -29,27 +30,40 @@ public class MainWindow extends javax.swing.JFrame {
            wt = null,
            was = null,
            qty = null,
-           buy = null,
-           barcode = null;
+           buy = null;
     
     public MainWindow() {
         initComponents();
+        
+        // Database Connectivity
+        try{
+            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+        }catch(Exception e){
+            System.out.println(e);
+        } 
+        getLocalDate();
         groupButton();
         Combo();
     }
+    
+    private void getLocalDate() {
+        LocalDate l_date = LocalDate.now();
+        date = l_date.toString();
+        this.Entry_DateNoValue_Label.setText(this.date);
+}
     
     // button group
     private void groupButton( ) {
 
         ButtonGroup bg = new ButtonGroup( );
-
         bg.add(Entry_22CT_RadioButton);
         bg.add(Entry_961HM_RadioButton);
    }
     
+    
+    // Combobox dropdown display
     private void Combo(){
         try{
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
             String sql = "select * from Ornament_type";
             PreparedStatement ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
@@ -60,32 +74,50 @@ public class MainWindow extends javax.swing.JFrame {
             }
         }
         catch(Exception e){
-               System.out.println(e);
-            }  
+            System.out.println(e);
+        }  
         
     }
     
+    
+    // generating chase value
     private void Chase(){
-       //generate chasevalue
         try{
-                
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
             String sql = "select * from Ornament_type where type=?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, ornament_type);
             rs = ps.executeQuery();
-            
+            // to check limit of value
             while(rs.next()){
-                this.chase_no = rs.getString(3)+""+(rs.getInt(4)+1);
-                //this.barcode = rs.getString(3)+""+(rs.getInt(4)+1);
+                if(rs.getInt(4) < 9){
+                  this.chase_no = rs.getString(3)+""+"0"+"0"+(rs.getInt(4)+1);  
+                }
+                else if(rs.getInt(4) < 99){
+                   this.chase_no = rs.getString(3)+""+"0"+(rs.getInt(4)+1);   
+                }
+                else{
+                    this.chase_no = rs.getString(3)+""+(rs.getInt(4)+1);
+                }
                 System.out.println(this.chase_no);
             }
         }
         catch(Exception e){
             System.out.println(e);
+            JOptionPane.showMessageDialog(null, "OOPS! Sry, try again");
         }        
         this.Entry_ChaseNoValue_Label.setText(this.chase_no);
-        JOptionPane.showMessageDialog(null, "Chase Number Generated!");
+        JOptionPane.showMessageDialog(null, "Chase Number Generated successfully!");
+    }
+    
+    
+    // to store the quality of Radiobutton text
+    private void QualityRadioBTN(){
+        if(Entry_22CT_RadioButton.isSelected()){
+            quality = Entry_22CT_RadioButton.getText();
+        }
+        else{
+            quality = Entry_961HM_RadioButton.getText();
+        }
     }
 
     /**
@@ -110,7 +142,7 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_ChaseNo_Label = new javax.swing.JLabel();
         Entry_ChaseNoValue_Label = new javax.swing.JLabel();
         Entry_Date_Label = new javax.swing.JLabel();
-        Entry_DateNoValue_Label2 = new javax.swing.JLabel();
+        Entry_DateNoValue_Label = new javax.swing.JLabel();
         Entry_InputFields_Panel = new javax.swing.JPanel();
         Entry_Ornament_TextField = new javax.swing.JTextField();
         Entry_Ornament_Label = new javax.swing.JLabel();
@@ -203,10 +235,10 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_Date_Label.setForeground(new java.awt.Color(98, 98, 98));
         Entry_Date_Label.setText("Date :");
 
-        Entry_DateNoValue_Label2.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_DateNoValue_Label2.setFont(new java.awt.Font("Ubuntu", 1, 27)); // NOI18N
-        Entry_DateNoValue_Label2.setForeground(new java.awt.Color(0, 0, 0));
-        Entry_DateNoValue_Label2.setText("04-06-2020");
+        Entry_DateNoValue_Label.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_DateNoValue_Label.setFont(new java.awt.Font("Ubuntu", 1, 27)); // NOI18N
+        Entry_DateNoValue_Label.setForeground(new java.awt.Color(0, 0, 0));
+        Entry_DateNoValue_Label.setText("04-06-2020");
 
         Entry_InputFields_Panel.setBackground(new java.awt.Color(251, 251, 251));
         Entry_InputFields_Panel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -373,6 +405,11 @@ public class MainWindow extends javax.swing.JFrame {
 
         jCheckBox1.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/checkbox.png")); // NOI18N
         jCheckBox1.setSelectedIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Checked.png")); // NOI18N
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout WrapperLayout = new javax.swing.GroupLayout(Wrapper);
         Wrapper.setLayout(WrapperLayout);
@@ -403,7 +440,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(WrapperLayout.createSequentialGroup()
                         .addComponent(Entry_Date_Label)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Entry_DateNoValue_Label2)))
+                        .addComponent(Entry_DateNoValue_Label)))
                 .addGap(70, 70, 70))
             .addGroup(WrapperLayout.createSequentialGroup()
                 .addGap(70, 70, 70)
@@ -442,7 +479,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(Entry_ChaseNoValue_Label)
                     .addComponent(Entry_ChaseNo_Label)
                     .addComponent(Entry_Date_Label)
-                    .addComponent(Entry_DateNoValue_Label2))
+                    .addComponent(Entry_DateNoValue_Label))
                 .addGap(49, 49, 49)
                 .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(WrapperLayout.createSequentialGroup()
@@ -487,17 +524,10 @@ public class MainWindow extends javax.swing.JFrame {
     
     private void Entry_EnterButton_LabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Entry_EnterButton_LabelMouseClicked
         
-        // to store Radiobutton text
-        if(Entry_22CT_RadioButton.isSelected()){
-            quality = Entry_22CT_RadioButton.getText();
-        }
-        else{
-            quality = Entry_961HM_RadioButton.getText();
-        }
+        // quality 
+        QualityRadioBTN();
         
         
-        barcode = "837283";
-        date = "2020-03-02";
         ornament_name = Entry_Ornament_TextField.getText();
         mc = Entry_MC_TextField.getText();
         wt = Entry_WT_TextField.getText();
@@ -507,16 +537,14 @@ public class MainWindow extends javax.swing.JFrame {
           
         
         // if else to display message box
-        if("".equals(mc) || "".equals(barcode) || "".equals(date) || "".equals(chase_no) || "".equals(ornament_type) || "".equals(ornament_name) ||"".equals(quality) || "".equals(wt) || "".equals(was) || "".equals(qty) || "".equals(buy) ){
+        if("".equals(mc) || "".equals(date) || "".equals(chase_no) || "".equals(ornament_type) || "".equals(ornament_name) ||"".equals(quality) || "".equals(wt) || "".equals(was) || "".equals(qty) || "".equals(buy) ){
             System.out.println("enter all");
-            JOptionPane.showMessageDialog(null, "Please Fill all the fields");
+            JOptionPane.showMessageDialog(null, "Sry, You missed some fields, Please do fill it");
         }
         else{
+            
             try{
                 
-                con=DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                System.out.println("success");
-
                 // Query
                 String sql = "INSERT INTO jewellery_entry (date, chase_no, ornament_type, ornament_name, quality, making_charge, weight, wastage, quantity, buy, barcode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
@@ -531,27 +559,33 @@ public class MainWindow extends javax.swing.JFrame {
                 statement.setString(8, was);
                 statement.setString(9, qty);
                 statement.setString(10, buy);
-                statement.setString(11, barcode);
+                statement.setString(11, chase_no);
 
                 int rowsInserted = statement.executeUpdate();
                 if (rowsInserted > 0) {
                     JOptionPane.showMessageDialog(null, " updation successful!");
                 }            
             }
-
             catch(Exception e){
                System.out.println(e);
+               JOptionPane.showMessageDialog(null, "OOPS! Sry, try again");
             }              
        }
 
     }//GEN-LAST:event_Entry_EnterButton_LabelMouseClicked
 
     private void Entry_OrnamentType_jComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_OrnamentType_jComboBoxActionPerformed
-        // TODO add your handling code here:
+        
         this.ornament_type = (String) Entry_OrnamentType_jComboBox.getSelectedItem();
         Chase();
 
     }//GEN-LAST:event_Entry_OrnamentType_jComboBoxActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+       
+        JOptionPane.showMessageDialog(null, " Barcode Generated! kindly ENTER to update");
+              
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -605,7 +639,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel Entry_ChaseNoValue_Label;
     private javax.swing.JLabel Entry_ChaseNo_Label;
     private javax.swing.JLabel Entry_CheckText_Label;
-    private javax.swing.JLabel Entry_DateNoValue_Label2;
+    private javax.swing.JLabel Entry_DateNoValue_Label;
     private javax.swing.JLabel Entry_Date_Label;
     private javax.swing.JLabel Entry_EnterButton_Label;
     private javax.swing.JPanel Entry_InputFields_Panel;
