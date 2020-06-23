@@ -26,6 +26,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 
 
 /**
@@ -40,17 +41,27 @@ public class MainWindow extends javax.swing.JFrame {
     
     //Getting selectedItem from dropdown
     String view_ornament_type1_data;
+    String view_ornament_type2_data;
+    String view_ornament_type3_data;
     String view_ornament_type4_data;
     
     //Date got from calendar before formating
     String view_from1_dateformat;
     String view_to1_dateformat;
+    String view_from2_dateformat;
+    String view_to2_dateformat;
+    String view_from3_dateformat;
+    String view_to3_dateformat;
     String view_from4_dateformat;
     String view_to4_dateformat;
      
     //Date obtained after formating
     String view_from1_date;
     String view_to1_date;
+    String view_from2_date;
+    String view_to2_date;
+    String view_from3_date;
+    String view_to3_date;
     String view_from4_date;
     String view_to4_date;
     
@@ -62,10 +73,25 @@ public class MainWindow extends javax.swing.JFrame {
         setVisible(true);
         setLocationRelativeTo(null);
         
+//        //      Initialize Table Model
+//        model = (DefaultTableModel) this.view_table2_table.getModel();
+//
+////      Initialize Image Icon
+//        imageIcon = new ImageIcon(getClass().getResource("/image/p2.jpg"));
+//
+////      Override Cell render of Image column
+//        view_table2_table.getColumn("RT").setCellRenderer(new MyCellRenderer());
+       
+        //method for displaying dropdown elements from database
         view_dropdown1_display();
+        view_dropdown2_display();
+        view_dropdown3_display();
         view_dropdown4_display();
         
+        //method for default display of contents from database
         view_default1_display();
+        view_default2_display();
+        view_default3_display();
         view_default4_display();
         
      
@@ -146,6 +172,18 @@ public class MainWindow extends javax.swing.JFrame {
         
     
         
+    }
+    
+     class MyCellRenderer implements TableCellRenderer {
+
+        @Override
+        public Component getTableCellRendererComponent(JTable jtable, Object o, boolean bln, boolean bln1, int i, int i1) {
+            
+           // jTable1.setRowHeight(100);
+            return (Component) o;
+
+        }
+
     }
   
     /**
@@ -1073,8 +1111,6 @@ public class MainWindow extends javax.swing.JFrame {
  
                 try{ 
                     try{
-
-
                         //Getting table values acc. to selOrnament
                         String sql="SELECT id, date, chase_no, ornament_type, ornament_name, quality,\n" +
                         "making_charge, weight, wastage, quantity,buy, barcode, status FROM overall\n" +
@@ -1220,27 +1256,211 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void view_selOrnament2_dropdownview_selOrnament_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_selOrnament2_dropdownview_selOrnament_dropdownActionPerformed
         // TODO add your handling code here:
-        
+           view_ornament_type2_data=view_selOrnament2_dropdown.getSelectedItem().toString();
+           
+           if(view_ornament_type2_data!="Select the Ornament"){
+ 
+                try{ 
+                    try{
+
+
+                        //Getting table values acc. to selOrnament
+                        String sql="SELECT id, date, chase_no, ornament_name, weight, quantity, barcode FROM sold\n" +
+                        "WHERE ornament_type =" + "'"+  view_ornament_type2_data + "'";
+                        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                        pat=con.prepareStatement(sql);
+                        rs=pat.executeQuery();
+                        DefaultTableModel tm=(DefaultTableModel)view_table2_table.getModel();
+                        tm.setRowCount(0);
+                        while(rs.next()){
+                            Object o[]={rs.getInt("id"),rs.getString("date"),rs.getString("chase_no"),rs.getString("ornament_name"),rs.getString("weight"), rs.getString("quantity"), rs.getString("barcode")};
+                            tm.addRow(o);
+                        }
+
+                    } 
+                    catch(Exception e){
+                        JOptionPane.showMessageDialog(null,e);
+                    }
+
+                    try{
+
+                       //Getting total weight of items acc. to selOrnament.
+                       String sql1="SELECT SUM(weight) FROM sold WHERE ornament_type = " + "'"+  view_ornament_type2_data + "'";
+                       con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                       PreparedStatement pat1=con1.prepareStatement(sql1);
+                       ResultSet rs1=pat1.executeQuery();
+                       while(rs1.next()){
+                            if(rs1.getString(1)==null){
+                                view_totWtInp2_label.setText("0"); 
+                            }
+                            else{
+                                view_totWtInp2_label.setText(rs1.getString(1)); 
+                            }
+                       } 
+                      
+                    } 
+                    catch(Exception e){
+                        JOptionPane.showMessageDialog(null,e);
+                    } 
+
+                    try{
+
+                       //Getting total number of items acc. to selOrnament.
+                       String sql2="SELECT COUNT(id) FROM sold WHERE ornament_type = " + "'"+  view_ornament_type2_data + "'";
+                       con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                       PreparedStatement pat2=con2.prepareStatement(sql2);
+                       ResultSet rs2=pat2.executeQuery();
+                       while(rs2.next()){
+                           view_totItemInp2_label.setText(rs2.getString(1)); 
+                       }
+                    } 
+                    catch(Exception e){
+                        JOptionPane.showMessageDialog(null,e);
+                    }
+                    con.close();
+                    con1.close();
+                    con2.close();
+                }
+                catch(Exception e){
+                        JOptionPane.showMessageDialog(null,e);
+                }
+                view_combined2_display();
+            }
+            else if((view_from2_date!=null)&&(view_to2_date!=null)){
+                        view_date2_display();
+            }
+            else{
+                        view_default2_display();
+            }   
     }//GEN-LAST:event_view_selOrnament2_dropdownview_selOrnament_dropdownActionPerformed
 
     private void view_from2_datechooserview_fromDate_propertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_view_from2_datechooserview_fromDate_propertyChange
         // TODO add your handling code here:
+        
+                    try{
+                         SimpleDateFormat df =  new SimpleDateFormat("yyyy-MM-dd");
+                         view_from2_dateformat=df.format(view_from2_datechooser.getDate());
+                    }
+                    catch(Exception e){
+                        e.printStackTrace();
+                    } 
+                    view_date2_display();  
     }//GEN-LAST:event_view_from2_datechooserview_fromDate_propertyChange
 
     private void view_to2_datechooserview_todate_propertChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_view_to2_datechooserview_todate_propertChange
         // TODO add your handling code here:
+                    try{
+                            SimpleDateFormat df =  new SimpleDateFormat("yyyy-MM-dd");
+                            view_to2_dateformat=df.format(view_to2_datechooser.getDate());
+                    }
+                    catch(Exception e){
+                            e.printStackTrace();
+                    }
+                    view_date2_display();
     }//GEN-LAST:event_view_to2_datechooserview_todate_propertChange
 
     private void view_selOrnament3_dropdownview_selOrnament_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_selOrnament3_dropdownview_selOrnament_dropdownActionPerformed
         // TODO add your handling code here:
+        view_ornament_type3_data=view_selOrnament3_dropdown.getSelectedItem().toString();
+           
+           if(view_ornament_type3_data!="Select the Ornament"){
+ 
+                try{ 
+                    try{
+
+
+                        //Getting table values acc. to selOrnament
+                        String sql="SELECT id, date, chase_no, ornament_name, weight, quantity, barcode FROM balance\n" +
+                        "WHERE ornament_type =" + "'"+  view_ornament_type3_data + "'";
+                        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                        pat=con.prepareStatement(sql);
+                        rs=pat.executeQuery();
+                        DefaultTableModel tm=(DefaultTableModel)view_table3_table.getModel();
+                        tm.setRowCount(0);
+                        while(rs.next()){
+                            Object o[]={rs.getInt("id"),rs.getString("date"),rs.getString("chase_no"),rs.getString("ornament_name"),rs.getString("weight"), rs.getString("quantity"), rs.getString("barcode")};
+                            tm.addRow(o);
+                        }
+
+                    } 
+                    catch(Exception e){
+                        JOptionPane.showMessageDialog(null,e);
+                    }
+
+                    try{
+
+                       //Getting total weight of items acc. to selOrnament.
+                       String sql1="SELECT SUM(weight) FROM balance WHERE ornament_type = " + "'"+  view_ornament_type3_data + "'";
+                       con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                       PreparedStatement pat1=con1.prepareStatement(sql1);
+                       ResultSet rs1=pat1.executeQuery();
+                       while(rs1.next()){
+                            if(rs1.getString(1)==null){
+                                view_totWtInp3_label.setText("0"); 
+                            }
+                            else{
+                                view_totWtInp3_label.setText(rs1.getString(1)); 
+                            }
+                       } 
+                      
+                    } 
+                    catch(Exception e){
+                        JOptionPane.showMessageDialog(null,e);
+                    } 
+
+                    try{
+
+                       //Getting total number of items acc. to selOrnament.
+                       String sql2="SELECT COUNT(id) FROM balance WHERE ornament_type = " + "'"+  view_ornament_type3_data + "'";
+                       con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                       PreparedStatement pat2=con2.prepareStatement(sql2);
+                       ResultSet rs2=pat2.executeQuery();
+                       while(rs2.next()){
+                           view_totItemInp3_label.setText(rs2.getString(1)); 
+                       }
+                    } 
+                    catch(Exception e){
+                        JOptionPane.showMessageDialog(null,e);
+                    }
+                    con.close();
+                    con1.close();
+                    con2.close();
+                }
+                catch(Exception e){
+                        JOptionPane.showMessageDialog(null,e);
+                }
+                view_combined3_display();
+            }
+            else if((view_from3_date!=null)&&(view_to3_date!=null)){
+                        view_date3_display();
+            }
+            else{
+                        view_default3_display();
+            }
     }//GEN-LAST:event_view_selOrnament3_dropdownview_selOrnament_dropdownActionPerformed
 
     private void view_from3_datechooserview_fromDate_propertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_view_from3_datechooserview_fromDate_propertyChange
         // TODO add your handling code here:
+                    try{
+                         SimpleDateFormat df =  new SimpleDateFormat("yyyy-MM-dd");
+                         view_from3_dateformat=df.format(view_from3_datechooser.getDate());
+                    }
+                    catch(Exception e){
+                        e.printStackTrace();
+                    } 
+                    view_date3_display(); 
     }//GEN-LAST:event_view_from3_datechooserview_fromDate_propertyChange
 
     private void view_to3_datechooserview_todate_propertChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_view_to3_datechooserview_todate_propertChange
         // TODO add your handling code here:
+                    try{
+                            SimpleDateFormat df =  new SimpleDateFormat("yyyy-MM-dd");
+                            view_to3_dateformat=df.format(view_to3_datechooser.getDate());
+                    }
+                    catch(Exception e){
+                            e.printStackTrace();
+                    }
+                    view_date3_display();
     }//GEN-LAST:event_view_to3_datechooserview_todate_propertChange
 
     private void view_selOrnament4_dropdownview_selOrnament_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_selOrnament4_dropdownview_selOrnament_dropdownActionPerformed
@@ -1501,6 +1721,36 @@ public class MainWindow extends javax.swing.JFrame {
         }  
     }
     
+    private void view_dropdown2_display(){  
+        try{
+            String sql="SELECT type FROM Ornament_type";
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+            stmt=con.createStatement();
+            rs=stmt.executeQuery(sql);
+            while(rs.next()){
+                view_selOrnament2_dropdown.addItem(rs.getString("type"));
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }  
+    }
+     
+    private void view_dropdown3_display(){  
+        try{
+            String sql="SELECT type FROM Ornament_type";
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+            stmt=con.createStatement();
+            rs=stmt.executeQuery(sql);
+            while(rs.next()){
+                view_selOrnament3_dropdown.addItem(rs.getString("type"));
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }  
+    }
+    
     private void view_dropdown4_display(){
          try{
             String sql="SELECT type FROM Ornament_type";
@@ -1580,8 +1830,135 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }
 
+    private void view_default2_display(){
+        //        Masking the image into jLabel Object
+//        JLabel imageLabel = new JLabel();
+//        imageLabel.setIcon(this.imageIcon);
+        try{
+                try{
+                    //Getting default total weight of items.
+                    String sql1="SELECT SUM(weight) FROM sold";
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    PreparedStatement pat1=con.prepareStatement(sql1);
+                    ResultSet rs1=pat1.executeQuery();
+                    while(rs1.next()){
+                         if(rs1.getString(1)==null){
+                            view_totWtInp2_label.setText("0"); 
+                         }
+                         else{
+                            view_totWtInp2_label.setText(rs1.getString(1)); 
+                         }
+                    }
+                    
+                }
+                catch(Exception e){
+                    JOptionPane.showMessageDialog(null,e);
+                }
+                
+                try{
+                    //Getting default overall table values. 
+                    String sql2="SELECT id, date, chase_no, ornament_name, weight, quantity, barcode FROM sold\n" ;
+                    con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    PreparedStatement pat2=con1.prepareStatement(sql2);
+                    ResultSet rs2=pat2.executeQuery();
+                    DefaultTableModel tm=(DefaultTableModel)view_table2_table.getModel();
+                    tm.setRowCount(0);
+                    while(rs2.next()){
+                        Object o[]={rs2.getInt("id"),rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_name"),rs2.getString("weight"),rs2.getString("quantity"),rs2.getString("barcode")};
+                        tm.addRow(o);
+                        //this.model.addRow(new Object[]{rs2.getInt("id"),rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_name"),rs2.getString("weight"),rs2.getString("quantity"),rs2.getString("barcode"), imageLabel});
+                    }
+                }
+                catch(Exception e){
+                    JOptionPane.showMessageDialog(null,e);
+                }
+                
+                try{
+                    //Getting default total number of items.
+                    String sql3="SELECT COUNT(id) FROM sold";
+                    con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    PreparedStatement pat3=con2.prepareStatement(sql3);
+                    ResultSet rs3=pat3.executeQuery();
+                    while(rs3.next()){
+                        view_totItemInp2_label.setText(rs3.getString(1)); 
+                    }
+                }
+                catch(Exception e){
+                    JOptionPane.showMessageDialog(null,e);
+                }
+                con.close(); 
+                con1.close(); 
+                con2.close(); 
+        }
+        catch(Exception e){
+             JOptionPane.showMessageDialog(null,e);
+        }
+    }
+    
+    private void view_default3_display(){
+        try{
+                try{
+                    //Getting default total weight of items.
+                    String sql1="SELECT SUM(weight) FROM balance";
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    PreparedStatement pat1=con.prepareStatement(sql1);
+                    ResultSet rs1=pat1.executeQuery();
+                    while(rs1.next()){
+                         if(rs1.getString(1)==null){
+                            view_totWtInp3_label.setText("0"); 
+                         }
+                         else{
+                            view_totWtInp3_label.setText(rs1.getString(1)); 
+                         }
+                    }
+                    
+                }
+                catch(Exception e){
+                    JOptionPane.showMessageDialog(null,e);
+                }
+                
+                try{
+                    //Getting default overall table values. 
+                    String sql2="SELECT id, date, chase_no, ornament_name, weight, quantity, barcode FROM balance\n" ;
+                    con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    PreparedStatement pat2=con1.prepareStatement(sql2);
+                    ResultSet rs2=pat2.executeQuery();
+                    DefaultTableModel tm=(DefaultTableModel)view_table3_table.getModel();
+                    tm.setRowCount(0);
+                    while(rs2.next()){
+                        Object o[]={rs2.getInt("id"),rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_name"),rs2.getString("weight"),rs2.getString("quantity"),rs2.getString("barcode")};
+                        tm.addRow(o);
+                        //this.model.addRow(new Object[]{rs2.getInt("id"),rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_name"),rs2.getString("weight"),rs2.getString("quantity"),rs2.getString("barcode"), imageLabel});
+                    }
+                }
+                catch(Exception e){
+                    JOptionPane.showMessageDialog(null,e);
+                }
+                
+                try{
+                    //Getting default total number of items.
+                    String sql3="SELECT COUNT(id) FROM balance";
+                    con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    PreparedStatement pat3=con2.prepareStatement(sql3);
+                    ResultSet rs3=pat3.executeQuery();
+                    while(rs3.next()){
+                        view_totItemInp3_label.setText(rs3.getString(1)); 
+                    }
+                }
+                catch(Exception e){
+                    JOptionPane.showMessageDialog(null,e);
+                }
+                con.close(); 
+                con1.close(); 
+                con2.close(); 
+        }
+        catch(Exception e){
+             JOptionPane.showMessageDialog(null,e);
+        }
+    }
+    
     private void view_default4_display(){
-         try{
+        try{
                 try{
                     //Getting default total weight of items.
                     String sql1="SELECT SUM(weight) FROM return_table";
@@ -1703,6 +2080,124 @@ public class MainWindow extends javax.swing.JFrame {
                 view_combined1_display();
     }
     
+    private void view_date2_display(){
+                view_from2_date= view_from2_dateformat;
+                view_to2_date= view_to2_dateformat;
+                if((view_from2_date!=null) && (view_to2_date!=null)){
+                    try{ 
+                        
+                        //Displaying table according to dates
+                        String sql1="SELECT * FROM sold WHERE date >=" + "'"+  view_from2_date + "'  AND date <= " + "'"+  view_to2_date + "'";
+                        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                        PreparedStatement pat1=con.prepareStatement(sql1);
+                        ResultSet rs1=pat1.executeQuery();
+                        DefaultTableModel tm=(DefaultTableModel)view_table2_table.getModel();
+                        tm.setRowCount(0);
+                        while(rs1.next()){
+                            Object o[]={rs1.getInt("id"),rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("weight"),rs1.getString("quantity"),rs1.getString("barcode")};
+                            tm.addRow(o);
+                        } 
+                    }
+                    catch(Exception e){
+                        JOptionPane.showMessageDialog(null,e);
+                    }
+                    try{
+                        
+                        //Getting total weight of items acc. to dates.
+                        String sql1="SELECT SUM(weight) FROM sold WHERE date >=" + "'"+  view_from2_date + "'  AND date <= " + "'"+  view_to2_date + "'";
+                        con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                        PreparedStatement pat1=con1.prepareStatement(sql1);
+                        ResultSet rs1=pat1.executeQuery();
+                        while(rs1.next()){
+                             if(rs1.getString(1)==null){
+                                    view_totWtInp2_label.setText("0"); 
+                             }
+                             else{
+                                    view_totWtInp2_label.setText(rs1.getString(1));
+                             }
+                        }  
+                    }
+                    catch(Exception e){
+                         JOptionPane.showMessageDialog(null,e);
+                    }
+                    
+                    try{
+                        
+                        //Getting total number of items acc. to dates.
+                        String sql2="SELECT COUNT(id) FROM sold WHERE date >=" + "'"+  view_from2_date + "'  AND date <= " + "'"+  view_to2_date + "'";
+                        con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                        PreparedStatement pat2=con2.prepareStatement(sql2);
+                        ResultSet rs2=pat2.executeQuery();
+                        while(rs2.next()){
+                            view_totItemInp2_label.setText(rs2.getString(1)); 
+                        }
+                    } 
+                    catch(Exception e){
+                        JOptionPane.showMessageDialog(null,e);
+                    }
+                }
+                view_combined2_display();
+    }
+    
+    private void view_date3_display(){
+                view_from3_date= view_from3_dateformat;
+                view_to3_date= view_to3_dateformat;
+                if((view_from3_date!=null) && (view_to3_date!=null)){
+                    try{ 
+                        
+                        //Displaying table according to dates
+                        String sql1="SELECT * FROM balance WHERE date >=" + "'"+  view_from3_date + "'  AND date <= " + "'"+  view_to3_date + "'";
+                        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                        PreparedStatement pat1=con.prepareStatement(sql1);
+                        ResultSet rs1=pat1.executeQuery();
+                        DefaultTableModel tm=(DefaultTableModel)view_table3_table.getModel();
+                        tm.setRowCount(0);
+                        while(rs1.next()){
+                            Object o[]={rs1.getInt("id"),rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("weight"),rs1.getString("quantity"),rs1.getString("barcode")};
+                            tm.addRow(o);
+                        } 
+                    }
+                    catch(Exception e){
+                        JOptionPane.showMessageDialog(null,e);
+                    }
+                    try{
+                        
+                        //Getting total weight of items acc. to dates.
+                        String sql1="SELECT SUM(weight) FROM balance WHERE date >=" + "'"+  view_from3_date + "'  AND date <= " + "'"+  view_to3_date + "'";
+                        con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                        PreparedStatement pat1=con1.prepareStatement(sql1);
+                        ResultSet rs1=pat1.executeQuery();
+                        while(rs1.next()){
+                             if(rs1.getString(1)==null){
+                                    view_totWtInp3_label.setText("0"); 
+                             }
+                             else{
+                                    view_totWtInp3_label.setText(rs1.getString(1));
+                             }
+                        }  
+                    }
+                    catch(Exception e){
+                         JOptionPane.showMessageDialog(null,e);
+                    }
+                    
+                    try{
+                        
+                        //Getting total number of items acc. to dates.
+                        String sql2="SELECT COUNT(id) FROM balance WHERE date >=" + "'"+  view_from3_date + "'  AND date <= " + "'"+  view_to3_date + "'";
+                        con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                        PreparedStatement pat2=con2.prepareStatement(sql2);
+                        ResultSet rs2=pat2.executeQuery();
+                        while(rs2.next()){
+                            view_totItemInp3_label.setText(rs2.getString(1)); 
+                        }
+                    } 
+                    catch(Exception e){
+                        JOptionPane.showMessageDialog(null,e);
+                    }
+                }
+                view_combined3_display();
+    }
+    
     private void  view_date4_display(){
                 view_from4_date= view_from4_dateformat;
                 view_to4_date= view_to4_dateformat;
@@ -1759,9 +2254,7 @@ public class MainWindow extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null,e);
                     }
                 }
-                view_combined4_display();
-    
-        
+                view_combined4_display();       
     }
     
     //Displaying contents according to both selOrnament and dates
@@ -1827,8 +2320,128 @@ public class MainWindow extends javax.swing.JFrame {
             }
     } 
     
+    private void view_combined2_display(){
+        if((view_ornament_type2_data!=null) &&(view_from2_date!=null) && (view_to2_date!=null)){
+                
+                if(view_ornament_type2_data!="Select the Ornament"){
+                    try{ 
+
+                            //Displaying table according to selOrnament and dates
+                            String sql1="SELECT * FROM sold WHERE ornament_type = " + "'"+  view_ornament_type2_data + "' AND date >=" + "'"+  view_from2_date + "'  AND date <= " + "'"+  view_to2_date + "'";
+                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                            PreparedStatement pat1=con.prepareStatement(sql1);
+                            ResultSet rs1=pat1.executeQuery();
+                            DefaultTableModel tm=(DefaultTableModel)view_table2_table.getModel();
+                            tm.setRowCount(0);
+                            while(rs1.next()){
+                                Object o[]={rs1.getInt("id"),rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("weight"), rs1.getString("quantity"),rs1.getString("barcode")};
+                                tm.addRow(o);
+                            } 
+                    }
+                    catch(Exception e){
+                            JOptionPane.showMessageDialog(null,e);
+                    }
+
+                    try{
+
+                            //Getting total weight of items acc. to selOrnament and dates.
+                            String sql1="SELECT SUM(weight) FROM sold WHERE ornament_type = " + "'"+  view_ornament_type2_data + "' AND date >=" + "'"+  view_from2_date + "'  AND date <= " + "'"+  view_to2_date + "'";
+                            con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                            PreparedStatement pat1=con1.prepareStatement(sql1);
+                            ResultSet rs1=pat1.executeQuery();
+                            while(rs1.next()){
+                                 if(rs1.getString(1)==null){
+                                    view_totWtInp2_label.setText("0"); 
+                                 }
+                                 else{
+                                    view_totWtInp2_label.setText(rs1.getString(1));
+                                 }
+                            } 
+                    }
+                    catch(Exception e){
+                             JOptionPane.showMessageDialog(null,e);
+                    }
+
+                    try{
+
+                            //Getting total number of items acc. to selOrnament and dates.
+                            String sql2="SELECT COUNT(id) FROM sold WHERE ornament_type = " + "'"+  view_ornament_type2_data + "' AND date >=" + "'"+  view_from2_date + "'  AND date <= " + "'"+  view_to2_date + "'";
+                            con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                            PreparedStatement pat2=con2.prepareStatement(sql2);
+                            ResultSet rs2=pat2.executeQuery();
+                            while(rs2.next()){
+                                view_totItemInp2_label.setText(rs2.getString(1)); 
+                            }
+                    } 
+                    catch(Exception e){
+                            JOptionPane.showMessageDialog(null,e);
+                    }
+                }
+        }
+    }
+    
+    private void view_combined3_display(){
+        if((view_ornament_type3_data!=null) &&(view_from3_date!=null) && (view_to3_date!=null)){
+                
+                if(view_ornament_type3_data!="Select the Ornament"){
+                    try{ 
+
+                            //Displaying table according to selOrnament and dates
+                            String sql1="SELECT * FROM balance WHERE ornament_type = " + "'"+  view_ornament_type3_data + "' AND date >=" + "'"+  view_from3_date + "'  AND date <= " + "'"+  view_to3_date + "'";
+                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                            PreparedStatement pat1=con.prepareStatement(sql1);
+                            ResultSet rs1=pat1.executeQuery();
+                            DefaultTableModel tm=(DefaultTableModel)view_table3_table.getModel();
+                            tm.setRowCount(0);
+                            while(rs1.next()){
+                                Object o[]={rs1.getInt("id"),rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("weight"), rs1.getString("quantity"),rs1.getString("barcode")};
+                                tm.addRow(o);
+                            } 
+                    }
+                    catch(Exception e){
+                            JOptionPane.showMessageDialog(null,e);
+                    }
+
+                    try{
+
+                            //Getting total weight of items acc. to selOrnament and dates.
+                            String sql1="SELECT SUM(weight) FROM balance WHERE ornament_type = " + "'"+  view_ornament_type3_data + "' AND date >=" + "'"+  view_from3_date + "'  AND date <= " + "'"+  view_to3_date + "'";
+                            con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                            PreparedStatement pat1=con1.prepareStatement(sql1);
+                            ResultSet rs1=pat1.executeQuery();
+                            while(rs1.next()){
+                                 if(rs1.getString(1)==null){
+                                    view_totWtInp3_label.setText("0"); 
+                                 }
+                                 else{
+                                    view_totWtInp3_label.setText(rs1.getString(1));
+                                 }
+                            } 
+                    }
+                    catch(Exception e){
+                             JOptionPane.showMessageDialog(null,e);
+                    }
+
+                    try{
+
+                            //Getting total number of items acc. to selOrnament and dates.
+                            String sql2="SELECT COUNT(id) FROM balance WHERE ornament_type = " + "'"+  view_ornament_type3_data + "' AND date >=" + "'"+  view_from3_date + "'  AND date <= " + "'"+  view_to3_date + "'";
+                            con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                            PreparedStatement pat2=con2.prepareStatement(sql2);
+                            ResultSet rs2=pat2.executeQuery();
+                            while(rs2.next()){
+                                view_totItemInp3_label.setText(rs2.getString(1)); 
+                            }
+                    } 
+                    catch(Exception e){
+                            JOptionPane.showMessageDialog(null,e);
+                    }
+                }
+        }
+    }
+    
     private void view_combined4_display(){
-         if((view_ornament_type4_data!=null) &&(view_from4_date!=null) && (view_to4_date!=null)){
+        if((view_ornament_type4_data!=null) &&(view_from4_date!=null) && (view_to4_date!=null)){
                 
                 if(view_ornament_type4_data!="Select the Ornament"){
                     try{ 
@@ -1884,9 +2497,14 @@ public class MainWindow extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(null,e);
                     }
                 }
-            }
+        }
     }
+     
     
-    
+  //  Table Model instance;
+    private DefaultTableModel model;
+
+//  Image Icon instance
+    private ImageIcon imageIcon;  
 }
 
