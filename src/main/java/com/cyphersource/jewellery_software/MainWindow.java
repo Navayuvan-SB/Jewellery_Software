@@ -15,6 +15,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
+import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
 
 
@@ -23,6 +24,7 @@ public class MainWindow extends javax.swing.JFrame {
     Connection con;
     PreparedStatement ps=null;
     ResultSet rs=null;
+    String sql;
     String date_UI = null,
            dateDB = null,
            chase_no = null,
@@ -33,7 +35,8 @@ public class MainWindow extends javax.swing.JFrame {
            wt = null,
            was = null,
            qty = null,
-           buy = null;
+           buy = null,
+           barcode = null;
     
     public MainWindow() {
         initComponents();
@@ -45,8 +48,9 @@ public class MainWindow extends javax.swing.JFrame {
             System.out.println(e);
         } 
         getLocalDate();
-        groupButton();
         Combo();
+        AutoComplete();
+        groupButton();
     }
     
     // to get current date
@@ -55,7 +59,8 @@ public class MainWindow extends javax.swing.JFrame {
         dateDB = l_date.toString();
         date_UI = l_date.format(DateTimeFormatter.ofPattern("dd-MM-yy"));
         this.Entry_DateNoValue_Label.setText(this.date_UI);
-}
+    }
+    
     
     // button group
     private void groupButton( ) {
@@ -63,13 +68,13 @@ public class MainWindow extends javax.swing.JFrame {
         ButtonGroup bg = new ButtonGroup( );
         bg.add(Entry_22CT_RadioButton);
         bg.add(Entry_961HM_RadioButton);
-   }
+    }
     
     
     // Combobox dropdown display
     private void Combo(){
         try{
-            String sql = "select * from Ornament_type";
+             sql = "select * from Ornament_type";
             PreparedStatement ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
             
@@ -81,19 +86,39 @@ public class MainWindow extends javax.swing.JFrame {
         catch(Exception e){
             System.out.println(e);
         }  
-        
     }
     
+    
+    // AutoComplete for Ornament checkbox
+    private void AutoComplete(){
+        try{
+             sql = "select * from ornament_name";
+            PreparedStatement ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                String ornt_name = rs.getString("ornament_name");
+                Entry_OrnamentName_jCombobox.addItem(ornt_name);
+            }
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+        // this is a class to autocomplete text.
+        AutoCompleteDecorator.decorate(Entry_OrnamentName_jCombobox);
+    }
+
     
     // generating chase value
     private void Chase(){
         try{
-            String sql = "select * from Ornament_type where type=?";
+            sql = "select * from Ornament_type where type=?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, ornament_type);
             rs = ps.executeQuery();
-            // to check limit of value
+           
             while(rs.next()){
+                // conditions to check limit of chase_no.
                 if(rs.getInt(4) < 9){
                   this.chase_no = rs.getString(3)+""+"0"+"0"+(rs.getInt(4)+1);  
                 }
@@ -103,7 +128,6 @@ public class MainWindow extends javax.swing.JFrame {
                 else{
                     this.chase_no = rs.getString(3)+""+(rs.getInt(4)+1);
                 }
-                System.out.println(this.chase_no);
             }
         }
         catch(Exception e){
@@ -124,6 +148,9 @@ public class MainWindow extends javax.swing.JFrame {
             quality = Entry_961HM_RadioButton.getText();
         }
     }
+    
+    
+     
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -149,9 +176,6 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_Date_Label = new javax.swing.JLabel();
         Entry_DateNoValue_Label = new javax.swing.JLabel();
         Entry_InputFields_Panel = new javax.swing.JPanel();
-        Entry_Ornament_TextField = new javax.swing.JTextField();
-        Entry_Ornament_Label = new javax.swing.JLabel();
-        Entry_Ornament_Label_Icon = new javax.swing.JLabel();
         Entry_Quality_TextField = new javax.swing.JLabel();
         Entry_961HM_RadioButton = new javax.swing.JRadioButton();
         Entry_22CT_RadioButton = new javax.swing.JRadioButton();
@@ -172,9 +196,11 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_BUY_TextField = new javax.swing.JTextField();
         Entry_BUY_Label_Icon = new javax.swing.JLabel();
         Entry_OrnamentType_jComboBox = new javax.swing.JComboBox<>();
+        Entry_OrnamentName_jCombobox = new javax.swing.JComboBox<>();
         Entry_CheckText_Label = new javax.swing.JLabel();
         Entry_EnterButton_Label = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        Entry_Check_jCheckBox = new javax.swing.JCheckBox();
+        Entry_Reset_jLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -248,23 +274,6 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_InputFields_Panel.setBackground(new java.awt.Color(251, 251, 251));
         Entry_InputFields_Panel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Entry_InputFields_Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Entry_Ornament_TextField.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_Ornament_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        Entry_Ornament_TextField.setForeground(new java.awt.Color(0, 0, 0));
-        Entry_Ornament_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        Entry_Ornament_TextField.setBorder(null);
-        Entry_InputFields_Panel.add(Entry_Ornament_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, 360, -1));
-
-        Entry_Ornament_Label.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_Ornament_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        Entry_Ornament_Label.setForeground(new java.awt.Color(98, 98, 98));
-        Entry_Ornament_Label.setText("Ornament Name :");
-        Entry_InputFields_Panel.add(Entry_Ornament_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 200, -1));
-
-        Entry_Ornament_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_Ornament_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
-        Entry_InputFields_Panel.add(Entry_Ornament_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, -1, -1));
 
         Entry_Quality_TextField.setBackground(new java.awt.Color(255, 255, 255));
         Entry_Quality_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
@@ -394,7 +403,20 @@ public class MainWindow extends javax.swing.JFrame {
                 Entry_OrnamentType_jComboBoxActionPerformed(evt);
             }
         });
-        Entry_InputFields_Panel.add(Entry_OrnamentType_jComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 580, 60));
+        Entry_InputFields_Panel.add(Entry_OrnamentType_jComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 580, 70));
+
+        Entry_OrnamentName_jCombobox.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_OrnamentName_jCombobox.setEditable(true);
+        Entry_OrnamentName_jCombobox.setFont(new java.awt.Font("Ubuntu", 0, 17)); // NOI18N
+        Entry_OrnamentName_jCombobox.setForeground(new java.awt.Color(98, 98, 98));
+        Entry_OrnamentName_jCombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Ornament Name" }));
+        Entry_OrnamentName_jCombobox.setBorder(null);
+        Entry_OrnamentName_jCombobox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Entry_OrnamentName_jComboboxActionPerformed(evt);
+            }
+        });
+        Entry_InputFields_Panel.add(Entry_OrnamentName_jCombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 580, 70));
 
         Entry_CheckText_Label.setBackground(new java.awt.Color(255, 255, 255));
         Entry_CheckText_Label.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
@@ -408,29 +430,41 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
-        jCheckBox1.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/checkbox.png")); // NOI18N
-        jCheckBox1.setSelectedIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Checked.png")); // NOI18N
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        Entry_Check_jCheckBox.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/checkbox.png")); // NOI18N
+        Entry_Check_jCheckBox.setSelectedIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Checked.png")); // NOI18N
+        Entry_Check_jCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                Entry_Check_jCheckBoxActionPerformed(evt);
             }
         });
+
+        Entry_Reset_jLabel.setIcon(new javax.swing.JLabel() {
+            public javax.swing.Icon getIcon() {
+                try {
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL("file:/home/poorvasha/Downloads/ResetButton.png")
+                    );
+                } catch (java.net.MalformedURLException e) {
+                }
+                return null;
+            }
+        }.getIcon());
 
         javax.swing.GroupLayout WrapperLayout = new javax.swing.GroupLayout(Wrapper);
         Wrapper.setLayout(WrapperLayout);
         WrapperLayout.setHorizontalGroup(
             WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WrapperLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
                 .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(WrapperLayout.createSequentialGroup()
-                        .addGap(591, 591, 591)
+                        .addGap(521, 521, 521)
                         .addComponent(Entry_ShopnameJ_Label)
                         .addGap(0, 0, 0)
                         .addComponent(Entry_ShopNameA_Label)
                         .addGap(0, 0, 0)
                         .addComponent(Entry_ShopnameJ2_Label))
                     .addGroup(WrapperLayout.createSequentialGroup()
-                        .addGap(70, 70, 70)
                         .addComponent(Entry_ChaseNo_Label)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Entry_ChaseNoValue_Label)))
@@ -447,21 +481,22 @@ public class MainWindow extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Entry_DateNoValue_Label)))
                 .addGap(70, 70, 70))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WrapperLayout.createSequentialGroup()
+                .addContainerGap(376, Short.MAX_VALUE)
+                .addComponent(Entry_Check_jCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Entry_CheckText_Label)
+                .addGap(374, 374, 374))
             .addGroup(WrapperLayout.createSequentialGroup()
                 .addGap(70, 70, 70)
                 .addComponent(Entry_InputFields_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WrapperLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WrapperLayout.createSequentialGroup()
-                        .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Entry_CheckText_Label)
-                        .addGap(376, 376, 376))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WrapperLayout.createSequentialGroup()
-                        .addComponent(Entry_EnterButton_Label)
-                        .addGap(505, 505, 505))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(WrapperLayout.createSequentialGroup()
+                .addGap(184, 184, 184)
+                .addComponent(Entry_Reset_jLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Entry_EnterButton_Label)
+                .addGap(167, 167, 167))
         );
         WrapperLayout.setVerticalGroup(
             WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -485,16 +520,20 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(Entry_ChaseNo_Label)
                     .addComponent(Entry_Date_Label)
                     .addComponent(Entry_DateNoValue_Label))
-                .addGap(49, 49, 49)
-                .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(52, 52, 52)
+                .addComponent(Entry_InputFields_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 945, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Entry_CheckText_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Entry_Check_jCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53)
+                .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(WrapperLayout.createSequentialGroup()
-                        .addComponent(Entry_InputFields_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 939, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(Entry_CheckText_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(66, 66, 66)
-                .addComponent(Entry_EnterButton_Label)
-                .addContainerGap(248, Short.MAX_VALUE))
+                        .addComponent(Entry_Reset_jLabel)
+                        .addContainerGap(242, Short.MAX_VALUE))
+                    .addGroup(WrapperLayout.createSequentialGroup()
+                        .addComponent(Entry_EnterButton_Label)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         jScrollPane.setViewportView(Wrapper);
@@ -524,6 +563,7 @@ public class MainWindow extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     
     
@@ -531,27 +571,41 @@ public class MainWindow extends javax.swing.JFrame {
         
         // quality 
         QualityRadioBTN();
-        
-        ornament_name = Entry_Ornament_TextField.getText();
+        //ornament_name = Entry_Ornament_TextField.getText();
         mc = Entry_MC_TextField.getText();
         wt = Entry_WT_TextField.getText();
         was = Entry_WAS_TextField.getText();
         qty = Entry_QTY_TextField.getText();
         buy = Entry_BUY_TextField.getText();
+        
+        try{
+            // Query
+            sql = "INSERT INTO ornament_name (ornament_name) VALUES (?)";
+
+            PreparedStatement statement = con.prepareStatement(sql);
+            statement.setString(1, ornament_name);
+
+            int rowsInserted = statement.executeUpdate();
+            if (rowsInserted > 0) {
+            }            
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }         
           
         
+        
         // if else to display message box
-        if("".equals(mc) || "".equals(dateDB) || "".equals(chase_no) || "".equals(ornament_type) || "".equals(ornament_name) ||"".equals(quality) || "".equals(wt) || "".equals(was) || "".equals(qty) || "".equals(buy) ){
+        if("".equals(mc) || "".equals(barcode) || "".equals(dateDB) || "".equals(chase_no) || "".equals(ornament_type) || "".equals(ornament_name) ||"".equals(quality) || "".equals(wt) || "".equals(was) || "".equals(qty) || "".equals(buy) ){
             System.out.println("enter all");
             JOptionPane.showMessageDialog(null, "Sry, You missed some fields, Please do fill it");
         }
         else{
             
             try{
-                
                 // Query
-                String sql = "INSERT INTO jewellery_entry (date, chase_no, ornament_type, ornament_name, quality, making_charge, weight, wastage, quantity, buy, barcode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
+                sql = "INSERT INTO jewellery_entry (date, chase_no, ornament_type, ornament_name, quality, making_charge, weight, wastage, quantity, buy, barcode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                
                 PreparedStatement statement = con.prepareStatement(sql);
                 statement.setString(1, dateDB);
                 statement.setString(2, chase_no);
@@ -563,7 +617,7 @@ public class MainWindow extends javax.swing.JFrame {
                 statement.setString(8, was);
                 statement.setString(9, qty);
                 statement.setString(10, buy);
-                statement.setString(11, chase_no);
+                statement.setString(11, barcode);
 
                 int rowsInserted = statement.executeUpdate();
                 if (rowsInserted > 0) {
@@ -582,14 +636,24 @@ public class MainWindow extends javax.swing.JFrame {
         
         this.ornament_type = (String) Entry_OrnamentType_jComboBox.getSelectedItem();
         Chase();
-
     }//GEN-LAST:event_Entry_OrnamentType_jComboBoxActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void Entry_Check_jCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_Check_jCheckBoxActionPerformed
        
-        JOptionPane.showMessageDialog(null, " Barcode Generated! kindly ENTER to update");
-              
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+        if(Entry_Check_jCheckBox.isSelected()){
+            this.barcode = chase_no;
+            JOptionPane.showMessageDialog(null, " Barcode Generated! kindly ENTER to update");
+        }
+        else{
+            this.barcode = null;
+            JOptionPane.showMessageDialog(null, " Barcode Generation Canceled!");
+        }           
+    }//GEN-LAST:event_Entry_Check_jCheckBoxActionPerformed
+
+    private void Entry_OrnamentName_jComboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_OrnamentName_jComboboxActionPerformed
+
+        this.ornament_name = (String) Entry_OrnamentName_jCombobox.getSelectedItem();
+    }//GEN-LAST:event_Entry_OrnamentName_jComboboxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -643,6 +707,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel Entry_ChaseNoValue_Label;
     private javax.swing.JLabel Entry_ChaseNo_Label;
     private javax.swing.JLabel Entry_CheckText_Label;
+    private javax.swing.JCheckBox Entry_Check_jCheckBox;
     private javax.swing.JLabel Entry_DateNoValue_Label;
     private javax.swing.JLabel Entry_Date_Label;
     private javax.swing.JLabel Entry_EnterButton_Label;
@@ -653,15 +718,14 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel Entry_NavEntry_Label;
     private javax.swing.JLabel Entry_NavSell_Label;
     private javax.swing.JLabel Entry_NavView_Label;
+    private javax.swing.JComboBox<String> Entry_OrnamentName_jCombobox;
     private javax.swing.JComboBox<String> Entry_OrnamentType_jComboBox;
-    private javax.swing.JLabel Entry_Ornament_Label;
-    private javax.swing.JLabel Entry_Ornament_Label_Icon;
-    private javax.swing.JTextField Entry_Ornament_TextField;
     private javax.swing.JLabel Entry_QTY_Label;
     private javax.swing.JLabel Entry_QTY_Label_Icon;
     private javax.swing.JTextField Entry_QTY_TextField;
     private javax.swing.JLabel Entry_Quality_Label;
     private javax.swing.JLabel Entry_Quality_TextField;
+    private javax.swing.JLabel Entry_Reset_jLabel;
     private javax.swing.JLabel Entry_ShopNameA_Label;
     private javax.swing.JLabel Entry_ShopnameJ2_Label;
     private javax.swing.JLabel Entry_ShopnameJ_Label;
@@ -673,7 +737,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JTextField Entry_WT_TextField;
     private javax.swing.JPanel Wrapper;
     private javax.swing.JPanel entryPage;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane;
     // End of variables declaration//GEN-END:variables
