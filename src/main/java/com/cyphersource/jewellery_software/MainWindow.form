@@ -397,8 +397,8 @@
                                       <Component id="view_datelimit1_panel" min="-2" pref="106" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="40" max="32767" attributes="0"/>
-                              <Component id="view_tablearea1_scrollpane" min="-2" pref="430" max="-2" attributes="0"/>
+                              <EmptySpace pref="30" max="32767" attributes="0"/>
+                              <Component id="view_tablearea1_scrollpane" min="-2" pref="440" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -511,47 +511,47 @@
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                               <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="45" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="110" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="105" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="150" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="35" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="35" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="40" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="45" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
                                 <Column maxWidth="-1" minWidth="-1" prefWidth="50" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="70" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="100" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="160" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="55" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="55" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="55" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="70" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="70" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
@@ -686,36 +686,31 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="view_tablearea2_scrollpane" alignment="0" min="-2" pref="809" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="view_tablearea2_scrollpane" min="-2" pref="797" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="view_totItem2_label" min="-2" pref="158" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="view_colon22_label" min="-2" pref="6" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="view_totItemInp2_label" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="view_totWt2_label" max="32767" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="view_colon21_label" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="view_totWtInp2_label" min="-2" pref="52" max="-2" attributes="0"/>
-                                          </Group>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="view_totWt2_label" alignment="0" pref="160" max="32767" attributes="0"/>
+                                          <Component id="view_totItem2_label" alignment="0" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="view_colon21_label" alignment="0" min="-2" pref="11" max="-2" attributes="0"/>
+                                          <Component id="view_colon22_label" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="view_totItemInp2_label" alignment="0" pref="59" max="32767" attributes="0"/>
+                                          <Component id="view_totWtInp2_label" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
                                       <Component id="view_selOrnament2_dropdown" min="-2" pref="227" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="view_datelimit2_panel" min="-2" pref="325" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="view_datelimit2_panel" min="-2" pref="327" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <EmptySpace pref="26" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -723,38 +718,37 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="view_totWt2_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="view_colon21_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="view_totWtInp2_label" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="view_totItem2_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="view_colon22_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="view_totItemInp2_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Component id="view_selOrnament2_dropdown" alignment="1" min="-2" pref="43" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="view_totItem2_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="view_colon21_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="view_totItemInp2_label" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="view_totWt2_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="view_colon22_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="view_totWtInp2_label" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                                      <Component id="view_selOrnament2_dropdown" min="-2" pref="43" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="view_datelimit2_panel" min="-2" max="-2" attributes="0"/>
+                                      <Component id="view_datelimit2_panel" min="-2" pref="106" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="61" max="32767" attributes="0"/>
-                              <Component id="view_tablearea2_scrollpane" min="-2" pref="419" max="-2" attributes="0"/>
+                              <EmptySpace pref="30" max="32767" attributes="0"/>
+                              <Component id="view_tablearea2_scrollpane" min="-2" pref="440" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="view_totItem2_label">
+                    <Component class="javax.swing.JLabel" name="view_totWt2_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Ubuntu" size="19" style="1"/>
@@ -762,18 +756,18 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Total Weight"/>
+                        <Property name="text" type="java.lang.String" value="Total Weight    "/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="view_totItemInp2_label">
+                    <Component class="javax.swing.JLabel" name="view_totWtInp2_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Ubuntu" size="19" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="1454"/>
+                        <Property name="name" type="java.lang.String" value="" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="view_totWt2_label">
+                    <Component class="javax.swing.JLabel" name="view_totItem2_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Ubuntu" size="19" style="1"/>
@@ -784,12 +778,11 @@
                         <Property name="text" type="java.lang.String" value="Total no of Items"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="view_totWtInp2_label">
+                    <Component class="javax.swing.JLabel" name="view_totItemInp2_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Ubuntu" size="19" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="1050"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="view_selOrnament2_dropdown">
@@ -804,10 +797,8 @@
                           <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="3">
+                          <StringArray count="1">
                             <StringItem index="0" value="Select the Ornament"/>
-                            <StringItem index="1" value="Item1"/>
-                            <StringItem index="2" value="item2"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -834,6 +825,88 @@
                         <Property name="text" type="java.lang.String" value=":"/>
                       </Properties>
                     </Component>
+                    <Container class="javax.swing.JScrollPane" name="view_tablearea2_scrollpane">
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="view_table2_table">
+                          <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                                <EmptyBorder/>
+                              </Border>
+                            </Property>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Ubuntu" size="18" style="1"/>
+                            </Property>
+                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                              <Table columnCount="8" rowCount="13">
+                                <Column editable="true" title="No" type="java.lang.Object"/>
+                                <Column editable="true" title="Date" type="java.lang.Object"/>
+                                <Column editable="true" title="Chase No" type="java.lang.Object"/>
+                                <Column editable="true" title="Ornament Name" type="java.lang.Object"/>
+                                <Column editable="true" title="WT" type="java.lang.Object"/>
+                                <Column editable="true" title="QTY" type="java.lang.Object"/>
+                                <Column editable="true" title="BARCODE" type="java.lang.Object"/>
+                                <Column editable="true" title="RT" type="java.lang.Object"/>
+                              </Table>
+                            </Property>
+                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                              <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="35" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="90" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="105" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="150" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="35" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="45" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="75" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                              </TableColumnModel>
+                            </Property>
+                            <Property name="requestFocusEnabled" type="boolean" value="false"/>
+                            <Property name="rowHeight" type="int" value="45"/>
+                            <Property name="rowMargin" type="int" value="0"/>
+                            <Property name="showGrid" type="boolean" value="true"/>
+                            <Property name="showHorizontalLines" type="boolean" value="false"/>
+                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
                     <Container class="javax.swing.JPanel" name="view_datelimit2_panel">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -855,9 +928,12 @@
                               <Font name="Ubuntu" size="13" style="0"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="view_from2_datechooserview_fromDate_propertyChange"/>
+                          </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="20" y="40" width="130" height="30"/>
+                              <AbsoluteConstraints x="30" y="40" width="130" height="30"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -873,7 +949,7 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="20" y="10" width="60" height="30"/>
+                              <AbsoluteConstraints x="30" y="10" width="60" height="30"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -887,9 +963,12 @@
                               <Font name="Ubuntu" size="13" style="0"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="view_to2_datechooserview_todate_propertChange"/>
+                          </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="160" y="40" width="130" height="30"/>
+                              <AbsoluteConstraints x="170" y="40" width="130" height="30"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -902,7 +981,7 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="160" y="10" width="-1" height="30"/>
+                              <AbsoluteConstraints x="170" y="10" width="-1" height="30"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -915,89 +994,9 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="0" y="0" width="314" height="-1"/>
+                              <AbsoluteConstraints x="10" y="0" width="314" height="-1"/>
                             </Constraint>
                           </Constraints>
-                        </Component>
-                      </SubComponents>
-                    </Container>
-                    <Container class="javax.swing.JScrollPane" name="view_tablearea2_scrollpane">
-
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                      <SubComponents>
-                        <Component class="javax.swing.JTable" name="view_table2_table">
-                          <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Ubuntu" size="18" style="1"/>
-                            </Property>
-                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="8" rowCount="13">
-                                <Column editable="true" title="No" type="java.lang.Object"/>
-                                <Column editable="true" title="Date" type="java.lang.Object"/>
-                                <Column editable="true" title="Chase No" type="java.lang.Object"/>
-                                <Column editable="true" title="Ornamant Name" type="java.lang.Object"/>
-                                <Column editable="true" title="WT" type="java.lang.Object"/>
-                                <Column editable="true" title="QTY" type="java.lang.Object"/>
-                                <Column editable="true" title="BARCODE" type="java.lang.Object"/>
-                                <Column editable="true" title="RT" type="java.lang.Object"/>
-                              </Table>
-                            </Property>
-                            <Property name="autoResizeMode" type="int" value="4"/>
-                            <Property name="cellSelectionEnabled" type="boolean" value="true"/>
-                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                              <TableColumnModel selectionModel="2">
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="60" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="90" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="120" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="160" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="75" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="75" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="130" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                              </TableColumnModel>
-                            </Property>
-                            <Property name="intercellSpacing" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                              <Dimension value="[0, 0]"/>
-                            </Property>
-                            <Property name="rowHeight" type="int" value="45"/>
-                            <Property name="showGrid" type="boolean" value="true"/>
-                            <Property name="showHorizontalLines" type="boolean" value="false"/>
-                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
-                            </Property>
-                          </Properties>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1020,39 +1019,30 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="view_tablearea3_scrollpane" min="-2" pref="808" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="view_totItem3_label" max="32767" attributes="0"/>
-                                              <Component id="view_totWt3_label" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="view_colon31_label" min="-2" pref="11" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                                  <Component id="view_colon32_label" min="-2" pref="11" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="view_totItemInp3_label" min="-2" max="-2" attributes="0"/>
-                                              <Component id="view_totWtInp3_label" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="view_selOrnament3_dropdown" min="-2" pref="226" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="view_tablearea3_scrollpane" alignment="0" min="-2" pref="809" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="view_totWt3_label" alignment="0" pref="160" max="32767" attributes="0"/>
+                                          <Component id="view_totItem3_label" alignment="0" max="32767" attributes="0"/>
                                       </Group>
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="497" max="-2" attributes="0"/>
-                                          <Component id="view_datelimit3_panel" min="-2" pref="311" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="view_colon31_label" alignment="0" min="-2" pref="11" max="-2" attributes="0"/>
+                                          <Component id="view_colon32_label" alignment="0" max="32767" attributes="0"/>
                                       </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="view_totItemInp3_label" alignment="0" pref="59" max="32767" attributes="0"/>
+                                          <Component id="view_totWtInp3_label" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="view_selOrnament3_dropdown" min="-2" pref="227" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="view_datelimit3_panel" min="-2" pref="327" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="38" max="32767" attributes="0"/>
+                              <EmptySpace pref="26" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1063,35 +1053,34 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="view_totWt3_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="view_totItem3_label" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="view_colon31_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="view_totWtInp3_label" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                                          <Component id="view_totItemInp3_label" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="view_totItem3_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="view_totWt3_label" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="view_colon32_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="view_totItemInp3_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="view_totWtInp3_label" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                                       <Component id="view_selOrnament3_dropdown" min="-2" pref="43" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                      <Component id="view_datelimit3_panel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="view_datelimit3_panel" min="-2" pref="106" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="41" max="32767" attributes="0"/>
-                              <Component id="view_tablearea3_scrollpane" min="-2" pref="436" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace pref="30" max="32767" attributes="0"/>
+                              <Component id="view_tablearea3_scrollpane" min="-2" pref="440" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="view_totItem3_label">
+                    <Component class="javax.swing.JLabel" name="view_totWt3_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Ubuntu" size="19" style="1"/>
@@ -1102,15 +1091,15 @@
                         <Property name="text" type="java.lang.String" value="Total Weight    "/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="view_totItemInp3_label">
+                    <Component class="javax.swing.JLabel" name="view_totWtInp3_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Ubuntu" size="19" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="1454"/>
+                        <Property name="name" type="java.lang.String" value="" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="view_totWt3_label">
+                    <Component class="javax.swing.JLabel" name="view_totItem3_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Ubuntu" size="19" style="1"/>
@@ -1121,12 +1110,11 @@
                         <Property name="text" type="java.lang.String" value="Total no of Items"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="view_totWtInp3_label">
+                    <Component class="javax.swing.JLabel" name="view_totItemInp3_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Ubuntu" size="19" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="1050"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="view_selOrnament3_dropdown">
@@ -1141,10 +1129,8 @@
                           <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="3">
+                          <StringArray count="1">
                             <StringItem index="0" value="Select the Ornament"/>
-                            <StringItem index="1" value="Item1"/>
-                            <StringItem index="2" value="item2"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -1177,6 +1163,11 @@
                       <SubComponents>
                         <Component class="javax.swing.JTable" name="view_table3_table">
                           <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                                <EmptyBorder/>
+                              </Border>
+                            </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Ubuntu" size="18" style="1"/>
                             </Property>
@@ -1185,23 +1176,16 @@
                                 <Column editable="true" title="No" type="java.lang.Object"/>
                                 <Column editable="true" title="Date" type="java.lang.Object"/>
                                 <Column editable="true" title="Chase No" type="java.lang.Object"/>
-                                <Column editable="true" title="Ornamant Name" type="java.lang.Object"/>
+                                <Column editable="true" title="Ornament Name" type="java.lang.Object"/>
                                 <Column editable="true" title="WT" type="java.lang.Object"/>
                                 <Column editable="true" title="QTY" type="java.lang.Object"/>
                                 <Column editable="true" title="BARCODE" type="java.lang.Object"/>
                                 <Column editable="true" title="RP" type="java.lang.Object"/>
                               </Table>
                             </Property>
-                            <Property name="autoResizeMode" type="int" value="4"/>
-                            <Property name="cellSelectionEnabled" type="boolean" value="true"/>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                              <TableColumnModel selectionModel="2">
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="60" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="90" resizable="true">
+                              <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="70" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
@@ -1211,17 +1195,22 @@
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="160" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="130" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="75" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="195" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="75" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="73" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="73" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
@@ -1238,10 +1227,9 @@
                                 </Column>
                               </TableColumnModel>
                             </Property>
-                            <Property name="intercellSpacing" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                              <Dimension value="[0, 0]"/>
-                            </Property>
+                            <Property name="requestFocusEnabled" type="boolean" value="false"/>
                             <Property name="rowHeight" type="int" value="45"/>
+                            <Property name="rowMargin" type="int" value="0"/>
                             <Property name="showGrid" type="boolean" value="true"/>
                             <Property name="showHorizontalLines" type="boolean" value="false"/>
                             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
@@ -1272,9 +1260,12 @@
                               <Font name="Ubuntu" size="13" style="0"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="view_from3_datechooserview_fromDate_propertyChange"/>
+                          </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="20" y="40" width="130" height="30"/>
+                              <AbsoluteConstraints x="30" y="40" width="130" height="30"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -1290,7 +1281,7 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="20" y="10" width="60" height="30"/>
+                              <AbsoluteConstraints x="30" y="10" width="60" height="30"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -1304,9 +1295,12 @@
                               <Font name="Ubuntu" size="13" style="0"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="view_to3_datechooserview_todate_propertChange"/>
+                          </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="160" y="40" width="130" height="30"/>
+                              <AbsoluteConstraints x="170" y="40" width="130" height="30"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -1319,7 +1313,7 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="160" y="10" width="-1" height="30"/>
+                              <AbsoluteConstraints x="170" y="10" width="-1" height="30"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -1332,7 +1326,7 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="0" y="0" width="314" height="-1"/>
+                              <AbsoluteConstraints x="10" y="0" width="314" height="-1"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -1355,35 +1349,32 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="view_tablearea4_scrollpane" max="32767" attributes="0"/>
-                                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="view_tablearea4_scrollpane" alignment="0" min="-2" pref="809" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="view_totItem4_label" max="32767" attributes="0"/>
-                                          <Component id="view_totWt4_label" max="32767" attributes="0"/>
+                                          <Component id="view_totWt4_label" alignment="0" pref="160" max="32767" attributes="0"/>
+                                          <Component id="view_totItem4_label" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="view_colon41_label" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="view_colon42_label" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="view_colon41_label" alignment="0" min="-2" pref="11" max="-2" attributes="0"/>
+                                          <Component id="view_colon42_label" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="view_totWtInp4_label" min="-2" pref="53" max="-2" attributes="0"/>
-                                          <Component id="view_totItemInp4_label" min="-2" pref="53" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="view_totItemInp4_label" alignment="0" pref="59" max="32767" attributes="0"/>
+                                          <Component id="view_totWtInp4_label" alignment="0" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                       <Component id="view_selOrnament4_dropdown" min="-2" pref="227" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="view_datelimit4_panel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="view_datelimit4_panel" min="-2" pref="327" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <EmptySpace pref="26" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1392,36 +1383,36 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="view_totItem4_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="view_colon41_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="view_totItemInp4_label" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="view_totWt4_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="view_totWtInp4_label" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                                          <Component id="view_colon41_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="view_colon42_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="view_totItemInp4_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="view_totItem4_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="view_totWtInp4_label" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                                       <Component id="view_selOrnament4_dropdown" min="-2" pref="43" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                      <Component id="view_datelimit4_panel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="view_datelimit4_panel" min="-2" pref="106" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="63" max="32767" attributes="0"/>
-                              <Component id="view_tablearea4_scrollpane" min="-2" pref="418" max="-2" attributes="0"/>
+                              <EmptySpace pref="30" max="32767" attributes="0"/>
+                              <Component id="view_tablearea4_scrollpane" min="-2" pref="440" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="view_totItem4_label">
+                    <Component class="javax.swing.JLabel" name="view_totWt4_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Ubuntu" size="19" style="1"/>
@@ -1429,18 +1420,18 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Total Weight"/>
+                        <Property name="text" type="java.lang.String" value="Total Weight    "/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="view_totItemInp4_label">
+                    <Component class="javax.swing.JLabel" name="view_totWtInp4_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Ubuntu" size="19" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="1454"/>
+                        <Property name="name" type="java.lang.String" value="" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="view_totWt4_label">
+                    <Component class="javax.swing.JLabel" name="view_totItem4_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Ubuntu" size="19" style="1"/>
@@ -1451,12 +1442,11 @@
                         <Property name="text" type="java.lang.String" value="Total no of Items"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="view_totWtInp4_label">
+                    <Component class="javax.swing.JLabel" name="view_totItemInp4_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Ubuntu" size="19" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="1050"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="view_selOrnament4_dropdown">
@@ -1471,10 +1461,8 @@
                           <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="3">
+                          <StringArray count="1">
                             <StringItem index="0" value="Select the Ornament"/>
-                            <StringItem index="1" value="Item1"/>
-                            <StringItem index="2" value="item2"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -1485,12 +1473,33 @@
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
                     </Component>
+                    <Component class="javax.swing.JLabel" name="view_colon41_label">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Ubuntu" size="19" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value=":"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="view_colon42_label">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Ubuntu" size="19" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value=":"/>
+                      </Properties>
+                    </Component>
                     <Container class="javax.swing.JScrollPane" name="view_tablearea4_scrollpane">
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
                         <Component class="javax.swing.JTable" name="view_table4_table">
                           <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                                <EmptyBorder/>
+                              </Border>
+                            </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Ubuntu" size="18" style="1"/>
                             </Property>
@@ -1499,22 +1508,20 @@
                                 <Column editable="true" title="No" type="java.lang.Object"/>
                                 <Column editable="true" title="Date" type="java.lang.Object"/>
                                 <Column editable="true" title="Chase No" type="java.lang.Object"/>
-                                <Column editable="true" title="Ornamant Name" type="java.lang.Object"/>
+                                <Column editable="true" title="Ornament Name" type="java.lang.Object"/>
                                 <Column editable="true" title="WT" type="java.lang.Object"/>
                                 <Column editable="true" title="QTY" type="java.lang.Object"/>
                                 <Column editable="true" title="BUY" type="java.lang.Object"/>
                               </Table>
                             </Property>
-                            <Property name="autoResizeMode" type="int" value="4"/>
-                            <Property name="cellSelectionEnabled" type="boolean" value="true"/>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                              <TableColumnModel selectionModel="3">
+                              <TableColumnModel selectionModel="0">
                                 <Column maxWidth="-1" minWidth="-1" prefWidth="70" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="100" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="120" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
@@ -1529,24 +1536,25 @@
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="93" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="73" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="93" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="73" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="130" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
                               </TableColumnModel>
                             </Property>
-                            <Property name="rowHeight" type="int" value="40"/>
+                            <Property name="requestFocusEnabled" type="boolean" value="false"/>
+                            <Property name="rowHeight" type="int" value="45"/>
                             <Property name="rowMargin" type="int" value="0"/>
                             <Property name="showGrid" type="boolean" value="true"/>
                             <Property name="showHorizontalLines" type="boolean" value="false"/>
@@ -1557,22 +1565,6 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JLabel" name="view_colon41_label">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="20" style="1"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value=":"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="view_colon42_label">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="20" style="1"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value=":"/>
-                      </Properties>
-                    </Component>
                     <Container class="javax.swing.JPanel" name="view_datelimit4_panel">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1594,9 +1586,12 @@
                               <Font name="Ubuntu" size="13" style="0"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="view_from4_datechooserview_fromDate_propertyChange"/>
+                          </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="20" y="40" width="130" height="30"/>
+                              <AbsoluteConstraints x="30" y="40" width="130" height="30"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -1612,7 +1607,7 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="20" y="10" width="60" height="30"/>
+                              <AbsoluteConstraints x="30" y="10" width="60" height="30"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -1626,9 +1621,12 @@
                               <Font name="Ubuntu" size="13" style="0"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="view_to4_datechooserview_todate_propertChange"/>
+                          </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="160" y="40" width="130" height="30"/>
+                              <AbsoluteConstraints x="170" y="40" width="130" height="30"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -1641,11 +1639,11 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="160" y="10" width="-1" height="30"/>
+                              <AbsoluteConstraints x="170" y="10" width="-1" height="30"/>
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="view_datelimitIcon2_label3">
+                        <Component class="javax.swing.JLabel" name="view_datelimitIcon4_label">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="2" name="/home/logida/Documents/Rectangle 26 (1).png"/>
@@ -1654,7 +1652,7 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="0" y="0" width="314" height="-1"/>
+                              <AbsoluteConstraints x="10" y="0" width="314" height="-1"/>
                             </Constraint>
                           </Constraints>
                         </Component>
