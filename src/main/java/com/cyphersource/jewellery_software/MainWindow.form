@@ -564,7 +564,7 @@
                               </TableColumnModel>
                             </Property>
                             <Property name="requestFocusEnabled" type="boolean" value="false"/>
-                            <Property name="rowHeight" type="int" value="45"/>
+                            <Property name="rowHeight" type="int" value="48"/>
                             <Property name="rowMargin" type="int" value="0"/>
                             <Property name="showGrid" type="boolean" value="true"/>
                             <Property name="showHorizontalLines" type="boolean" value="false"/>

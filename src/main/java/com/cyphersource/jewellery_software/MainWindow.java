@@ -66,6 +66,11 @@ public class MainWindow extends javax.swing.JFrame {
     String view_from4_date;
     String view_to4_date;
     
+    //  Image Icon instance
+    private ImageIcon imageIcon,returnIcon; 
+    
+    
+    
     /**
      * Creates new form MainWindow
      */
@@ -74,15 +79,17 @@ public class MainWindow extends javax.swing.JFrame {
         setVisible(true);
         setLocationRelativeTo(null);
         
-//             Initialize Table Model
+//       Initialize Table Model
 //       model = (DefaultTableModel) this.view_table2_table.getModel();
 
-////      Initialize Image Icon
-          imageIcon = new ImageIcon("/image/bharathi.png");
+////     Initialize Image Icon
+         imageIcon = new ImageIcon("/home/logida/jewel/Jewellery_Software/src/main/java/image/p2.jpg");
+         returnIcon= new ImageIcon("/home/logida/jewel/Jewellery_Software/src/main/java/image/return1.png");
  
 
 ////      Override Cell render of Image column
           view_table2_table.getColumn("RT").setCellRenderer(new MyCellRenderer());
+          view_table3_table.getColumn("RP").setCellRenderer(new MyCellRenderer());
        
         //method for displaying dropdown elements from database
         view_dropdown1_display();
@@ -101,6 +108,7 @@ public class MainWindow extends javax.swing.JFrame {
         
         view_table1_table.setShowVerticalLines(true);
         view_table1_table.setGridColor(Color.LIGHT_GRAY);
+        
         
         view_table2_table.setShowVerticalLines(true);
         view_table2_table.setGridColor(Color.LIGHT_GRAY);
@@ -171,8 +179,25 @@ public class MainWindow extends javax.swing.JFrame {
         Theaderthree.setDefaultRenderer(new HeaderColor());
         Theaderthree.setPreferredSize(new Dimension(50,50));
         ((DefaultTableCellRenderer)Theaderthree.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
-//        
-    
+        
+        // For setting all the values in  the column to center
+        
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment( JLabel.CENTER );
+        
+        //For table 1
+        for(int x=0;x<10;x++){
+            view_table1_table.getColumnModel().getColumn(x).setCellRenderer( centerRenderer ); 
+        }
+        //For table 2 & 3
+        for(int x=0;x<7;x++){
+            view_table2_table.getColumnModel().getColumn(x).setCellRenderer( centerRenderer );
+            view_table3_table.getColumnModel().getColumn(x).setCellRenderer( centerRenderer );
+        }
+        //For table 4
+        for(int x=0;x<6;x++){
+            view_table4_table.getColumnModel().getColumn(x).setCellRenderer( centerRenderer ); 
+        }
         
     }
     
@@ -482,7 +507,7 @@ public class MainWindow extends javax.swing.JFrame {
             }
         ));
         view_table1_table.setRequestFocusEnabled(false);
-        view_table1_table.setRowHeight(45);
+        view_table1_table.setRowHeight(48);
         view_table1_table.setRowMargin(0);
         view_table1_table.setShowGrid(true);
         view_table1_table.setShowHorizontalLines(false);
@@ -1067,7 +1092,7 @@ public class MainWindow extends javax.swing.JFrame {
         view_areaTwo_panelLayout.setHorizontalGroup(
             view_areaTwo_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(view_contOne_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(view_contTwo_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(view_contTwo_panel, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
         );
         view_areaTwo_panelLayout.setVerticalGroup(
             view_areaTwo_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1094,8 +1119,10 @@ public class MainWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void view_selOrnament1_dropdownview_selOrnament_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_selOrnament1_dropdownview_selOrnament_dropdownActionPerformed
-       // TODO add your handling code here:
-           
+ 
+            //For autoincrementing the no. of rows 
+            int count=1;
+        
            view_ornament_type1_data=view_selOrnament1_dropdown.getSelectedItem().toString();
            
            if(view_ornament_type1_data!="Select the Ornament"){
@@ -1103,7 +1130,7 @@ public class MainWindow extends javax.swing.JFrame {
                 try{ 
                     try{
                         //Getting table values acc. to selOrnament
-                        String sql="SELECT id, date, chase_no, ornament_type, ornament_name, quality,\n" +
+                        String sql="SELECT date, chase_no, ornament_type, ornament_name, quality,\n" +
                         "making_charge, weight, wastage, quantity,buy, barcode, status FROM overall\n" +
                         "WHERE ornament_type =" + "'"+  view_ornament_type1_data + "'";
                         con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
@@ -1112,8 +1139,9 @@ public class MainWindow extends javax.swing.JFrame {
                         DefaultTableModel tm=(DefaultTableModel)view_table1_table.getModel();
                         tm.setRowCount(0);
                         while(rs.next()){
-                            Object o[]={rs.getInt("id"),rs.getString("date"),rs.getString("chase_no"),rs.getString("ornament_name"),rs.getString("weight"),rs.getString("wastage"),rs.getString("making_charge"),rs.getString("quantity"),rs.getString("quality"),rs.getString("buy")};
+                            Object o[]={count,rs.getString("date"),rs.getString("chase_no"),rs.getString("ornament_name"),rs.getString("weight"),rs.getString("wastage"),rs.getString("making_charge"),rs.getString("quantity"),rs.getString("quality"),rs.getString("buy")};
                             tm.addRow(o);
+                            count++;
                         }
 
                     } 
@@ -1246,7 +1274,13 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_view_todate_propertChange
 
     private void view_selOrnament2_dropdownview_selOrnament_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_selOrnament2_dropdownview_selOrnament_dropdownActionPerformed
-        // TODO add your handling code here:
+             
+            //For autoincrementing the no. of rows 
+            int count=1;
+            
+            //Masking the image into jLabel Object
+            JLabel returnLabel = new JLabel(this.returnIcon);
+        
            view_ornament_type2_data=view_selOrnament2_dropdown.getSelectedItem().toString();
            
            if(view_ornament_type2_data!="Select the Ornament"){
@@ -1256,7 +1290,7 @@ public class MainWindow extends javax.swing.JFrame {
 
 
                         //Getting table values acc. to selOrnament
-                        String sql="SELECT id, date, chase_no, ornament_name, weight, quantity, barcode FROM sold\n" +
+                        String sql="SELECT date, chase_no, ornament_name, weight, quantity, barcode FROM sold\n" +
                         "WHERE ornament_type =" + "'"+  view_ornament_type2_data + "'";
                         con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
                         pat=con.prepareStatement(sql);
@@ -1264,8 +1298,9 @@ public class MainWindow extends javax.swing.JFrame {
                         DefaultTableModel tm=(DefaultTableModel)view_table2_table.getModel();
                         tm.setRowCount(0);
                         while(rs.next()){
-                            Object o[]={rs.getInt("id"),rs.getString("date"),rs.getString("chase_no"),rs.getString("ornament_name"),rs.getString("weight"), rs.getString("quantity"), rs.getString("barcode")};
+                            Object o[]={count,rs.getString("date"),rs.getString("chase_no"),rs.getString("ornament_name"),rs.getString("weight"), rs.getString("quantity"), rs.getString("barcode"),returnLabel};
                             tm.addRow(o);
+                            count++;
                         }
 
                     } 
@@ -1351,7 +1386,13 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_view_to2_datechooserview_todate_propertChange
 
     private void view_selOrnament3_dropdownview_selOrnament_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_selOrnament3_dropdownview_selOrnament_dropdownActionPerformed
-        // TODO add your handling code here:
+        
+        //For autoincrementing the no. of rows 
+        int count=1;
+        
+        //Masking the image into jLabel Object
+        JLabel imageLabel = new JLabel(this.imageIcon);
+        
         view_ornament_type3_data=view_selOrnament3_dropdown.getSelectedItem().toString();
            
            if(view_ornament_type3_data!="Select the Ornament"){
@@ -1361,7 +1402,7 @@ public class MainWindow extends javax.swing.JFrame {
 
 
                         //Getting table values acc. to selOrnament
-                        String sql="SELECT id, date, chase_no, ornament_name, weight, quantity, barcode FROM balance\n" +
+                        String sql="SELECT date, chase_no, ornament_name, weight, quantity, barcode FROM balance\n" +
                         "WHERE ornament_type =" + "'"+  view_ornament_type3_data + "'";
                         con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
                         pat=con.prepareStatement(sql);
@@ -1369,8 +1410,9 @@ public class MainWindow extends javax.swing.JFrame {
                         DefaultTableModel tm=(DefaultTableModel)view_table3_table.getModel();
                         tm.setRowCount(0);
                         while(rs.next()){
-                            Object o[]={rs.getInt("id"),rs.getString("date"),rs.getString("chase_no"),rs.getString("ornament_name"),rs.getString("weight"), rs.getString("quantity"), rs.getString("barcode")};
+                            Object o[]={count,rs.getString("date"),rs.getString("chase_no"),rs.getString("ornament_name"),rs.getString("weight"), rs.getString("quantity"), rs.getString("barcode"),imageLabel};
                             tm.addRow(o);
+                            count++;
                         }
 
                     } 
@@ -1455,7 +1497,10 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_view_to3_datechooserview_todate_propertChange
 
     private void view_selOrnament4_dropdownview_selOrnament_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_selOrnament4_dropdownview_selOrnament_dropdownActionPerformed
-        // TODO add your handling code here:
+        
+        //For autoincrementing the no. of rows 
+        int count=1;
+        
          view_ornament_type4_data=view_selOrnament4_dropdown.getSelectedItem().toString();
            
            if(view_ornament_type4_data!="Select the Ornament"){
@@ -1463,7 +1508,7 @@ public class MainWindow extends javax.swing.JFrame {
                     try{
 
                         //Getting table values acc. to selOrnament
-                        String sql="SELECT id, date, chase_no, ornament_name, quality,\n" +
+                        String sql="SELECT date, chase_no, ornament_name, quality,\n" +
                         "weight,buy FROM return_table\n" +
                         "WHERE ornament_type =" + "'"+  view_ornament_type4_data + "'";
                         con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
@@ -1472,8 +1517,9 @@ public class MainWindow extends javax.swing.JFrame {
                         DefaultTableModel tm=(DefaultTableModel)view_table4_table.getModel();
                         tm.setRowCount(0);
                         while(rs.next()){
-                            Object o[]={rs.getInt("id"),rs.getString("date"),rs.getString("chase_no"),rs.getString("ornament_name"),rs.getString("quality"),rs.getString("weight"),rs.getString("buy")};
+                            Object o[]={count,rs.getString("date"),rs.getString("chase_no"),rs.getString("ornament_name"),rs.getString("quality"),rs.getString("weight"),rs.getString("buy")};
                             tm.addRow(o);
+                            count++;
                         }
 
                     } 
@@ -1681,6 +1727,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JPanel view_total_panel;
     // End of variables declaration//GEN-END:variables
   
+    
     //common class for changing TableHeader bg color and border thickness
     
      public static class HeaderColor extends DefaultTableCellRenderer{
@@ -1775,6 +1822,10 @@ public class MainWindow extends javax.swing.JFrame {
     // Displaying the default items in the table 
     
     private void view_default1_display(){
+        
+        // For autoincrementing the no. of rows 
+        int count=1;
+        
         try{
                 try{
                     //Getting default total weight of items.
@@ -1798,16 +1849,18 @@ public class MainWindow extends javax.swing.JFrame {
                 
                 try{
                     //Getting default overall table values. 
-                    String sql2="SELECT id, date, chase_no, ornament_type, ornament_name, quality,\n" +
+                    String sql2="SELECT date, chase_no, ornament_type, ornament_name, quality,\n" +
                    "making_charge, weight, wastage, quantity,buy, barcode, status FROM overall\n" ;
                     con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
                     PreparedStatement pat2=con1.prepareStatement(sql2);
                     ResultSet rs2=pat2.executeQuery();
+                    
                     DefaultTableModel tm=(DefaultTableModel)view_table1_table.getModel();
                     tm.setRowCount(0);
                     while(rs2.next()){
-                        Object o[]={rs2.getInt("id"),rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_name"),rs2.getString("weight"),rs2.getString("wastage"),rs2.getString("making_charge"),rs2.getString("quantity"),rs2.getString("quality"),rs2.getString("buy")};
+                        Object o[]={count,rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_name"),rs2.getString("weight"),rs2.getString("wastage"),rs2.getString("making_charge"),rs2.getString("quantity"),rs2.getString("quality"),rs2.getString("buy")};
                         tm.addRow(o);
+                        count++;
                     }
                 }
                 catch(Exception e){
@@ -1837,9 +1890,11 @@ public class MainWindow extends javax.swing.JFrame {
     }
 
     private void view_default2_display(){
-        //        Masking the image into jLabel Object
-        JLabel imageLabel = new JLabel();
-        imageLabel.setIcon(this.imageIcon);
+        //For autoincrementing the no. of rows 
+        int count=1;
+        
+        //Masking the image into jLabel Object
+        JLabel returnLabel = new JLabel(this.returnIcon);
         
         try{
                 try{
@@ -1864,7 +1919,7 @@ public class MainWindow extends javax.swing.JFrame {
                 
                 try{
                     //Getting default overall table values. 
-                    String sql2="SELECT id, date, chase_no, ornament_name, weight, quantity, barcode FROM sold\n" ;
+                    String sql2="SELECT date, chase_no, ornament_name, weight, quantity, barcode FROM sold\n" ;
                     con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
                     PreparedStatement pat2=con1.prepareStatement(sql2);
                     ResultSet rs2=pat2.executeQuery();
@@ -1872,9 +1927,9 @@ public class MainWindow extends javax.swing.JFrame {
                    
                     tm.setRowCount(0);
                     while(rs2.next()){
-                        Object o[]={rs2.getInt("id"),rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_name"),rs2.getString("weight"),rs2.getString("quantity"),rs2.getString("barcode"),imageLabel};
-                        tm.addRow(o);
-                        //this.model.addRow(new Object[]{rs2.getInt("id"),rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_name"),rs2.getString("weight"),rs2.getString("quantity"),rs2.getString("barcode"), imageLabel});
+                        Object o[]={count,rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_name"),rs2.getString("weight"),rs2.getString("quantity"),rs2.getString("barcode"),returnLabel};
+                        tm.addRow(o); 
+                        count++;
                     }
                 }
                 catch(Exception e){
@@ -1904,6 +1959,13 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
     private void view_default3_display(){
+        
+        //For autoincrementing the no. of rows 
+        int count=1;
+        
+          //Masking the image into jLabel Object
+        JLabel imageLabel = new JLabel(this.imageIcon);
+        
         try{
                 try{
                     //Getting default total weight of items.
@@ -1927,16 +1989,16 @@ public class MainWindow extends javax.swing.JFrame {
                 
                 try{
                     //Getting default overall table values. 
-                    String sql2="SELECT id, date, chase_no, ornament_name, weight, quantity, barcode FROM balance\n" ;
+                    String sql2="SELECT date, chase_no, ornament_name, weight, quantity, barcode FROM balance\n" ;
                     con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
                     PreparedStatement pat2=con1.prepareStatement(sql2);
                     ResultSet rs2=pat2.executeQuery();
                     DefaultTableModel tm=(DefaultTableModel)view_table3_table.getModel();
                     tm.setRowCount(0);
                     while(rs2.next()){
-                        Object o[]={rs2.getInt("id"),rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_name"),rs2.getString("weight"),rs2.getString("quantity"),rs2.getString("barcode")};
+                        Object o[]={count,rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_name"),rs2.getString("weight"),rs2.getString("quantity"),rs2.getString("barcode"),imageLabel};
                         tm.addRow(o);
-                        //this.model.addRow(new Object[]{rs2.getInt("id"),rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_name"),rs2.getString("weight"),rs2.getString("quantity"),rs2.getString("barcode"), imageLabel});
+                        count++;
                     }
                 }
                 catch(Exception e){
@@ -1966,6 +2028,10 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
     private void view_default4_display(){
+        
+        //For autoincrementing the no. of rows 
+        int count=1;
+        
         try{
                 try{
                     //Getting default total weight of items.
@@ -1989,15 +2055,16 @@ public class MainWindow extends javax.swing.JFrame {
                 
                 try{
                     //Getting default overall table values. 
-                    String sql2="SELECT id, date, chase_no, ornament_name, quality, weight, buy FROM return_table";
+                    String sql2="SELECT date, chase_no, ornament_name, quality, weight, buy FROM return_table";
                     con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
                     PreparedStatement pat2=con1.prepareStatement(sql2);
                     ResultSet rs2=pat2.executeQuery();
                     DefaultTableModel tm=(DefaultTableModel)view_table4_table.getModel();
                     tm.setRowCount(0);
                     while(rs2.next()){
-                        Object o[]={rs2.getInt("id"),rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_name"),rs2.getString("quality"),rs2.getString("weight"),rs2.getString("buy")};
+                        Object o[]={count,rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_name"),rs2.getString("quality"),rs2.getString("weight"),rs2.getString("buy")};
                         tm.addRow(o);
+                        count++;
                     }
                 }
                 catch(Exception e){
@@ -2030,8 +2097,14 @@ public class MainWindow extends javax.swing.JFrame {
     //Displaying contents according to the date alone
     
     private void view_date1_display(){
+        
+                //Getting date values from date methods
                 view_from1_date= view_from1_dateformat;
                 view_to1_date= view_to1_dateformat;
+                
+                //For autoincrementing the no. of rows 
+                int count=1;
+        
                 if((view_from1_date!=null) && (view_to1_date!=null)){
                     try{ 
                         
@@ -2043,8 +2116,9 @@ public class MainWindow extends javax.swing.JFrame {
                         DefaultTableModel tm=(DefaultTableModel)view_table1_table.getModel();
                         tm.setRowCount(0);
                         while(rs1.next()){
-                            Object o[]={rs1.getInt("id"),rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("weight"),rs1.getString("wastage"),rs1.getString("making_charge"),rs1.getString("quantity"),rs1.getString("quality"),rs1.getString("buy")};
+                            Object o[]={count,rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("weight"),rs1.getString("wastage"),rs1.getString("making_charge"),rs1.getString("quantity"),rs1.getString("quality"),rs1.getString("buy")};
                             tm.addRow(o);
+                            count++;
                         } 
                     }
                     catch(Exception e){
@@ -2089,8 +2163,17 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
     private void view_date2_display(){
+        
+                //Getting date values from date methods
                 view_from2_date= view_from2_dateformat;
                 view_to2_date= view_to2_dateformat;
+                               
+                //For autoincrementing the no. of rows 
+                int count=1;
+                
+                //Masking the image into jLabel Object
+                JLabel returnLabel = new JLabel(this.returnIcon);
+                
                 if((view_from2_date!=null) && (view_to2_date!=null)){
                     try{ 
                         
@@ -2102,8 +2185,9 @@ public class MainWindow extends javax.swing.JFrame {
                         DefaultTableModel tm=(DefaultTableModel)view_table2_table.getModel();
                         tm.setRowCount(0);
                         while(rs1.next()){
-                            Object o[]={rs1.getInt("id"),rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("weight"),rs1.getString("quantity"),rs1.getString("barcode")};
+                            Object o[]={count,rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("weight"),rs1.getString("quantity"),rs1.getString("barcode"),returnLabel};
                             tm.addRow(o);
+                            count++;
                         } 
                     }
                     catch(Exception e){
@@ -2148,8 +2232,17 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
     private void view_date3_display(){
+                
+                //Getting date values from date methods
                 view_from3_date= view_from3_dateformat;
                 view_to3_date= view_to3_dateformat;
+                
+                //For autoincrementing the no. of rows 
+                int count=1;
+                
+                //Masking the image into jLabel Object
+                JLabel imageLabel = new JLabel(this.imageIcon);
+                
                 if((view_from3_date!=null) && (view_to3_date!=null)){
                     try{ 
                         
@@ -2161,8 +2254,9 @@ public class MainWindow extends javax.swing.JFrame {
                         DefaultTableModel tm=(DefaultTableModel)view_table3_table.getModel();
                         tm.setRowCount(0);
                         while(rs1.next()){
-                            Object o[]={rs1.getInt("id"),rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("weight"),rs1.getString("quantity"),rs1.getString("barcode")};
+                            Object o[]={count,rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("weight"),rs1.getString("quantity"),rs1.getString("barcode"),imageLabel};
                             tm.addRow(o);
+                            count++;
                         } 
                     }
                     catch(Exception e){
@@ -2207,8 +2301,14 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
     private void  view_date4_display(){
+            
+                //Getting date values from date methods
                 view_from4_date= view_from4_dateformat;
                 view_to4_date= view_to4_dateformat;
+                
+                //For autoincrementing the no. of rows 
+                int count=1;
+                
                 if((view_from4_date!=null) && (view_to4_date!=null)){
                     try{ 
                         
@@ -2220,8 +2320,9 @@ public class MainWindow extends javax.swing.JFrame {
                         DefaultTableModel tm=(DefaultTableModel)view_table4_table.getModel();
                         tm.setRowCount(0);
                         while(rs1.next()){
-                            Object o[]={rs1.getInt("id"),rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("quality"),rs1.getString("weight"),rs1.getString("buy")};
+                            Object o[]={count,rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("quality"),rs1.getString("weight"),rs1.getString("buy")};
                             tm.addRow(o);
+                            count++;
                         } 
                     }
                     catch(Exception e){
@@ -2269,6 +2370,9 @@ public class MainWindow extends javax.swing.JFrame {
     
     private void view_combined1_display(){
         
+        //For autoincrementing the no. of rows 
+        int count=1;
+        
             if((view_ornament_type1_data!=null) &&(view_from1_date!=null) && (view_to1_date!=null)){
                 
                 if(view_ornament_type1_data!="Select the Ornament"){
@@ -2282,8 +2386,9 @@ public class MainWindow extends javax.swing.JFrame {
                             DefaultTableModel tm=(DefaultTableModel)view_table1_table.getModel();
                             tm.setRowCount(0);
                             while(rs1.next()){
-                                Object o[]={rs1.getInt("id"),rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("weight"),rs1.getString("wastage"),rs1.getString("making_charge"),rs1.getString("quantity"),rs1.getString("quality"),rs1.getString("buy")};
+                                Object o[]={count,rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("weight"),rs1.getString("wastage"),rs1.getString("making_charge"),rs1.getString("quantity"),rs1.getString("quality"),rs1.getString("buy")};
                                 tm.addRow(o);
+                                count++;
                             } 
                     }
                     catch(Exception e){
@@ -2329,6 +2434,13 @@ public class MainWindow extends javax.swing.JFrame {
     } 
     
     private void view_combined2_display(){
+        
+        //For autoincrementing the no. of rows 
+        int count=1;
+        
+        //Masking the image into jLabel Object
+        JLabel returnLabel = new JLabel(this.returnIcon);
+        
         if((view_ornament_type2_data!=null) &&(view_from2_date!=null) && (view_to2_date!=null)){
                 
                 if(view_ornament_type2_data!="Select the Ornament"){
@@ -2342,8 +2454,9 @@ public class MainWindow extends javax.swing.JFrame {
                             DefaultTableModel tm=(DefaultTableModel)view_table2_table.getModel();
                             tm.setRowCount(0);
                             while(rs1.next()){
-                                Object o[]={rs1.getInt("id"),rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("weight"), rs1.getString("quantity"),rs1.getString("barcode")};
+                                Object o[]={count,rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("weight"), rs1.getString("quantity"),rs1.getString("barcode"),returnLabel};
                                 tm.addRow(o);
+                                count++;
                             } 
                     }
                     catch(Exception e){
@@ -2389,6 +2502,13 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
     private void view_combined3_display(){
+        
+        //For autoincrementing the no. of rows 
+        int count=1;
+        
+        //Masking the image into jLabel Object
+        JLabel imageLabel = new JLabel(this.imageIcon);
+        
         if((view_ornament_type3_data!=null) &&(view_from3_date!=null) && (view_to3_date!=null)){
                 
                 if(view_ornament_type3_data!="Select the Ornament"){
@@ -2402,8 +2522,9 @@ public class MainWindow extends javax.swing.JFrame {
                             DefaultTableModel tm=(DefaultTableModel)view_table3_table.getModel();
                             tm.setRowCount(0);
                             while(rs1.next()){
-                                Object o[]={rs1.getInt("id"),rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("weight"), rs1.getString("quantity"),rs1.getString("barcode")};
+                                Object o[]={count,rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("weight"), rs1.getString("quantity"),rs1.getString("barcode"),imageLabel};
                                 tm.addRow(o);
+                                count++;
                             } 
                     }
                     catch(Exception e){
@@ -2449,6 +2570,10 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
     private void view_combined4_display(){
+        
+        //For autoincrementing the no. of rows 
+        int count=1;
+        
         if((view_ornament_type4_data!=null) &&(view_from4_date!=null) && (view_to4_date!=null)){
                 
                 if(view_ornament_type4_data!="Select the Ornament"){
@@ -2462,8 +2587,9 @@ public class MainWindow extends javax.swing.JFrame {
                             DefaultTableModel tm=(DefaultTableModel)view_table4_table.getModel();
                             tm.setRowCount(0);
                             while(rs1.next()){
-                                Object o[]={rs1.getInt("id"),rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("quality"),rs1.getString("weight"),rs1.getString("buy")};
+                                Object o[]={count,rs1.getString("date"),rs1.getString("chase_no"),rs1.getString("ornament_name"),rs1.getString("quality"),rs1.getString("weight"),rs1.getString("buy")};
                                 tm.addRow(o);
+                                count++;
                             } 
                     }
                     catch(Exception e){
@@ -2507,12 +2633,5 @@ public class MainWindow extends javax.swing.JFrame {
                 }
         }
     }
-     
-    
-  //  Table Model instance;
-    private DefaultTableModel model;
-
-//  Image Icon instance
-    private ImageIcon imageIcon;  
 }
 
