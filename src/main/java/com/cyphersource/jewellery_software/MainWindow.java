@@ -128,6 +128,11 @@ public class MainWindow extends javax.swing.JFrame {
         sell_Welcome_label.setText("Welcome,  Please  Scan  OR  Code.");
 
         sell_refresh_label.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_refresh.png")); // NOI18N
+        sell_refresh_label.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sell_refresh_labelMouseClicked(evt);
+            }
+        });
 
         sell_confirm_label.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_confirm.png")); // NOI18N
 
@@ -487,7 +492,7 @@ public class MainWindow extends javax.swing.JFrame {
             sell_verify_checkbox.setSelected(false);
         }
         else{
-            //Verifies and enables the buttons
+            //Verifies and enables the Confirm, Return Labels
             sell_confirm_label.setEnabled(true);
             sell_return_label1.setEnabled(true);
         }
@@ -542,6 +547,25 @@ public class MainWindow extends javax.swing.JFrame {
           }
         
     }//GEN-LAST:event_sell_barcodeInput_textFieldActionPerformed
+
+    //Refreshes the Page 
+    private void sell_refresh_labelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sell_refresh_labelMouseClicked
+        
+        //Resets the Text Fields and Labels
+        sell_barcodeInput_textField.setText("");
+        sell_qtyInput_textField.setText("");
+        sell_chaseNoDetail_label.setText("");
+        sell_ornamentNameDetail_label.setText("");
+        sell_wtDetail_label.setText("");
+        sell_wasDetail_label.setText("");
+        sell_mcDetail_label.setText("");
+        
+        //Unchecks the checkbox and disables the confirm, Return Labels
+        sell_verify_checkbox.setSelected(false);
+        sell_confirm_label.setEnabled(false);
+        sell_return_label1.setEnabled(false);
+        
+    }//GEN-LAST:event_sell_refresh_labelMouseClicked
 
     //Barcode Details
     public class Barcode{
