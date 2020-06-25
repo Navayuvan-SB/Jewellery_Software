@@ -143,6 +143,11 @@ public class MainWindow extends javax.swing.JFrame {
         sell_barcodeInput_textField.setForeground(java.awt.Color.black);
         sell_barcodeInput_textField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         sell_barcodeInput_textField.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        sell_barcodeInput_textField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sell_barcodeInput_textFieldActionPerformed(evt);
+            }
+        });
         sell_barcodeInput_panel.add(sell_barcodeInput_textField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 150, 40));
 
         sell_barcodeInput_label.setBackground(java.awt.Color.white);
@@ -512,7 +517,49 @@ public class MainWindow extends javax.swing.JFrame {
         
     }//GEN-LAST:event_sell_qtyInput_textFieldKeyPressed
 
-    
+    //Fetches the Barcode Details after the action performed
+    private void sell_barcodeInput_textFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sell_barcodeInput_textFieldActionPerformed
+
+           try {
+                
+               Barcode f = new Barcode();
+               rs = f.find(sell_barcodeInput_textField.getText());
+                    
+               if(rs.next()){
+                    sell_chaseNoDetail_label.setText(rs.getString("chase_no"));
+                    sell_ornamentNameDetail_label.setText(rs.getString("ornament_name"));
+                    sell_wtDetail_label.setText(rs.getString("weight"));
+                    sell_wasDetail_label.setText((rs.getString("wastage"))+" %");
+                    sell_mcDetail_label.setText((rs.getString("making_charge"))+" /G");
+               }  
+               else{
+                    JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
+               }
+            
+          } 
+          catch (SQLException ex) {
+             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+          }
+        
+    }//GEN-LAST:event_sell_barcodeInput_textFieldActionPerformed
+
+    //Barcode Details
+    public class Barcode{
+
+       public ResultSet find(String s){
+           try{
+            Class.forName("com.mysql.cj.jdbc.Driver");     
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+            st = con.prepareStatement("SELECT chase_no, ornament_name, making_charge, weight, wastage FROM balance WHERE barcode = ?");
+            st.setString(1,s);
+            rs = st.executeQuery();
+           }catch(Exception ex){
+              JOptionPane.showMessageDialog(null, ex.getMessage());
+           }
+           return rs;
+       }
+       
+   }
     /**
      * @param args the command line arguments
      */
