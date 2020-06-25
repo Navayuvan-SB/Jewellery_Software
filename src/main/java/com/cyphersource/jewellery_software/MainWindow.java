@@ -29,6 +29,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 
 
+
 /**
  *
  * @author ghost
@@ -73,14 +74,15 @@ public class MainWindow extends javax.swing.JFrame {
         setVisible(true);
         setLocationRelativeTo(null);
         
-//        //      Initialize Table Model
-//        model = (DefaultTableModel) this.view_table2_table.getModel();
-//
+//             Initialize Table Model
+//       model = (DefaultTableModel) this.view_table2_table.getModel();
+
 ////      Initialize Image Icon
-//        imageIcon = new ImageIcon(getClass().getResource("/image/p2.jpg"));
-//
+          imageIcon = new ImageIcon("/image/bharathi.png");
+ 
+
 ////      Override Cell render of Image column
-//        view_table2_table.getColumn("RT").setCellRenderer(new MyCellRenderer());
+          view_table2_table.getColumn("RT").setCellRenderer(new MyCellRenderer());
        
         //method for displaying dropdown elements from database
         view_dropdown1_display();
@@ -169,22 +171,11 @@ public class MainWindow extends javax.swing.JFrame {
         Theaderthree.setDefaultRenderer(new HeaderColor());
         Theaderthree.setPreferredSize(new Dimension(50,50));
         ((DefaultTableCellRenderer)Theaderthree.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
-        
+//        
     
         
     }
     
-     class MyCellRenderer implements TableCellRenderer {
-
-        @Override
-        public Component getTableCellRendererComponent(JTable jtable, Object o, boolean bln, boolean bln1, int i, int i1) {
-            
-           // jTable1.setRowHeight(100);
-            return (Component) o;
-
-        }
-
-    }
   
     /**
      * This method is called from within the constructor to initialize the form.
@@ -1076,7 +1067,7 @@ public class MainWindow extends javax.swing.JFrame {
         view_areaTwo_panelLayout.setHorizontalGroup(
             view_areaTwo_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(view_contOne_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(view_contTwo_panel, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(view_contTwo_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         view_areaTwo_panelLayout.setVerticalGroup(
             view_areaTwo_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1692,16 +1683,31 @@ public class MainWindow extends javax.swing.JFrame {
   
     //common class for changing TableHeader bg color and border thickness
     
-    static public class HeaderColor extends DefaultTableCellRenderer{
+     public static class HeaderColor extends DefaultTableCellRenderer{
         public HeaderColor(){
-            setOpaque(true);
+            //setOpaque(true);
+            super();
         }
+         @Override
         public Component getTableCellRendererComponent(JTable table,Object value,boolean selected,boolean focused,int row,int column){
             super.getTableCellRendererComponent(table, value, selected, focused, row, column);
             setBackground(new Color(247,247,247));
             setBorder(BorderFactory.createMatteBorder(0,0,1,1,Color.LIGHT_GRAY));
             return this;
-        }   
+            //return (Component) value;
+        } 
+    }
+     
+      class MyCellRenderer implements TableCellRenderer {
+
+        @Override
+        public Component getTableCellRendererComponent(JTable jtable, Object o, boolean bln, boolean bln1, int i, int i1) {
+            
+            //jTable1.setRowHeight(100);
+            return (Component) o;
+
+        }
+
     }
     
     // Displaying dropdown items from database
@@ -1832,8 +1838,9 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void view_default2_display(){
         //        Masking the image into jLabel Object
-//        JLabel imageLabel = new JLabel();
-//        imageLabel.setIcon(this.imageIcon);
+        JLabel imageLabel = new JLabel();
+        imageLabel.setIcon(this.imageIcon);
+        
         try{
                 try{
                     //Getting default total weight of items.
@@ -1862,9 +1869,10 @@ public class MainWindow extends javax.swing.JFrame {
                     PreparedStatement pat2=con1.prepareStatement(sql2);
                     ResultSet rs2=pat2.executeQuery();
                     DefaultTableModel tm=(DefaultTableModel)view_table2_table.getModel();
+                   
                     tm.setRowCount(0);
                     while(rs2.next()){
-                        Object o[]={rs2.getInt("id"),rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_name"),rs2.getString("weight"),rs2.getString("quantity"),rs2.getString("barcode")};
+                        Object o[]={rs2.getInt("id"),rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_name"),rs2.getString("weight"),rs2.getString("quantity"),rs2.getString("barcode"),imageLabel};
                         tm.addRow(o);
                         //this.model.addRow(new Object[]{rs2.getInt("id"),rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_name"),rs2.getString("weight"),rs2.getString("quantity"),rs2.getString("barcode"), imageLabel});
                     }
