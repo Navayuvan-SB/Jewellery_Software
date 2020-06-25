@@ -574,9 +574,9 @@ public class demo extends javax.swing.JFrame {
 
     private void sell_return_labelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sell_return_labelMouseClicked
  
-     Return r = new Return();
+        Return r = new Return();
     
-     rs = r.find(sell_barcodeInput_textField.getText());
+        rs = r.find(sell_barcodeInput_textField.getText());
         sell_barcodeInput_textField.setText("");
         sell_qtyInput_textField.setText("");
         sell_chaseNoDetail_label.setText("");
@@ -619,7 +619,7 @@ public class demo extends javax.swing.JFrame {
            try{
             Class.forName("com.mysql.cj.jdbc.Driver");     
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-            st = con.prepareStatement("SELECT chase_no, ornament_name, making_charge, weight, wastage FROM balance WHERE barcode = ?");
+            st = con.prepareStatement("SELECT chase_no, ornament_name, making_charge, weight, wastage, quantity FROM balance WHERE barcode = ?");
             st.setString(1,s);
             rs = st.executeQuery();
            }catch(Exception ex){
@@ -633,7 +633,74 @@ public class demo extends javax.swing.JFrame {
       public class Return{
 
        public ResultSet find(String s){
-           return null;
+            try{
+            Class.forName("com.mysql.cj.jdbc.Driver");     
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+            st = con.prepareStatement("update overall set status=2 WHERE barcode = ?");
+            st.setString(1,s);
+            int updateOverall = st.executeUpdate();
+                   
+                try{
+                    int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
+                    Class.forName("com.mysql.cj.jdbc.Driver");     
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    st = con.prepareStatement("UPDATE return_table SET quantity=? WHERE barcode = ?");
+                    st.setInt(1,quantity);
+                    st.setString(2,s);
+                    int updateReturn = st.executeUpdate();
+
+                   }catch(Exception ex){
+                      JOptionPane.showMessageDialog(null, ex.getMessage());
+                   }
+                
+                try{
+                    int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
+                    Class.forName("com.mysql.cj.jdbc.Driver");     
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    st = con.prepareStatement("SELECT quantity FROM balance WHERE barcode = ?");
+                    st.setString(1,s);
+                    rs = st.executeQuery();
+                    while(rs.next()){
+                        int qty = rs.getInt("quantity");
+                        int Quantity;
+                        Quantity = qty - quantity;
+                    
+                        if(Quantity > 0 ){
+                            try{
+                            Class.forName("com.mysql.cj.jdbc.Driver");     
+                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                            st = con.prepareStatement("UPDATE balance SET quantity=? WHERE barcode = ?");
+                            st.setInt(1,Quantity);
+                            st.setString(2,s);
+                            int updateReturnQty = st.executeUpdate();
+
+                           }catch(Exception ex){
+                              JOptionPane.showMessageDialog(null, ex.getMessage());
+                           }
+                        }
+                        else{
+                            try{
+                            Class.forName("com.mysql.cj.jdbc.Driver");     
+                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                            st = con.prepareStatement("DELETE FROM balance WHERE barcode =?");
+                            st.setString(1,s);
+                            int updateReturnQty = st.executeUpdate();
+
+                           }catch(Exception ex){
+                              JOptionPane.showMessageDialog(null, ex.getMessage());
+                           }
+                    }
+                    
+                    }
+                    
+                   }catch(Exception ex){
+                      JOptionPane.showMessageDialog(null, ex.getMessage());
+                   }
+                
+           }catch(Exception ex){
+              JOptionPane.showMessageDialog(null, ex.getMessage());
+           }
+           return rs;
      
        }
    }
@@ -641,36 +708,75 @@ public class demo extends javax.swing.JFrame {
        public class Confirm{
 
        public ResultSet find(String s){
-           
-//           try{
-//            String qty = sell_qtyInput_textField.getText();
-//            Class.forName("com.mysql.cj.jdbc.Driver");     
-//            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-//            st = con.prepareStatement("SELECT quantity FROM balance WHERE barcode = ?");
-//            st.setString(1,s);
-//            rs = st.executeQuery();
-//            int QTY= rs.getInt("quantity") - qty;
-//            if(rs.getString("quantity").equals("0")){
-//            st = con.prepareStatement("delete balance where barcode = ?");
-//            }
-//            //int updtaeCode = st.executeUpdate();
-//           }
-//           catch(Exception ex){
-//              JOptionPane.showMessageDialog(null, ex.getMessage());
-//           }
-//           try{
-//            Class.forName("com.mysql.cj.jdbc.Driver");     
-//            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-//            st = con.prepareStatement("UPDATE sold SET quantity= ?  WHERE barcode = ?");
-//            String Qty = sell_qtyInput_textField.getText();
-//            st.setString(1,Qty);
-//            st.setString(2,s);
-//            int deleteCode = st.executeUpdate();
-//            }
-//           catch(Exception ex){
-//              JOptionPane.showMessageDialog(null, ex.getMessage());
-//           }
-          return null;
+            try{
+            Class.forName("com.mysql.cj.jdbc.Driver");     
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+            st = con.prepareStatement("update overall set status=1 WHERE barcode = ?");
+            st.setString(1,s);
+            int updateOverall = st.executeUpdate();
+                   
+                try{
+                    int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
+                    Class.forName("com.mysql.cj.jdbc.Driver");     
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    st = con.prepareStatement("UPDATE sold SET quantity=? WHERE barcode = ?");
+                    st.setInt(1,quantity);
+                    st.setString(2,s);
+                    int updateReturn = st.executeUpdate();
+
+                   }catch(Exception ex){
+                      JOptionPane.showMessageDialog(null, ex.getMessage());
+                   }
+                
+                try{
+                    int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
+                    Class.forName("com.mysql.cj.jdbc.Driver");     
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    st = con.prepareStatement("SELECT quantity FROM balance WHERE barcode = ?");
+                    st.setString(1,s);
+                    rs = st.executeQuery();
+                    while(rs.next()){
+                        int qty = rs.getInt("quantity");
+                        int Quantity;
+                        Quantity = qty - quantity;
+                    
+                        if(Quantity > 0 ){
+                            try{
+                            Class.forName("com.mysql.cj.jdbc.Driver");     
+                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                            st = con.prepareStatement("UPDATE balance SET quantity=? WHERE barcode = ?");
+                            st.setInt(1,Quantity);
+                            st.setString(2,s);
+                            int updateReturnQty = st.executeUpdate();
+
+                           }catch(Exception ex){
+                              JOptionPane.showMessageDialog(null, ex.getMessage());
+                           }
+                        }
+                        else{
+                            try{
+                            Class.forName("com.mysql.cj.jdbc.Driver");     
+                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                            st = con.prepareStatement("DELETE FROM balance WHERE barcode =?");
+                            st.setString(1,s);
+                            int updateReturnQty = st.executeUpdate();
+
+                           }catch(Exception ex){
+                              JOptionPane.showMessageDialog(null, ex.getMessage());
+                           }
+                    }
+                    
+                    }
+                    
+                   }catch(Exception ex){
+                      JOptionPane.showMessageDialog(null, ex.getMessage());
+                   }
+                
+           }catch(Exception ex){
+              JOptionPane.showMessageDialog(null, ex.getMessage());
+           }
+
+          return rs;
           
        }
        
