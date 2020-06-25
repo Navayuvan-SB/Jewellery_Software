@@ -135,6 +135,11 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         sell_confirm_label.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_confirm.png")); // NOI18N
+        sell_confirm_label.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sell_confirm_labelMouseClicked(evt);
+            }
+        });
 
         sell_return_label1.setBackground(java.awt.Color.white);
         sell_return_label1.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_return.png")); // NOI18N
@@ -593,6 +598,28 @@ public class MainWindow extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Returned Successfully");
     }//GEN-LAST:event_sell_return_label1MouseClicked
 
+    
+    //Confirms the entry
+    private void sell_confirm_labelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sell_confirm_labelMouseClicked
+        
+        Confirm c = new Confirm();
+    
+        rs = c.find(sell_barcodeInput_textField.getText());
+        sell_barcodeInput_textField.setText("");
+        sell_qtyInput_textField.setText("");
+        sell_chaseNoDetail_label.setText("");
+        sell_ornamentNameDetail_label.setText("");
+        sell_wtDetail_label.setText("");
+        sell_wasDetail_label.setText("");
+        sell_mcDetail_label.setText("");
+        
+        sell_verify_checkbox.setSelected(false);
+        sell_confirm_label.setEnabled(false);
+        sell_return_label1.setEnabled(false);
+        
+        JOptionPane.showMessageDialog(null, "Confirmed Successfully");
+    }//GEN-LAST:event_sell_confirm_labelMouseClicked
+
     //Barcode Details
     public class Barcode{
 
@@ -687,6 +714,85 @@ public class MainWindow extends javax.swing.JFrame {
      
        }
    }
+   
+   //Confirm
+   public class Confirm{
+
+       public ResultSet find(String s){
+            try{
+            Class.forName("com.mysql.cj.jdbc.Driver");     
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+            st = con.prepareStatement("update overall set status=1 WHERE barcode = ?");
+            st.setString(1,s);
+            int updateOverall = st.executeUpdate();
+                   
+                try{
+                    int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
+                    Class.forName("com.mysql.cj.jdbc.Driver");     
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    st = con.prepareStatement("UPDATE sold SET quantity=? WHERE barcode = ?");
+                    st.setInt(1,quantity);
+                    st.setString(2,s);
+                    int updateReturn = st.executeUpdate();
+
+                   }catch(Exception ex){
+                      JOptionPane.showMessageDialog(null, ex.getMessage());
+                   }
+                
+                try{
+                    int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
+                    Class.forName("com.mysql.cj.jdbc.Driver");     
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    st = con.prepareStatement("SELECT quantity FROM balance WHERE barcode = ?");
+                    st.setString(1,s);
+                    rs = st.executeQuery();
+                    while(rs.next()){
+                        int qty = rs.getInt("quantity");
+                        int Quantity;
+                        Quantity = qty - quantity;
+                    
+                        if(Quantity > 0 ){
+                            try{
+                            Class.forName("com.mysql.cj.jdbc.Driver");     
+                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                            st = con.prepareStatement("UPDATE balance SET quantity=? WHERE barcode = ?");
+                            st.setInt(1,Quantity);
+                            st.setString(2,s);
+                            int updateReturnQty = st.executeUpdate();
+
+                           }catch(Exception ex){
+                              JOptionPane.showMessageDialog(null, ex.getMessage());
+                           }
+                        }
+                        else{
+                            try{
+                            Class.forName("com.mysql.cj.jdbc.Driver");     
+                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                            st = con.prepareStatement("DELETE FROM balance WHERE barcode =?");
+                            st.setString(1,s);
+                            int updateReturnQty = st.executeUpdate();
+
+                           }catch(Exception ex){
+                              JOptionPane.showMessageDialog(null, ex.getMessage());
+                           }
+                    }
+                    
+                    }
+                    
+                   }catch(Exception ex){
+                      JOptionPane.showMessageDialog(null, ex.getMessage());
+                   }
+                
+           }catch(Exception ex){
+              JOptionPane.showMessageDialog(null, ex.getMessage());
+           }
+
+          return rs;
+          
+       }
+       
+   }
+
       
     /**
      * @param args the command line arguments

@@ -281,6 +281,9 @@
                           <Image iconType="2" name="/home/ramya/Desktop/Jewellery project/sell_confirm.png"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sell_confirm_labelMouseClicked"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="sell_return_label1">
                       <Properties>
