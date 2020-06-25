@@ -20,6 +20,8 @@ public class MainWindow extends javax.swing.JFrame {
      */
     public MainWindow() {
         initComponents();
+        
+        //Labels Disabled
         sell_confirm_label.setEnabled(false);
         sell_return_label1.setEnabled(false);
     }
@@ -141,19 +143,6 @@ public class MainWindow extends javax.swing.JFrame {
         sell_barcodeInput_textField.setForeground(java.awt.Color.black);
         sell_barcodeInput_textField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         sell_barcodeInput_textField.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
-        sell_barcodeInput_textField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sell_barcodeInput_textFieldActionPerformed(evt);
-            }
-        });
-        sell_barcodeInput_textField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                sell_barcodeInput_textFieldKeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                sell_barcodeInput_textFieldKeyTyped(evt);
-            }
-        });
         sell_barcodeInput_panel.add(sell_barcodeInput_textField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 150, 40));
 
         sell_barcodeInput_label.setBackground(java.awt.Color.white);
@@ -269,11 +258,6 @@ public class MainWindow extends javax.swing.JFrame {
         sell_qtyInput_textField.setForeground(java.awt.Color.black);
         sell_qtyInput_textField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         sell_qtyInput_textField.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
-        sell_qtyInput_textField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sell_qtyInput_textFieldActionPerformed(evt);
-            }
-        });
         sell_qtyInput_textField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 sell_qtyInput_textFieldKeyPressed(evt);
@@ -483,54 +467,44 @@ public class MainWindow extends javax.swing.JFrame {
      PreparedStatement st = null;
      ResultSet rs = null;
     
+    //Checkbox Validation
     private void sell_verify_checkboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sell_verify_checkboxActionPerformed
-      sell_confirm_label.setEnabled(true);
-      sell_return_label1.setEnabled(true);
+
+      if(sell_verify_checkbox.isSelected()){
+          
+        //checks whether the details are filled
+        String input = sell_qtyInput_textField.getText();
       
-      String input = sell_qtyInput_textField.getText();
-      if(input.trim().isEmpty()){
-          JOptionPane.showMessageDialog(null, "Enter the Quantity needed");
+        if(input.trim().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Enter the Quantity needed");
+            sell_confirm_label.setEnabled(false);
+            sell_return_label1.setEnabled(false);
+            sell_verify_checkbox.setSelected(false);
+        }
+        else{
+            //Verifies and enables the buttons
+            sell_confirm_label.setEnabled(true);
+            sell_return_label1.setEnabled(true);
+        }
       }
+      else{
+        sell_confirm_label.setEnabled(false);
+        sell_return_label1.setEnabled(false);
+      }
+            
     }//GEN-LAST:event_sell_verify_checkboxActionPerformed
     
-    private void sell_barcodeInput_textFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sell_barcodeInput_textFieldActionPerformed
-//        try {
-//            Class.forName("com.mysql.cj.jdbc.Driver");     
-//            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-//            st = con.prepareStatement("SELECT chase_no, ornament_name, making_charge, weight, wastage FROM balance WHERE barcode = ?");
-//            rs = st.executeQuery(); 
-//            
-//            while(rs.next()){
-//                sell_chaseNoDetail_label.setText(rs.getString("chase_no"));
-//                sell_ornamentNameDetail_label.setText(rs.getString("chase_no"));
-//                sell_wtDetail_label.setText(rs.getString("ornament_name"));
-//                sell_wtDetail_label.setText(rs.getString("weight"));
-//                sell_wasDetail_label.setText(rs.getString("wastage"));
-//                sell_mcDetail_label.setText(rs.getString("making_charge"));
-//            }
-//        }
-//        catch (ClassNotFoundException ex) {
-//            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-//        } 
-//        catch (SQLException ex) {
-//            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-    }//GEN-LAST:event_sell_barcodeInput_textFieldActionPerformed
-
-    private void sell_qtyInput_textFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sell_qtyInput_textFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_sell_qtyInput_textFieldActionPerformed
-
     //KeyPressed Event for Quantity Text Field
     private void sell_qtyInput_textFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sell_qtyInput_textFieldKeyPressed
         
+        //Number only can be entered
         char c = evt.getKeyChar();
         
         if(Character.isLetter(c)){
             //Can't type as it is a character
             sell_qtyInput_textField.setEditable(false);
-           //Error Message
-           JOptionPane.showMessageDialog(null, "Please Enter Number Only");
+            //Error Message
+            JOptionPane.showMessageDialog(null, "Please Enter Number Only");
         }
         else{
             sell_qtyInput_textField.setEditable(true);
@@ -538,50 +512,7 @@ public class MainWindow extends javax.swing.JFrame {
         
     }//GEN-LAST:event_sell_qtyInput_textFieldKeyPressed
 
-    //KeyPressed Event for Barcode Text Field
-    private void sell_barcodeInput_textFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sell_barcodeInput_textFieldKeyPressed
-     
-        char c = evt.getKeyChar();
-        
-        if(Character.isLetter(c)){
-            //Can't type as it is a character
-            sell_barcodeInput_textField.setEditable(false);
-           //Error Message
-           JOptionPane.showMessageDialog(null, "Please Enter Number Only");
-        }
-        else{
-            sell_barcodeInput_textField.setEditable(true);
-        }
-        
-    }//GEN-LAST:event_sell_barcodeInput_textFieldKeyPressed
-
-    //KeyTyped Event for Barcode Text Field
-    private void sell_barcodeInput_textFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sell_barcodeInput_textFieldKeyTyped
-           
-//        try {
-//            Class.forName("com.mysql.cj.jdbc.Driver");     
-//            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-//            st = con.prepareStatement("SELECT chase_no, ornament_name, making_charge, weight, wastage FROM balance WHERE barcode = ?");
-//            rs = st.executeQuery(); 
-//            
-//            while(rs.next()){
-//                sell_chaseNoDetail_label.setText(rs.getString("chase_no"));
-//                sell_ornamentNameDetail_label.setText(rs.getString("chase_no"));
-//                sell_wtDetail_label.setText(rs.getString("ornament_name"));
-//                sell_wtDetail_label.setText(rs.getString("weight"));
-//                sell_wasDetail_label.setText(rs.getString("wastage"));
-//                sell_mcDetail_label.setText(rs.getString("making_charge"));
-//            }
-//        }
-//        catch (ClassNotFoundException ex) {
-//            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-//        } 
-//        catch (SQLException ex) {
-//            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-
-    }//GEN-LAST:event_sell_barcodeInput_textFieldKeyTyped
-
+    
     /**
      * @param args the command line arguments
      */
