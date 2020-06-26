@@ -494,18 +494,21 @@ public class MainWindow extends javax.swing.JFrame {
           
         //checks whether the details are filled
         String input = sell_qtyInput_textField.getText();
+       
       
         if(input.trim().isEmpty()){
             JOptionPane.showMessageDialog(null, "Enter the Quantity needed");
             sell_confirm_label.setEnabled(false);
             sell_return_label1.setEnabled(false);
             sell_verify_checkbox.setSelected(false);
+             
         }
+        
         else{
-            //Verifies and enables the Confirm, Return Labels
-            sell_confirm_label.setEnabled(true);
-            sell_return_label1.setEnabled(true);
+            QuantityVerification qv = new QuantityVerification();
+            rs = qv.find(sell_barcodeInput_textField.getText());
         }
+        
       }
       else{
         sell_confirm_label.setEnabled(false);
@@ -548,7 +551,7 @@ public class MainWindow extends javax.swing.JFrame {
                     sell_mcDetail_label.setText((rs.getString("making_charge"))+" /G");
                }  
                else{
-                    JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
+                    JOptionPane.showMessageDialog(null, "Barcode is incorrect, Please do check it");
                }
             
           } 
@@ -792,7 +795,40 @@ public class MainWindow extends javax.swing.JFrame {
        }
        
    }
-
+   
+   //Quantity Verification
+   public class QuantityVerification{
+        public ResultSet find(String s){
+            
+                    try{
+                    int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
+                    Class.forName("com.mysql.cj.jdbc.Driver");     
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    st = con.prepareStatement("SELECT quantity FROM balance WHERE barcode = ?");
+                    st.setString(1,s);
+                    rs = st.executeQuery();
+                    while(rs.next()){
+                        int qty = rs.getInt("quantity");
+                    
+                        if(quantity > qty ){
+                            JOptionPane.showMessageDialog(null, "Please do check the available quantity");
+                            sell_confirm_label.setEnabled(false);
+                            sell_return_label1.setEnabled(false);
+                            sell_verify_checkbox.setSelected(false);
+                        }
+                        else{
+                            //Verifies and enables the Confirm, Return Labels
+                            sell_confirm_label.setEnabled(true);
+                            sell_return_label1.setEnabled(true);
+                        }
+                    }
+                 }
+                 catch(Exception ex){
+                      JOptionPane.showMessageDialog(null, ex.getMessage());
+                   }
+            return rs;
+        }
+   }
       
     /**
      * @param args the command line arguments
