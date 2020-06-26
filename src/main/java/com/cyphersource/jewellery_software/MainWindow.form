@@ -497,16 +497,16 @@
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="10" rowCount="13">
-                                <Column editable="true" title="No" type="java.lang.Object"/>
-                                <Column editable="true" title="Date" type="java.lang.Object"/>
-                                <Column editable="true" title="Chase No" type="java.lang.Object"/>
-                                <Column editable="true" title="Ornament Name" type="java.lang.Object"/>
-                                <Column editable="true" title="WT" type="java.lang.Object"/>
-                                <Column editable="true" title="WAS" type="java.lang.Object"/>
-                                <Column editable="true" title="MC" type="java.lang.Object"/>
+                                <Column editable="false" title="No" type="java.lang.Object"/>
+                                <Column editable="false" title="Date" type="java.lang.Object"/>
+                                <Column editable="false" title="Chase No" type="java.lang.Object"/>
+                                <Column editable="false" title="Ornament Name" type="java.lang.Object"/>
+                                <Column editable="false" title="WT" type="java.lang.Object"/>
+                                <Column editable="false" title="WAS" type="java.lang.Object"/>
+                                <Column editable="false" title="MC" type="java.lang.Object"/>
                                 <Column editable="true" title="QTY" type="java.lang.Object"/>
-                                <Column editable="true" title="QLTY" type="java.lang.Object"/>
-                                <Column editable="true" title="BUY" type="java.lang.Object"/>
+                                <Column editable="false" title="QLTY" type="java.lang.Object"/>
+                                <Column editable="false" title="BUY" type="java.lang.Object"/>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -569,7 +569,7 @@
                             <Property name="showGrid" type="boolean" value="true"/>
                             <Property name="showHorizontalLines" type="boolean" value="false"/>
                             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                              <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -841,18 +841,18 @@
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="8" rowCount="13">
-                                <Column editable="true" title="No" type="java.lang.Object"/>
-                                <Column editable="true" title="Date" type="java.lang.Object"/>
-                                <Column editable="true" title="Chase No" type="java.lang.Object"/>
-                                <Column editable="true" title="Ornament Name" type="java.lang.Object"/>
-                                <Column editable="true" title="WT" type="java.lang.Object"/>
-                                <Column editable="true" title="QTY" type="java.lang.Object"/>
-                                <Column editable="true" title="BARCODE" type="java.lang.Object"/>
-                                <Column editable="true" title="RT" type="java.lang.Object"/>
+                                <Column editable="false" title="No" type="java.lang.Object"/>
+                                <Column editable="false" title="Date" type="java.lang.Object"/>
+                                <Column editable="false" title="Chase No" type="java.lang.Object"/>
+                                <Column editable="false" title="Ornament Name" type="java.lang.Object"/>
+                                <Column editable="false" title="WT" type="java.lang.Object"/>
+                                <Column editable="false" title="QTY" type="java.lang.Object"/>
+                                <Column editable="false" title="BARCODE" type="java.lang.Object"/>
+                                <Column editable="false" title="RT" type="java.lang.Object"/>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                              <TableColumnModel selectionModel="0">
+                              <TableColumnModel selectionModel="1">
                                 <Column maxWidth="-1" minWidth="-1" prefWidth="35" resizable="true">
                                   <Title/>
                                   <Editor/>
@@ -895,13 +895,14 @@
                                 </Column>
                               </TableColumnModel>
                             </Property>
+                            <Property name="columnSelectionAllowed" type="boolean" value="true"/>
                             <Property name="requestFocusEnabled" type="boolean" value="false"/>
-                            <Property name="rowHeight" type="int" value="45"/>
+                            <Property name="rowHeight" type="int" value="48"/>
                             <Property name="rowMargin" type="int" value="0"/>
                             <Property name="showGrid" type="boolean" value="true"/>
                             <Property name="showHorizontalLines" type="boolean" value="false"/>
                             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                              <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -1174,17 +1175,17 @@
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="8" rowCount="13">
                                 <Column editable="true" title="No" type="java.lang.Object"/>
-                                <Column editable="true" title="Date" type="java.lang.Object"/>
-                                <Column editable="true" title="Chase No" type="java.lang.Object"/>
-                                <Column editable="true" title="Ornament Name" type="java.lang.Object"/>
-                                <Column editable="true" title="WT" type="java.lang.Object"/>
-                                <Column editable="true" title="QTY" type="java.lang.Object"/>
-                                <Column editable="true" title="BARCODE" type="java.lang.Object"/>
+                                <Column editable="false" title="Date" type="java.lang.Object"/>
+                                <Column editable="false" title="Chase No" type="java.lang.Object"/>
+                                <Column editable="false" title="Ornament Name" type="java.lang.Object"/>
+                                <Column editable="false" title="WT" type="java.lang.Object"/>
+                                <Column editable="false" title="QTY" type="java.lang.Object"/>
+                                <Column editable="false" title="BARCODE" type="java.lang.Object"/>
                                 <Column editable="true" title="RP" type="java.lang.Object"/>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                              <TableColumnModel selectionModel="0">
+                              <TableColumnModel selectionModel="1">
                                 <Column maxWidth="-1" minWidth="-1" prefWidth="70" resizable="true">
                                   <Title/>
                                   <Editor/>
@@ -1227,13 +1228,14 @@
                                 </Column>
                               </TableColumnModel>
                             </Property>
+                            <Property name="columnSelectionAllowed" type="boolean" value="true"/>
                             <Property name="requestFocusEnabled" type="boolean" value="false"/>
                             <Property name="rowHeight" type="int" value="45"/>
                             <Property name="rowMargin" type="int" value="0"/>
                             <Property name="showGrid" type="boolean" value="true"/>
                             <Property name="showHorizontalLines" type="boolean" value="false"/>
                             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                              <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -1505,13 +1507,13 @@
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="7" rowCount="13">
-                                <Column editable="true" title="No" type="java.lang.Object"/>
-                                <Column editable="true" title="Date" type="java.lang.Object"/>
-                                <Column editable="true" title="Chase No" type="java.lang.Object"/>
-                                <Column editable="true" title="Ornament Name" type="java.lang.Object"/>
-                                <Column editable="true" title="WT" type="java.lang.Object"/>
-                                <Column editable="true" title="QTY" type="java.lang.Object"/>
-                                <Column editable="true" title="BUY" type="java.lang.Object"/>
+                                <Column editable="false" title="No" type="java.lang.Object"/>
+                                <Column editable="false" title="Date" type="java.lang.Object"/>
+                                <Column editable="false" title="Chase No" type="java.lang.Object"/>
+                                <Column editable="false" title="Ornament Name" type="java.lang.Object"/>
+                                <Column editable="false" title="WT" type="java.lang.Object"/>
+                                <Column editable="false" title="QTY" type="java.lang.Object"/>
+                                <Column editable="false" title="BUY" type="java.lang.Object"/>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -1554,12 +1556,12 @@
                               </TableColumnModel>
                             </Property>
                             <Property name="requestFocusEnabled" type="boolean" value="false"/>
-                            <Property name="rowHeight" type="int" value="45"/>
+                            <Property name="rowHeight" type="int" value="48"/>
                             <Property name="rowMargin" type="int" value="0"/>
                             <Property name="showGrid" type="boolean" value="true"/>
                             <Property name="showHorizontalLines" type="boolean" value="false"/>
                             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                              <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
                             </Property>
                           </Properties>
                         </Component>
