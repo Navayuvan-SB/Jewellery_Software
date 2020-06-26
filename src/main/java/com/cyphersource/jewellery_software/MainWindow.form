@@ -57,24 +57,24 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane" alignment="1" pref="1280" max="32767" attributes="0"/>
+                  <Component id="EntryPage_jScrollPane" alignment="1" pref="1280" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane" alignment="0" pref="1617" max="32767" attributes="0"/>
+                  <Component id="EntryPage_jScrollPane" alignment="0" pref="1617" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane">
+            <Container class="javax.swing.JScrollPane" name="EntryPage_jScrollPane">
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="// Code to reduce ScrollPane width&#xa;jScrollPane.getVerticalScrollBar().setPreferredSize(&#xa;new Dimension(0, Integer.MAX_VALUE));&#xa;jScrollPane.getHorizontalScrollBar().setPreferredSize(&#xa;new Dimension(Integer.MAX_VALUE, 0));"/>
+                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="// Code to reduce ScrollPane width&#xa;EntryPage_jScrollPane.getVerticalScrollBar().setPreferredSize(&#xa;new Dimension(0, Integer.MAX_VALUE));&#xa;EntryPage_jScrollPane.getHorizontalScrollBar().setPreferredSize(&#xa;new Dimension(Integer.MAX_VALUE, 0));"/>
               </AuxValues>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Container class="javax.swing.JPanel" name="Wrapper">
+                <Container class="javax.swing.JPanel" name="EntryPage_Wrapper">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -813,10 +813,13 @@
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Entry_EnterButton_LabelMouseClicked"/>
                       </Events>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="// Entry_EnterBtn_Label"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JCheckBox" name="Entry_Check_jCheckBox">
                       <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor" postCode="// Entry_CheckedBox_Label">
                           <Image iconType="2" name="/home/poorvasha/Downloads/checkbox.png"/>
                         </Property>
                         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -826,6 +829,9 @@
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Entry_Check_jCheckBoxActionPerformed"/>
                       </Events>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="// Entry_CheckBox_Label"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="Entry_Reset_jLabel">
                       <Properties>
@@ -836,6 +842,9 @@
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Entry_Reset_jLabelMouseClicked"/>
                       </Events>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="// Entry_ResetBtn_Label"/>
+                      </AuxValues>
                     </Component>
                   </SubComponents>
                 </Container>

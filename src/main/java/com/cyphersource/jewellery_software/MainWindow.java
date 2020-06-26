@@ -206,8 +206,8 @@ public class MainWindow extends javax.swing.JFrame {
 
         jLayeredPane1 = new javax.swing.JLayeredPane();
         entryPage = new javax.swing.JPanel();
-        jScrollPane = new javax.swing.JScrollPane();
-        Wrapper = new javax.swing.JPanel();
+        EntryPage_jScrollPane = new javax.swing.JScrollPane();
+        EntryPage_Wrapper = new javax.swing.JPanel();
         Entry_ShopnameJ_Label = new javax.swing.JLabel();
         Entry_ShopnameJ2_Label = new javax.swing.JLabel();
         Entry_ShopNameA_Label = new javax.swing.JLabel();
@@ -255,14 +255,14 @@ public class MainWindow extends javax.swing.JFrame {
         entryPage.setPreferredSize(new java.awt.Dimension(1280, 900));
 
         // Code to reduce ScrollPane width
-        jScrollPane.getVerticalScrollBar().setPreferredSize(
+        EntryPage_jScrollPane.getVerticalScrollBar().setPreferredSize(
             new Dimension(0, Integer.MAX_VALUE));
-        jScrollPane.getHorizontalScrollBar().setPreferredSize(
+        EntryPage_jScrollPane.getHorizontalScrollBar().setPreferredSize(
             new Dimension(Integer.MAX_VALUE, 0));
 
-        Wrapper.setBackground(new java.awt.Color(255, 255, 255));
-        Wrapper.setAutoscrolls(true);
-        Wrapper.setPreferredSize(new java.awt.Dimension(1220, 1690));
+        EntryPage_Wrapper.setBackground(new java.awt.Color(255, 255, 255));
+        EntryPage_Wrapper.setAutoscrolls(true);
+        EntryPage_Wrapper.setPreferredSize(new java.awt.Dimension(1220, 1690));
 
         Entry_ShopnameJ_Label.setBackground(new java.awt.Color(250, 250, 250));
         Entry_ShopnameJ_Label.setFont(new java.awt.Font("Ubuntu", 1, 64)); // NOI18N
@@ -479,6 +479,7 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_CheckText_Label.setForeground(new java.awt.Color(0, 0, 0));
         Entry_CheckText_Label.setText("Click to Generate BarCode and Print");
 
+        // Entry_EnterBtn_Label
         Entry_EnterButton_Label.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/EnterBtn.png")); // NOI18N
         Entry_EnterButton_Label.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -486,7 +487,9 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
+        // Entry_CheckBox_Label
         Entry_Check_jCheckBox.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/checkbox.png")); // NOI18N
+        // Entry_CheckedBox_Label
         Entry_Check_jCheckBox.setSelectedIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Checked.png")); // NOI18N
         Entry_Check_jCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -494,6 +497,7 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
+        // Entry_ResetBtn_Label
         Entry_Reset_jLabel.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/ResetBtn.png")); // NOI18N
         Entry_Reset_jLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -501,72 +505,72 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout WrapperLayout = new javax.swing.GroupLayout(Wrapper);
-        Wrapper.setLayout(WrapperLayout);
-        WrapperLayout.setHorizontalGroup(
-            WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WrapperLayout.createSequentialGroup()
+        javax.swing.GroupLayout EntryPage_WrapperLayout = new javax.swing.GroupLayout(EntryPage_Wrapper);
+        EntryPage_Wrapper.setLayout(EntryPage_WrapperLayout);
+        EntryPage_WrapperLayout.setHorizontalGroup(
+            EntryPage_WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EntryPage_WrapperLayout.createSequentialGroup()
                 .addGap(70, 70, 70)
-                .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(WrapperLayout.createSequentialGroup()
+                .addGroup(EntryPage_WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(EntryPage_WrapperLayout.createSequentialGroup()
                         .addGap(521, 521, 521)
                         .addComponent(Entry_ShopnameJ_Label)
                         .addGap(0, 0, 0)
                         .addComponent(Entry_ShopNameA_Label)
                         .addGap(0, 0, 0)
                         .addComponent(Entry_ShopnameJ2_Label))
-                    .addGroup(WrapperLayout.createSequentialGroup()
+                    .addGroup(EntryPage_WrapperLayout.createSequentialGroup()
                         .addComponent(Entry_ChaseNo_Label)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Entry_ChaseNoValue_Label)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(WrapperLayout.createSequentialGroup()
+                .addGroup(EntryPage_WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(EntryPage_WrapperLayout.createSequentialGroup()
                         .addComponent(Entry_NavEntry_Label)
                         .addGap(55, 55, 55)
                         .addComponent(Entry_NavView_Label)
                         .addGap(55, 55, 55)
                         .addComponent(Entry_NavSell_Label))
-                    .addGroup(WrapperLayout.createSequentialGroup()
+                    .addGroup(EntryPage_WrapperLayout.createSequentialGroup()
                         .addComponent(Entry_Date_Label)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Entry_DateNoValue_Label)))
                 .addGap(70, 70, 70))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WrapperLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EntryPage_WrapperLayout.createSequentialGroup()
                 .addContainerGap(376, Short.MAX_VALUE)
                 .addComponent(Entry_Check_jCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Entry_CheckText_Label)
                 .addGap(374, 374, 374))
-            .addGroup(WrapperLayout.createSequentialGroup()
+            .addGroup(EntryPage_WrapperLayout.createSequentialGroup()
                 .addGap(70, 70, 70)
                 .addComponent(Entry_InputFields_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(WrapperLayout.createSequentialGroup()
+            .addGroup(EntryPage_WrapperLayout.createSequentialGroup()
                 .addGap(167, 167, 167)
                 .addComponent(Entry_Reset_jLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Entry_EnterButton_Label)
                 .addGap(161, 161, 161))
         );
-        WrapperLayout.setVerticalGroup(
-            WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(WrapperLayout.createSequentialGroup()
-                .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(WrapperLayout.createSequentialGroup()
+        EntryPage_WrapperLayout.setVerticalGroup(
+            EntryPage_WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EntryPage_WrapperLayout.createSequentialGroup()
+                .addGroup(EntryPage_WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(EntryPage_WrapperLayout.createSequentialGroup()
                         .addGap(50, 50, 50)
-                        .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(EntryPage_WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Entry_ShopNameA_Label)
                             .addComponent(Entry_ShopnameJ2_Label)
                             .addComponent(Entry_ShopnameJ_Label)))
-                    .addGroup(WrapperLayout.createSequentialGroup()
+                    .addGroup(EntryPage_WrapperLayout.createSequentialGroup()
                         .addGap(74, 74, 74)
-                        .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(EntryPage_WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Entry_NavSell_Label)
                             .addComponent(Entry_NavView_Label)
                             .addComponent(Entry_NavEntry_Label))))
                 .addGap(77, 77, 77)
-                .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(EntryPage_WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Entry_ChaseNoValue_Label)
                     .addComponent(Entry_ChaseNo_Label)
                     .addComponent(Entry_Date_Label)
@@ -574,27 +578,27 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGap(52, 52, 52)
                 .addComponent(Entry_InputFields_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 945, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
-                .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(EntryPage_WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Entry_Check_jCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Entry_CheckText_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48)
-                .addGroup(WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(EntryPage_WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Entry_EnterButton_Label)
                     .addComponent(Entry_Reset_jLabel))
                 .addGap(0, 249, Short.MAX_VALUE))
         );
 
-        jScrollPane.setViewportView(Wrapper);
+        EntryPage_jScrollPane.setViewportView(EntryPage_Wrapper);
 
         javax.swing.GroupLayout entryPageLayout = new javax.swing.GroupLayout(entryPage);
         entryPage.setLayout(entryPageLayout);
         entryPageLayout.setHorizontalGroup(
             entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1280, Short.MAX_VALUE)
+            .addComponent(EntryPage_jScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1280, Short.MAX_VALUE)
         );
         entryPageLayout.setVerticalGroup(
             entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1617, Short.MAX_VALUE)
+            .addComponent(EntryPage_jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1617, Short.MAX_VALUE)
         );
 
         jLayeredPane1.add(entryPage, "entryPage");
@@ -836,6 +840,8 @@ public class MainWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel EntryPage_Wrapper;
+    private javax.swing.JScrollPane EntryPage_jScrollPane;
     private javax.swing.JRadioButton Entry_22CT_RadioButton;
     private javax.swing.JRadioButton Entry_961HM_RadioButton;
     private javax.swing.JLabel Entry_BUY_Label;
@@ -872,10 +878,8 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel Entry_WT_Label_Icon;
     private javax.swing.JLabel Entry_WT_Lable;
     private javax.swing.JTextField Entry_WT_TextField;
-    private javax.swing.JPanel Wrapper;
     private javax.swing.JPanel entryPage;
     private javax.swing.JLayeredPane jLayeredPane1;
-    private javax.swing.JScrollPane jScrollPane;
     // End of variables declaration//GEN-END:variables
 
     
