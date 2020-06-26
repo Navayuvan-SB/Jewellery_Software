@@ -6,6 +6,7 @@
 package com.cyphersource.jewellery_software;
 
 import java.awt.Dimension;
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -28,8 +29,8 @@ public class MainWindow extends javax.swing.JFrame {
     String date_UI = null,
            dateDB = null,
            chase_no = null,
-           ornament_type,
-           ornament_name,
+           ornament_type ="0",
+           ornament_name = "0",
            quality = null,
            mc = null,
            wt = null,
@@ -46,6 +47,7 @@ public class MainWindow extends javax.swing.JFrame {
             con=DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
         }catch(Exception e){
             System.out.println(e);
+            JOptionPane.showMessageDialog(null, "Oops! Sorry, Connection Lost! kindly Check it");
         } 
         getLocalDate();
         DropDown_from_DB();
@@ -85,6 +87,7 @@ public class MainWindow extends javax.swing.JFrame {
         }
         catch(Exception e){
             System.out.println(e);
+            JOptionPane.showMessageDialog(null, "Oops! Sorry, Connection Lost! kindly Check it");
         }  
     }
     
@@ -103,6 +106,7 @@ public class MainWindow extends javax.swing.JFrame {
         }
         catch(Exception e){
             System.out.println(e);
+            JOptionPane.showMessageDialog(null, "Oops! Sorry, Connection Lost! kindly Check it");
         }
         // this is a class to autocomplete text.
         AutoCompleteDecorator.decorate(Entry_OrnamentName_jCombobox);
@@ -162,9 +166,34 @@ public class MainWindow extends javax.swing.JFrame {
          Entry_BUY_TextField.setText("");
          Entry_Check_jCheckBox.setSelected(false);
          Entry_ChaseNoValue_Label.setText("");
-         Entry_DateNoValue_Label.setText("");
+           chase_no = null;
+           ornament_type = "0";
+           ornament_name = "0";
+           quality = null;
+           mc = null;
+           wt = null;
+           was = null;
+           qty = null;
+           buy = null;
+           barcode = null;
     }
      
+    private boolean Limit_of_OrnamentNameChar(String name){
+        if(name.length() <= 16){
+           return true;
+        }else{
+            return false;
+        }
+    }
+    
+    private void PrintBarcode(){
+        System.out.println(mc);
+        System.out.println(mc);
+        System.out.println(mc);
+        System.out.println(mc);
+        System.out.println(mc);
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -315,7 +344,7 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_MC_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         Entry_MC_Label.setForeground(new java.awt.Color(98, 98, 98));
         Entry_MC_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Entry_MC_Label.setText("MC :");
+        Entry_MC_Label.setText("MC (/G) :");
         Entry_InputFields_Panel.add(Entry_MC_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
 
         Entry_MC_TextField.setBackground(new java.awt.Color(255, 255, 255));
@@ -323,7 +352,12 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_MC_TextField.setForeground(new java.awt.Color(0, 0, 0));
         Entry_MC_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Entry_MC_TextField.setBorder(null);
-        Entry_InputFields_Panel.add(Entry_MC_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 510, -1));
+        Entry_MC_TextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Entry_MC_TextFieldKeyPressed(evt);
+            }
+        });
+        Entry_InputFields_Panel.add(Entry_MC_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 460, -1));
 
         Entry_MC_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
         Entry_MC_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
@@ -333,7 +367,7 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_WT_Lable.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         Entry_WT_Lable.setForeground(new java.awt.Color(98, 98, 98));
         Entry_WT_Lable.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Entry_WT_Lable.setText("WT :");
+        Entry_WT_Lable.setText("WT (g) :");
         Entry_InputFields_Panel.add(Entry_WT_Lable, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 510, -1, -1));
 
         Entry_WT_TextField.setBackground(new java.awt.Color(255, 255, 255));
@@ -341,7 +375,12 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_WT_TextField.setForeground(new java.awt.Color(0, 0, 0));
         Entry_WT_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Entry_WT_TextField.setBorder(null);
-        Entry_InputFields_Panel.add(Entry_WT_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 510, 510, -1));
+        Entry_WT_TextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Entry_WT_TextFieldKeyPressed(evt);
+            }
+        });
+        Entry_InputFields_Panel.add(Entry_WT_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 510, 470, -1));
 
         Entry_WT_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WT_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
@@ -351,7 +390,7 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_WAS_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         Entry_WAS_Label.setForeground(new java.awt.Color(98, 98, 98));
         Entry_WAS_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Entry_WAS_Label.setText("WAS :");
+        Entry_WAS_Label.setText("WAS (%) :");
         Entry_InputFields_Panel.add(Entry_WAS_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 620, -1, -1));
 
         Entry_WAS_TextField.setBackground(new java.awt.Color(255, 255, 255));
@@ -359,7 +398,12 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_WAS_TextField.setForeground(new java.awt.Color(0, 0, 0));
         Entry_WAS_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Entry_WAS_TextField.setBorder(null);
-        Entry_InputFields_Panel.add(Entry_WAS_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 620, 500, -1));
+        Entry_WAS_TextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Entry_WAS_TextFieldKeyPressed(evt);
+            }
+        });
+        Entry_InputFields_Panel.add(Entry_WAS_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 620, 450, -1));
 
         Entry_WAS_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WAS_Label_Icon.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
@@ -585,27 +629,35 @@ public class MainWindow extends javax.swing.JFrame {
         
         
         // to Insert newly entered Ornament Name in Database in(ornament_name Table)
-        try{
-            // Query
-            sql = "INSERT INTO ornament_name (ornament_name) VALUES (?)";
+        if(Limit_of_OrnamentNameChar(ornament_name)){
+            try{
+                // Query
+                sql = "INSERT INTO ornament_name (ornament_name) VALUES (?)";
 
-            PreparedStatement statement = con.prepareStatement(sql);
-            statement.setString(1, ornament_name);
+                PreparedStatement statement = con.prepareStatement(sql);
+                statement.setString(1, ornament_name);
 
-            int rowsInserted = statement.executeUpdate();
-            if (rowsInserted > 0) {
-            }            
+                int rowsInserted = statement.executeUpdate();
+                if (rowsInserted > 0) {
+                }            
+            }
+            catch(Exception e){
+                System.out.println(e);
+                JOptionPane.showMessageDialog(null, "OOPS! Sry");
+            }
+        }else{
+            //JOptionPane.showMessageDialog(null, "Oops! Sorry, unable to update Ornament Name, check whether the entered name is within 16 characters");
         }
-        catch(Exception e){
-            System.out.println(e);
-        }         
           
         
         
         // condition to check all datas are entered if not show MessageBox orelse Insert Data.
-        if("".equals(mc) || "".equals(barcode) || "".equals(dateDB) || "".equals(chase_no) || ornament_type == null || ornament_name == null||"".equals(quality) || "".equals(wt) || "".equals(was) || "".equals(qty) || "".equals(buy) ){
- 
-            JOptionPane.showMessageDialog(null, "Sry, You missed some fields, Please do fill it");
+        if("".equals(mc) || "".equals(barcode) || "".equals(dateDB) || "".equals(chase_no) || ornament_type == "0" || ornament_name == "0"||"".equals(quality) || "".equals(wt) || "".equals(was) || "".equals(qty) || "".equals(buy)){
+
+            JOptionPane.showMessageDialog(null, "Sry, You missed some fields, Please do fill it");    
+        }
+        else if(!Limit_of_OrnamentNameChar(ornament_name)){
+            JOptionPane.showMessageDialog(null, "\"Oops! Sorry, check whether the entered Ornament name is within 16 characters");
         }
         else{
             // to Insert all Datas in DB in(jewellery_entry Table).
@@ -663,7 +715,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void Entry_Check_jCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_Check_jCheckBoxActionPerformed
        
         // if fields are empty it should not generate barcode 
-        if("".equals(mc) || "".equals(barcode) || "".equals(dateDB) || "".equals(chase_no) || ornament_type == null || ornament_name == null||"".equals(quality) || "".equals(wt) || "".equals(was) || "".equals(qty) || "".equals(buy) ){
+        if("".equals(mc) || "".equals(barcode) || "".equals(dateDB) || "".equals(chase_no) || ornament_type == "0" || ornament_name == "0" ||"".equals(quality) || "".equals(wt) || "".equals(was) || "".equals(qty) || "".equals(buy) ){
             Entry_Check_jCheckBox.setSelected(false);
             JOptionPane.showMessageDialog(null, "Sry, You have missed some fields, Please fill it");
         }
@@ -678,17 +730,67 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Entry_Check_jCheckBoxActionPerformed
 
-    // Ornament Name Action
-    private void Entry_OrnamentName_jComboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_OrnamentName_jComboboxActionPerformed
-
-        this.ornament_name = (String) Entry_OrnamentName_jCombobox.getSelectedItem();
-    }//GEN-LAST:event_Entry_OrnamentName_jComboboxActionPerformed
-
     // Reset Button to clear Data
     private void Entry_Reset_jLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Entry_Reset_jLabelMouseClicked
    
          ClearData(); 
     }//GEN-LAST:event_Entry_Reset_jLabelMouseClicked
+
+    // Entry_MC_TextField Keypressed event to type limit num of characters.
+    private void Entry_MC_TextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Entry_MC_TextFieldKeyPressed
+        
+        if(!(Entry_MC_TextField.getText().length() <= 5)){
+            Entry_MC_TextField.setEditable(false);
+        }
+        else{
+            Entry_MC_TextField.setEditable(true);
+        }
+        if(evt.getExtendedKeyCode()== KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode()== KeyEvent.VK_DELETE){
+            Entry_MC_TextField.setEditable(true);
+        }
+    }//GEN-LAST:event_Entry_MC_TextFieldKeyPressed
+
+    // Entry_WT_TextField Keypressed event to type limit num of characters.
+    private void Entry_WT_TextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Entry_WT_TextFieldKeyPressed
+        
+        if(!(Entry_WT_TextField.getText().length() <= 6)){
+            Entry_WT_TextField.setEditable(false);
+        }
+        else{
+            Entry_WT_TextField.setEditable(true);
+        }
+        if(evt.getExtendedKeyCode()== KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode()== KeyEvent.VK_DELETE){
+            Entry_WT_TextField.setEditable(true);
+        }
+
+    }//GEN-LAST:event_Entry_WT_TextFieldKeyPressed
+
+    // Entry_WAS_TextField Keypressed event to type limit num of characters.
+    private void Entry_WAS_TextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Entry_WAS_TextFieldKeyPressed
+        
+        if(!(Entry_WAS_TextField.getText().length() <= 5)){
+            Entry_WAS_TextField.setEditable(false);
+        }
+        else{
+            Entry_WAS_TextField.setEditable(true);
+        }
+        if(evt.getExtendedKeyCode()== KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode()== KeyEvent.VK_DELETE){
+            Entry_WAS_TextField.setEditable(true);
+        }
+
+    }//GEN-LAST:event_Entry_WAS_TextFieldKeyPressed
+
+    // Ornament_name Action
+    private void Entry_OrnamentName_jComboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_OrnamentName_jComboboxActionPerformed
+        
+        this.ornament_name = (String) Entry_OrnamentName_jCombobox.getSelectedItem();
+        
+        if(!"Select Ornament Name".equals(ornament_name)){
+            if(!Limit_of_OrnamentNameChar(ornament_name)){
+                JOptionPane.showMessageDialog(null, "\"Oops! Sorry, check whether the entered name is within 16 characters");
+            }
+        }
+    }//GEN-LAST:event_Entry_OrnamentName_jComboboxActionPerformed
 
     /**
      * @param args the command line arguments
