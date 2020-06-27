@@ -16,6 +16,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.BorderFactory;
@@ -79,7 +80,7 @@ public class MainWindow extends javax.swing.JFrame {
 
 ////     Initialize Image Icon
          imageIcon = new ImageIcon("/home/logida/jewel/Jewellery_Software/src/main/java/image/p2.jpg");
-         returnIcon= new ImageIcon("/home/logida/jewel/Jewellery_Software/src/main/java/image/Vector (1).png");
+         returnIcon= new ImageIcon("/home/logida/jewel/Jewellery_Software/src/main/java/image/return1.png");
  
 
 ////      Override Cell render of Image column
@@ -229,7 +230,14 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
-        
+    view_from1_date = default_from_date;
+    view_to1_date = default_to_date;
+     view_from2_date = default_from_date;
+    view_to2_date = default_to_date;
+     view_from3_date = default_from_date;
+    view_to3_date = default_to_date;
+     view_from4_date = default_from_date;
+     view_to4_date = default_to_date;
     }
     
   
@@ -1670,7 +1678,7 @@ public class MainWindow extends javax.swing.JFrame {
      * @param args the command line arguments
      */
    
-    public static void main(String args[]) {
+    public static void main(String args[]) throws ParseException{
         
        
        
@@ -1885,8 +1893,15 @@ public class MainWindow extends javax.swing.JFrame {
        
         // For autoincrementing the no. of rows 
         int count=1;
-        if((view_from1_date!=null)&&(view_to1_date!=null)){
-            try{
+        try{
+           System.out.println(view_from1_date);
+           System.out.println(view_to1_date);
+//             SimpleDateFormat sdformat = new SimpleDateFormat("YYYY-MM-dd");
+//             Date d1= sdformat.parse(view_from1_date);
+//             Date d2= sdformat.parse(view_to1_date);
+//             System.out.println(d1);
+//             System.out.println(d2); 
+     //       if(d1.compareTo(d2) < 0){
                 try{
                     //Getting default total weight of items.
                     String sql1="SELECT SUM(weight) FROM overall WHERE date >=" + "'"+  view_from1_date + "'  AND date <= " + "'"+  view_to1_date + "'";
@@ -1942,12 +1957,13 @@ public class MainWindow extends javax.swing.JFrame {
                 }
                 con.close(); 
                 con1.close(); 
-                con2.close(); 
-            }
-            catch(Exception e){
-                 JOptionPane.showMessageDialog(null,e);
-            }
+                con2.close();
+            //}
         }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        
     }
 
     private void view_default2_display(){
@@ -2173,8 +2189,13 @@ public class MainWindow extends javax.swing.JFrame {
                        
                 //For autoincrementing the no. of rows 
                 int count=1;
-        
-                if((view_from1_date!=null) && (view_to1_date!=null)){
+        try{
+//            SimpleDateFormat sdformat = new SimpleDateFormat("YYYY-MM-dd");
+//            Date d1= sdformat.parse(view_from1_date);
+//            Date d2= sdformat.parse(view_to1_date);
+//            System.out.println(d1);
+//            System.out.println(d2); 
+//            if(d1.compareTo(d2) < 0){
                     try{ 
                         
                         //Displaying table according to dates
@@ -2227,8 +2248,12 @@ public class MainWindow extends javax.swing.JFrame {
                     catch(Exception e){
                         JOptionPane.showMessageDialog(null,e);
                     }
-                }
-                view_combined1_display();
+           // }    
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+            view_combined1_display();
     }
     
     private void view_date2_display(){
@@ -2729,6 +2754,7 @@ public class MainWindow extends javax.swing.JFrame {
                 
                 // ToDate to be checked through database
                 default_to_date=df.format(date);
+                view_to1_date=default_to_date;
                 
                 String[] change_date = default_to_date. split("-");
                 int month=Integer.parseInt(change_date[1]); //1
@@ -2739,7 +2765,7 @@ public class MainWindow extends javax.swing.JFrame {
 
                             // FromDate to be checked through database
                             default_from_date=change_date[0]+"-"+c+"-"+change_date[2];
-
+                            view_from1_date=default_from_date;
                             //System.out.println(default_from_date);
                             new_normal_display_format=change_date[2]+"-"+c+"-"+change_date[0];
                             Date date1=new SimpleDateFormat("dd-MM-yyyy").parse(new_normal_display_format);
@@ -2760,6 +2786,7 @@ public class MainWindow extends javax.swing.JFrame {
                             
                             // FromDate to be checked through database
                             default_from_date=newYear+"-"+c+"-"+change_date[2];
+                            view_from1_date=default_from_date;
                             
                             //System.out.println(default_from_date);
                             new_normal_display_format=change_date[2]+"-"+c+"-"+newYear;
