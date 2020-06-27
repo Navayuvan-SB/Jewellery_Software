@@ -1,6 +1,6 @@
 com/cyphersource/jewellery_software/MainWindow$16.class
+com/cyphersource/jewellery_software/MainWindow$view_myCellRenderer.class
 com/cyphersource/jewellery_software/MainWindow$4.class
-com/cyphersource/jewellery_software/MainWindow$MyCellRenderer.class
 com/cyphersource/jewellery_software/MainWindow$6.class
 com/cyphersource/jewellery_software/MainWindow$9.class
 com/cyphersource/jewellery_software/MainWindow$21.class
@@ -11,7 +11,7 @@ com/cyphersource/jewellery_software/MainWindow$13.class
 com/cyphersource/jewellery_software/MainWindow$8.class
 com/cyphersource/jewellery_software/MainWindow$23.class
 com/cyphersource/jewellery_software/MainWindow$3.class
-com/cyphersource/jewellery_software/MainWindow$HeaderColor.class
+com/cyphersource/jewellery_software/MainWindow$view_headerColor.class
 com/cyphersource/jewellery_software/MainWindow$18.class
 com/cyphersource/jewellery_software/MainWindow$10.class
 com/cyphersource/jewellery_software/MainWindow$17.class
