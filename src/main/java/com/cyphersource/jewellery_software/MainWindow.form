@@ -24,7 +24,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="view_total_panel" alignment="0" pref="886" max="32767" attributes="0"/>
+          <Component id="view_total_panel" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -79,10 +79,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace pref="51" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="view_AName_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="view_JFirstname_label" alignment="3" min="-2" pref="54" max="-2" attributes="0"/>
-                          <Component id="view_JLastname_label" alignment="3" min="-2" pref="56" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="view_entry_label" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
@@ -90,6 +87,11 @@
                                   <Component id="view_sell_label" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="view_AName_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="view_JFirstname_label" alignment="3" min="-2" pref="54" max="-2" attributes="0"/>
+                              <Component id="view_JLastname_label" alignment="3" min="-2" pref="56" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -754,11 +756,13 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="view_overall_datelimitIcon_label">
                           <Properties>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="/home/logida/Documents/Rectangle 26 (1).png"/>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="new javax.swing.ImageIcon(&quot;/home/logida/Documents/view_datelimiticon.png&quot;)" type="code"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="jLabel6"/>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="//view page image : view_datelimiticon.png"/>
+                          </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                               <AbsoluteConstraints x="10" y="0" width="314" height="-1"/>
@@ -1087,11 +1091,14 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="view_sold_datelimitIcon_label">
                           <Properties>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="/home/logida/Documents/Rectangle 26 (1).png"/>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="new javax.swing.ImageIcon(&quot;/home/logida/Documents/view_datelimiticon.png&quot;)" type="code"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="jLabel6"/>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="// view page images : view_datelimiticon.png"/>
+                          </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                               <AbsoluteConstraints x="10" y="0" width="314" height="-1"/>
@@ -1420,11 +1427,14 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="view_balance_datelimitIcon_label">
                           <Properties>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="/home/logida/Documents/Rectangle 26 (1).png"/>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="new javax.swing.ImageIcon(&quot;/home/logida/Documents/view_datelimiticon.png&quot;)" type="code"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="jLabel6"/>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="// view page images : view_datelimiticon.png"/>
+                          </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                               <AbsoluteConstraints x="10" y="0" width="314" height="-1"/>
@@ -1747,11 +1757,14 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="view_return_datelimitIcon_label">
                           <Properties>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="/home/logida/Documents/Rectangle 26 (1).png"/>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="new javax.swing.ImageIcon(&quot;/home/logida/Documents/view_datelimiticon.png&quot;)" type="code"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="jLabel6"/>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="//view page images : view_datelimiticon.png"/>
+                          </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                               <AbsoluteConstraints x="10" y="0" width="314" height="-1"/>

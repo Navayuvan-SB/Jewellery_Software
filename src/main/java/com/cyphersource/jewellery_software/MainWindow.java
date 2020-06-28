@@ -77,8 +77,11 @@ public class MainWindow extends javax.swing.JFrame {
         
 
 //      Initialize Image Icon
-        imageIcon = new ImageIcon("/home/logida/jewel/Jewellery_Software/src/main/java/image/p2.jpg");
-        returnIcon= new ImageIcon("/home/logida/jewel/Jewellery_Software/src/main/java/image/return1.png");
+        // view page print image: view_print.jpg 
+        imageIcon = new ImageIcon("/home/logida/jewel/Jewellery_Software/src/main/java/image/view_print.jpg");
+        
+        // view page print image: view_return.jpg 
+        returnIcon= new ImageIcon("/home/logida/jewel/Jewellery_Software/src/main/java/image/view_return.png");
  
 
 //      Override Cell render of Image column
@@ -385,16 +388,17 @@ public class MainWindow extends javax.swing.JFrame {
             view_areaOne_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(view_areaOne_panelLayout.createSequentialGroup()
                 .addContainerGap(51, Short.MAX_VALUE)
-                .addGroup(view_areaOne_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(view_AName_label)
-                    .addComponent(view_JFirstname_label, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(view_JLastname_label, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(view_areaOne_panelLayout.createSequentialGroup()
+                .addGroup(view_areaOne_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, view_areaOne_panelLayout.createSequentialGroup()
                         .addGroup(view_areaOne_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(view_entry_label, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(view_view_label, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(view_sell_label))
-                        .addGap(14, 14, 14)))
+                        .addGap(14, 14, 14))
+                    .addGroup(view_areaOne_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(view_AName_label)
+                        .addComponent(view_JFirstname_label, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(view_JLastname_label, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -657,8 +661,8 @@ public class MainWindow extends javax.swing.JFrame {
         view_overall_to_label.setText("To");
         view_overall_datelimit_panel.add(view_overall_to_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, 30));
 
-        view_overall_datelimitIcon_label.setIcon(new javax.swing.ImageIcon("/home/logida/Documents/Rectangle 26 (1).png")); // NOI18N
-        view_overall_datelimitIcon_label.setText("jLabel6");
+        //view page image : view_datelimiticon.png
+        view_overall_datelimitIcon_label.setIcon(new javax.swing.ImageIcon("/home/logida/Documents/view_datelimiticon.png"));
         view_overall_datelimit_panel.add(view_overall_datelimitIcon_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 314, -1));
 
         javax.swing.GroupLayout view_overallCont_panelLayout = new javax.swing.GroupLayout(view_overallCont_panel);
@@ -826,7 +830,8 @@ public class MainWindow extends javax.swing.JFrame {
         view_sold_to_label.setText("To");
         view_sold_datelimit_panel.add(view_sold_to_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, 30));
 
-        view_sold_datelimitIcon_label.setIcon(new javax.swing.ImageIcon("/home/logida/Documents/Rectangle 26 (1).png")); // NOI18N
+        // view page images : view_datelimiticon.png
+        view_sold_datelimitIcon_label.setIcon(new javax.swing.ImageIcon("/home/logida/Documents/view_datelimiticon.png"));
         view_sold_datelimitIcon_label.setText("jLabel6");
         view_sold_datelimit_panel.add(view_sold_datelimitIcon_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 314, -1));
 
@@ -995,7 +1000,8 @@ public class MainWindow extends javax.swing.JFrame {
         view_balance_to_label.setText("To");
         view_balance_datelimit_panel.add(view_balance_to_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, 30));
 
-        view_balance_datelimitIcon_label.setIcon(new javax.swing.ImageIcon("/home/logida/Documents/Rectangle 26 (1).png")); // NOI18N
+        // view page images : view_datelimiticon.png
+        view_balance_datelimitIcon_label.setIcon(new javax.swing.ImageIcon("/home/logida/Documents/view_datelimiticon.png"));
         view_balance_datelimitIcon_label.setText("jLabel6");
         view_balance_datelimit_panel.add(view_balance_datelimitIcon_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 314, -1));
 
@@ -1164,7 +1170,8 @@ public class MainWindow extends javax.swing.JFrame {
         view_return_to_label.setText("To");
         view_return_datelimit_panel.add(view_return_to_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, 30));
 
-        view_return_datelimitIcon_label.setIcon(new javax.swing.ImageIcon("/home/logida/Documents/Rectangle 26 (1).png")); // NOI18N
+        //view page images : view_datelimiticon.png
+        view_return_datelimitIcon_label.setIcon(new javax.swing.ImageIcon("/home/logida/Documents/view_datelimiticon.png"));
         view_return_datelimitIcon_label.setText("jLabel6");
         view_return_datelimit_panel.add(view_return_datelimitIcon_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 314, -1));
 
@@ -1242,7 +1249,7 @@ public class MainWindow extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(view_total_panel, javax.swing.GroupLayout.DEFAULT_SIZE, 886, Short.MAX_VALUE)
+            .addComponent(view_total_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
