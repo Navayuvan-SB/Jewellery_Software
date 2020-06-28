@@ -85,9 +85,10 @@ public class MainWindow extends javax.swing.JFrame {
         sellPage.setAlignmentX(0.0F);
         sellPage.setAlignmentY(0.0F);
         sellPage.setDoubleBuffered(false);
-        sellPage.setPreferredSize(new java.awt.Dimension(1280, 820));
+        sellPage.setPreferredSize(new java.awt.Dimension(1280, 1000));
 
         sell_scroll_scrollpanel.setAutoscrolls(true);
+        sell_scroll_scrollpanel.setHorizontalScrollBar(null);
         sell_scroll_scrollpanel.setMinimumSize(new java.awt.Dimension(0, 0));
         sell_scroll_scrollpanel.setPreferredSize(new java.awt.Dimension(1280, 1489));
 
@@ -99,31 +100,31 @@ public class MainWindow extends javax.swing.JFrame {
         sell_wrapper_panel.setPreferredSize(new java.awt.Dimension(1280, 1000));
 
         sell_shopeName_label.setAlignment(java.awt.Label.CENTER);
-        sell_shopeName_label.setFont(new java.awt.Font("Ubuntu", 1, 50)); // NOI18N
+        sell_shopeName_label.setFont(new java.awt.Font("Ubuntu", 1, 64)); // NOI18N
         sell_shopeName_label.setText("J");
 
         sell_shopeName_label2.setAlignment(java.awt.Label.CENTER);
-        sell_shopeName_label2.setFont(new java.awt.Font("Ubuntu", 1, 50)); // NOI18N
+        sell_shopeName_label2.setFont(new java.awt.Font("Ubuntu", 1, 64)); // NOI18N
         sell_shopeName_label2.setText("J");
 
         sell_shopeName_label1.setAlignment(java.awt.Label.CENTER);
-        sell_shopeName_label1.setFont(new java.awt.Font("Ubuntu", 1, 32)); // NOI18N
+        sell_shopeName_label1.setFont(new java.awt.Font("Ubuntu", 1, 38)); // NOI18N
         sell_shopeName_label1.setText("A");
 
         sell_entryNavigation_label.setAlignment(java.awt.Label.CENTER);
-        sell_entryNavigation_label.setFont(new java.awt.Font("Ubuntu", 0, 19)); // NOI18N
-        sell_entryNavigation_label.setForeground(java.awt.Color.gray);
+        sell_entryNavigation_label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        sell_entryNavigation_label.setForeground(new java.awt.Color(98, 98, 8));
         sell_entryNavigation_label.setText("Entry");
 
-        sell_viewNavigation_label.setFont(new java.awt.Font("Ubuntu", 0, 19)); // NOI18N
-        sell_viewNavigation_label.setForeground(java.awt.Color.gray);
+        sell_viewNavigation_label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        sell_viewNavigation_label.setForeground(new java.awt.Color(98, 98, 98));
         sell_viewNavigation_label.setText("View");
 
-        sell_sellNavigation_label.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        sell_sellNavigation_label.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         sell_sellNavigation_label.setText("Sell");
 
         sell_Welcome_label.setAlignment(java.awt.Label.CENTER);
-        sell_Welcome_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
+        sell_Welcome_label.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
         sell_Welcome_label.setForeground(new java.awt.Color(124, 119, 119));
         sell_Welcome_label.setText("Welcome,  Please  Scan  OR  Code.");
 
@@ -157,7 +158,7 @@ public class MainWindow extends javax.swing.JFrame {
         sell_barcodeInput_panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         sell_barcodeInput_textField.setBackground(new java.awt.Color(250, 250, 250));
-        sell_barcodeInput_textField.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
+        sell_barcodeInput_textField.setFont(new java.awt.Font("Ubuntu", 1, 25)); // NOI18N
         sell_barcodeInput_textField.setForeground(java.awt.Color.black);
         sell_barcodeInput_textField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         sell_barcodeInput_textField.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
@@ -174,36 +175,36 @@ public class MainWindow extends javax.swing.JFrame {
         sell_barcodeInput_label.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_barcode.png")); // NOI18N
         sell_barcodeInput_panel.add(sell_barcodeInput_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 170, 70));
 
-        sell_innerWindow_panel.setBackground(new java.awt.Color(250, 250, 250));
+        sell_innerWindow_panel.setBackground(new java.awt.Color(251, 251, 251));
         sell_innerWindow_panel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, new java.awt.Color(245, 245, 245), java.awt.Color.gray, new java.awt.Color(230, 230, 230)));
         sell_innerWindow_panel.setForeground(new java.awt.Color(130, 130, 130));
 
-        sell_qty_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        sell_qty_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
         sell_qty_label.setForeground(new java.awt.Color(130, 130, 130));
         sell_qty_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         sell_qty_label.setText("QTY");
 
-        sell_chaseNo_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        sell_chaseNo_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
         sell_chaseNo_label.setForeground(new java.awt.Color(130, 130, 130));
         sell_chaseNo_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         sell_chaseNo_label.setText("Chase No");
 
-        sell_ornamentName_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        sell_ornamentName_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
         sell_ornamentName_label.setForeground(new java.awt.Color(130, 130, 130));
         sell_ornamentName_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         sell_ornamentName_label.setText("Ornament Name");
 
-        sell_wt_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        sell_wt_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
         sell_wt_label.setForeground(new java.awt.Color(130, 130, 130));
         sell_wt_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         sell_wt_label.setText("WT");
 
-        sell_was_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        sell_was_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
         sell_was_label.setForeground(new java.awt.Color(130, 130, 130));
         sell_was_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         sell_was_label.setText("WAS");
 
-        sell_mc_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        sell_mc_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
         sell_mc_label.setForeground(new java.awt.Color(130, 130, 130));
         sell_mc_label.setText("MC");
 
@@ -232,23 +233,23 @@ public class MainWindow extends javax.swing.JFrame {
         sell_semicolon6_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sell_semicolon6_label.setText(" :");
 
-        sell_chaseNoDetail_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        sell_chaseNoDetail_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
         sell_chaseNoDetail_label.setForeground(java.awt.Color.black);
         sell_chaseNoDetail_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
-        sell_ornamentNameDetail_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        sell_ornamentNameDetail_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
         sell_ornamentNameDetail_label.setForeground(java.awt.Color.black);
         sell_ornamentNameDetail_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
-        sell_wtDetail_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        sell_wtDetail_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
         sell_wtDetail_label.setForeground(java.awt.Color.black);
         sell_wtDetail_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
-        sell_wasDetail_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        sell_wasDetail_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
         sell_wasDetail_label.setForeground(java.awt.Color.black);
         sell_wasDetail_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
-        sell_mcDetail_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        sell_mcDetail_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
         sell_mcDetail_label.setForeground(java.awt.Color.black);
 
         sell_semicolon4_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
@@ -257,7 +258,7 @@ public class MainWindow extends javax.swing.JFrame {
         sell_semicolon4_label.setText(":");
 
         sell_verify_checkbox.setBackground(java.awt.Color.white);
-        sell_verify_checkbox.setFont(new java.awt.Font("Ubuntu", 0, 19)); // NOI18N
+        sell_verify_checkbox.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         sell_verify_checkbox.setForeground(new java.awt.Color(121, 121, 121));
         sell_verify_checkbox.setText(" Verify  and  Checkout !");
         sell_verify_checkbox.setBorder(null);
@@ -280,7 +281,7 @@ public class MainWindow extends javax.swing.JFrame {
         sell_qtyInput_panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         sell_qtyInput_textField.setBackground(new java.awt.Color(250, 250, 250));
-        sell_qtyInput_textField.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        sell_qtyInput_textField.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
         sell_qtyInput_textField.setForeground(java.awt.Color.black);
         sell_qtyInput_textField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         sell_qtyInput_textField.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
@@ -303,13 +304,13 @@ public class MainWindow extends javax.swing.JFrame {
         sell_innerWindow_panelLayout.setHorizontalGroup(
             sell_innerWindow_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sell_innerWindow_panelLayout.createSequentialGroup()
-                .addGap(252, 252, 252)
+                .addGap(242, 242, 242)
                 .addGroup(sell_innerWindow_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(sell_innerWindow_panelLayout.createSequentialGroup()
                         .addGroup(sell_innerWindow_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(sell_was_label, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
                             .addComponent(sell_mc_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(130, 130, 130)
+                        .addGap(151, 151, 151)
                         .addGroup(sell_innerWindow_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(sell_semicolon5_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(sell_semicolon6_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -320,11 +321,11 @@ public class MainWindow extends javax.swing.JFrame {
                             .addComponent(sell_chaseNo_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(sell_qty_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(sell_wt_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(130, 130, 130)
+                        .addGap(138, 138, 138)
                         .addGroup(sell_innerWindow_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sell_semicolon3_label, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                            .addComponent(sell_semicolon2_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(sell_semicolon1_label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(sell_semicolon2_label, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                            .addComponent(sell_semicolon3_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(sell_semicolon1_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(130, 130, 130)
                 .addGroup(sell_innerWindow_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(sell_chaseNoDetail_label, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -333,9 +334,9 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(sell_wasDetail_label, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sell_mcDetail_label, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sell_qtyInput_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(231, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_innerWindow_panelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(451, Short.MAX_VALUE)
                 .addComponent(sell_verify_checkbox, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(396, 396, 396))
         );
@@ -344,11 +345,11 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(sell_innerWindow_panelLayout.createSequentialGroup()
                 .addGroup(sell_innerWindow_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(sell_innerWindow_panelLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
+                        .addGap(45, 45, 45)
                         .addGroup(sell_innerWindow_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(sell_qty_label, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(sell_semicolon1_label))
-                        .addGap(25, 25, 25))
+                        .addGap(30, 30, 30))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_innerWindow_panelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(sell_qtyInput_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -357,30 +358,30 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(sell_semicolon2_label)
                     .addComponent(sell_chaseNo_label, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sell_chaseNoDetail_label, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
+                .addGap(30, 30, 30)
                 .addGroup(sell_innerWindow_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(sell_semicolon3_label)
                     .addComponent(sell_ornamentName_label, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                    .addComponent(sell_ornamentNameDetail_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(25, 25, 25)
+                    .addComponent(sell_ornamentNameDetail_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(sell_semicolon3_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
                 .addGroup(sell_innerWindow_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sell_wtDetail_label, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sell_semicolon4_label)
+                    .addComponent(sell_semicolon4_label, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sell_wt_label, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
+                .addGap(30, 30, 30)
                 .addGroup(sell_innerWindow_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(sell_innerWindow_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(sell_was_label, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(sell_semicolon5_label))
                     .addComponent(sell_wasDetail_label, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
+                .addGap(30, 30, 30)
                 .addGroup(sell_innerWindow_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sell_mc_label, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sell_semicolon6_label)
                     .addComponent(sell_mcDetail_label, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
+                .addGap(30, 30, 30)
                 .addComponent(sell_verify_checkbox, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout sell_wrapper_panelLayout = new javax.swing.GroupLayout(sell_wrapper_panel);
@@ -388,69 +389,73 @@ public class MainWindow extends javax.swing.JFrame {
         sell_wrapper_panelLayout.setHorizontalGroup(
             sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_wrapper_panelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(sell_shopeName_label, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(sell_shopeName_label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(sell_shopeName_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(260, 260, 260)
-                .addComponent(sell_entryNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addComponent(sell_viewNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addComponent(sell_sellNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60))
-            .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
-                .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
-                        .addGap(575, 575, 575)
-                        .addComponent(sell_barcodeInput_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(4, 4, 4)
-                        .addComponent(sell_refresh_label, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(sell_innerWindow_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(75, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_wrapper_panelLayout.createSequentialGroup()
-                .addGap(0, 495, Short.MAX_VALUE)
-                .addComponent(sell_Welcome_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(440, 440, 440))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_wrapper_panelLayout.createSequentialGroup()
-                .addGap(150, 150, 150)
+                .addGap(180, 180, 180)
                 .addComponent(sell_return_label1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 585, Short.MAX_VALUE)
                 .addComponent(sell_confirm_label)
-                .addGap(150, 150, 150))
+                .addGap(180, 180, 180))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_wrapper_panelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_wrapper_panelLayout.createSequentialGroup()
+                        .addComponent(sell_shopeName_label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(sell_shopeName_label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(sell_shopeName_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(195, 195, 195)
+                        .addComponent(sell_entryNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(55, 55, 55)
+                        .addComponent(sell_viewNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(55, 55, 55)
+                        .addComponent(sell_sellNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(70, 70, 70))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_wrapper_panelLayout.createSequentialGroup()
+                        .addComponent(sell_barcodeInput_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(3, 3, 3)
+                        .addComponent(sell_refresh_label)
+                        .addGap(455, 455, 455))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_wrapper_panelLayout.createSequentialGroup()
+                        .addComponent(sell_Welcome_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(379, 379, 379))))
+            .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
+                .addGap(86, 86, 86)
+                .addComponent(sell_innerWindow_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         sell_wrapper_panelLayout.setVerticalGroup(
             sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
-                .addGap(60, 60, 60)
                 .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(sell_shopeName_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(sell_shopeName_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(sell_shopeName_label, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(sell_sellNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(sell_viewNavigation_label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(sell_entryNavigation_label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
-                .addComponent(sell_Welcome_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sell_barcodeInput_panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_wrapper_panelLayout.createSequentialGroup()
-                        .addComponent(sell_refresh_label, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(17, 17, 17)))
-                .addGap(30, 30, 30)
-                .addComponent(sell_innerWindow_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(sell_shopeName_label, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(sell_shopeName_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                            .addComponent(sell_shopeName_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
+                        .addGap(74, 74, 74)
+                        .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(sell_viewNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sell_entryNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sell_sellNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(50, 50, 50)
+                .addComponent(sell_Welcome_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(sell_refresh_label, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(sell_barcodeInput_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(sell_innerWindow_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
                 .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(sell_return_label1)
                     .addComponent(sell_confirm_label))
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         sell_scroll_scrollpanel.setViewportView(sell_wrapper_panel);
@@ -460,19 +465,20 @@ public class MainWindow extends javax.swing.JFrame {
         sellPageLayout.setHorizontalGroup(
             sellPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sellPageLayout.createSequentialGroup()
-                .addComponent(sell_scroll_scrollpanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(sell_scroll_scrollpanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         sellPageLayout.setVerticalGroup(
             sellPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sellPageLayout.createSequentialGroup()
-                .addComponent(sell_scroll_scrollpanel, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+                .addComponent(sell_scroll_scrollpanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1400, Short.MAX_VALUE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         sell_scroll_scrollpanel.getAccessibleContext().setAccessibleName("");
         sell_scroll_scrollpanel.getVerticalScrollBar().setPreferredSize(new Dimension(0, Integer.MAX_VALUE));
         sell_scroll_scrollpanel.getHorizontalScrollBar().setPreferredSize(new Dimension(Integer.MAX_VALUE, 0));
+        sell_scroll_scrollpanel.getVerticalScrollBar().setUnitIncrement(100);
 
         jLayeredPane1.add(sellPage, "sellPage");
 
