@@ -69,6 +69,7 @@
           <SubComponents>
             <Container class="javax.swing.JScrollPane" name="EntryPage_jScrollPane">
               <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="EntryPage_jScrollPane.getVerticalScrollBar().setUnitIncrement(100);"/>
                 <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="// Code to reduce ScrollPane width&#xa;EntryPage_jScrollPane.getVerticalScrollBar().setPreferredSize(&#xa;new Dimension(0, Integer.MAX_VALUE));&#xa;EntryPage_jScrollPane.getHorizontalScrollBar().setPreferredSize(&#xa;new Dimension(Integer.MAX_VALUE, 0));"/>
               </AuxValues>
 
@@ -406,11 +407,11 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="Entry_Quality_Label">
                           <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="// Entry_InputBox_Label Image">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
                             </Property>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="/home/poorvasha/Downloads/Select-Box.png"/>
+                              <Image iconType="2" name="/home/poorvasha/Downloads/EntryPage_Images/Entry_InputBox_Label.png"/>
                             </Property>
                           </Properties>
                           <Constraints>
@@ -470,9 +471,12 @@
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
                             </Property>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="/home/poorvasha/Downloads/Select-Box.png"/>
+                              <Image iconType="2" name="/home/poorvasha/Downloads/EntryPage_Images/Entry_InputBox_Label.png"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="//Entry_InputBox_Label Image"/>
+                          </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                               <AbsoluteConstraints x="240" y="380" width="-1" height="-1"/>
@@ -524,21 +528,6 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="Entry_WT_Label_Icon">
-                          <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                            </Property>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="/home/poorvasha/Downloads/Select-Box.png"/>
-                            </Property>
-                          </Properties>
-                          <Constraints>
-                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="240" y="490" width="-1" height="-1"/>
-                            </Constraint>
-                          </Constraints>
-                        </Component>
                         <Component class="javax.swing.JLabel" name="Entry_WAS_Label">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -556,6 +545,24 @@
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                               <AbsoluteConstraints x="250" y="620" width="-1" height="-1"/>
+                            </Constraint>
+                          </Constraints>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="Entry_WT_Label_Icon">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                            </Property>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="2" name="/home/poorvasha/Downloads/EntryPage_Images/Entry_InputBox_Label.png"/>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="//Entry_InputBox_Label Image"/>
+                          </AuxValues>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                              <AbsoluteConstraints x="240" y="490" width="-1" height="-1"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -593,9 +600,12 @@
                               <Font name="Ubuntu" size="20" style="0"/>
                             </Property>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="/home/poorvasha/Downloads/Select-Box.png"/>
+                              <Image iconType="2" name="/home/poorvasha/Downloads/EntryPage_Images/Entry_InputBox_Label.png"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="//Entry_InputBox_Label Image"/>
+                          </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                               <AbsoluteConstraints x="240" y="600" width="-1" height="-1"/>
@@ -653,9 +663,12 @@
                               <Font name="Ubuntu" size="20" style="0"/>
                             </Property>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="/home/poorvasha/Downloads/Select-Box.png"/>
+                              <Image iconType="2" name="/home/poorvasha/Downloads/EntryPage_Images/Entry_InputBox_Label.png"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="//Entry_InputBox_Label Image"/>
+                          </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                               <AbsoluteConstraints x="240" y="710" width="-1" height="-1"/>
@@ -713,9 +726,12 @@
                               <Font name="Ubuntu" size="20" style="0"/>
                             </Property>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="/home/poorvasha/Downloads/Select-Box.png"/>
+                              <Image iconType="2" name="/home/poorvasha/Downloads/EntryPage_Images/Entry_InputBox_Label.png"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="//Entry_InputBox_Label Image"/>
+                          </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                               <AbsoluteConstraints x="240" y="820" width="-1" height="-1"/>
@@ -807,7 +823,7 @@
                     <Component class="javax.swing.JLabel" name="Entry_EnterButton_Label">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="/home/poorvasha/Downloads/EnterBtn.png"/>
+                          <Image iconType="2" name="/home/poorvasha/Downloads/EntryPage_Images/Entry_EnterBtn_Label.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -820,10 +836,10 @@
                     <Component class="javax.swing.JCheckBox" name="Entry_Check_jCheckBox">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor" postCode="// Entry_CheckedBox_Label">
-                          <Image iconType="2" name="/home/poorvasha/Downloads/checkbox.png"/>
+                          <Image iconType="2" name="/home/poorvasha/Downloads/EntryPage_Images/Entry_checkBox_Label.png"/>
                         </Property>
                         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="/home/poorvasha/Downloads/Checked.png"/>
+                          <Image iconType="2" name="/home/poorvasha/Downloads/EntryPage_Images/Entry_CheckedBox_Label.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -836,7 +852,7 @@
                     <Component class="javax.swing.JLabel" name="Entry_Reset_jLabel">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="/home/poorvasha/Downloads/ResetBtn.png"/>
+                          <Image iconType="2" name="/home/poorvasha/Downloads/EntryPage_Images/Entry_ResetBtn_Label.png"/>
                         </Property>
                       </Properties>
                       <Events>

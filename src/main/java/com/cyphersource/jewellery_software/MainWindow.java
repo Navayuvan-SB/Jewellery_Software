@@ -228,8 +228,8 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_MC_Label_Icon = new javax.swing.JLabel();
         Entry_WT_Lable = new javax.swing.JLabel();
         Entry_WT_TextField = new javax.swing.JTextField();
-        Entry_WT_Label_Icon = new javax.swing.JLabel();
         Entry_WAS_Label = new javax.swing.JLabel();
+        Entry_WT_Label_Icon = new javax.swing.JLabel();
         Entry_WAS_TextField = new javax.swing.JTextField();
         Entry_WAS_Label_Icon = new javax.swing.JLabel();
         Entry_QTY_Label = new javax.swing.JLabel();
@@ -337,7 +337,8 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_InputFields_Panel.add(Entry_22CT_RadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 290, -1, -1));
 
         Entry_Quality_Label.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_Quality_Label.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
+        // Entry_InputBox_Label Image
+        Entry_Quality_Label.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/EntryPage_Images/Entry_InputBox_Label.png")); // NOI18N
         Entry_InputFields_Panel.add(Entry_Quality_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, -1, -1));
 
         Entry_MC_Label.setBackground(new java.awt.Color(255, 255, 255));
@@ -360,7 +361,8 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_InputFields_Panel.add(Entry_MC_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 460, -1));
 
         Entry_MC_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_MC_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
+        Entry_MC_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/EntryPage_Images/Entry_InputBox_Label.png")); // NOI18N
+        //Entry_InputBox_Label Image
         Entry_InputFields_Panel.add(Entry_MC_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
 
         Entry_WT_Lable.setBackground(new java.awt.Color(255, 255, 255));
@@ -382,16 +384,17 @@ public class MainWindow extends javax.swing.JFrame {
         });
         Entry_InputFields_Panel.add(Entry_WT_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 510, 470, -1));
 
-        Entry_WT_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_WT_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
-        Entry_InputFields_Panel.add(Entry_WT_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 490, -1, -1));
-
         Entry_WAS_Label.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WAS_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         Entry_WAS_Label.setForeground(new java.awt.Color(98, 98, 98));
         Entry_WAS_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Entry_WAS_Label.setText("WAS (%) :");
         Entry_InputFields_Panel.add(Entry_WAS_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 620, -1, -1));
+
+        Entry_WT_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_WT_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/EntryPage_Images/Entry_InputBox_Label.png")); // NOI18N
+        //Entry_InputBox_Label Image
+        Entry_InputFields_Panel.add(Entry_WT_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 490, -1, -1));
 
         Entry_WAS_TextField.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WAS_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
@@ -407,7 +410,8 @@ public class MainWindow extends javax.swing.JFrame {
 
         Entry_WAS_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WAS_Label_Icon.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        Entry_WAS_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
+        Entry_WAS_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/EntryPage_Images/Entry_InputBox_Label.png")); // NOI18N
+        //Entry_InputBox_Label Image
         Entry_InputFields_Panel.add(Entry_WAS_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 600, -1, -1));
 
         Entry_QTY_Label.setBackground(new java.awt.Color(255, 255, 255));
@@ -426,7 +430,8 @@ public class MainWindow extends javax.swing.JFrame {
 
         Entry_QTY_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
         Entry_QTY_Label_Icon.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        Entry_QTY_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
+        Entry_QTY_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/EntryPage_Images/Entry_InputBox_Label.png")); // NOI18N
+        //Entry_InputBox_Label Image
         Entry_InputFields_Panel.add(Entry_QTY_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 710, -1, -1));
 
         Entry_BUY_Label.setBackground(new java.awt.Color(255, 255, 255));
@@ -445,7 +450,8 @@ public class MainWindow extends javax.swing.JFrame {
 
         Entry_BUY_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
         Entry_BUY_Label_Icon.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        Entry_BUY_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
+        Entry_BUY_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/EntryPage_Images/Entry_InputBox_Label.png")); // NOI18N
+        //Entry_InputBox_Label Image
         Entry_InputFields_Panel.add(Entry_BUY_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 820, -1, -1));
 
         Entry_OrnamentType_jComboBox.setBackground(new java.awt.Color(255, 255, 255));
@@ -480,7 +486,7 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_CheckText_Label.setText("Click to Generate BarCode and Print");
 
         // Entry_EnterBtn_Label
-        Entry_EnterButton_Label.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/EnterBtn.png")); // NOI18N
+        Entry_EnterButton_Label.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/EntryPage_Images/Entry_EnterBtn_Label.png")); // NOI18N
         Entry_EnterButton_Label.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Entry_EnterButton_LabelMouseClicked(evt);
@@ -488,9 +494,9 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         // Entry_CheckBox_Label
-        Entry_Check_jCheckBox.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/checkbox.png")); // NOI18N
+        Entry_Check_jCheckBox.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/EntryPage_Images/Entry_checkBox_Label.png")); // NOI18N
         // Entry_CheckedBox_Label
-        Entry_Check_jCheckBox.setSelectedIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Checked.png")); // NOI18N
+        Entry_Check_jCheckBox.setSelectedIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/EntryPage_Images/Entry_CheckedBox_Label.png")); // NOI18N
         Entry_Check_jCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Entry_Check_jCheckBoxActionPerformed(evt);
@@ -498,7 +504,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         // Entry_ResetBtn_Label
-        Entry_Reset_jLabel.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/ResetBtn.png")); // NOI18N
+        Entry_Reset_jLabel.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/EntryPage_Images/Entry_ResetBtn_Label.png")); // NOI18N
         Entry_Reset_jLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Entry_Reset_jLabelMouseClicked(evt);
@@ -601,6 +607,8 @@ public class MainWindow extends javax.swing.JFrame {
             .addComponent(EntryPage_jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1617, Short.MAX_VALUE)
         );
 
+        EntryPage_jScrollPane.getVerticalScrollBar().setUnitIncrement(100);
+
         jLayeredPane1.add(entryPage, "entryPage");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -647,7 +655,6 @@ public class MainWindow extends javax.swing.JFrame {
             }
             catch(Exception e){
                 System.out.println(e);
-                JOptionPane.showMessageDialog(null, "OOPS! Sry");
             }
         }else{
             //JOptionPane.showMessageDialog(null, "Oops! Sorry, unable to update Ornament Name, check whether the entered name is within 16 characters");
@@ -828,6 +835,7 @@ public class MainWindow extends javax.swing.JFrame {
            System.out.println(e);
         }
         //</editor-fold>
+        
         
         
 
