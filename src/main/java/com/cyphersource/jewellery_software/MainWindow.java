@@ -138,6 +138,13 @@ public class MainWindow extends javax.swing.JFrame {
         view_return_tablearea_scrollpane.getHorizontalScrollBar().setPreferredSize(
                 new Dimension(0,0));
         
+        //For increasing the speed of the scrollpane
+        
+        view_overall_tablearea_scrollpane.getVerticalScrollBar().setUnitIncrement(100);
+        view_sold_tablearea_scrollpane.getVerticalScrollBar().setUnitIncrement(100);
+        view_balance_tablearea_scrollpane.getVerticalScrollBar().setUnitIncrement(100);
+        view_return_tablearea_scrollpane.getVerticalScrollBar().setUnitIncrement(100);
+        
         //Styling table header
         
         JTableHeader Theader=view_overallTable_table.getTableHeader();
@@ -241,6 +248,12 @@ public class MainWindow extends javax.swing.JFrame {
 
         view_total_panel = new javax.swing.JPanel();
         view_areaOne_panel = new javax.swing.JPanel();
+        view_JFirstname_label = new javax.swing.JLabel();
+        view_AName_label = new javax.swing.JLabel();
+        view_JLastname_label = new javax.swing.JLabel();
+        view_entry_label = new javax.swing.JLabel();
+        view_view_label = new javax.swing.JLabel();
+        view_sell_label = new javax.swing.JLabel();
         view_areaTwo_panel = new javax.swing.JPanel();
         view_contOne_panel = new javax.swing.JPanel();
         view_overall_panel = new javax.swing.JPanel();
@@ -325,15 +338,64 @@ public class MainWindow extends javax.swing.JFrame {
 
         view_areaOne_panel.setBackground(java.awt.Color.white);
 
+        view_JFirstname_label.setFont(new java.awt.Font("Ubuntu", 1, 55)); // NOI18N
+        view_JFirstname_label.setForeground(java.awt.Color.black);
+        view_JFirstname_label.setText("J");
+
+        view_AName_label.setFont(new java.awt.Font("Ubuntu", 1, 32)); // NOI18N
+        view_AName_label.setForeground(java.awt.Color.black);
+        view_AName_label.setText("A");
+
+        view_JLastname_label.setFont(new java.awt.Font("Ubuntu", 1, 55)); // NOI18N
+        view_JLastname_label.setForeground(java.awt.Color.black);
+        view_JLastname_label.setText("J");
+
+        view_entry_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        view_entry_label.setForeground(new java.awt.Color(98, 98, 98));
+        view_entry_label.setText("Entry");
+
+        view_view_label.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
+        view_view_label.setForeground(java.awt.Color.black);
+        view_view_label.setText("View");
+
+        view_sell_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        view_sell_label.setForeground(new java.awt.Color(98, 98, 98));
+        view_sell_label.setText("Sell");
+
         javax.swing.GroupLayout view_areaOne_panelLayout = new javax.swing.GroupLayout(view_areaOne_panel);
         view_areaOne_panel.setLayout(view_areaOne_panelLayout);
         view_areaOne_panelLayout.setHorizontalGroup(
             view_areaOne_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 886, Short.MAX_VALUE)
+            .addGroup(view_areaOne_panelLayout.createSequentialGroup()
+                .addGap(379, 379, 379)
+                .addComponent(view_JFirstname_label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(view_AName_label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(view_JLastname_label)
+                .addGap(123, 123, 123)
+                .addComponent(view_entry_label)
+                .addGap(40, 40, 40)
+                .addComponent(view_view_label)
+                .addGap(40, 40, 40)
+                .addComponent(view_sell_label)
+                .addContainerGap(82, Short.MAX_VALUE))
         );
         view_areaOne_panelLayout.setVerticalGroup(
             view_areaOne_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 120, Short.MAX_VALUE)
+            .addGroup(view_areaOne_panelLayout.createSequentialGroup()
+                .addContainerGap(51, Short.MAX_VALUE)
+                .addGroup(view_areaOne_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(view_AName_label)
+                    .addComponent(view_JFirstname_label, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(view_JLastname_label, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(view_areaOne_panelLayout.createSequentialGroup()
+                        .addGroup(view_areaOne_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(view_entry_label, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(view_view_label, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(view_sell_label))
+                        .addGap(14, 14, 14)))
+                .addContainerGap())
         );
 
         view_total_panel.add(view_areaOne_panel, java.awt.BorderLayout.PAGE_START);
@@ -350,7 +412,7 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
-        view_overall_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        view_overall_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
         view_overall_label.setForeground(java.awt.Color.black);
         view_overall_label.setText("Overall");
 
@@ -378,8 +440,8 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
-        view_sold_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        view_sold_label.setForeground(new java.awt.Color(158, 154, 154));
+        view_sold_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
+        view_sold_label.setForeground(new java.awt.Color(158, 154, 144));
         view_sold_label.setText("Sold");
 
         javax.swing.GroupLayout view_sold_panelLayout = new javax.swing.GroupLayout(view_sold_panel);
@@ -406,7 +468,7 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
-        view_balance_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        view_balance_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
         view_balance_label.setForeground(new java.awt.Color(158, 154, 154));
         view_balance_label.setText("Balance");
 
@@ -434,7 +496,7 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
-        view_return_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        view_return_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
         view_return_label.setForeground(new java.awt.Color(158, 154, 154));
         view_return_label.setText("Return");
 
@@ -623,7 +685,7 @@ public class MainWindow extends javax.swing.JFrame {
                         .addComponent(view_overall_selOrnament_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(view_overall_datelimit_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         view_overallCont_panelLayout.setVerticalGroup(
             view_overallCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -646,7 +708,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(view_overallCont_panelLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(view_overall_datelimit_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(view_overall_tablearea_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -792,7 +854,7 @@ public class MainWindow extends javax.swing.JFrame {
                         .addComponent(view_sold_selOrnament_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(view_sold_datelimit_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         view_soldCont_panelLayout.setVerticalGroup(
             view_soldCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -815,7 +877,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(view_soldCont_panelLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(view_sold_datelimit_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(view_sold_tablearea_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -961,7 +1023,7 @@ public class MainWindow extends javax.swing.JFrame {
                         .addComponent(view_balance_selOrnament_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(view_balance_datelimit_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         view_balanceCont_panelLayout.setVerticalGroup(
             view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -984,7 +1046,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(view_balanceCont_panelLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(view_balance_datelimit_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(view_balance_tablearea_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -1130,7 +1192,7 @@ public class MainWindow extends javax.swing.JFrame {
                         .addComponent(view_return_selOrnament_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(view_return_datelimit_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         view_returnCont_panelLayout.setVerticalGroup(
             view_returnCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1153,7 +1215,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(view_returnCont_panelLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(view_return_datelimit_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(view_return_tablearea_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -1164,7 +1226,7 @@ public class MainWindow extends javax.swing.JFrame {
         view_areaTwo_panelLayout.setHorizontalGroup(
             view_areaTwo_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(view_contOne_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(view_contTwo_panel, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(view_contTwo_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         view_areaTwo_panelLayout.setVerticalGroup(
             view_areaTwo_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1180,7 +1242,7 @@ public class MainWindow extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(view_total_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(view_total_panel, javax.swing.GroupLayout.DEFAULT_SIZE, 886, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1711,6 +1773,9 @@ public class MainWindow extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel view_AName_label;
+    private javax.swing.JLabel view_JFirstname_label;
+    private javax.swing.JLabel view_JLastname_label;
     private javax.swing.JPanel view_areaOne_panel;
     private javax.swing.JPanel view_areaTwo_panel;
     private javax.swing.JPanel view_balanceCont_panel;
@@ -1733,6 +1798,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel view_balance_wtColon_label;
     private javax.swing.JPanel view_contOne_panel;
     private javax.swing.JPanel view_contTwo_panel;
+    private javax.swing.JLabel view_entry_label;
     private javax.swing.JPanel view_overallCont_panel;
     private javax.swing.JTable view_overallTable_table;
     private javax.swing.JLabel view_overall_datelimitIcon_label;
@@ -1769,6 +1835,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel view_return_totWtInp_label;
     private javax.swing.JLabel view_return_totWt_label;
     private javax.swing.JLabel view_return_wtColon_label;
+    private javax.swing.JLabel view_sell_label;
     private javax.swing.JPanel view_soldCont_panel;
     private javax.swing.JTable view_soldTable_table;
     private javax.swing.JLabel view_sold_datelimitIcon_label;
@@ -1788,6 +1855,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel view_sold_totWt_label;
     private javax.swing.JLabel view_sold_wtColon_label;
     private javax.swing.JPanel view_total_panel;
+    private javax.swing.JLabel view_view_label;
     // End of variables declaration//GEN-END:variables
   
     

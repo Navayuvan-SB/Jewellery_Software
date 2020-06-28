@@ -24,7 +24,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="view_total_panel" alignment="0" max="32767" attributes="0"/>
+          <Component id="view_total_panel" alignment="0" pref="886" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -58,15 +58,113 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="886" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="379" max="-2" attributes="0"/>
+                      <Component id="view_JFirstname_label" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="view_AName_label" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="view_JLastname_label" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
+                      <Component id="view_entry_label" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="view_view_label" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="view_sell_label" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="82" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="120" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace pref="51" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="view_AName_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="view_JFirstname_label" alignment="3" min="-2" pref="54" max="-2" attributes="0"/>
+                          <Component id="view_JLastname_label" alignment="3" min="-2" pref="56" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="view_entry_label" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Component id="view_view_label" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                                  <Component id="view_sell_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="view_JFirstname_label">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Ubuntu" size="55" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="J"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="view_AName_label">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Ubuntu" size="32" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="A"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="view_JLastname_label">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Ubuntu" size="55" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="J"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="view_entry_label">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Ubuntu" size="20" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="62" green="62" red="62" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Entry"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="view_view_label">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Ubuntu" size="20" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="View"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="view_sell_label">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Ubuntu" size="20" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="62" green="62" red="62" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Sell"/>
+              </Properties>
+            </Component>
+          </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="view_areaTwo_panel">
           <Properties>
@@ -173,7 +271,7 @@
                     <Component class="javax.swing.JLabel" name="view_overall_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="20" style="0"/>
+                          <Font name="Ubuntu" size="22" style="0"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
@@ -217,10 +315,10 @@
                     <Component class="javax.swing.JLabel" name="view_sold_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="20" style="0"/>
+                          <Font name="Ubuntu" size="22" style="0"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="9a" green="9a" red="9e" type="rgb"/>
+                          <Color blue="90" green="9a" red="9e" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Sold"/>
                       </Properties>
@@ -261,7 +359,7 @@
                     <Component class="javax.swing.JLabel" name="view_balance_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="20" style="0"/>
+                          <Font name="Ubuntu" size="22" style="0"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="9a" green="9a" red="9e" type="rgb"/>
@@ -305,7 +403,7 @@
                     <Component class="javax.swing.JLabel" name="view_return_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="20" style="0"/>
+                          <Font name="Ubuntu" size="22" style="0"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="9a" green="9a" red="9e" type="rgb"/>
@@ -366,7 +464,7 @@
                                       <Component id="view_overall_datelimit_panel" min="-2" pref="327" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="26" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -397,7 +495,7 @@
                                       <Component id="view_overall_datelimit_panel" min="-2" pref="106" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="30" max="32767" attributes="0"/>
+                              <EmptySpace pref="28" max="32767" attributes="0"/>
                               <Component id="view_overall_tablearea_scrollpane" min="-2" pref="440" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -711,7 +809,7 @@
                                       <Component id="view_sold_datelimit_panel" min="-2" pref="327" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="26" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -742,7 +840,7 @@
                                       <Component id="view_sold_datelimit_panel" min="-2" pref="106" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="30" max="32767" attributes="0"/>
+                              <EmptySpace pref="28" max="32767" attributes="0"/>
                               <Component id="view_sold_tablearea_scrollpane" min="-2" pref="440" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -1044,7 +1142,7 @@
                                       <Component id="view_balance_datelimit_panel" min="-2" pref="327" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="26" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1075,7 +1173,7 @@
                                       <Component id="view_balance_datelimit_panel" min="-2" pref="106" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="30" max="32767" attributes="0"/>
+                              <EmptySpace pref="28" max="32767" attributes="0"/>
                               <Component id="view_balance_tablearea_scrollpane" min="-2" pref="440" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -1377,7 +1475,7 @@
                                       <Component id="view_return_datelimit_panel" min="-2" pref="327" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="26" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1408,7 +1506,7 @@
                                       <Component id="view_return_datelimit_panel" min="-2" pref="106" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="30" max="32767" attributes="0"/>
+                              <EmptySpace pref="28" max="32767" attributes="0"/>
                               <Component id="view_return_tablearea_scrollpane" min="-2" pref="440" max="-2" attributes="0"/>
                           </Group>
                       </Group>
