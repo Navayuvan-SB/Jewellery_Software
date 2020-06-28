@@ -308,9 +308,9 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(sell_innerWindow_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(sell_innerWindow_panelLayout.createSequentialGroup()
                         .addGroup(sell_innerWindow_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(sell_was_label, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                            .addComponent(sell_was_label, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
                             .addComponent(sell_mc_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(151, 151, 151)
+                        .addGap(138, 138, 138)
                         .addGroup(sell_innerWindow_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(sell_semicolon5_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(sell_semicolon6_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -421,7 +421,7 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
                 .addGap(86, 86, 86)
                 .addComponent(sell_innerWindow_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         sell_wrapper_panelLayout.setVerticalGroup(
             sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -477,7 +477,6 @@ public class MainWindow extends javax.swing.JFrame {
 
         sell_scroll_scrollpanel.getAccessibleContext().setAccessibleName("");
         sell_scroll_scrollpanel.getVerticalScrollBar().setPreferredSize(new Dimension(0, Integer.MAX_VALUE));
-        sell_scroll_scrollpanel.getHorizontalScrollBar().setPreferredSize(new Dimension(Integer.MAX_VALUE, 0));
         sell_scroll_scrollpanel.getVerticalScrollBar().setUnitIncrement(100);
 
         jLayeredPane1.add(sellPage, "sellPage");
@@ -568,7 +567,7 @@ public class MainWindow extends javax.swing.JFrame {
                if(rs.next()){
                     sell_chaseNoDetail_label.setText(rs.getString("chase_no"));
                     sell_ornamentNameDetail_label.setText(rs.getString("ornament_name"));
-                    sell_wtDetail_label.setText(rs.getString("weight"));
+                    sell_wtDetail_label.setText((rs.getString("weight"))+" g");
                     sell_wasDetail_label.setText((rs.getString("wastage"))+" %");
                     sell_mcDetail_label.setText((rs.getString("making_charge"))+" /G");
                }  
@@ -704,7 +703,7 @@ public class MainWindow extends javax.swing.JFrame {
                     int updateReturn = st.executeUpdate();
             
                    }catch(Exception ex){
-                      JOptionPane.showMessageDialog(null, "Error., in updation");
+                      JOptionPane.showMessageDialog(null, "Error., in Return updation");
                    }
                 
                 //Updates the balance table quantity
@@ -735,7 +734,7 @@ public class MainWindow extends javax.swing.JFrame {
                            
 
                            }catch(Exception ex){
-                              JOptionPane.showMessageDialog(null, "Error., in updation");
+                              JOptionPane.showMessageDialog(null, "Error., in Return updation");
                            }
                         }
                         
@@ -750,7 +749,7 @@ public class MainWindow extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(null, "Returned Successfully");
 
                            }catch(Exception ex){
-                              JOptionPane.showMessageDialog(null, "Some errors, please do check or try again.");
+                              JOptionPane.showMessageDialog(null, "Error., in Return updation.");
                            }
                     }
                     
@@ -761,7 +760,7 @@ public class MainWindow extends javax.swing.JFrame {
                    }
                 
            }catch(Exception ex){
-              JOptionPane.showMessageDialog(null, "Error..!");
+              JOptionPane.showMessageDialog(null, "Error., in Return. Please do Check your connection");
            }
            return rs;
      
@@ -793,7 +792,7 @@ public class MainWindow extends javax.swing.JFrame {
                     int updateReturn = st.executeUpdate();
 
                    }catch(Exception ex){
-                      JOptionPane.showMessageDialog(null, "Error., in updation");
+                      JOptionPane.showMessageDialog(null, "Error., in Confirm updation");
                    }
                 
                 //Updates the balance table quantity
@@ -822,7 +821,7 @@ public class MainWindow extends javax.swing.JFrame {
                             int updateReturnQty = st.executeUpdate();
                             JOptionPane.showMessageDialog(null, "Confirmed Successfully");
                            }catch(Exception ex){
-                              JOptionPane.showMessageDialog(null, "Error., in updation");
+                              JOptionPane.showMessageDialog(null, "Error., in Confirm updation");
                            }
                         }
                         
@@ -836,7 +835,7 @@ public class MainWindow extends javax.swing.JFrame {
                             int updateReturnQty = st.executeUpdate();
                             JOptionPane.showMessageDialog(null, "Confirmed Successfully");
                            }catch(Exception ex){
-                              JOptionPane.showMessageDialog(null, "Some errors, please do check or try again.");
+                              JOptionPane.showMessageDialog(null, "Error., in Confirm updation");
                            }
                     }
                     
@@ -847,7 +846,7 @@ public class MainWindow extends javax.swing.JFrame {
                    }
                 
            }catch(Exception ex){
-              JOptionPane.showMessageDialog(null, "Error..!");
+              JOptionPane.showMessageDialog(null, "Error., in Confirmation. Please do Check your connection");
            }
 
           return rs;

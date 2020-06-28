@@ -154,7 +154,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                               <Component id="sell_innerWindow_panel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="87" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -404,10 +404,10 @@
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="sell_was_label" alignment="0" pref="154" max="32767" attributes="0"/>
-                                              <Component id="sell_mc_label" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="sell_was_label" pref="167" max="32767" attributes="0"/>
+                                              <Component id="sell_mc_label" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="sell_semicolon5_label" alignment="0" max="32767" attributes="0"/>
                                               <Component id="sell_semicolon6_label" alignment="0" max="32767" attributes="0"/>
