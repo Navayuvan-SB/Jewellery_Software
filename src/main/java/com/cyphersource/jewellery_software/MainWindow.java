@@ -493,7 +493,6 @@ public class MainWindow extends javax.swing.JFrame {
 
         sell_scroll_scrollpanel.getAccessibleContext().setAccessibleName("");
         sell_scroll_scrollpanel.getVerticalScrollBar().setPreferredSize(new Dimension(0, Integer.MAX_VALUE));
-        sell_scroll_scrollpanel.getHorizontalScrollBar().setPreferredSize(new Dimension(Integer.MAX_VALUE, 0));
         sell_scroll_scrollpanel.getVerticalScrollBar().setUnitIncrement(100);
 
         jLayeredPane1.add(sellPage, "sellPage");
@@ -685,7 +684,7 @@ public class MainWindow extends javax.swing.JFrame {
        public ResultSet find(String s){
            try{
             Class.forName("com.mysql.cj.jdbc.Driver");     
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
             st = con.prepareStatement("SELECT chase_no, ornament_name, making_charge, weight, wastage FROM balance WHERE barcode = ?");
             st.setString(1,s);
             rs = st.executeQuery();
@@ -707,7 +706,7 @@ public class MainWindow extends javax.swing.JFrame {
            //Updates the overall table status as 2 (balance table status too changes and the retun table is also updated with the entry)
             try{
             Class.forName("com.mysql.cj.jdbc.Driver");     
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
             st = con.prepareStatement("update overall set status=2 WHERE barcode = ?");
             st.setString(1,s);
             int updateOverall = st.executeUpdate();
@@ -716,7 +715,7 @@ public class MainWindow extends javax.swing.JFrame {
                 try{
                     int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
                     Class.forName("com.mysql.cj.jdbc.Driver");     
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
                     st = con.prepareStatement("UPDATE return_table SET quantity=? WHERE barcode = ?");
                     st.setInt(1,quantity);
                     st.setString(2,s);
@@ -730,7 +729,7 @@ public class MainWindow extends javax.swing.JFrame {
                 try{
                     int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
                     Class.forName("com.mysql.cj.jdbc.Driver");     
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
                     st = con.prepareStatement("SELECT quantity FROM balance WHERE barcode = ?");
                     st.setString(1,s);
                     rs = st.executeQuery();
@@ -745,7 +744,7 @@ public class MainWindow extends javax.swing.JFrame {
                         if(Quantity > 0 ){
                             try{
                             Class.forName("com.mysql.cj.jdbc.Driver");     
-                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
                             st = con.prepareStatement("UPDATE balance SET quantity=? WHERE barcode = ?");
                             st.setInt(1,Quantity);
                             st.setString(2,s);
@@ -762,7 +761,7 @@ public class MainWindow extends javax.swing.JFrame {
                         else{
                             try{
                             Class.forName("com.mysql.cj.jdbc.Driver");     
-                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
                             st = con.prepareStatement("DELETE FROM balance WHERE barcode =?");
                             st.setString(1,s);
                             int updateReturnQty = st.executeUpdate();
@@ -796,7 +795,7 @@ public class MainWindow extends javax.swing.JFrame {
            //Updates the overall table status as 1 (balance table status too changes and the sold table is also updated with the entry)
             try{
             Class.forName("com.mysql.cj.jdbc.Driver");     
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
             st = con.prepareStatement("update overall set status=1 WHERE barcode = ?");
             st.setString(1,s);
             int updateOverall = st.executeUpdate();
@@ -805,7 +804,7 @@ public class MainWindow extends javax.swing.JFrame {
                 try{
                     int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
                     Class.forName("com.mysql.cj.jdbc.Driver");     
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
                     st = con.prepareStatement("UPDATE sold SET quantity=? WHERE barcode = ?");
                     st.setInt(1,quantity);
                     st.setString(2,s);
@@ -819,7 +818,7 @@ public class MainWindow extends javax.swing.JFrame {
                 try{
                     int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
                     Class.forName("com.mysql.cj.jdbc.Driver");     
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
                     st = con.prepareStatement("SELECT quantity FROM balance WHERE barcode = ?");
                     st.setString(1,s);
                     rs = st.executeQuery();
@@ -834,7 +833,7 @@ public class MainWindow extends javax.swing.JFrame {
                         if(Quantity > 0 ){
                             try{
                             Class.forName("com.mysql.cj.jdbc.Driver");     
-                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
                             st = con.prepareStatement("UPDATE balance SET quantity=? WHERE barcode = ?");
                             st.setInt(1,Quantity);
                             st.setString(2,s);
@@ -849,7 +848,7 @@ public class MainWindow extends javax.swing.JFrame {
                         else{
                             try{
                             Class.forName("com.mysql.cj.jdbc.Driver");     
-                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
                             st = con.prepareStatement("DELETE FROM balance WHERE barcode =?");
                             st.setString(1,s);
                             int updateReturnQty = st.executeUpdate();
@@ -885,7 +884,7 @@ public class MainWindow extends javax.swing.JFrame {
                     try{
                     int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
                     Class.forName("com.mysql.cj.jdbc.Driver");     
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
                     st = con.prepareStatement("SELECT quantity FROM balance WHERE barcode = ?");
                     st.setString(1,s);
                     rs = st.executeQuery();
