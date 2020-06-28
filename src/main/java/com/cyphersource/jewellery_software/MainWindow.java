@@ -6,8 +6,6 @@
 package com.cyphersource.jewellery_software;
 import java.awt.Dimension;
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 /**
  *
@@ -15,15 +13,17 @@ import javax.swing.JOptionPane;
  */
 public class MainWindow extends javax.swing.JFrame {
 
+     
     /**
      * Creates new form MainWindow
      */
     public MainWindow() {
         initComponents();
         
-        //Labels Disabled
+        //Initially Labels Disabled
         sell_confirm_label.setEnabled(false);
         sell_return_label1.setEnabled(false);
+        
     }
 
     /**
@@ -127,6 +127,7 @@ public class MainWindow extends javax.swing.JFrame {
         sell_Welcome_label.setForeground(new java.awt.Color(124, 119, 119));
         sell_Welcome_label.setText("Welcome,  Please  Scan  OR  Code.");
 
+        //sell page image : sell_refresh.png
         sell_refresh_label.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_refresh.png")); // NOI18N
         sell_refresh_label.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -134,6 +135,7 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
+        //sell page image : sell_confirm.png
         sell_confirm_label.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_confirm.png")); // NOI18N
         sell_confirm_label.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -142,6 +144,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         sell_return_label1.setBackground(java.awt.Color.white);
+        //sell page image : sell_return.png
         sell_return_label1.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_return.png")); // NOI18N
         sell_return_label1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -167,6 +170,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         sell_barcodeInput_label.setBackground(java.awt.Color.white);
         sell_barcodeInput_label.setForeground(java.awt.Color.white);
+        //sell page image : sell_barcode.png
         sell_barcodeInput_label.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_barcode.png")); // NOI18N
         sell_barcodeInput_panel.add(sell_barcodeInput_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 170, 70));
 
@@ -260,8 +264,10 @@ public class MainWindow extends javax.swing.JFrame {
         sell_verify_checkbox.setBorderPainted(true);
         sell_verify_checkbox.setBorderPaintedFlat(true);
         sell_verify_checkbox.setContentAreaFilled(false);
+        //sell page image : sell_unChecked_checkbox.jpg
         sell_verify_checkbox.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_unChecked_checkbox.jpg")); // NOI18N
         sell_verify_checkbox.setPreferredSize(new java.awt.Dimension(205, 25));
+        //sell page image : sell_Checked_checkbox.jpg
         sell_verify_checkbox.setSelectedIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_Checked_checkbox.jpg")); // NOI18N
         sell_verify_checkbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -288,6 +294,7 @@ public class MainWindow extends javax.swing.JFrame {
         sell_qtyInput_label.setBackground(java.awt.Color.white);
         sell_qtyInput_label.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         sell_qtyInput_label.setForeground(java.awt.Color.white);
+        //sell page image : sell_qtyInput.png
         sell_qtyInput_label.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_qtyInput.png")); // NOI18N
         sell_qtyInput_panel.add(sell_qtyInput_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 50));
 
@@ -482,67 +489,76 @@ public class MainWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+     //DB Initialization
      Connection con = null;
      PreparedStatement st = null;
      ResultSet rs = null;
-    
+     
     //Checkbox Validation
     private void sell_verify_checkboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sell_verify_checkboxActionPerformed
-
+      
+      //If the check box is checked in
       if(sell_verify_checkbox.isSelected()){
-          
-        //checks whether the details are filled
+        
+        //gets quatity inut data
         String input = sell_qtyInput_textField.getText();
        
-      
+        //checks whether the details are filled
         if(input.trim().isEmpty()){
             JOptionPane.showMessageDialog(null, "Enter the Quantity needed");
             sell_confirm_label.setEnabled(false);
             sell_return_label1.setEnabled(false);
-            sell_verify_checkbox.setSelected(false);
-             
+            sell_verify_checkbox.setSelected(false);     
         }
         
+        //checks whether the input is correct
         else{
             QuantityVerification qv = new QuantityVerification();
             rs = qv.find(sell_barcodeInput_textField.getText());
         }
         
       }
-      else{
+      
+      //If the check box is checked in
+      else{    
         sell_confirm_label.setEnabled(false);
-        sell_return_label1.setEnabled(false);
+        sell_return_label1.setEnabled(false);    
       }
             
     }//GEN-LAST:event_sell_verify_checkboxActionPerformed
     
-    //KeyPressed Event for Quantity Text Field
+    //KeyPressed Event for Quantity Text Field to enter only numbers
     private void sell_qtyInput_textFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sell_qtyInput_textFieldKeyPressed
         
-        //Number only can be entered
+        //gets the key press
         char c = evt.getKeyChar();
         
+        //Characters not allowed
         if(Character.isLetter(c)){
             //Can't type as it is a character
             sell_qtyInput_textField.setEditable(false);
             //Error Message
             JOptionPane.showMessageDialog(null, "Please Enter Number Only");
         }
+        
+        //Number only can be entered
         else{
             sell_qtyInput_textField.setEditable(true);
         }
         
     }//GEN-LAST:event_sell_qtyInput_textFieldKeyPressed
 
-    //Fetches the Barcode Details after the action performed
+    //Fetches the Barcode Details after the action is performed
     private void sell_barcodeInput_textFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sell_barcodeInput_textFieldActionPerformed
-
+ 
            try {
-                
+               
+               //Fetching Operation
                Barcode f = new Barcode();
                rs = f.find(sell_barcodeInput_textField.getText());
-                    
+                
+               //Displays the barcode details
                if(rs.next()){
                     sell_chaseNoDetail_label.setText(rs.getString("chase_no"));
                     sell_ornamentNameDetail_label.setText(rs.getString("ornament_name"));
@@ -550,13 +566,15 @@ public class MainWindow extends javax.swing.JFrame {
                     sell_wasDetail_label.setText((rs.getString("wastage"))+" %");
                     sell_mcDetail_label.setText((rs.getString("making_charge"))+" /G");
                }  
+               
+               //Incorrect barcode
                else{
                     JOptionPane.showMessageDialog(null, "Barcode is incorrect, Please do check it");
                }
             
           } 
           catch (SQLException ex) {
-             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+             JOptionPane.showMessageDialog(null, "Re-Scan or Re-Enter the Barcode");
           }
         
     }//GEN-LAST:event_sell_barcodeInput_textFieldActionPerformed
@@ -582,10 +600,13 @@ public class MainWindow extends javax.swing.JFrame {
 
     //Returns the entry
     private void sell_return_label1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sell_return_label1MouseClicked
-         
+        
+        try{
+        //Return Operations
         Return r = new Return();
-    
         rs = r.find(sell_barcodeInput_textField.getText());
+        
+        //Resets the page once it returns the entry
         sell_barcodeInput_textField.setText("");
         sell_qtyInput_textField.setText("");
         sell_chaseNoDetail_label.setText("");
@@ -598,16 +619,22 @@ public class MainWindow extends javax.swing.JFrame {
         sell_confirm_label.setEnabled(false);
         sell_return_label1.setEnabled(false);
         
-        JOptionPane.showMessageDialog(null, "Returned Successfully");
+        }
+        catch (Exception ex) {
+             JOptionPane.showMessageDialog(null, "Try again");
+          }
     }//GEN-LAST:event_sell_return_label1MouseClicked
 
     
     //Confirms the entry
     private void sell_confirm_labelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sell_confirm_labelMouseClicked
         
+        try{
+        //Confirmation Oprations
         Confirm c = new Confirm();
-    
         rs = c.find(sell_barcodeInput_textField.getText());
+        
+        //Resets the page once it confirms the entry
         sell_barcodeInput_textField.setText("");
         sell_qtyInput_textField.setText("");
         sell_chaseNoDetail_label.setText("");
@@ -620,12 +647,16 @@ public class MainWindow extends javax.swing.JFrame {
         sell_confirm_label.setEnabled(false);
         sell_return_label1.setEnabled(false);
         
-        JOptionPane.showMessageDialog(null, "Confirmed Successfully");
+        }
+        catch (Exception ex) {
+             JOptionPane.showMessageDialog(null, "Try again");
+          }
     }//GEN-LAST:event_sell_confirm_labelMouseClicked
 
-    //Barcode Details
+    //Barcode Fetching Operation
     public class Barcode{
-
+        
+       //Method to fetch the data
        public ResultSet find(String s){
            try{
             Class.forName("com.mysql.cj.jdbc.Driver");     
@@ -634,7 +665,7 @@ public class MainWindow extends javax.swing.JFrame {
             st.setString(1,s);
             rs = st.executeQuery();
            }catch(Exception ex){
-              JOptionPane.showMessageDialog(null, ex.getMessage());
+              JOptionPane.showMessageDialog(null, "Some Errors, Please do try again");
            }
            return rs;
        }
@@ -642,17 +673,21 @@ public class MainWindow extends javax.swing.JFrame {
    }
     
     
-    //Return
+    //Return Operation
     public class Return{
 
+       //Method to Return the Entry 
        public ResultSet find(String s){
+           
+           //Updates the overall table status as 2 (balance table status too changes and the retun table is also updated with the entry)
             try{
             Class.forName("com.mysql.cj.jdbc.Driver");     
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
             st = con.prepareStatement("update overall set status=2 WHERE barcode = ?");
             st.setString(1,s);
             int updateOverall = st.executeUpdate();
-                   
+                
+                //Updates the return table quantity with the input entered
                 try{
                     int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
                     Class.forName("com.mysql.cj.jdbc.Driver");     
@@ -661,11 +696,12 @@ public class MainWindow extends javax.swing.JFrame {
                     st.setInt(1,quantity);
                     st.setString(2,s);
                     int updateReturn = st.executeUpdate();
-
+            
                    }catch(Exception ex){
-                      JOptionPane.showMessageDialog(null, ex.getMessage());
+                      JOptionPane.showMessageDialog(null, "Error., in updation");
                    }
                 
+                //Updates the balance table quantity
                 try{
                     int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
                     Class.forName("com.mysql.cj.jdbc.Driver");     
@@ -676,8 +712,11 @@ public class MainWindow extends javax.swing.JFrame {
                     while(rs.next()){
                         int qty = rs.getInt("quantity");
                         int Quantity;
+                        
+                        //Entered_quantity subtracted from DB_quantity
                         Quantity = qty - quantity;
-                    
+                        
+                        //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is greater than zero then it updates the balance table quantity with the decremented value
                         if(Quantity > 0 ){
                             try{
                             Class.forName("com.mysql.cj.jdbc.Driver");     
@@ -686,11 +725,15 @@ public class MainWindow extends javax.swing.JFrame {
                             st.setInt(1,Quantity);
                             st.setString(2,s);
                             int updateReturnQty = st.executeUpdate();
+                            JOptionPane.showMessageDialog(null, "Returned Successfully");
+                           
 
                            }catch(Exception ex){
-                              JOptionPane.showMessageDialog(null, ex.getMessage());
+                              JOptionPane.showMessageDialog(null, "Error., in updation");
                            }
                         }
+                        
+                        //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is equal to zero then it deletes the data from balance table 
                         else{
                             try{
                             Class.forName("com.mysql.cj.jdbc.Driver");     
@@ -698,37 +741,42 @@ public class MainWindow extends javax.swing.JFrame {
                             st = con.prepareStatement("DELETE FROM balance WHERE barcode =?");
                             st.setString(1,s);
                             int updateReturnQty = st.executeUpdate();
+                            JOptionPane.showMessageDialog(null, "Returned Successfully");
 
                            }catch(Exception ex){
-                              JOptionPane.showMessageDialog(null, ex.getMessage());
+                              JOptionPane.showMessageDialog(null, "Some errors, please do check or try again.");
                            }
                     }
                     
                     }
                     
                    }catch(Exception ex){
-                      JOptionPane.showMessageDialog(null, ex.getMessage());
+                      JOptionPane.showMessageDialog(null, "Try again");
                    }
                 
            }catch(Exception ex){
-              JOptionPane.showMessageDialog(null, ex.getMessage());
+              JOptionPane.showMessageDialog(null, "Error..!");
            }
            return rs;
      
        }
    }
    
-   //Confirm
+   //Confirmation Operation
    public class Confirm{
 
+       //Method to Confirm the Entry
        public ResultSet find(String s){
+           
+           //Updates the overall table status as 1 (balance table status too changes and the sold table is also updated with the entry)
             try{
             Class.forName("com.mysql.cj.jdbc.Driver");     
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
             st = con.prepareStatement("update overall set status=1 WHERE barcode = ?");
             st.setString(1,s);
             int updateOverall = st.executeUpdate();
-                   
+                
+                //Updates the sold table quantity with the input entered
                 try{
                     int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
                     Class.forName("com.mysql.cj.jdbc.Driver");     
@@ -739,9 +787,10 @@ public class MainWindow extends javax.swing.JFrame {
                     int updateReturn = st.executeUpdate();
 
                    }catch(Exception ex){
-                      JOptionPane.showMessageDialog(null, ex.getMessage());
+                      JOptionPane.showMessageDialog(null, "Error., in updation");
                    }
                 
+                //Updates the balance table quantity
                 try{
                     int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
                     Class.forName("com.mysql.cj.jdbc.Driver");     
@@ -752,8 +801,11 @@ public class MainWindow extends javax.swing.JFrame {
                     while(rs.next()){
                         int qty = rs.getInt("quantity");
                         int Quantity;
+                        
+                        //Entered_quantity subtracted from DB_quantity
                         Quantity = qty - quantity;
                     
+                        //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is greater than zero then it updates the balance table quantity with the decremented value
                         if(Quantity > 0 ){
                             try{
                             Class.forName("com.mysql.cj.jdbc.Driver");     
@@ -762,11 +814,13 @@ public class MainWindow extends javax.swing.JFrame {
                             st.setInt(1,Quantity);
                             st.setString(2,s);
                             int updateReturnQty = st.executeUpdate();
-
+                            JOptionPane.showMessageDialog(null, "Confirmed Successfully");
                            }catch(Exception ex){
-                              JOptionPane.showMessageDialog(null, ex.getMessage());
+                              JOptionPane.showMessageDialog(null, "Error., in updation");
                            }
                         }
+                        
+                        //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is equal to zero then it deletes the data from balance table 
                         else{
                             try{
                             Class.forName("com.mysql.cj.jdbc.Driver");     
@@ -774,20 +828,20 @@ public class MainWindow extends javax.swing.JFrame {
                             st = con.prepareStatement("DELETE FROM balance WHERE barcode =?");
                             st.setString(1,s);
                             int updateReturnQty = st.executeUpdate();
-
+                            JOptionPane.showMessageDialog(null, "Confirmed Successfully");
                            }catch(Exception ex){
-                              JOptionPane.showMessageDialog(null, ex.getMessage());
+                              JOptionPane.showMessageDialog(null, "Some errors, please do check or try again.");
                            }
                     }
                     
                     }
                     
                    }catch(Exception ex){
-                      JOptionPane.showMessageDialog(null, ex.getMessage());
+                      JOptionPane.showMessageDialog(null, " Try again");
                    }
                 
            }catch(Exception ex){
-              JOptionPane.showMessageDialog(null, ex.getMessage());
+              JOptionPane.showMessageDialog(null, "Error..!");
            }
 
           return rs;
@@ -798,8 +852,11 @@ public class MainWindow extends javax.swing.JFrame {
    
    //Quantity Verification
    public class QuantityVerification{
+       
+       //Method to verify the entered Quantity in the Quantity input
         public ResultSet find(String s){
-            
+                    
+                    //Verification
                     try{
                     int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
                     Class.forName("com.mysql.cj.jdbc.Driver");     
@@ -810,21 +867,24 @@ public class MainWindow extends javax.swing.JFrame {
                     while(rs.next()){
                         int qty = rs.getInt("quantity");
                     
+                        //If the Entered Quantity input is greater than the DB quantity then a error message popups
                         if(quantity > qty ){
                             JOptionPane.showMessageDialog(null, "Please do check the available quantity");
                             sell_confirm_label.setEnabled(false);
                             sell_return_label1.setEnabled(false);
                             sell_verify_checkbox.setSelected(false);
                         }
+                        
+                        //If the quantity input entered is available
                         else{
                             //Verifies and enables the Confirm, Return Labels
                             sell_confirm_label.setEnabled(true);
-                            sell_return_label1.setEnabled(true);
+                            sell_return_label1.setEnabled(true); 
                         }
                     }
                  }
                  catch(Exception ex){
-                      JOptionPane.showMessageDialog(null, ex.getMessage());
+                      JOptionPane.showMessageDialog(null, "Try again");
                    }
             return rs;
         }
