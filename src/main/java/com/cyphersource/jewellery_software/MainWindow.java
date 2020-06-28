@@ -285,7 +285,8 @@ public class MainWindow extends javax.swing.JFrame {
         sell_verify_checkbox.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_unChecked_checkbox.jpg")); // NOI18N
         sell_verify_checkbox.setPreferredSize(new java.awt.Dimension(205, 25));
         //sell page image : sell_Checked_checkbox.jpg
-        sell_verify_checkbox.setSelectedIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_Checked_checkbox.jpg")); // NOI18N
+        sell_verify_checkbox.setSelectedIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_unChecked_checkbox.jpg"));
+        sell_verify_checkbox.setPressedIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_Checked_checkbox.jpg")); // NOI18N
         sell_verify_checkbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sell_verify_checkboxActionPerformed(evt);
