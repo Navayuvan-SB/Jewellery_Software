@@ -7,6 +7,11 @@ package com.cyphersource.jewellery_software;
 import java.awt.Dimension;
 import java.sql.*;
 import javax.swing.JOptionPane;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileSystemView;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 /**
  *
  * @author ghost
@@ -18,6 +23,17 @@ public class MainWindow extends javax.swing.JFrame {
      * Creates new form MainWindow
      */
     public MainWindow() {
+        // image path
+        try {
+            JFileChooser fr = new JFileChooser();
+            FileSystemView fw = fr.getFileSystemView();
+            System.out.println(fw.getDefaultDirectory());
+            String dir_path = fw.getDefaultDirectory().toString();
+            defaultPath = dir_path + "\\JP";
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Oops! Problem in getting default directory");
+        }
+
         initComponents();
         
         //Initially Labels Disabled
@@ -129,7 +145,7 @@ public class MainWindow extends javax.swing.JFrame {
         sell_Welcome_label.setText("Welcome,  Please  Scan  OR  Code.");
 
         //sell page image : sell_refresh.png
-        sell_refresh_label.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_refresh.png")); // NOI18N
+        sell_refresh_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_refresh.png")); // NOI18N
         sell_refresh_label.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sell_refresh_labelMouseClicked(evt);
@@ -137,7 +153,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         //sell page image : sell_confirm.png
-        sell_confirm_label.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_confirm.png")); // NOI18N
+        sell_confirm_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_confirm.png")); // NOI18N
         sell_confirm_label.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sell_confirm_labelMouseClicked(evt);
@@ -146,7 +162,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         sell_return_label1.setBackground(java.awt.Color.white);
         //sell page image : sell_return.png
-        sell_return_label1.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_return.png")); // NOI18N
+        sell_return_label1.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_return.png")); // NOI18N
         sell_return_label1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sell_return_label1MouseClicked(evt);
@@ -172,7 +188,7 @@ public class MainWindow extends javax.swing.JFrame {
         sell_barcodeInput_label.setBackground(java.awt.Color.white);
         sell_barcodeInput_label.setForeground(java.awt.Color.white);
         //sell page image : sell_barcode.png
-        sell_barcodeInput_label.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_barcode.png")); // NOI18N
+        sell_barcodeInput_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_barcode.png")); // NOI18N
         sell_barcodeInput_panel.add(sell_barcodeInput_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 170, 70));
 
         sell_innerWindow_panel.setBackground(new java.awt.Color(251, 251, 251));
@@ -266,7 +282,7 @@ public class MainWindow extends javax.swing.JFrame {
         sell_verify_checkbox.setBorderPaintedFlat(true);
         sell_verify_checkbox.setContentAreaFilled(false);
         //sell page image : sell_unChecked_checkbox.jpg
-        sell_verify_checkbox.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_unChecked_checkbox.jpg")); // NOI18N
+        sell_verify_checkbox.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_unChecked_checkbox.jpg")); // NOI18N
         sell_verify_checkbox.setPreferredSize(new java.awt.Dimension(205, 25));
         //sell page image : sell_Checked_checkbox.jpg
         sell_verify_checkbox.setSelectedIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_Checked_checkbox.jpg")); // NOI18N
@@ -296,7 +312,7 @@ public class MainWindow extends javax.swing.JFrame {
         sell_qtyInput_label.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         sell_qtyInput_label.setForeground(java.awt.Color.white);
         //sell page image : sell_qtyInput.png
-        sell_qtyInput_label.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_qtyInput.png")); // NOI18N
+        sell_qtyInput_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_qtyInput.png")); // NOI18N
         sell_qtyInput_panel.add(sell_qtyInput_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 50));
 
         javax.swing.GroupLayout sell_innerWindow_panelLayout = new javax.swing.GroupLayout(sell_innerWindow_panel);
@@ -500,6 +516,9 @@ public class MainWindow extends javax.swing.JFrame {
      Connection con = null;
      PreparedStatement st = null;
      ResultSet rs = null;
+
+     // Image Path
+     String defaultPath = null;
      
     //Checkbox Validation
     private void sell_verify_checkboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sell_verify_checkboxActionPerformed
