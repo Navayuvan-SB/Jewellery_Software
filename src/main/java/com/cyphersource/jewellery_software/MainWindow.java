@@ -709,6 +709,11 @@ public class MainWindow extends javax.swing.JFrame {
         sell_entryNavigation_label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         sell_entryNavigation_label.setForeground(new java.awt.Color(98, 98, 8));
         sell_entryNavigation_label.setText("Entry");
+        sell_entryNavigation_label.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sell_entryNavigation_labelMouseClicked(evt);
+            }
+        });
 
         sell_viewNavigation_label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         sell_viewNavigation_label.setForeground(new java.awt.Color(98, 98, 98));
@@ -1090,6 +1095,13 @@ public class MainWindow extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void sell_entryNavigation_labelMouseClicked(java.awt.event.MouseEvent evt) {                                                        
+        // TODO add your handling code here:
+        if (!this.navToEntry()){
+            JOptionPane.showMessageDialog(null, "There is a problem in Navigation. Kindly close the software, reopen it and try again!");
+        }
+    }                                                       
     
     private void Entry_NavSell_LabelMouseClicked(java.awt.event.MouseEvent evt) {                                                 
         // TODO add your handling code here:
@@ -1098,10 +1110,23 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }
     
+    // Navigate to Sell Page
     private boolean navToSell(){
      
         try {
             mainLayout.show(jLayeredPane1, "sellPage");
+            return true;
+        }
+        catch (Exception e){
+            return false;
+        }
+        
+    }
+    // Navigate to Entry Page
+    private boolean navToEntry(){
+     
+        try {
+            mainLayout.show(jLayeredPane1, "entryPage");
             return true;
         }
         catch (Exception e){
