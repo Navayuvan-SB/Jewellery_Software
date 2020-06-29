@@ -19,8 +19,12 @@ import java.time.format.FormatStyle;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
-
-
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileSystemView;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.sql.SQLException;
 
 public class MainWindow extends javax.swing.JFrame {
 
@@ -28,26 +32,38 @@ public class MainWindow extends javax.swing.JFrame {
     PreparedStatement ps=null, st=null;
     ResultSet rs=null;
     String sql;
+    String defaultPath = null;
     String date_UI = null,
-           dateDB = null,
-           chase_no = null,
-           ornament_type ="0",
-           ornament_name = "0",
-           quality = null,
-           mc = null,
-           wt = null,
-           was = null,
-           qty = null,
-           buy = null,
-           barcode = null;
-    
+            dateDB = null,
+            chase_no = null,
+            ornament_type = "0",
+            ornament_name = "0",
+            quality = null,
+            mc = null,
+            wt = null,
+            was = null,
+            qty = null,
+            buy = null,
+            barcode = null;
+
     public MainWindow() {
+
+        try {
+            JFileChooser fr = new JFileChooser();
+            FileSystemView fw = fr.getFileSystemView();
+            System.out.println(fw.getDefaultDirectory());
+            String dir_path = fw.getDefaultDirectory().toString();
+            defaultPath = dir_path + "\\JP";
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Oops! Problem in getting default directory");
+        }
+
         initComponents();
-        
+
         // Database Connectivity
-        try{
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-        }catch(Exception e){
+        try {
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC", "root", "");
+        } catch (Exception e) {
             System.out.println(e);
             JOptionPane.showMessageDialog(null, "Oops! Sorry, Connection Lost! kindly Check it");
         } 
@@ -61,7 +77,7 @@ public class MainWindow extends javax.swing.JFrame {
         AutoComplete();
         groupButton();
     }
-    
+
     // to get current date
     private void getLocalDate() {
         LocalDate l_date = LocalDate.now();
@@ -69,138 +85,131 @@ public class MainWindow extends javax.swing.JFrame {
         date_UI = l_date.format(DateTimeFormatter.ofPattern("dd-MM-yy"));
         this.Entry_DateNoValue_Label.setText(this.date_UI);
     }
-    
-    
-    // RadioButton group
-    private void groupButton( ) {
 
-        ButtonGroup bg = new ButtonGroup( );
+    // RadioButton group
+    private void groupButton() {
+
+        ButtonGroup bg = new ButtonGroup();
         bg.add(Entry_22CT_RadioButton);
         bg.add(Entry_961HM_RadioButton);
     }
-    
-    
+
     // Combobox dropdown display from database
-    private void DropDown_from_DB(){
-        try{
+    private void DropDown_from_DB() {
+        try {
             sql = "select * from Ornament_type";
             PreparedStatement ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
-            
-            while(rs.next()){
+
+            while (rs.next()) {
                 String type = rs.getString("type");
                 Entry_OrnamentType_jComboBox.addItem(type);
             }
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e);
             JOptionPane.showMessageDialog(null, "Oops! Sorry, Connection Lost! kindly Check it");
-        }  
+        }
     }
-    
-    
+
     // DropDown with items from dataBase and AutoComplete Text
-    private void AutoComplete(){
-        try{
-             sql = "select * from ornament_name";
+    private void AutoComplete() {
+//        try {
+//            Entry_OrnamentName_jCombobox.removeAllItems();
+//        }
+//        catch (NullPointerException e){
+//            System.out.println(e);
+//        }
+
+        try {
+            sql = "select * from ornament_name";
             PreparedStatement ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
-            
-            while(rs.next()){
+            while (rs.next()) {
                 String ornt_name = rs.getString("ornament_name");
                 Entry_OrnamentName_jCombobox.addItem(ornt_name);
             }
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e);
-            JOptionPane.showMessageDialog(null, "Oops! Sorry, Connection Lost! kindly Check it");
         }
         // this is a class to autocomplete text.
         AutoCompleteDecorator.decorate(Entry_OrnamentName_jCombobox);
     }
 
-    
     // getting selected Ornament Type form DataBase and generating chaseNo according the selected type's keyword and total_count
-    private void ChaseNo(){
-        try{
+    private void ChaseNo() {
+        try {
             sql = "select * from Ornament_type where type=?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, ornament_type);
             rs = ps.executeQuery();
-           
-            while(rs.next()){
+
+            while (rs.next()) {
                 // conditions to check limit of chase_no and increase total_count by 1.
-                if(rs.getInt(4) < 9){
-                  this.chase_no = rs.getString(3)+""+"0"+"0"+(rs.getInt(4)+1);  
-                }
-                else if(rs.getInt(4) < 99){
-                   this.chase_no = rs.getString(3)+""+"0"+(rs.getInt(4)+1);   
-                }
-                else{
-                    this.chase_no = rs.getString(3)+""+(rs.getInt(4)+1);
+                if (rs.getInt(4) < 9) {
+                    this.chase_no = rs.getString(3) + "" + "0" + "0" + (rs.getInt(4) + 1);
+                } else if (rs.getInt(4) < 99) {
+                    this.chase_no = rs.getString(3) + "" + "0" + (rs.getInt(4) + 1);
+                } else {
+                    this.chase_no = rs.getString(3) + "" + (rs.getInt(4) + 1);
                 }
             }
             this.Entry_ChaseNoValue_Label.setText(this.chase_no);
             JOptionPane.showMessageDialog(null, "Chase Number Generated successfully!");
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e);
             JOptionPane.showMessageDialog(null, "Oops! Sorry, try again");
-        }        
-    }
-    
-    
-    // to store the quality of Radiobutton text
-    private void QualityRadioBTN(){
-        if(Entry_22CT_RadioButton.isSelected()){
-            quality = Entry_22CT_RadioButton.getText();
         }
-        else{
+    }
+
+    // to store the quality of Radiobutton text
+    private void QualityRadioBTN() {
+        if (Entry_22CT_RadioButton.isSelected()) {
+            quality = Entry_22CT_RadioButton.getText();
+        } else {
             quality = Entry_961HM_RadioButton.getText();
         }
     }
-    
+
     // To clear all entered data
-    public void ClearData(){
-         Entry_OrnamentType_jComboBox.setSelectedIndex(0);
-         Entry_OrnamentName_jCombobox.setSelectedIndex(0);
-         Entry_22CT_RadioButton.setSelected(false);
-         Entry_961HM_RadioButton.setSelected(false);
-         Entry_MC_TextField.setText("");
-         Entry_WT_TextField.setText("");
-         Entry_WAS_TextField.setText("");
-         Entry_QTY_TextField.setText("");
-         Entry_BUY_TextField.setText("");
-         Entry_Check_jCheckBox.setSelected(false);
-         Entry_ChaseNoValue_Label.setText("");
-           chase_no = null;
-           ornament_type = "0";
-           ornament_name = "0";
-           quality = null;
-           mc = null;
-           wt = null;
-           was = null;
-           qty = null;
-           buy = null;
-           barcode = null;
+    public void ClearData() {
+        Entry_OrnamentType_jComboBox.setSelectedIndex(0);
+        Entry_OrnamentName_jCombobox.setSelectedIndex(0);
+        Entry_22CT_RadioButton.setSelected(false);
+        Entry_961HM_RadioButton.setSelected(false);
+        Entry_MC_TextField.setText("");
+        Entry_WT_TextField.setText("");
+        Entry_WAS_TextField.setText("");
+        Entry_QTY_TextField.setText("");
+        Entry_BUY_TextField.setText("");
+        Entry_Check_jCheckBox.setSelected(false);
+        Entry_ChaseNoValue_Label.setText("");
+        chase_no = null;
+        ornament_type = "0";
+        ornament_name = "0";
+        quality = null;
+        mc = null;
+        wt = null;
+        was = null;
+        qty = null;
+        buy = null;
+        barcode = null;
     }
-     
-    private boolean Limit_of_OrnamentNameChar(String name){
-        if(name.length() <= 16){
-           return true;
-        }else{
+
+    private boolean Limit_of_OrnamentNameChar(String name) {
+        if (name.length() <= 16) {
+            return true;
+        } else {
             return false;
         }
     }
-    
-    private void PrintBarcode(){
+
+    private void PrintBarcode() {
         System.out.println(mc);
         System.out.println(mc);
         System.out.println(mc);
         System.out.println(mc);
         System.out.println(mc);
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -236,8 +245,8 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_MC_Label_Icon = new javax.swing.JLabel();
         Entry_WT_Lable = new javax.swing.JLabel();
         Entry_WT_TextField = new javax.swing.JTextField();
-        Entry_WT_Label_Icon = new javax.swing.JLabel();
         Entry_WAS_Label = new javax.swing.JLabel();
+        Entry_WT_Label_Icon = new javax.swing.JLabel();
         Entry_WAS_TextField = new javax.swing.JTextField();
         Entry_WAS_Label_Icon = new javax.swing.JLabel();
         Entry_QTY_Label = new javax.swing.JLabel();
@@ -383,7 +392,8 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_InputFields_Panel.add(Entry_22CT_RadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 290, -1, -1));
 
         Entry_Quality_Label.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_Quality_Label.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
+        // Entry_InputBox_Label Image
+        Entry_Quality_Label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_InputBox_Label.png")); // NOI18N
         Entry_InputFields_Panel.add(Entry_Quality_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, -1, -1));
 
         Entry_MC_Label.setBackground(new java.awt.Color(255, 255, 255));
@@ -406,7 +416,8 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_InputFields_Panel.add(Entry_MC_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 460, -1));
 
         Entry_MC_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_MC_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
+        Entry_MC_Label_Icon.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_InputBox_Label.png")); // NOI18N
+        //Entry_InputBox_Label Image
         Entry_InputFields_Panel.add(Entry_MC_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
 
         Entry_WT_Lable.setBackground(new java.awt.Color(255, 255, 255));
@@ -428,16 +439,17 @@ public class MainWindow extends javax.swing.JFrame {
         });
         Entry_InputFields_Panel.add(Entry_WT_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 510, 470, -1));
 
-        Entry_WT_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_WT_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
-        Entry_InputFields_Panel.add(Entry_WT_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 490, -1, -1));
-
         Entry_WAS_Label.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WAS_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         Entry_WAS_Label.setForeground(new java.awt.Color(98, 98, 98));
         Entry_WAS_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Entry_WAS_Label.setText("WAS (%) :");
         Entry_InputFields_Panel.add(Entry_WAS_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 620, -1, -1));
+
+        Entry_WT_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_WT_Label_Icon.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_InputBox_Label.png")); // NOI18N
+        //Entry_InputBox_Label Image
+        Entry_InputFields_Panel.add(Entry_WT_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 490, -1, -1));
 
         Entry_WAS_TextField.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WAS_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
@@ -453,7 +465,8 @@ public class MainWindow extends javax.swing.JFrame {
 
         Entry_WAS_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WAS_Label_Icon.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        Entry_WAS_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
+        Entry_WAS_Label_Icon.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_InputBox_Label.png")); // NOI18N
+        //Entry_InputBox_Label Image
         Entry_InputFields_Panel.add(Entry_WAS_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 600, -1, -1));
 
         Entry_QTY_Label.setBackground(new java.awt.Color(255, 255, 255));
@@ -472,7 +485,8 @@ public class MainWindow extends javax.swing.JFrame {
 
         Entry_QTY_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
         Entry_QTY_Label_Icon.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        Entry_QTY_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
+        Entry_QTY_Label_Icon.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_InputBox_Label.png")); // NOI18N
+        //Entry_InputBox_Label Image
         Entry_InputFields_Panel.add(Entry_QTY_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 710, -1, -1));
 
         Entry_BUY_Label.setBackground(new java.awt.Color(255, 255, 255));
@@ -491,7 +505,8 @@ public class MainWindow extends javax.swing.JFrame {
 
         Entry_BUY_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
         Entry_BUY_Label_Icon.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        Entry_BUY_Label_Icon.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Select-Box.png")); // NOI18N
+        Entry_BUY_Label_Icon.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_InputBox_Label.png")); // NOI18N
+        //Entry_InputBox_Label Image
         Entry_InputFields_Panel.add(Entry_BUY_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 820, -1, -1));
 
         Entry_OrnamentType_jComboBox.setBackground(new java.awt.Color(255, 255, 255));
@@ -526,7 +541,7 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_CheckText_Label.setText("Click to Generate BarCode and Print");
 
         // Entry_EnterBtn_Label
-        Entry_EnterButton_Label.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/EnterBtn.png")); // NOI18N
+        Entry_EnterButton_Label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_EnterBtn_Label.png")); // NOI18N
         Entry_EnterButton_Label.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Entry_EnterButton_LabelMouseClicked(evt);
@@ -534,9 +549,10 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         // Entry_CheckBox_Label
-        Entry_Check_jCheckBox.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/checkbox.png")); // NOI18N
+        Entry_Check_jCheckBox.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_checkBox_Label.png")); // NOI18N
         // Entry_CheckedBox_Label
-        Entry_Check_jCheckBox.setSelectedIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/Checked.png")); // NOI18N
+        Entry_Check_jCheckBox.setPressedIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_CheckedBox_Label.png")); // NOI18N
+        Entry_Check_jCheckBox.setSelectedIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_checkBox_Label.png")); // NOI18N
         Entry_Check_jCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Entry_Check_jCheckBoxActionPerformed(evt);
@@ -544,7 +560,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         // Entry_ResetBtn_Label
-        Entry_Reset_jLabel.setIcon(new javax.swing.ImageIcon("/home/poorvasha/Downloads/ResetBtn.png")); // NOI18N
+        Entry_Reset_jLabel.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_ResetBtn_Label.png")); // NOI18N
         Entry_Reset_jLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Entry_Reset_jLabelMouseClicked(evt);
@@ -646,6 +662,8 @@ public class MainWindow extends javax.swing.JFrame {
             entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(EntryPage_jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1617, Short.MAX_VALUE)
         );
+
+        EntryPage_jScrollPane.getVerticalScrollBar().setUnitIncrement(100);
 
         jLayeredPane1.add(entryPage, "entryPage");
         sellPage.setBackground(java.awt.Color.white);
@@ -1062,24 +1080,23 @@ public class MainWindow extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-    
-    
+
+
     private void Entry_EnterButton_LabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Entry_EnterButton_LabelMouseClicked
-        
+
         // quality 
         QualityRadioBTN();
-   
+
         mc = Entry_MC_TextField.getText();
         wt = Entry_WT_TextField.getText();
         was = Entry_WAS_TextField.getText();
         qty = Entry_QTY_TextField.getText();
         buy = Entry_BUY_TextField.getText();
         barcode = chase_no;
-        
-        
+
         // to Insert newly entered Ornament Name in Database in(ornament_name Table)
-        if(Limit_of_OrnamentNameChar(ornament_name)){
-            try{
+        if (Limit_of_OrnamentNameChar(ornament_name)) {
+            try {
                 // Query
                 sql = "INSERT INTO ornament_name (ornament_name) VALUES (?)";
 
@@ -1088,33 +1105,27 @@ public class MainWindow extends javax.swing.JFrame {
 
                 int rowsInserted = statement.executeUpdate();
                 if (rowsInserted > 0) {
-                }            
-            }
-            catch(Exception e){
+                }
+            } catch (Exception e) {
                 System.out.println(e);
-                JOptionPane.showMessageDialog(null, "OOPS! Sry");
             }
-        }else{
+        } else {
             //JOptionPane.showMessageDialog(null, "Oops! Sorry, unable to update Ornament Name, check whether the entered name is within 16 characters");
         }
-          
-        
-        
-        // condition to check all datas are entered if not show MessageBox orelse Insert Data.
-        if("".equals(mc) || "".equals(barcode) || "".equals(dateDB) || "".equals(chase_no) || ornament_type == "0" || ornament_name == "0"||"".equals(quality) || "".equals(wt) || "".equals(was) || "".equals(qty) || "".equals(buy)){
 
-            JOptionPane.showMessageDialog(null, "Sry, You missed some fields, Please do fill it");    
-        }
-        else if(!Limit_of_OrnamentNameChar(ornament_name)){
+        // condition to check all datas are entered if not show MessageBox orelse Insert Data.
+        if ("".equals(mc) || "".equals(barcode) || "".equals(dateDB) || "".equals(chase_no) || ornament_type == "0" || ornament_name == "0" || "".equals(quality) || "".equals(wt) || "".equals(was) || "".equals(qty) || "".equals(buy)) {
+
+            JOptionPane.showMessageDialog(null, "Sorry, You missed some fields, Please do fill it");
+        } else if (!Limit_of_OrnamentNameChar(ornament_name)) {
             JOptionPane.showMessageDialog(null, "\"Oops! Sorry, check whether the entered Ornament name is within 16 characters");
-        }
-        else{
+        } else {
             // to Insert all Datas in DB in(jewellery_entry Table).
-            try{
-                
+            try {
+
                 // Query
                 sql = "INSERT INTO jewellery_entry (date, chase_no, ornament_type, ornament_name, quality, making_charge, weight, wastage, quantity, buy, barcode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-                
+
                 PreparedStatement statement = con.prepareStatement(sql);
                 statement.setString(1, dateDB);
                 statement.setString(2, chase_no);
@@ -1132,83 +1143,87 @@ public class MainWindow extends javax.swing.JFrame {
                 if (rowsInserted > 0) {
                     JOptionPane.showMessageDialog(null, " updation successful!");
                 }
-                
+
+                boolean flag = true;
+                for (int i = 0; i < Entry_OrnamentName_jCombobox.getItemCount(); i++) {
+                    if ((Entry_OrnamentName_jCombobox.getItemAt(i).equals(ornament_name))) {
+                        flag = false;
+                    }
+                }
+                if (flag) {
+                    Entry_OrnamentName_jCombobox.addItem(ornament_name);
+                }
+
                 ClearData(); // to clear Data
-                AutoComplete(); // to show newly added item in dropdown;
+//                AutoComplete(); // to show newly added item in dropdown;
+            } catch (Exception e) {
+                System.out.println(e);
+                JOptionPane.showMessageDialog(null, "OOPS! Sorry, try again");
             }
-            catch(Exception e){
-               System.out.println(e);
-               JOptionPane.showMessageDialog(null, "OOPS! Sry, try again");
-            } 
-            
-       }
-        
+
+        }
+
 
     }//GEN-LAST:event_Entry_EnterButton_LabelMouseClicked
 
     // Ornament_type Action
     private void Entry_OrnamentType_jComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_OrnamentType_jComboBoxActionPerformed
-        
+
         this.ornament_type = (String) Entry_OrnamentType_jComboBox.getSelectedItem();
-        
+
         // if nothing is selected in Ornament_type don't show ChaseValue else call chaseNo() to generate chaseNo.
-        if(!"Select Ornament Type".equals(ornament_type)){
+        if (!"Select Ornament Type".equals(ornament_type)) {
             ChaseNo();
-        }
-        else{
+        } else {
             Entry_ChaseNoValue_Label.setText("");
         }
     }//GEN-LAST:event_Entry_OrnamentType_jComboBoxActionPerformed
 
     // CheckBox Action
     private void Entry_Check_jCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_Check_jCheckBoxActionPerformed
-       
+
         // if fields are empty it should not generate barcode 
-        if("".equals(mc) || "".equals(barcode) || "".equals(dateDB) || "".equals(chase_no) || ornament_type == "0" || ornament_name == "0" ||"".equals(quality) || "".equals(wt) || "".equals(was) || "".equals(qty) || "".equals(buy) ){
+        if ("".equals(mc) || "".equals(barcode) || "".equals(dateDB) || "".equals(chase_no) || ornament_type == "0" || ornament_name == "0" || "".equals(quality) || "".equals(wt) || "".equals(was) || "".equals(qty) || "".equals(buy)) {
             Entry_Check_jCheckBox.setSelected(false);
-            JOptionPane.showMessageDialog(null, "Sry, You have missed some fields, Please fill it");
-        }
-        else{
+            JOptionPane.showMessageDialog(null, "Sorry, You have missed some fields, Please fill it");
+        } else {
             // if checkBox is selected generate barcode orelse no
-            if(Entry_Check_jCheckBox.isSelected()){
+            if (Entry_Check_jCheckBox.isSelected()) {
                 this.barcode = chase_no;
-            }
-            else{
+            } else {
                 this.barcode = null;
-            } 
+            }
         }
     }//GEN-LAST:event_Entry_Check_jCheckBoxActionPerformed
 
     // Reset Button to clear Data
     private void Entry_Reset_jLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Entry_Reset_jLabelMouseClicked
-   
-         ClearData(); 
+
+        ClearData();
     }//GEN-LAST:event_Entry_Reset_jLabelMouseClicked
 
     // Entry_MC_TextField Keypressed event to type limit num of characters.
     private void Entry_MC_TextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Entry_MC_TextFieldKeyPressed
-        
-        if(!(Entry_MC_TextField.getText().length() <= 5)){
+
+        if (!(Entry_MC_TextField.getText().length() <= 5)) {
             Entry_MC_TextField.setEditable(false);
-        }
-        else{
+        } else {
             Entry_MC_TextField.setEditable(true);
         }
-        if(evt.getExtendedKeyCode()== KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode()== KeyEvent.VK_DELETE){
+        if (evt.getExtendedKeyCode() == KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode() == KeyEvent.VK_DELETE) {
             Entry_MC_TextField.setEditable(true);
         }
     }//GEN-LAST:event_Entry_MC_TextFieldKeyPressed
 
     // Entry_WT_TextField Keypressed event to type limit num of characters.
     private void Entry_WT_TextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Entry_WT_TextFieldKeyPressed
-        
-        if(!(Entry_WT_TextField.getText().length() <= 6)){
+
+        if (!(Entry_WT_TextField.getText().length() <= 6)) {
             Entry_WT_TextField.setEditable(false);
-        }
-        else{
+        } else {
             Entry_WT_TextField.setEditable(true);
         }
-        if(evt.getExtendedKeyCode()== KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode()== KeyEvent.VK_DELETE){
+        if (evt.getExtendedKeyCode() == KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode() == KeyEvent.VK_DELETE) {
             Entry_WT_TextField.setEditable(true);
         }
 
@@ -1216,14 +1231,13 @@ public class MainWindow extends javax.swing.JFrame {
 
     // Entry_WAS_TextField Keypressed event to type limit num of characters.
     private void Entry_WAS_TextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Entry_WAS_TextFieldKeyPressed
-        
-        if(!(Entry_WAS_TextField.getText().length() <= 5)){
+
+        if (!(Entry_WAS_TextField.getText().length() <= 5)) {
             Entry_WAS_TextField.setEditable(false);
-        }
-        else{
+        } else {
             Entry_WAS_TextField.setEditable(true);
         }
-        if(evt.getExtendedKeyCode()== KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode()== KeyEvent.VK_DELETE){
+        if (evt.getExtendedKeyCode() == KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode() == KeyEvent.VK_DELETE) {
             Entry_WAS_TextField.setEditable(true);
         }
 
@@ -1231,11 +1245,12 @@ public class MainWindow extends javax.swing.JFrame {
 
     // Ornament_name Action
     private void Entry_OrnamentName_jComboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_OrnamentName_jComboboxActionPerformed
-        
+
         this.ornament_name = (String) Entry_OrnamentName_jCombobox.getSelectedItem();
-        
-        if(!"Select Ornament Name".equals(ornament_name)){
-            if(!Limit_of_OrnamentNameChar(ornament_name)){
+        System.out.println(this.ornament_name);
+
+        if (!"Select Ornament Name".equals(ornament_name)) {
+            if (!Limit_of_OrnamentNameChar(ornament_name)) {
                 JOptionPane.showMessageDialog(null, "\"Oops! Sorry, check whether the entered name is within 16 characters");
             }
         }
@@ -1646,10 +1661,10 @@ public class MainWindow extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            
+
             // Database Connection class
             Class.forName("com.mysql.cj.jdbc.Driver");
-            
+
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -1664,8 +1679,8 @@ public class MainWindow extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MainWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MainWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }catch(Exception e){
-           System.out.println(e);
+        } catch (Exception e) {
+            System.out.println(e);
         }
         //</editor-fold>
    
