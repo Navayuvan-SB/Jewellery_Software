@@ -5,6 +5,7 @@
  */
 package com.cyphersource.jewellery_software;
 
+import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
@@ -24,11 +25,11 @@ import javax.swing.filechooser.FileSystemView;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.sql.SQLException;
 
 public class MainWindow extends javax.swing.JFrame {
 
     Connection con;
+    CardLayout mainLayout;
     PreparedStatement ps=null, st=null;
     ResultSet rs=null;
     String sql;
@@ -47,7 +48,7 @@ public class MainWindow extends javax.swing.JFrame {
             barcode = null;
 
     public MainWindow() {
-
+        // image path
         try {
             JFileChooser fr = new JFileChooser();
             FileSystemView fw = fr.getFileSystemView();
@@ -59,6 +60,9 @@ public class MainWindow extends javax.swing.JFrame {
         }
 
         initComponents();
+
+        // Initialize MainLayout
+        mainLayout = (CardLayout) jLayeredPane1.getLayout();
 
         // Database Connectivity
         try {
@@ -348,6 +352,11 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_NavSell_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         Entry_NavSell_Label.setForeground(new java.awt.Color(98, 98, 98));
         Entry_NavSell_Label.setText("Sell");
+        Entry_NavSell_Label.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Entry_NavSell_LabelMouseClicked(evt);
+            }
+        });
 
         Entry_ChaseNo_Label.setBackground(new java.awt.Color(255, 255, 255));
         Entry_ChaseNo_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
@@ -714,7 +723,7 @@ public class MainWindow extends javax.swing.JFrame {
         sell_Welcome_label.setText("Welcome,  Please  Scan  OR  Code.");
 
         //sell page image : sell_refresh.png
-        sell_refresh_label.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_refresh.png")); // NOI18N
+        sell_refresh_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_refresh.png")); // NOI18N
         sell_refresh_label.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sell_refresh_labelMouseClicked(evt);
@@ -722,7 +731,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         //sell page image : sell_confirm.png
-        sell_confirm_label.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_confirm.png")); // NOI18N
+        sell_confirm_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_confirm.png")); // NOI18N
         sell_confirm_label.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sell_confirm_labelMouseClicked(evt);
@@ -731,7 +740,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         sell_return_label1.setBackground(java.awt.Color.white);
         //sell page image : sell_return.png
-        sell_return_label1.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_return.png")); // NOI18N
+        sell_return_label1.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_return.png")); // NOI18N
         sell_return_label1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sell_return_label1MouseClicked(evt);
@@ -757,7 +766,7 @@ public class MainWindow extends javax.swing.JFrame {
         sell_barcodeInput_label.setBackground(java.awt.Color.white);
         sell_barcodeInput_label.setForeground(java.awt.Color.white);
         //sell page image : sell_barcode.png
-        sell_barcodeInput_label.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_barcode.png")); // NOI18N
+        sell_barcodeInput_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_barcode.png")); // NOI18N
         sell_barcodeInput_panel.add(sell_barcodeInput_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 170, 70));
 
         sell_innerWindow_panel.setBackground(new java.awt.Color(251, 251, 251));
@@ -851,10 +860,11 @@ public class MainWindow extends javax.swing.JFrame {
         sell_verify_checkbox.setBorderPaintedFlat(true);
         sell_verify_checkbox.setContentAreaFilled(false);
         //sell page image : sell_unChecked_checkbox.jpg
-        sell_verify_checkbox.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_unChecked_checkbox.jpg")); // NOI18N
+        sell_verify_checkbox.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_unChecked_checkbox.jpg")); // NOI18N
         sell_verify_checkbox.setPreferredSize(new java.awt.Dimension(205, 25));
         //sell page image : sell_Checked_checkbox.jpg
-        sell_verify_checkbox.setSelectedIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_Checked_checkbox.jpg")); // NOI18N
+        sell_verify_checkbox.setSelectedIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_Checked_checkbox.jpg"));
+        sell_verify_checkbox.setPressedIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_unChecked_checkbox.jpg")); // NOI18N
         sell_verify_checkbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sell_verify_checkboxActionPerformed(evt);
@@ -881,7 +891,7 @@ public class MainWindow extends javax.swing.JFrame {
         sell_qtyInput_label.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         sell_qtyInput_label.setForeground(java.awt.Color.white);
         //sell page image : sell_qtyInput.png
-        sell_qtyInput_label.setIcon(new javax.swing.ImageIcon("/home/ramya/Desktop/Jewellery project/sell_qtyInput.png")); // NOI18N
+        sell_qtyInput_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_qtyInput.png")); // NOI18N
         sell_qtyInput_panel.add(sell_qtyInput_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 50));
 
         javax.swing.GroupLayout sell_innerWindow_panelLayout = new javax.swing.GroupLayout(sell_innerWindow_panel);
@@ -1080,7 +1090,25 @@ public class MainWindow extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    private void Entry_NavSell_LabelMouseClicked(java.awt.event.MouseEvent evt) {                                                 
+        // TODO add your handling code here:
+        if (!this.navToSell()){
+            JOptionPane.showMessageDialog(null, "There is a problem in Navigation. Kindly close the software, reopen it and try again!");
+        }
+    }
+    
+    private boolean navToSell(){
+     
+        try {
+            mainLayout.show(jLayeredPane1, "sellPage");
+            return true;
+        }
+        catch (Exception e){
+            return false;
+        }
+        
+    }
 
     private void Entry_EnterButton_LabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Entry_EnterButton_LabelMouseClicked
 
@@ -1421,7 +1449,7 @@ public class MainWindow extends javax.swing.JFrame {
        public ResultSet find(String s){
            try{
             Class.forName("com.mysql.cj.jdbc.Driver");     
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
             st = con.prepareStatement("SELECT chase_no, ornament_name, making_charge, weight, wastage FROM balance WHERE barcode = ?");
             st.setString(1,s);
             rs = st.executeQuery();
@@ -1443,7 +1471,7 @@ public class MainWindow extends javax.swing.JFrame {
            //Updates the overall table status as 2 (balance table status too changes and the retun table is also updated with the entry)
             try{
             Class.forName("com.mysql.cj.jdbc.Driver");     
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
             st = con.prepareStatement("update overall set status=2 WHERE barcode = ?");
             st.setString(1,s);
             int updateOverall = st.executeUpdate();
@@ -1452,7 +1480,7 @@ public class MainWindow extends javax.swing.JFrame {
                 try{
                     int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
                     Class.forName("com.mysql.cj.jdbc.Driver");     
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
                     st = con.prepareStatement("UPDATE return_table SET quantity=? WHERE barcode = ?");
                     st.setInt(1,quantity);
                     st.setString(2,s);
@@ -1466,7 +1494,7 @@ public class MainWindow extends javax.swing.JFrame {
                 try{
                     int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
                     Class.forName("com.mysql.cj.jdbc.Driver");     
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
                     st = con.prepareStatement("SELECT quantity FROM balance WHERE barcode = ?");
                     st.setString(1,s);
                     rs = st.executeQuery();
@@ -1481,7 +1509,7 @@ public class MainWindow extends javax.swing.JFrame {
                         if(Quantity > 0 ){
                             try{
                             Class.forName("com.mysql.cj.jdbc.Driver");     
-                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
                             st = con.prepareStatement("UPDATE balance SET quantity=? WHERE barcode = ?");
                             st.setInt(1,Quantity);
                             st.setString(2,s);
@@ -1498,7 +1526,7 @@ public class MainWindow extends javax.swing.JFrame {
                         else{
                             try{
                             Class.forName("com.mysql.cj.jdbc.Driver");     
-                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
                             st = con.prepareStatement("DELETE FROM balance WHERE barcode =?");
                             st.setString(1,s);
                             int updateReturnQty = st.executeUpdate();
@@ -1532,7 +1560,7 @@ public class MainWindow extends javax.swing.JFrame {
            //Updates the overall table status as 1 (balance table status too changes and the sold table is also updated with the entry)
             try{
             Class.forName("com.mysql.cj.jdbc.Driver");     
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
             st = con.prepareStatement("update overall set status=1 WHERE barcode = ?");
             st.setString(1,s);
             int updateOverall = st.executeUpdate();
@@ -1541,7 +1569,7 @@ public class MainWindow extends javax.swing.JFrame {
                 try{
                     int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
                     Class.forName("com.mysql.cj.jdbc.Driver");     
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
                     st = con.prepareStatement("UPDATE sold SET quantity=? WHERE barcode = ?");
                     st.setInt(1,quantity);
                     st.setString(2,s);
@@ -1555,7 +1583,7 @@ public class MainWindow extends javax.swing.JFrame {
                 try{
                     int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
                     Class.forName("com.mysql.cj.jdbc.Driver");     
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
                     st = con.prepareStatement("SELECT quantity FROM balance WHERE barcode = ?");
                     st.setString(1,s);
                     rs = st.executeQuery();
@@ -1570,7 +1598,7 @@ public class MainWindow extends javax.swing.JFrame {
                         if(Quantity > 0 ){
                             try{
                             Class.forName("com.mysql.cj.jdbc.Driver");     
-                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
                             st = con.prepareStatement("UPDATE balance SET quantity=? WHERE barcode = ?");
                             st.setInt(1,Quantity);
                             st.setString(2,s);
@@ -1585,7 +1613,7 @@ public class MainWindow extends javax.swing.JFrame {
                         else{
                             try{
                             Class.forName("com.mysql.cj.jdbc.Driver");     
-                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
                             st = con.prepareStatement("DELETE FROM balance WHERE barcode =?");
                             st.setString(1,s);
                             int updateReturnQty = st.executeUpdate();
@@ -1621,7 +1649,7 @@ public class MainWindow extends javax.swing.JFrame {
                     try{
                     int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
                     Class.forName("com.mysql.cj.jdbc.Driver");     
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
                     st = con.prepareStatement("SELECT quantity FROM balance WHERE barcode = ?");
                     st.setString(1,s);
                     rs = st.executeQuery();
