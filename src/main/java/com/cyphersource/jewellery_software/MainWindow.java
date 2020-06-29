@@ -14,9 +14,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import javax.swing.BorderFactory;
@@ -63,6 +65,8 @@ public class MainWindow extends javax.swing.JFrame {
     
     String view_return_from_date ;
     String view_return_to_date ;
+    
+    String[][] view_sold_raw_data;
     
     //  Image Icon instance
     private ImageIcon imageIcon,returnIcon; 
@@ -231,8 +235,13 @@ public class MainWindow extends javax.swing.JFrame {
                 int column = view_soldTable_table.columnAtPoint(evt.getPoint());
                 if (column ==7){
                                 int setRow = view_soldTable_table.getSelectedRow();                             
-                                String view_return_value = view_soldTable_table.getModel().getValueAt(setRow,6).toString();
-                                view_sold_return(view_return_value);//System.out.println(value);
+//                                String view_return_value = view_soldTable_table.getModel().getValueAt(setRow,6).toString();
+//                                view_sold_return(view_return_value);//System.out.println(value);
+                                   int view_serial_no = Integer.parseInt(view_soldTable_table.getModel().getValueAt(setRow,0).toString());
+                                   System.out.println(view_serial_no);
+//                                view_trial_return(view_return_value,view_return);
+                                  System.out.println(Arrays.toString(view_sold_raw_data[view_serial_no-1]));
+                                  view_trial_return(view_serial_no);
                                 
                 }
             }
@@ -2035,11 +2044,12 @@ public class MainWindow extends javax.swing.JFrame {
         //For autoincrementing the no. of rows 
         int count=1;
         
+        int num_rows;
         //Masking the image into jLabel Object
         JLabel returnLabel = new JLabel(this.returnIcon);
         
         if((view_sold_from_date !=null)&&(view_sold_to_date!=null)){
-            if(view_sold_ornament_type_data =="Select the ornament"){
+            if(view_sold_ornament_type_data =="Select the Ornament"){
                 try{
                     SimpleDateFormat sd=new SimpleDateFormat("yyyy-MM-dd");
                     Date sold_from = sd.parse(this.view_sold_from_date);
@@ -2047,7 +2057,7 @@ public class MainWindow extends javax.swing.JFrame {
                     if(sold_from.compareTo(sold_to) < 0){
                         try{
                             //Getting default total weight of items.
-                            String sql1="SELECT SUM(weight) FROM sold WHERE date >=" + "'"+  view_sold_from_date  + "'  AND date <= " + "'"+ view_sold_to_date + "'";;
+                            String sql1="SELECT SUM(weight) FROM sold WHERE date >=" + "'"+  view_sold_from_date  + "'  AND date <= " + "'"+ view_sold_to_date + "'";
                             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
                             PreparedStatement pat1=con.prepareStatement(sql1);
                             ResultSet rs1=pat1.executeQuery();
@@ -2067,21 +2077,30 @@ public class MainWindow extends javax.swing.JFrame {
 
                         try{
                             //Getting default overall table values. 
-                            String sql2="SELECT date, chase_no, ornament_name, weight, quantity, barcode FROM sold WHERE date >=" + "'"+  view_sold_from_date  + "'  AND date <= " + "'"+  view_sold_to_date+ "'";
+                            String sql2="SELECT * FROM sold WHERE date >=" + "'"+  view_sold_from_date  + "'  AND date <= " + "'"+  view_sold_to_date+ "'";
                             con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
                             PreparedStatement pat2=con1.prepareStatement(sql2);
                             ResultSet rs2=pat2.executeQuery();
+                            ResultSetMetaData rsmd = rs2.getMetaData();
+                            rs2.last();
+                            view_sold_raw_data= new String[rs2.getRow()][rsmd.getColumnCount()];
+//                            System.out.println(rs2.getRow());
+//                            System.out.println(rsmd.getColumnCount());
+                            rs2.beforeFirst();
+                           
                             DefaultTableModel tm=(DefaultTableModel)view_soldTable_table.getModel();
 
                             tm.setRowCount(0);
                             while(rs2.next()){
+                                String obj[]={Integer.toString(count),rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_type"),rs2.getString("ornament_name"),rs2.getString("quality"),rs2.getString("making_charge"),rs2.getString("weight"),rs2.getString("wastage"),rs2.getString("quantity"),rs2.getString("buy"),rs2.getString("barcode"),rs2.getString("status")};
+                              view_sold_raw_data[count-1]=obj;
                                 Object o[]={count,rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_name"),rs2.getString("weight"),rs2.getString("quantity"),rs2.getString("barcode"),returnLabel};
                                 tm.addRow(o); 
                                 count++;
                             }
                         }
                         catch(Exception e){
-                            JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                            JOptionPane.showMessageDialog(null,e);
                         }
 
                         try{
@@ -2961,5 +2980,62 @@ public class MainWindow extends javax.swing.JFrame {
                 
             }
         }
+       private void  view_trial_return(int view_serial_no){
+        String view_balance_date=view_sold_raw_data[view_serial_no-1][1];
+        String view_balance_chaseNo= view_sold_raw_data[view_serial_no-1][2];
+        String view_balance_ornament_type=view_sold_raw_data[view_serial_no-1][3];
+        String view_balance_ornamentName=view_sold_raw_data[view_serial_no-1][4];
+        String view_balance_quality=view_sold_raw_data[view_serial_no-1][5];
+        String view_balance_making_charge=view_sold_raw_data[view_serial_no-1][6];
+        String view_balance_weight=view_sold_raw_data[view_serial_no-1][7];
+        String view_balance_wastage=view_sold_raw_data[view_serial_no-1][8];
+        String view_balance_quantity=view_sold_raw_data[view_serial_no-1][9];
+        String view_balance_buy=view_sold_raw_data[view_serial_no-1][10];
+        String view_balance_barcode=view_sold_raw_data[view_serial_no-1][11];
+        String view_balance_status=view_sold_raw_data[view_serial_no-1][12];
+        String view_balance_previous_check = null;
+        if(view_balance_chaseNo!=null){
+        
+        try{
+                    
+                    String sql="SELECT COUNT(chase_no) FROM jewellery_entry WHERE chase_no = " + "'"+  view_balance_chaseNo + "'";
+                     con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    pat=con.prepareStatement(sql);
+                    ResultSet rs=pat.executeQuery();
+                                while(rs.next()){  
+                                    view_balance_previous_check=rs.getString(1); 
+                                    System.out.println(view_balance_previous_check);
+                                }
+                                if(view_balance_previous_check=="0"){
+//                                    try{
+//                                       String sql1="INSERT INTO balance"
+//                                            + "(date, chase_no, ornament_type,ornament_name,quality,making_charge, weight,wastage, quantity,buy,barcode,status,)"   //snapshot
+//                                            + "VALUES(view_balance_date,view_balance_chaseNo,view_balance_ornament_type,view_balance_ornamentName,view_balance_quality,view_balance_making_charge,view_balance_weight,view_balance_wastage,view_balance_quantity,view_balance_buy,view_balance_barcode,view_balance_status)"; //current_timestamp()
+//                                       pat=con.prepareStatement(sql);
+//                                       pat.executeUpdate();
+//                                       String sql2=DELETE FROM `sold ` WHERE snapshot = 'snapshot value'
+//                                    }
+//                                    catch(Exception e){
+//                                         JOptionPane.showMessageDialog(null,e);
+//                                    }
+                                }
+                                else if(view_balance_previous_check=="1"){
+//                                    try{
+//                                         String sql2="UPDATE balance SET quantity=quantity+view_balance_quantity  WHERE chase_no=" + "'"+  view_balance_chaseNo + "'";
+//                                         pat=con.prepareStatement(sql);
+//                                         rs=pat.executeQuery();
+//                                         pat.executeUpdate();
+//                                    }
+//                                    catch(Exception e){
+//                                         JOptionPane.showMessageDialog(null,e);
+//                                    }
+                                }
+                                       
+        }
+        catch(Exception e){
+            
+        }
+       }
+       }
  }
 
