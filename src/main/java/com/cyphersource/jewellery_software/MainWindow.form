@@ -842,7 +842,7 @@
                 </Property>
               </Properties>
               <AccessibilityProperties>
-                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="" postCode="sell_scroll_scrollpanel.getVerticalScrollBar().setPreferredSize(new Dimension(0, Integer.MAX_VALUE));&#xa;sell_scroll_scrollpanel.getHorizontalScrollBar().setPreferredSize(new Dimension(Integer.MAX_VALUE, 0));&#xa;sell_scroll_scrollpanel.getVerticalScrollBar().setUnitIncrement(100);"/>
+                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="" postCode="sell_scroll_scrollpanel.getVerticalScrollBar().setUnitIncrement(100);"/>
               </AccessibilityProperties>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
@@ -871,51 +871,51 @@
                               <Component id="sell_confirm_label" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="sell_shopeName_label" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                      <Component id="sell_shopeName_label1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                      <Component id="sell_shopeName_label2" min="-2" pref="29" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="214" max="-2" attributes="0"/>
+                                      <Component id="sell_entryNavigation_label" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                                      <Component id="sell_viewNavigation_label" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                                      <Component id="sell_sellNavigation_label" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="197" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="sell_shopeName_label" min="-2" pref="30" max="-2" attributes="0"/>
-                                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                              <Component id="sell_shopeName_label1" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                              <Component id="sell_shopeName_label2" min="-2" pref="29" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="222" max="-2" attributes="0"/>
-                                              <Component id="sell_entryNavigation_label" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                                              <Component id="sell_viewNavigation_label" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                                              <Component id="sell_sellNavigation_label" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="sell_Welcome_label" min="-2" max="-2" attributes="0"/>
-                                                  <Group type="102" attributes="0">
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="sell_barcodeInput_label" min="-2" pref="170" max="-2" attributes="0"/>
-                                                          <Group type="102" attributes="0">
-                                                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                                              <Component id="sell_barcodeInput_textField" min="-2" pref="150" max="-2" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="sell_barcodeInput_panel" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                                              <Component id="sell_refresh_label" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="327" max="-2" attributes="0"/>
+                                          <Component id="sell_barcodeInput_label" min="-2" pref="170" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                              <Component id="sell_barcodeInput_textField" min="-2" pref="150" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="sell_barcodeInput_panel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                                      <Component id="sell_refresh_label" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="475" max="-2" attributes="0"/>
                                   </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                       <Component id="sell_innerWindow_panel" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="378" max="-2" attributes="0"/>
+                                      <Component id="sell_Welcome_label" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
+                              <EmptySpace min="148" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -939,9 +939,9 @@
                                       <Component id="sell_refresh_label" min="-2" pref="34" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                                       <Component id="sell_Welcome_label" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="sell_barcodeInput_panel" min="-2" max="-2" attributes="0"/>
                                           <Component id="sell_barcodeInput_label" min="-2" pref="70" max="-2" attributes="0"/>

@@ -61,6 +61,8 @@ public class MainWindow extends javax.swing.JFrame {
 
         initComponents();
 
+        initIcons();
+
         // Initialize MainLayout
         mainLayout = (CardLayout) jLayeredPane1.getLayout();
 
@@ -402,7 +404,6 @@ public class MainWindow extends javax.swing.JFrame {
 
         Entry_Quality_Label.setBackground(new java.awt.Color(255, 255, 255));
         // Entry_InputBox_Label Image
-        Entry_Quality_Label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_InputBox_Label.png")); // NOI18N
         Entry_InputFields_Panel.add(Entry_Quality_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, -1, -1));
 
         Entry_MC_Label.setBackground(new java.awt.Color(255, 255, 255));
@@ -425,7 +426,6 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_InputFields_Panel.add(Entry_MC_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 460, -1));
 
         Entry_MC_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_MC_Label_Icon.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_InputBox_Label.png")); // NOI18N
         //Entry_InputBox_Label Image
         Entry_InputFields_Panel.add(Entry_MC_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
 
@@ -456,7 +456,7 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_InputFields_Panel.add(Entry_WAS_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 620, -1, -1));
 
         Entry_WT_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_WT_Label_Icon.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_InputBox_Label.png")); // NOI18N
+        
         //Entry_InputBox_Label Image
         Entry_InputFields_Panel.add(Entry_WT_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 490, -1, -1));
 
@@ -474,7 +474,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         Entry_WAS_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WAS_Label_Icon.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        Entry_WAS_Label_Icon.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_InputBox_Label.png")); // NOI18N
+        
         //Entry_InputBox_Label Image
         Entry_InputFields_Panel.add(Entry_WAS_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 600, -1, -1));
 
@@ -494,7 +494,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         Entry_QTY_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
         Entry_QTY_Label_Icon.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        Entry_QTY_Label_Icon.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_InputBox_Label.png")); // NOI18N
+        
         //Entry_InputBox_Label Image
         Entry_InputFields_Panel.add(Entry_QTY_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 710, -1, -1));
 
@@ -514,7 +514,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         Entry_BUY_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
         Entry_BUY_Label_Icon.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        Entry_BUY_Label_Icon.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_InputBox_Label.png")); // NOI18N
+        
         //Entry_InputBox_Label Image
         Entry_InputFields_Panel.add(Entry_BUY_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 820, -1, -1));
 
@@ -550,7 +550,7 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_CheckText_Label.setText("Click to Generate BarCode and Print");
 
         // Entry_EnterBtn_Label
-        Entry_EnterButton_Label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_EnterBtn_Label.png")); // NOI18N
+        
         Entry_EnterButton_Label.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Entry_EnterButton_LabelMouseClicked(evt);
@@ -558,10 +558,9 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         // Entry_CheckBox_Label
-        Entry_Check_jCheckBox.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_checkBox_Label.png")); // NOI18N
+        
         // Entry_CheckedBox_Label
-        Entry_Check_jCheckBox.setPressedIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_CheckedBox_Label.png")); // NOI18N
-        Entry_Check_jCheckBox.setSelectedIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_checkBox_Label.png")); // NOI18N
+// NOI18N
         Entry_Check_jCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Entry_Check_jCheckBoxActionPerformed(evt);
@@ -569,7 +568,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         // Entry_ResetBtn_Label
-        Entry_Reset_jLabel.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_ResetBtn_Label.png")); // NOI18N
+        
         Entry_Reset_jLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Entry_Reset_jLabelMouseClicked(evt);
@@ -728,7 +727,7 @@ public class MainWindow extends javax.swing.JFrame {
         sell_Welcome_label.setText("Welcome,  Please  Scan  OR  Code.");
 
         //sell page image : sell_refresh.png
-        sell_refresh_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_refresh.png")); // NOI18N
+        
         sell_refresh_label.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sell_refresh_labelMouseClicked(evt);
@@ -736,7 +735,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         //sell page image : sell_confirm.png
-        sell_confirm_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_confirm.png")); // NOI18N
+        
         sell_confirm_label.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sell_confirm_labelMouseClicked(evt);
@@ -745,7 +744,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         sell_return_label1.setBackground(java.awt.Color.white);
         //sell page image : sell_return.png
-        sell_return_label1.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_return.png")); // NOI18N
+        
         sell_return_label1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sell_return_label1MouseClicked(evt);
@@ -771,7 +770,7 @@ public class MainWindow extends javax.swing.JFrame {
         sell_barcodeInput_label.setBackground(java.awt.Color.white);
         sell_barcodeInput_label.setForeground(java.awt.Color.white);
         //sell page image : sell_barcode.png
-        sell_barcodeInput_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_barcode.png")); // NOI18N
+        
         sell_barcodeInput_panel.add(sell_barcodeInput_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 170, 70));
 
         sell_innerWindow_panel.setBackground(new java.awt.Color(251, 251, 251));
@@ -865,11 +864,10 @@ public class MainWindow extends javax.swing.JFrame {
         sell_verify_checkbox.setBorderPaintedFlat(true);
         sell_verify_checkbox.setContentAreaFilled(false);
         //sell page image : sell_unChecked_checkbox.jpg
-        sell_verify_checkbox.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_unChecked_checkbox.jpg")); // NOI18N
+        
         sell_verify_checkbox.setPreferredSize(new java.awt.Dimension(205, 25));
         //sell page image : sell_Checked_checkbox.jpg
-        sell_verify_checkbox.setSelectedIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_Checked_checkbox.jpg"));
-        sell_verify_checkbox.setPressedIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_unChecked_checkbox.jpg")); // NOI18N
+        // NOI18N
         sell_verify_checkbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sell_verify_checkboxActionPerformed(evt);
@@ -896,7 +894,7 @@ public class MainWindow extends javax.swing.JFrame {
         sell_qtyInput_label.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         sell_qtyInput_label.setForeground(java.awt.Color.white);
         //sell page image : sell_qtyInput.png
-        sell_qtyInput_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_qtyInput.png")); // NOI18N
+        
         sell_qtyInput_panel.add(sell_qtyInput_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 50));
 
         javax.swing.GroupLayout sell_innerWindow_panelLayout = new javax.swing.GroupLayout(sell_innerWindow_panel);
@@ -1095,6 +1093,28 @@ public class MainWindow extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void initIcons() {
+        Entry_Quality_Label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_InputBox_Label.png"));
+        Entry_MC_Label_Icon.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_InputBox_Label.png")); // NOI18N
+        Entry_WT_Label_Icon.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_InputBox_Label.png")); // NOI18N
+        Entry_WAS_Label_Icon.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_InputBox_Label.png")); // NOI18N
+        Entry_QTY_Label_Icon.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_InputBox_Label.png")); // NOI18N
+        Entry_BUY_Label_Icon.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_InputBox_Label.png")); // NOI18N
+        Entry_EnterButton_Label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_EnterBtn_Label.png")); // NOI18N
+        Entry_Reset_jLabel.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_ResetBtn_Label.png")); // NOI18N
+        sell_refresh_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_refresh.png")); // NOI18N
+        sell_confirm_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_confirm.png")); // NOI18N
+        sell_return_label1.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_return.png")); // NOI18N
+        sell_barcodeInput_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_barcode.png")); // NOI18N
+        sell_verify_checkbox.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_unChecked_checkbox.jpg")); // NOI18N
+        sell_qtyInput_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_qtyInput.png")); // NOI18N
+        Entry_Check_jCheckBox.setIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_checkBox_Label.png")); // NOI18N
+        Entry_Check_jCheckBox.setPressedIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_CheckedBox_Label.png")); // NOI18N
+        Entry_Check_jCheckBox.setSelectedIcon(new javax.swing.ImageIcon(defaultPath+"\\Entry_checkBox_Label.png")); 
+        sell_verify_checkbox.setSelectedIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_Checked_checkbox.jpg"));
+        sell_verify_checkbox.setPressedIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_unChecked_checkbox.jpg"));
+    }
 
     private void sell_entryNavigation_labelMouseClicked(java.awt.event.MouseEvent evt) {                                                        
         // TODO add your handling code here:
