@@ -1,4 +1,5 @@
 com/cyphersource/jewellery_software/MainWindow.class
+<<<<<<< HEAD
 com/cyphersource/jewellery_software/MainWindow$7.class
 com/cyphersource/jewellery_software/MainWindow$8.class
 com/cyphersource/jewellery_software/MainWindow$4.class
@@ -7,4 +8,10 @@ com/cyphersource/jewellery_software/MainWindow$3.class
 com/cyphersource/jewellery_software/MainWindow$9.class
 com/cyphersource/jewellery_software/MainWindow$6.class
 com/cyphersource/jewellery_software/MainWindow$5.class
+=======
+com/cyphersource/jewellery_software/demo.class
+>>>>>>> B#3
 com/cyphersource/jewellery_software/MainWindow$1.class
+com/cyphersource/jewellery_software/demo$1.class
+com/cyphersource/jewellery_software/MainWindow$2.class
+com/cyphersource/jewellery_software/demo$2.class
