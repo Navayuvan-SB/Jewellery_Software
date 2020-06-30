@@ -201,12 +201,23 @@ public class MainWindow extends javax.swing.JFrame {
         barcode = null;
     }
 
+    // to set limit num of character for ornament name
     private boolean Limit_of_OrnamentNameChar(String name) {
         if (name.length() <= 16) {
             return true;
         } else {
             return false;
         }
+    }
+    
+    // To get values of input
+    private void GetValues(){
+        mc = Entry_MC_TextField.getText();
+        wt = Entry_WT_TextField.getText();
+        was = Entry_WAS_TextField.getText();
+        qty = Entry_QTY_TextField.getText();
+        buy = Entry_BUY_TextField.getText();
+        barcode = chase_no;
     }
 
     private void PrintBarcode() {
@@ -226,7 +237,6 @@ public class MainWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         entryPage = new javax.swing.JPanel();
         EntryPage_jScrollPane = new javax.swing.JScrollPane();
@@ -251,8 +261,8 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_MC_Label_Icon = new javax.swing.JLabel();
         Entry_WT_Lable = new javax.swing.JLabel();
         Entry_WT_TextField = new javax.swing.JTextField();
-        Entry_WAS_Label = new javax.swing.JLabel();
         Entry_WT_Label_Icon = new javax.swing.JLabel();
+        Entry_WAS_Label = new javax.swing.JLabel();
         Entry_WAS_TextField = new javax.swing.JTextField();
         Entry_WAS_Label_Icon = new javax.swing.JLabel();
         Entry_QTY_Label = new javax.swing.JLabel();
@@ -281,8 +291,6 @@ public class MainWindow extends javax.swing.JFrame {
         sell_confirm_label = new javax.swing.JLabel();
         sell_return_label1 = new javax.swing.JLabel();
         sell_barcodeInput_panel = new javax.swing.JPanel();
-        sell_barcodeInput_textField = new javax.swing.JTextField();
-        sell_barcodeInput_label = new javax.swing.JLabel();
         sell_innerWindow_panel = new javax.swing.JPanel();
         sell_qty_label = new javax.swing.JLabel();
         sell_chaseNo_label = new javax.swing.JLabel();
@@ -305,6 +313,8 @@ public class MainWindow extends javax.swing.JFrame {
         sell_qtyInput_panel = new javax.swing.JPanel();
         sell_qtyInput_textField = new javax.swing.JTextField();
         sell_qtyInput_label = new javax.swing.JLabel();
+        sell_barcodeInput_label = new javax.swing.JLabel();
+        sell_barcodeInput_textField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -327,22 +337,18 @@ public class MainWindow extends javax.swing.JFrame {
 
         Entry_ShopnameJ_Label.setBackground(new java.awt.Color(250, 250, 250));
         Entry_ShopnameJ_Label.setFont(new java.awt.Font("Ubuntu", 1, 64)); // NOI18N
-        Entry_ShopnameJ_Label.setForeground(new java.awt.Color(0, 0, 0));
         Entry_ShopnameJ_Label.setText("J");
 
         Entry_ShopnameJ2_Label.setBackground(new java.awt.Color(255, 255, 255));
         Entry_ShopnameJ2_Label.setFont(new java.awt.Font("Ubuntu", 1, 64)); // NOI18N
-        Entry_ShopnameJ2_Label.setForeground(new java.awt.Color(0, 0, 0));
         Entry_ShopnameJ2_Label.setText("J");
 
         Entry_ShopNameA_Label.setBackground(new java.awt.Color(255, 255, 255));
         Entry_ShopNameA_Label.setFont(new java.awt.Font("Ubuntu", 1, 38)); // NOI18N
-        Entry_ShopNameA_Label.setForeground(new java.awt.Color(0, 0, 0));
         Entry_ShopNameA_Label.setText("A");
 
         Entry_NavEntry_Label.setBackground(new java.awt.Color(250, 250, 250));
         Entry_NavEntry_Label.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
-        Entry_NavEntry_Label.setForeground(new java.awt.Color(0, 0, 0));
         Entry_NavEntry_Label.setText("Entry");
 
         Entry_NavView_Label.setBackground(new java.awt.Color(250, 250, 250));
@@ -367,7 +373,6 @@ public class MainWindow extends javax.swing.JFrame {
 
         Entry_ChaseNoValue_Label.setBackground(new java.awt.Color(255, 255, 255));
         Entry_ChaseNoValue_Label.setFont(new java.awt.Font("Ubuntu", 1, 27)); // NOI18N
-        Entry_ChaseNoValue_Label.setForeground(new java.awt.Color(0, 0, 0));
 
         Entry_Date_Label.setBackground(new java.awt.Color(255, 255, 255));
         Entry_Date_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
@@ -376,7 +381,6 @@ public class MainWindow extends javax.swing.JFrame {
 
         Entry_DateNoValue_Label.setBackground(new java.awt.Color(255, 255, 255));
         Entry_DateNoValue_Label.setFont(new java.awt.Font("Ubuntu", 1, 27)); // NOI18N
-        Entry_DateNoValue_Label.setForeground(new java.awt.Color(0, 0, 0));
 
         Entry_InputFields_Panel.setBackground(new java.awt.Color(251, 251, 251));
         Entry_InputFields_Panel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -413,9 +417,7 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_MC_Label.setText("MC (/G) :");
         Entry_InputFields_Panel.add(Entry_MC_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
 
-        Entry_MC_TextField.setBackground(new java.awt.Color(255, 255, 255));
         Entry_MC_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        Entry_MC_TextField.setForeground(new java.awt.Color(0, 0, 0));
         Entry_MC_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Entry_MC_TextField.setBorder(null);
         Entry_MC_TextField.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -436,9 +438,7 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_WT_Lable.setText("WT (g) :");
         Entry_InputFields_Panel.add(Entry_WT_Lable, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 510, -1, -1));
 
-        Entry_WT_TextField.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WT_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        Entry_WT_TextField.setForeground(new java.awt.Color(0, 0, 0));
         Entry_WT_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Entry_WT_TextField.setBorder(null);
         Entry_WT_TextField.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -448,6 +448,9 @@ public class MainWindow extends javax.swing.JFrame {
         });
         Entry_InputFields_Panel.add(Entry_WT_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 510, 470, -1));
 
+        Entry_WT_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
+        Entry_InputFields_Panel.add(Entry_WT_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 490, -1, -1));
+
         Entry_WAS_Label.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WAS_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         Entry_WAS_Label.setForeground(new java.awt.Color(98, 98, 98));
@@ -455,14 +458,7 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_WAS_Label.setText("WAS (%) :");
         Entry_InputFields_Panel.add(Entry_WAS_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 620, -1, -1));
 
-        Entry_WT_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
-        
-        //Entry_InputBox_Label Image
-        Entry_InputFields_Panel.add(Entry_WT_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 490, -1, -1));
-
-        Entry_WAS_TextField.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WAS_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        Entry_WAS_TextField.setForeground(new java.awt.Color(0, 0, 0));
         Entry_WAS_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Entry_WAS_TextField.setBorder(null);
         Entry_WAS_TextField.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -470,11 +466,10 @@ public class MainWindow extends javax.swing.JFrame {
                 Entry_WAS_TextFieldKeyPressed(evt);
             }
         });
-        Entry_InputFields_Panel.add(Entry_WAS_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 620, 450, -1));
+        Entry_InputFields_Panel.add(Entry_WAS_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 620, 470, -1));
 
         Entry_WAS_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WAS_Label_Icon.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        
         //Entry_InputBox_Label Image
         Entry_InputFields_Panel.add(Entry_WAS_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 600, -1, -1));
 
@@ -485,16 +480,13 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_QTY_Label.setText("QTY :");
         Entry_InputFields_Panel.add(Entry_QTY_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 730, -1, -1));
 
-        Entry_QTY_TextField.setBackground(new java.awt.Color(255, 255, 255));
         Entry_QTY_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        Entry_QTY_TextField.setForeground(new java.awt.Color(0, 0, 0));
         Entry_QTY_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Entry_QTY_TextField.setBorder(null);
         Entry_InputFields_Panel.add(Entry_QTY_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 730, 500, -1));
 
         Entry_QTY_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
         Entry_QTY_Label_Icon.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        
         //Entry_InputBox_Label Image
         Entry_InputFields_Panel.add(Entry_QTY_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 710, -1, -1));
 
@@ -505,20 +497,16 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_BUY_Label.setText("BUY :");
         Entry_InputFields_Panel.add(Entry_BUY_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 840, -1, -1));
 
-        Entry_BUY_TextField.setBackground(new java.awt.Color(255, 255, 255));
         Entry_BUY_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        Entry_BUY_TextField.setForeground(new java.awt.Color(0, 0, 0));
         Entry_BUY_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Entry_BUY_TextField.setBorder(null);
         Entry_InputFields_Panel.add(Entry_BUY_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 840, 500, -1));
 
         Entry_BUY_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
         Entry_BUY_Label_Icon.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        
         //Entry_InputBox_Label Image
         Entry_InputFields_Panel.add(Entry_BUY_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 820, -1, -1));
 
-        Entry_OrnamentType_jComboBox.setBackground(new java.awt.Color(255, 255, 255));
         Entry_OrnamentType_jComboBox.setFont(new java.awt.Font("Ubuntu", 0, 17)); // NOI18N
         Entry_OrnamentType_jComboBox.setForeground(new java.awt.Color(98, 98, 98));
         Entry_OrnamentType_jComboBox.setMaximumRowCount(30);
@@ -531,7 +519,6 @@ public class MainWindow extends javax.swing.JFrame {
         });
         Entry_InputFields_Panel.add(Entry_OrnamentType_jComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 580, 70));
 
-        Entry_OrnamentName_jCombobox.setBackground(new java.awt.Color(255, 255, 255));
         Entry_OrnamentName_jCombobox.setEditable(true);
         Entry_OrnamentName_jCombobox.setFont(new java.awt.Font("Ubuntu", 0, 17)); // NOI18N
         Entry_OrnamentName_jCombobox.setForeground(new java.awt.Color(98, 98, 98));
@@ -546,11 +533,9 @@ public class MainWindow extends javax.swing.JFrame {
 
         Entry_CheckText_Label.setBackground(new java.awt.Color(255, 255, 255));
         Entry_CheckText_Label.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
-        Entry_CheckText_Label.setForeground(new java.awt.Color(0, 0, 0));
         Entry_CheckText_Label.setText("Click to Generate BarCode and Print");
 
         // Entry_EnterBtn_Label
-        
         Entry_EnterButton_Label.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Entry_EnterButton_LabelMouseClicked(evt);
@@ -558,9 +543,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         // Entry_CheckBox_Label
-        
         // Entry_CheckedBox_Label
-// NOI18N
         Entry_Check_jCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Entry_Check_jCheckBoxActionPerformed(evt);
@@ -568,7 +551,6 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         // Entry_ResetBtn_Label
-        
         Entry_Reset_jLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Entry_Reset_jLabelMouseClicked(evt);
@@ -606,22 +588,22 @@ public class MainWindow extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Entry_DateNoValue_Label)))
                 .addGap(70, 70, 70))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EntryPage_WrapperLayout.createSequentialGroup()
-                .addContainerGap(376, Short.MAX_VALUE)
-                .addComponent(Entry_Check_jCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Entry_CheckText_Label)
-                .addGap(374, 374, 374))
             .addGroup(EntryPage_WrapperLayout.createSequentialGroup()
                 .addGap(70, 70, 70)
                 .addComponent(Entry_InputFields_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
             .addGroup(EntryPage_WrapperLayout.createSequentialGroup()
-                .addGap(167, 167, 167)
+                .addGap(164, 164, 164)
                 .addComponent(Entry_Reset_jLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Entry_EnterButton_Label)
-                .addGap(161, 161, 161))
+                .addGap(164, 164, 164))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EntryPage_WrapperLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Entry_Check_jCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Entry_CheckText_Label)
+                .addGap(386, 386, 386))
         );
         EntryPage_WrapperLayout.setVerticalGroup(
             EntryPage_WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -645,17 +627,19 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(Entry_ChaseNo_Label)
                     .addComponent(Entry_Date_Label)
                     .addComponent(Entry_DateNoValue_Label))
-                .addGap(52, 52, 52)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
                 .addComponent(Entry_InputFields_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 945, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
+                .addGap(62, 62, 62)
                 .addGroup(EntryPage_WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Entry_Check_jCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Entry_CheckText_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48)
-                .addGroup(EntryPage_WrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Entry_EnterButton_Label)
-                    .addComponent(Entry_Reset_jLabel))
-                .addGap(0, 249, Short.MAX_VALUE))
+                    .addGroup(EntryPage_WrapperLayout.createSequentialGroup()
+                        .addComponent(Entry_CheckText_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(74, 74, 74)
+                        .addComponent(Entry_EnterButton_Label))
+                    .addGroup(EntryPage_WrapperLayout.createSequentialGroup()
+                        .addComponent(Entry_Check_jCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59)
+                        .addComponent(Entry_Reset_jLabel)))
+                .addGap(201, 201, 201))
         );
 
         EntryPage_jScrollPane.setViewportView(EntryPage_Wrapper);
@@ -671,9 +655,10 @@ public class MainWindow extends javax.swing.JFrame {
             .addComponent(EntryPage_jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1617, Short.MAX_VALUE)
         );
 
-        EntryPage_jScrollPane.getVerticalScrollBar().setUnitIncrement(100);
+        EntryPage_jScrollPane.getVerticalScrollBar().setUnitIncrement(16);
 
         jLayeredPane1.add(entryPage, "entryPage");
+
         sellPage.setBackground(java.awt.Color.white);
         sellPage.setAlignmentX(0.0F);
         sellPage.setAlignmentY(0.0F);
@@ -727,7 +712,6 @@ public class MainWindow extends javax.swing.JFrame {
         sell_Welcome_label.setText("Welcome,  Please  Scan  OR  Code.");
 
         //sell page image : sell_refresh.png
-        
         sell_refresh_label.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sell_refresh_labelMouseClicked(evt);
@@ -735,7 +719,6 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         //sell page image : sell_confirm.png
-        
         sell_confirm_label.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sell_confirm_labelMouseClicked(evt);
@@ -744,7 +727,6 @@ public class MainWindow extends javax.swing.JFrame {
 
         sell_return_label1.setBackground(java.awt.Color.white);
         //sell page image : sell_return.png
-        
         sell_return_label1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sell_return_label1MouseClicked(evt);
@@ -754,24 +736,6 @@ public class MainWindow extends javax.swing.JFrame {
         sell_barcodeInput_panel.setBackground(java.awt.Color.white);
         sell_barcodeInput_panel.setForeground(java.awt.Color.white);
         sell_barcodeInput_panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        sell_barcodeInput_textField.setBackground(new java.awt.Color(250, 250, 250));
-        sell_barcodeInput_textField.setFont(new java.awt.Font("Ubuntu", 1, 25)); // NOI18N
-        sell_barcodeInput_textField.setForeground(java.awt.Color.black);
-        sell_barcodeInput_textField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        sell_barcodeInput_textField.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
-        sell_barcodeInput_textField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sell_barcodeInput_textFieldActionPerformed(evt);
-            }
-        });
-        sell_barcodeInput_panel.add(sell_barcodeInput_textField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 150, 40));
-
-        sell_barcodeInput_label.setBackground(java.awt.Color.white);
-        sell_barcodeInput_label.setForeground(java.awt.Color.white);
-        //sell page image : sell_barcode.png
-        
-        sell_barcodeInput_panel.add(sell_barcodeInput_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 170, 70));
 
         sell_innerWindow_panel.setBackground(new java.awt.Color(251, 251, 251));
         sell_innerWindow_panel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, new java.awt.Color(245, 245, 245), java.awt.Color.gray, new java.awt.Color(230, 230, 230)));
@@ -832,23 +796,18 @@ public class MainWindow extends javax.swing.JFrame {
         sell_semicolon6_label.setText(" :");
 
         sell_chaseNoDetail_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
-        sell_chaseNoDetail_label.setForeground(java.awt.Color.black);
         sell_chaseNoDetail_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         sell_ornamentNameDetail_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
-        sell_ornamentNameDetail_label.setForeground(java.awt.Color.black);
         sell_ornamentNameDetail_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         sell_wtDetail_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
-        sell_wtDetail_label.setForeground(java.awt.Color.black);
         sell_wtDetail_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         sell_wasDetail_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
-        sell_wasDetail_label.setForeground(java.awt.Color.black);
         sell_wasDetail_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         sell_mcDetail_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
-        sell_mcDetail_label.setForeground(java.awt.Color.black);
 
         sell_semicolon4_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         sell_semicolon4_label.setForeground(java.awt.Color.gray);
@@ -864,10 +823,8 @@ public class MainWindow extends javax.swing.JFrame {
         sell_verify_checkbox.setBorderPaintedFlat(true);
         sell_verify_checkbox.setContentAreaFilled(false);
         //sell page image : sell_unChecked_checkbox.jpg
-        
         sell_verify_checkbox.setPreferredSize(new java.awt.Dimension(205, 25));
         //sell page image : sell_Checked_checkbox.jpg
-        // NOI18N
         sell_verify_checkbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sell_verify_checkboxActionPerformed(evt);
@@ -880,7 +837,6 @@ public class MainWindow extends javax.swing.JFrame {
 
         sell_qtyInput_textField.setBackground(new java.awt.Color(250, 250, 250));
         sell_qtyInput_textField.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
-        sell_qtyInput_textField.setForeground(java.awt.Color.black);
         sell_qtyInput_textField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         sell_qtyInput_textField.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         sell_qtyInput_textField.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -894,7 +850,6 @@ public class MainWindow extends javax.swing.JFrame {
         sell_qtyInput_label.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         sell_qtyInput_label.setForeground(java.awt.Color.white);
         //sell page image : sell_qtyInput.png
-        
         sell_qtyInput_panel.add(sell_qtyInput_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 50));
 
         javax.swing.GroupLayout sell_innerWindow_panelLayout = new javax.swing.GroupLayout(sell_innerWindow_panel);
@@ -982,6 +937,20 @@ public class MainWindow extends javax.swing.JFrame {
                 .addContainerGap(44, Short.MAX_VALUE))
         );
 
+        sell_barcodeInput_label.setBackground(java.awt.Color.white);
+        sell_barcodeInput_label.setForeground(java.awt.Color.white);
+        //sell page image : sell_barcode.png
+
+        sell_barcodeInput_textField.setBackground(new java.awt.Color(250, 250, 250));
+        sell_barcodeInput_textField.setFont(new java.awt.Font("Ubuntu", 1, 25)); // NOI18N
+        sell_barcodeInput_textField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        sell_barcodeInput_textField.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        sell_barcodeInput_textField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sell_barcodeInput_textFieldActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout sell_wrapper_panelLayout = new javax.swing.GroupLayout(sell_wrapper_panel);
         sell_wrapper_panel.setLayout(sell_wrapper_panelLayout);
         sell_wrapper_panelLayout.setHorizontalGroup(
@@ -989,71 +958,81 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_wrapper_panelLayout.createSequentialGroup()
                 .addGap(180, 180, 180)
                 .addComponent(sell_return_label1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 585, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(sell_confirm_label)
                 .addGap(180, 180, 180))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_wrapper_panelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_wrapper_panelLayout.createSequentialGroup()
+                        .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(sell_barcodeInput_label, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(sell_barcodeInput_textField, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_wrapper_panelLayout.createSequentialGroup()
                         .addComponent(sell_shopeName_label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
                         .addComponent(sell_shopeName_label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
                         .addComponent(sell_shopeName_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(195, 195, 195)
+                        .addGap(205, 205, 205)))
+                .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
                         .addComponent(sell_entryNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55)
+                        .addGap(64, 64, 64)
                         .addComponent(sell_viewNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(55, 55, 55)
-                        .addComponent(sell_sellNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(70, 70, 70))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_wrapper_panelLayout.createSequentialGroup()
+                        .addComponent(sell_sellNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
                         .addComponent(sell_barcodeInput_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(3, 3, 3)
-                        .addComponent(sell_refresh_label)
-                        .addGap(455, 455, 455))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_wrapper_panelLayout.createSequentialGroup()
-                        .addComponent(sell_Welcome_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(379, 379, 379))))
+                        .addComponent(sell_refresh_label)))
+                .addGap(197, 197, 197))
             .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
-                .addGap(86, 86, 86)
-                .addComponent(sell_innerWindow_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(sell_innerWindow_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
+                        .addGap(378, 378, 378)
+                        .addComponent(sell_Welcome_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         sell_wrapper_panelLayout.setVerticalGroup(
             sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(sell_viewNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sell_entryNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sell_sellNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(sell_shopeName_label, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(sell_shopeName_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sell_shopeName_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(sell_shopeName_label, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(sell_shopeName_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                            .addComponent(sell_shopeName_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(sell_viewNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sell_entryNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sell_sellNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(50, 50, 50)
-                .addComponent(sell_Welcome_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
-                        .addGap(58, 58, 58)
+                        .addGap(148, 148, 148)
                         .addComponent(sell_refresh_label, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(sell_barcodeInput_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                        .addGap(49, 49, 49)
+                        .addComponent(sell_Welcome_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(sell_barcodeInput_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sell_barcodeInput_label, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(sell_barcodeInput_textField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                 .addComponent(sell_innerWindow_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60)
                 .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(sell_return_label1)
                     .addComponent(sell_confirm_label))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         sell_scroll_scrollpanel.setViewportView(sell_wrapper_panel);
@@ -1074,7 +1053,6 @@ public class MainWindow extends javax.swing.JFrame {
         );
 
         sell_scroll_scrollpanel.getAccessibleContext().setAccessibleName("");
-        sell_scroll_scrollpanel.getVerticalScrollBar().setPreferredSize(new Dimension(0, Integer.MAX_VALUE));
         sell_scroll_scrollpanel.getVerticalScrollBar().setUnitIncrement(100);
 
         jLayeredPane1.add(sellPage, "sellPage");
@@ -1116,20 +1094,9 @@ public class MainWindow extends javax.swing.JFrame {
         sell_verify_checkbox.setPressedIcon(new javax.swing.ImageIcon(defaultPath+"\\sell_unChecked_checkbox.jpg"));
     }
 
-    private void sell_entryNavigation_labelMouseClicked(java.awt.event.MouseEvent evt) {                                                        
-        // TODO add your handling code here:
-        if (!this.navToEntry()){
-            JOptionPane.showMessageDialog(null, "There is a problem in Navigation. Kindly close the software, reopen it and try again!");
-        }
-    }                                                       
     
-    private void Entry_NavSell_LabelMouseClicked(java.awt.event.MouseEvent evt) {                                                 
-        // TODO add your handling code here:
-        if (!this.navToSell()){
-            JOptionPane.showMessageDialog(null, "There is a problem in Navigation. Kindly close the software, reopen it and try again!");
-        }
-    }
     
+        
     // Navigate to Sell Page
     private boolean navToSell(){
      
@@ -1160,12 +1127,8 @@ public class MainWindow extends javax.swing.JFrame {
         // quality 
         QualityRadioBTN();
 
-        mc = Entry_MC_TextField.getText();
-        wt = Entry_WT_TextField.getText();
-        was = Entry_WAS_TextField.getText();
-        qty = Entry_QTY_TextField.getText();
-        buy = Entry_BUY_TextField.getText();
-        barcode = chase_no;
+        // funtion to get imput values
+        GetValues();
 
         // to Insert newly entered Ornament Name in Database in(ornament_name Table)
         if (Limit_of_OrnamentNameChar(ornament_name)) {
@@ -1255,6 +1218,9 @@ public class MainWindow extends javax.swing.JFrame {
     // CheckBox Action
     private void Entry_Check_jCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_Check_jCheckBoxActionPerformed
 
+        // funtion to get imput values
+        GetValues();
+        
         // if fields are empty it should not generate barcode 
         if ("".equals(mc) || "".equals(barcode) || "".equals(dateDB) || "".equals(chase_no) || ornament_type == "0" || ornament_name == "0" || "".equals(quality) || "".equals(wt) || "".equals(was) || "".equals(qty) || "".equals(buy)) {
             Entry_Check_jCheckBox.setSelected(false);
@@ -1301,20 +1267,6 @@ public class MainWindow extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_Entry_WT_TextFieldKeyPressed
-
-    // Entry_WAS_TextField Keypressed event to type limit num of characters.
-    private void Entry_WAS_TextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Entry_WAS_TextFieldKeyPressed
-
-        if (!(Entry_WAS_TextField.getText().length() <= 5)) {
-            Entry_WAS_TextField.setEditable(false);
-        } else {
-            Entry_WAS_TextField.setEditable(true);
-        }
-        if (evt.getExtendedKeyCode() == KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode() == KeyEvent.VK_DELETE) {
-            Entry_WAS_TextField.setEditable(true);
-        }
-
-    }//GEN-LAST:event_Entry_WAS_TextFieldKeyPressed
 
     // Ornament_name Action
     private void Entry_OrnamentName_jComboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_OrnamentName_jComboboxActionPerformed
@@ -1486,6 +1438,34 @@ public class MainWindow extends javax.swing.JFrame {
              JOptionPane.showMessageDialog(null, "Try again");
           }
     }//GEN-LAST:event_sell_confirm_labelMouseClicked
+
+    private void Entry_WAS_TextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Entry_WAS_TextFieldKeyPressed
+        // TODO add your handling code here:
+        if (!(Entry_WAS_TextField.getText().length() <= 5)) {
+            Entry_WAS_TextField.setEditable(false);
+        } else {
+            Entry_WAS_TextField.setEditable(true);
+        }
+        if (evt.getExtendedKeyCode() == KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode() == KeyEvent.VK_DELETE) {
+            Entry_WAS_TextField.setEditable(true);
+        }
+    }//GEN-LAST:event_Entry_WAS_TextFieldKeyPressed
+
+    // Navigation to sell page from entry page
+    private void Entry_NavSell_LabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Entry_NavSell_LabelMouseClicked
+        
+        if (!this.navToSell()){
+            JOptionPane.showMessageDialog(null, "There is a problem in Navigation. Kindly close the software, reopen it and try again!");
+        }
+    }//GEN-LAST:event_Entry_NavSell_LabelMouseClicked
+
+    // Navigation to entry page from sell page
+    private void sell_entryNavigation_labelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sell_entryNavigation_labelMouseClicked
+        
+        if (!this.navToEntry()){
+            JOptionPane.showMessageDialog(null, "There is a problem in Navigation. Kindly close the software, reopen it and try again!");
+        }
+    }//GEN-LAST:event_sell_entryNavigation_labelMouseClicked
 
     //Barcode Fetching Operation
     public class Barcode{
@@ -1807,7 +1787,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel Entry_WT_Lable;
     private javax.swing.JTextField Entry_WT_TextField;
     private javax.swing.JPanel entryPage;
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel sellPage;
     private java.awt.Label sell_Welcome_label;
