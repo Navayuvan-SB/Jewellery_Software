@@ -234,14 +234,11 @@ public class MainWindow extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 int column = view_soldTable_table.columnAtPoint(evt.getPoint());
                 if (column ==7){
-                                int setRow = view_soldTable_table.getSelectedRow();                             
-//                                String view_return_value = view_soldTable_table.getModel().getValueAt(setRow,6).toString();
-//                                view_sold_return(view_return_value);//System.out.println(value);
+                                int setRow = view_soldTable_table.getSelectedRow();                           
                                    int view_serial_no = Integer.parseInt(view_soldTable_table.getModel().getValueAt(setRow,0).toString());
-                                   System.out.println(view_serial_no);
-//                                view_trial_return(view_return_value,view_return);
+                                                            
                                   System.out.println(Arrays.toString(view_sold_raw_data[view_serial_no-1]));
-                                  view_trial_return(view_serial_no);
+                                  view_sold_return(view_serial_no);
                                 
                 }
             }
@@ -2044,7 +2041,6 @@ public class MainWindow extends javax.swing.JFrame {
         //For autoincrementing the no. of rows 
         int count=1;
         
-        int num_rows;
         //Masking the image into jLabel Object
         JLabel returnLabel = new JLabel(this.returnIcon);
         
@@ -2076,7 +2072,7 @@ public class MainWindow extends javax.swing.JFrame {
                         }
 
                         try{
-                            //Getting default overall table values. 
+                            //Getting default sold table values. 
                             String sql2="SELECT * FROM sold WHERE date >=" + "'"+  view_sold_from_date  + "'  AND date <= " + "'"+  view_sold_to_date+ "'";
                             con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
                             PreparedStatement pat2=con1.prepareStatement(sql2);
@@ -2084,15 +2080,13 @@ public class MainWindow extends javax.swing.JFrame {
                             ResultSetMetaData rsmd = rs2.getMetaData();
                             rs2.last();
                             view_sold_raw_data= new String[rs2.getRow()][rsmd.getColumnCount()];
-//                            System.out.println(rs2.getRow());
-//                            System.out.println(rsmd.getColumnCount());
                             rs2.beforeFirst();
                            
                             DefaultTableModel tm=(DefaultTableModel)view_soldTable_table.getModel();
 
                             tm.setRowCount(0);
                             while(rs2.next()){
-                                String obj[]={Integer.toString(count),rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_type"),rs2.getString("ornament_name"),rs2.getString("quality"),rs2.getString("making_charge"),rs2.getString("weight"),rs2.getString("wastage"),rs2.getString("quantity"),rs2.getString("buy"),rs2.getString("barcode"),rs2.getString("status")};
+                                String obj[]={Integer.toString(count),rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_type"),rs2.getString("ornament_name"),rs2.getString("quality"),rs2.getString("making_charge"),rs2.getString("weight"),rs2.getString("wastage"),rs2.getString("quantity"),rs2.getString("buy"),rs2.getString("barcode"),rs2.getString("status"),rs2.getString("snapshot")};
                               view_sold_raw_data[count-1]=obj;
                                 Object o[]={count,rs2.getString("date"),rs2.getString("chase_no"),rs2.getString("ornament_name"),rs2.getString("weight"),rs2.getString("quantity"),rs2.getString("barcode"),returnLabel};
                                 tm.addRow(o); 
@@ -2171,7 +2165,7 @@ public class MainWindow extends javax.swing.JFrame {
                     }
 
                     try{
-                        //Getting default overall table values. 
+                        //Getting default balance table values. 
                         String sql2="SELECT date, chase_no, ornament_name, weight, quantity, barcode FROM balance WHERE date >=" + "'"+  view_balance_from_date + "'  AND date <= " + "'"+  view_balance_to_date + "'";
                         con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
                         PreparedStatement pat2=con1.prepareStatement(sql2);
@@ -2245,7 +2239,7 @@ public class MainWindow extends javax.swing.JFrame {
                 }
                 
                 try{
-                    //Getting default overall table values. 
+                    //Getting default return table values. 
                     String sql2="SELECT date, chase_no, ornament_name, quality, weight, buy FROM return_table WHERE date >=" + "'"+  view_return_from_date + "'  AND date <= " + "'"+  view_return_to_date + "'";
                     con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
                     PreparedStatement pat2=con1.prepareStatement(sql2);
@@ -2914,30 +2908,6 @@ public class MainWindow extends javax.swing.JFrame {
             }
         }
     }
-   private void view_sold_return(String view_return_value){
-        if(view_return_value!=null){
-            try{ 
-                    String sql="UPDATE overall SET status= 0 WHERE barcode = " + "'"+  view_return_value + "'";
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                    pat=con.prepareStatement(sql);
-                    pat.executeUpdate();
-                    String sql1="DELETE FROM sold WHERE barcode = " + "'"+  view_return_value + "'";
-                    con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                    PreparedStatement pat1=con1.prepareStatement(sql1);
-                    pat1.executeUpdate();
-                    DefaultTableModel dm = (DefaultTableModel)view_soldTable_table.getModel();
-                    dm.setRowCount(0);   
-                    view_sold_default_display();
-
-                    JOptionPane.showMessageDialog(null,"The item is returned successfully");
-
-                    } 
-                    
-            catch(Exception e){
-                    JOptionPane.showMessageDialog(null,"Couldn't return data. Please check the database connection. If not, contact the software vendor");
-            }
-        }
-    }
   
         private void view_default_date(){
             try{
@@ -2980,62 +2950,92 @@ public class MainWindow extends javax.swing.JFrame {
                 
             }
         }
-       private void  view_trial_return(int view_serial_no){
-        String view_balance_date=view_sold_raw_data[view_serial_no-1][1];
-        String view_balance_chaseNo= view_sold_raw_data[view_serial_no-1][2];
-        String view_balance_ornament_type=view_sold_raw_data[view_serial_no-1][3];
-        String view_balance_ornamentName=view_sold_raw_data[view_serial_no-1][4];
-        String view_balance_quality=view_sold_raw_data[view_serial_no-1][5];
-        String view_balance_making_charge=view_sold_raw_data[view_serial_no-1][6];
-        String view_balance_weight=view_sold_raw_data[view_serial_no-1][7];
-        String view_balance_wastage=view_sold_raw_data[view_serial_no-1][8];
-        String view_balance_quantity=view_sold_raw_data[view_serial_no-1][9];
-        String view_balance_buy=view_sold_raw_data[view_serial_no-1][10];
-        String view_balance_barcode=view_sold_raw_data[view_serial_no-1][11];
-        String view_balance_status=view_sold_raw_data[view_serial_no-1][12];
-        String view_balance_previous_check = null;
-        if(view_balance_chaseNo!=null){
         
-        try{
-                    
-                    String sql="SELECT COUNT(chase_no) FROM jewellery_entry WHERE chase_no = " + "'"+  view_balance_chaseNo + "'";
-                     con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+  //  Function performed when return icon is clicked.
+    private void  view_sold_return(int view_serial_no){
+        String view_sold_date=view_sold_raw_data[view_serial_no-1][1];
+        String view_sold_chaseNo= view_sold_raw_data[view_serial_no-1][2];
+        String view_sold_ornament_type=view_sold_raw_data[view_serial_no-1][3];
+        String view_sold_ornamentName=view_sold_raw_data[view_serial_no-1][4];
+        String view_sold_quality=view_sold_raw_data[view_serial_no-1][5];
+        String view_sold_making_charge=view_sold_raw_data[view_serial_no-1][6];
+        String view_sold_weight=view_sold_raw_data[view_serial_no-1][7];
+        String view_sold_wastage=view_sold_raw_data[view_serial_no-1][8];
+        String view_sold_quantity=view_sold_raw_data[view_serial_no-1][9];
+        String view_sold_buy=view_sold_raw_data[view_serial_no-1][10];
+        String view_sold_barcode=view_sold_raw_data[view_serial_no-1][11];
+        String view_sold_status=view_sold_raw_data[view_serial_no-1][12];
+        String view_sold_snapshot=view_sold_raw_data[view_serial_no-1][13];
+        String view_sold_chasenum_check=null ;
+       
+        if(view_sold_chaseNo!=null){
+            try{                  
+                    String sql="SELECT COUNT(chase_no) FROM balance WHERE chase_no = " + "'"+  view_sold_chaseNo + "'";
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
                     pat=con.prepareStatement(sql);
                     ResultSet rs=pat.executeQuery();
-                                while(rs.next()){  
-                                    view_balance_previous_check=rs.getString(1); 
-                                    System.out.println(view_balance_previous_check);
-                                }
-                                if(view_balance_previous_check=="0"){
-//                                    try{
+                        while(rs.next()){  
+                            view_sold_chasenum_check=rs.getString(1); 
+                        }
+                        if(view_sold_chasenum_check.equals("0")){
+                            try{
+////                                String sql1="INSERT INTO balance"
+////                                        + "(id,date, chase_no, ornament_type,ornament_name,quality,making_charge, weight,wastage, quantity,buy,barcode,status,snapshot)SELECT id,date, chase_no, ornament_type,ornament_name,quality,making_charge, weight,wastage, quantity,buy,barcode,status,snapshot FROM sold WHERE snapshot='" + view_sold_snapshot + "'";
+////                                         pat=con.prepareStatement(sql1);
+////                                         pat.executeQuery();
+////                                        JOptionPane.showMessageDialog(null,"returned successfully");
+//                                    
 //                                       String sql1="INSERT INTO balance"
-//                                            + "(date, chase_no, ornament_type,ornament_name,quality,making_charge, weight,wastage, quantity,buy,barcode,status,)"   //snapshot
-//                                            + "VALUES(view_balance_date,view_balance_chaseNo,view_balance_ornament_type,view_balance_ornamentName,view_balance_quality,view_balance_making_charge,view_balance_weight,view_balance_wastage,view_balance_quantity,view_balance_buy,view_balance_barcode,view_balance_status)"; //current_timestamp()
-//                                       pat=con.prepareStatement(sql);
-//                                       pat.executeUpdate();
-//                                       String sql2=DELETE FROM `sold ` WHERE snapshot = 'snapshot value'
-//                                    }
-//                                    catch(Exception e){
-//                                         JOptionPane.showMessageDialog(null,e);
-//                                    }
-                                }
-                                else if(view_balance_previous_check=="1"){
-//                                    try{
-//                                         String sql2="UPDATE balance SET quantity=quantity+view_balance_quantity  WHERE chase_no=" + "'"+  view_balance_chaseNo + "'";
-//                                         pat=con.prepareStatement(sql);
+//                                            + "(date, chase_no, ornament_type,ornament_name,quality,making_charge, weight,wastage, quantity,buy,barcode,status,snapshot)"   //snapshot
+//                                           + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+////                                          // + "VALUES(view_sold_date,view_sold_chaseNo,view_sold_ornament_type,view_sold_ornamentName,view_sold_quality,view_sold_making_charge,view_sold_weight,view_sold_wastage,view_sold_quantity,view_sold_buy,view_sold_barcode,view_sold_status,view_sold_snapshot)";
+//                                       pat=con.prepareStatement(sql1);
+//                                         pat.setString(1,view_sold_date);
+//                                         pat.setString(2,view_sold_chaseNo);
+//                                         pat.setString(3,view_sold_ornament_type);
+//                                         pat.setString(4,view_sold_ornamentName);
+//                                         pat.setString(5,view_sold_quality);
+//                                         pat.setString(6,view_sold_making_charge);
+//                                         pat.setString(7,view_sold_weight);
+//                                         pat.setString(8,view_sold_wastage);
+//                                         pat.setString(9,view_sold_quantity);
+//                                         pat.setString(10,view_sold_buy);
+//                                         pat.setString(11,view_sold_barcode);
+//                                         pat.setString(12,view_sold_status);
+//                                         pat.setString(13,view_sold_snapshot);
+//                                         
+//                                          pat.executeUpdate();
+//                                         
+//                                       String sql2="DELETE FROM sold  WHERE snapshot = " + "'"+  view_sold_snapshot + "'";
+//                                       PreparedStatement pat1=con1.prepareStatement(sql2);
+//                                       pat1.executeUpdate();
+//
+//                                       //For refreshing after returning the item and deleting it from sold table       
+//                                       DefaultTableModel dm = (DefaultTableModel)view_soldTable_table.getModel();
+//                                       dm.setRowCount(0);   
+//                                       view_sold_default_display();
+                            }
+                            catch(Exception e){
+                                JOptionPane.showMessageDialog(null,e);
+                            }
+                        }
+                        else if(view_sold_chasenum_check.equals("1")){
+//                            try{
+//                                         String sql2="UPDATE balance SET quantity= quantity+view_sold_quantity  WHERE chase_no=" + "'"+  view_sold_chaseNo + "'";
+//                                         pat=con.prepareStatement(sql2);
 //                                         rs=pat.executeQuery();
-//                                         pat.executeUpdate();
-//                                    }
-//                                    catch(Exception e){
+//                                         pat.executeUpdate();                                           
+//                            }
+//                            catch(Exception e){
 //                                         JOptionPane.showMessageDialog(null,e);
-//                                    }
-                                }
-                                       
-        }
-        catch(Exception e){
-            
-        }
+//                            }
+                        }          
+            }
+            catch(Exception e){
+                JOptionPane.showMessageDialog(null,e);
+            }
        }
-       }
+    }
+       
  }
 
