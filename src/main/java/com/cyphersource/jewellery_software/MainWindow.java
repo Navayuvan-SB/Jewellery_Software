@@ -61,7 +61,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         initComponents();
 
-        //initIcons();
+        initIcons();
 
         // Initialize MainLayout
         mainLayout = (CardLayout) jLayeredPane1.getLayout();
@@ -708,11 +708,10 @@ public class MainWindow extends javax.swing.JFrame {
 
         sell_Welcome_label.setAlignment(java.awt.Label.CENTER);
         sell_Welcome_label.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
-        sell_Welcome_label.setForeground(new java.awt.Color(124, 119, 119));
+        sell_Welcome_label.setForeground(new java.awt.Color(51, 51, 51));
         sell_Welcome_label.setText("Welcome,  Please  Scan  OR  Code.");
 
         //sell page image : sell_refresh.png
-        sell_refresh_label.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ramya\\Documents\\JP\\sell_refresh.png")); // NOI18N
         sell_refresh_label.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sell_refresh_labelMouseClicked(evt);
@@ -720,7 +719,6 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         //sell page image : sell_confirm.png
-        sell_confirm_label.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ramya\\Documents\\JP\\sell_confirm.png")); // NOI18N
         sell_confirm_label.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sell_confirm_labelMouseClicked(evt);
@@ -729,7 +727,6 @@ public class MainWindow extends javax.swing.JFrame {
 
         sell_return_label1.setBackground(java.awt.Color.white);
         //sell page image : sell_return.png
-        sell_return_label1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ramya\\Documents\\JP\\sell_return.png")); // NOI18N
         sell_return_label1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sell_return_label1MouseClicked(evt);
@@ -754,7 +751,6 @@ public class MainWindow extends javax.swing.JFrame {
         sell_barcodeInput_label.setBackground(java.awt.Color.white);
         sell_barcodeInput_label.setForeground(java.awt.Color.white);
         //sell page image : sell_barcode.png
-        sell_barcodeInput_label.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ramya\\Documents\\JP\\sell_barcode.png")); // NOI18N
         sell_barcodeInput_panel.add(sell_barcodeInput_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 70));
 
         sell_innerWindow_panel.setBackground(new java.awt.Color(251, 251, 251));
@@ -762,32 +758,32 @@ public class MainWindow extends javax.swing.JFrame {
         sell_innerWindow_panel.setForeground(new java.awt.Color(130, 130, 130));
 
         sell_qty_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
-        sell_qty_label.setForeground(new java.awt.Color(130, 130, 130));
+        sell_qty_label.setForeground(new java.awt.Color(51, 51, 51));
         sell_qty_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         sell_qty_label.setText("QTY");
 
         sell_chaseNo_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
-        sell_chaseNo_label.setForeground(new java.awt.Color(130, 130, 130));
+        sell_chaseNo_label.setForeground(new java.awt.Color(51, 51, 51));
         sell_chaseNo_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         sell_chaseNo_label.setText("Chase No");
 
         sell_ornamentName_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
-        sell_ornamentName_label.setForeground(new java.awt.Color(130, 130, 130));
+        sell_ornamentName_label.setForeground(new java.awt.Color(51, 51, 51));
         sell_ornamentName_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         sell_ornamentName_label.setText("Ornament Name");
 
         sell_wt_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
-        sell_wt_label.setForeground(new java.awt.Color(130, 130, 130));
+        sell_wt_label.setForeground(new java.awt.Color(51, 51, 51));
         sell_wt_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         sell_wt_label.setText("WT");
 
         sell_was_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
-        sell_was_label.setForeground(new java.awt.Color(130, 130, 130));
+        sell_was_label.setForeground(new java.awt.Color(51, 51, 51));
         sell_was_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         sell_was_label.setText("WAS");
 
         sell_mc_label.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
-        sell_mc_label.setForeground(new java.awt.Color(130, 130, 130));
+        sell_mc_label.setForeground(new java.awt.Color(51, 51, 51));
         sell_mc_label.setText("MC");
 
         sell_semicolon1_label.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
@@ -836,7 +832,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         sell_verify_checkbox.setBackground(java.awt.Color.white);
         sell_verify_checkbox.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
-        sell_verify_checkbox.setForeground(new java.awt.Color(121, 121, 121));
+        sell_verify_checkbox.setForeground(new java.awt.Color(102, 102, 102));
         sell_verify_checkbox.setText(" Verify  and  Checkout !");
         sell_verify_checkbox.setBorder(null);
         sell_verify_checkbox.setBorderPainted(true);
@@ -870,7 +866,6 @@ public class MainWindow extends javax.swing.JFrame {
         sell_qtyInput_label.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         sell_qtyInput_label.setForeground(java.awt.Color.white);
         //sell page image : sell_qtyInput.png
-        sell_qtyInput_label.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ramya\\Documents\\JP\\sell_qtyInput.png")); // NOI18N
         sell_qtyInput_panel.add(sell_qtyInput_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 50));
 
         javax.swing.GroupLayout sell_innerWindow_panelLayout = new javax.swing.GroupLayout(sell_innerWindow_panel);
@@ -1031,7 +1026,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(sell_ShopNameA_Label1Layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addComponent(sell_innerWindow_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
                         .addComponent(sell_confirm_label))
                     .addGroup(sell_ShopNameA_Label1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1333,7 +1328,6 @@ public class MainWindow extends javax.swing.JFrame {
     private void sell_barcodeInput_textFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sell_barcodeInput_textFieldActionPerformed
 
         try {
-
             //Fetching Operation
             Barcode f = new Barcode();
             rs = f.find(sell_barcodeInput_textField.getText());
@@ -1444,7 +1438,7 @@ public class MainWindow extends javax.swing.JFrame {
      //If the check box is checked in
       if(sell_verify_checkbox.isSelected()){
         
-        //gets quatity inut data
+        //gets quatity input data
         String input = sell_qtyInput_textField.getText();
        
         //checks whether the details are filled
@@ -1482,7 +1476,7 @@ public class MainWindow extends javax.swing.JFrame {
             st.setString(1,s);
             rs = st.executeQuery();
            }catch(Exception ex){
-              JOptionPane.showMessageDialog(null, "Some Errors, Please do try again");
+              JOptionPane.showMessageDialog(null, "Some Errors, Please do check the connection");
            }
            return rs;
        }
@@ -1545,7 +1539,7 @@ public class MainWindow extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "Confirmed Successfully");
                     }
                         
-                        //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is equal to zero then it deletes the data from balance table 
+                    //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is equal to zero then it deletes the data from balance table 
                     else{
                         st = con.prepareStatement("DELETE FROM balance WHERE barcode =?");
                         st.setString(1,s);
@@ -1618,7 +1612,7 @@ public class MainWindow extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "Returned Successfully");
                     }
                         
-                        //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is equal to zero then it deletes the data from balance table 
+                    //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is equal to zero then it deletes the data from balance table 
                     else{
                         st = con.prepareStatement("DELETE FROM balance WHERE barcode =?");
                         st.setString(1,s);
@@ -1630,7 +1624,7 @@ public class MainWindow extends javax.swing.JFrame {
                
            }
            catch(Exception ex){
-               JOptionPane.showMessageDialog(null,ex.getMessage());
+               JOptionPane.showMessageDialog(null,"Some Error in Returning the item");
            }     
           return rs;     
        }      

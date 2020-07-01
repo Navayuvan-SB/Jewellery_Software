@@ -936,7 +936,7 @@
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                                       <Component id="sell_innerWindow_panel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="41" max="32767" attributes="0"/>
+                                      <EmptySpace pref="102" max="32767" attributes="0"/>
                                       <Component id="sell_confirm_label" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
@@ -1024,17 +1024,12 @@
                           <Font name="Ubuntu" size="25" style="0"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="77" green="77" red="7c" type="rgb"/>
+                          <Color blue="33" green="33" red="33" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Welcome,  Please  Scan  OR  Code."/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="sell_refresh_label">
-                      <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="C:\Users\Ramya\Documents\JP\sell_refresh.png"/>
-                        </Property>
-                      </Properties>
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sell_refresh_labelMouseClicked"/>
                       </Events>
@@ -1043,11 +1038,6 @@
                       </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="sell_confirm_label">
-                      <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="C:\Users\Ramya\Documents\JP\sell_confirm.png"/>
-                        </Property>
-                      </Properties>
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sell_confirm_labelMouseClicked"/>
                       </Events>
@@ -1059,9 +1049,6 @@
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="//sell page image : sell_return.png">
                           <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
-                        </Property>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="C:\Users\Ramya\Documents\JP\sell_return.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1113,9 +1100,6 @@
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="//sell page image : sell_barcode.png">
                               <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
-                            </Property>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="C:\Users\Ramya\Documents\JP\sell_barcode.png"/>
                             </Property>
                           </Properties>
                           <Constraints>
@@ -1265,7 +1249,7 @@
                               <Font name="Ubuntu" size="22" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="82" green="82" red="82" type="rgb"/>
+                              <Color blue="33" green="33" red="33" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="text" type="java.lang.String" value="QTY"/>
@@ -1277,7 +1261,7 @@
                               <Font name="Ubuntu" size="22" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="82" green="82" red="82" type="rgb"/>
+                              <Color blue="33" green="33" red="33" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="text" type="java.lang.String" value="Chase No"/>
@@ -1289,7 +1273,7 @@
                               <Font name="Ubuntu" size="22" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="82" green="82" red="82" type="rgb"/>
+                              <Color blue="33" green="33" red="33" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="text" type="java.lang.String" value="Ornament Name"/>
@@ -1301,7 +1285,7 @@
                               <Font name="Ubuntu" size="22" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="82" green="82" red="82" type="rgb"/>
+                              <Color blue="33" green="33" red="33" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="text" type="java.lang.String" value="WT"/>
@@ -1313,7 +1297,7 @@
                               <Font name="Ubuntu" size="22" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="82" green="82" red="82" type="rgb"/>
+                              <Color blue="33" green="33" red="33" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="text" type="java.lang.String" value="WAS"/>
@@ -1325,7 +1309,7 @@
                               <Font name="Ubuntu" size="22" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="82" green="82" red="82" type="rgb"/>
+                              <Color blue="33" green="33" red="33" type="rgb"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="MC"/>
                           </Properties>
@@ -1450,7 +1434,7 @@
                               <Font name="Ubuntu" size="22" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="79" green="79" red="79" type="rgb"/>
+                              <Color blue="66" green="66" red="66" type="rgb"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value=" Verify  and  Checkout !"/>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -1515,9 +1499,6 @@
                                 </Property>
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="//sell page image : sell_qtyInput.png">
                                   <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
-                                </Property>
-                                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                  <Image iconType="2" name="C:\Users\Ramya\Documents\JP\sell_qtyInput.png"/>
                                 </Property>
                               </Properties>
                               <Constraints>
