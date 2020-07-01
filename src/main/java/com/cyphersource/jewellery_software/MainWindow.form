@@ -855,11 +855,11 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
                               <Component id="sell_return_label1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="sell_confirm_label" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="220" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -871,7 +871,7 @@
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace pref="621" max="32767" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Component id="sell_ShopnameJ_Label1" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                       <Component id="sell_ShopnameA_Label2" min="-2" max="-2" attributes="0"/>
@@ -887,15 +887,15 @@
                               <Component id="sell_sellNavigation_label" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                              <Component id="sell_innerWindow_panel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="sell_Welcome_label" min="-2" pref="450" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="393" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                              <Component id="sell_innerWindow_panel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="139" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -920,27 +920,31 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                               <Component id="sell_Welcome_label" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                                       <Component id="sell_barcodeInput_panel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                                       <Component id="sell_refresh_label" min="-2" pref="34" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="sell_innerWindow_panel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="sell_return_label1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="sell_confirm_label" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                      <Component id="sell_innerWindow_panel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace pref="41" max="32767" attributes="0"/>
+                                      <Component id="sell_confirm_label" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="sell_return_label1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="0" pref="117" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1039,6 +1043,11 @@
                       </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="sell_confirm_label">
+                      <Properties>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="2" name="C:\Users\Ramya\Documents\JP\sell_confirm.png"/>
+                        </Property>
+                      </Properties>
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sell_confirm_labelMouseClicked"/>
                       </Events>
@@ -1050,6 +1059,9 @@
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="//sell page image : sell_return.png">
                           <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                        </Property>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="2" name="C:\Users\Ramya\Documents\JP\sell_return.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1076,7 +1088,7 @@
                               <Color blue="fa" green="fa" red="fa" type="rgb"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Ubuntu" size="25" style="1"/>
+                              <Font name="Ubuntu" size="24" style="1"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="0"/>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -1138,18 +1150,17 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="242" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="224" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="sell_was_label" pref="167" max="32767" attributes="0"/>
+                                              <Component id="sell_was_label" pref="158" max="32767" attributes="0"/>
                                               <Component id="sell_mc_label" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="sell_semicolon5_label" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="sell_semicolon6_label" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="sell_semicolon4_label" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="sell_semicolon5_label" max="32767" attributes="0"/>
+                                              <Component id="sell_semicolon6_label" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
@@ -1159,29 +1170,35 @@
                                               <Component id="sell_qty_label" alignment="0" max="32767" attributes="0"/>
                                               <Component id="sell_wt_label" alignment="0" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="sell_semicolon2_label" pref="103" max="32767" attributes="0"/>
                                               <Component id="sell_semicolon3_label" max="32767" attributes="0"/>
                                               <Component id="sell_semicolon1_label" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
+                                      <Component id="sell_semicolon4_label" alignment="1" min="-2" pref="103" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="130" pref="130" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="sell_chaseNoDetail_label" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                      <Component id="sell_ornamentNameDetail_label" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                      <Component id="sell_wtDetail_label" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                      <Component id="sell_wasDetail_label" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                      <Component id="sell_mcDetail_label" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                      <Component id="sell_qtyInput_panel" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+                                      <Component id="sell_mcDetail_label" min="-2" pref="227" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="sell_wasDetail_label" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="sell_wtDetail_label" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="sell_ornamentNameDetail_label" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="sell_chaseNoDetail_label" alignment="1" max="32767" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Component id="sell_qtyInput_panel" min="-2" pref="172" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="55" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace pref="181" max="32767" attributes="0"/>
+                                  <EmptySpace pref="101" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="451" max="32767" attributes="0"/>
-                                  <Component id="sell_verify_checkbox" min="-2" pref="256" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="396" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="sell_verify_checkbox" min="-2" pref="269" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="335" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1214,7 +1231,7 @@
                                       <Component id="sell_ornamentNameDetail_label" alignment="0" max="32767" attributes="0"/>
                                       <Component id="sell_semicolon3_label" alignment="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="sell_wtDetail_label" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                                       <Component id="sell_semicolon4_label" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
@@ -1236,7 +1253,7 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                   <Component id="sell_verify_checkbox" min="-2" pref="31" max="-2" attributes="0"/>
-                                  <EmptySpace pref="44" max="32767" attributes="0"/>
+                                  <EmptySpace pref="45" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1430,7 +1447,7 @@
                               <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Ubuntu" size="20" style="0"/>
+                              <Font name="Ubuntu" size="22" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="79" green="79" red="79" type="rgb"/>
@@ -1499,10 +1516,13 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="//sell page image : sell_qtyInput.png">
                                   <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
                                 </Property>
+                                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                                  <Image iconType="2" name="C:\Users\Ramya\Documents\JP\sell_qtyInput.png"/>
+                                </Property>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="0" y="0" width="140" height="50"/>
+                                  <AbsoluteConstraints x="0" y="0" width="150" height="50"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
