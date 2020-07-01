@@ -279,10 +279,10 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_Reset_jLabel = new javax.swing.JLabel();
         sellPage = new javax.swing.JPanel();
         sell_scroll_scrollpanel = new javax.swing.JScrollPane();
-        sell_wrapper_panel = new javax.swing.JPanel();
-        sell_shopeName_label = new java.awt.Label();
-        sell_shopeName_label2 = new java.awt.Label();
-        sell_shopeName_label1 = new java.awt.Label();
+        sell_ShopNameA_Label1 = new javax.swing.JPanel();
+        sell_ShopnameJ_Label1 = new javax.swing.JLabel();
+        sell_ShopnameA_Label2 = new javax.swing.JLabel();
+        sell_ShopnameJ2_Label3 = new javax.swing.JLabel();
         sell_entryNavigation_label = new java.awt.Label();
         sell_viewNavigation_label = new java.awt.Label();
         sell_sellNavigation_label = new java.awt.Label();
@@ -648,11 +648,11 @@ public class MainWindow extends javax.swing.JFrame {
         entryPage.setLayout(entryPageLayout);
         entryPageLayout.setHorizontalGroup(
             entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(EntryPage_jScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1280, Short.MAX_VALUE)
+            .addComponent(EntryPage_jScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1220, Short.MAX_VALUE)
         );
         entryPageLayout.setVerticalGroup(
             entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(EntryPage_jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1617, Short.MAX_VALUE)
+            .addComponent(EntryPage_jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
 
         EntryPage_jScrollPane.getVerticalScrollBar().setUnitIncrement(16);
@@ -670,24 +670,24 @@ public class MainWindow extends javax.swing.JFrame {
         sell_scroll_scrollpanel.setMinimumSize(new java.awt.Dimension(0, 0));
         sell_scroll_scrollpanel.setPreferredSize(new java.awt.Dimension(1280, 1489));
 
-        sell_wrapper_panel.setBackground(java.awt.Color.white);
-        sell_wrapper_panel.setAlignmentX(0.0F);
-        sell_wrapper_panel.setAlignmentY(0.0F);
-        sell_wrapper_panel.setAutoscrolls(true);
-        sell_wrapper_panel.setDoubleBuffered(false);
-        sell_wrapper_panel.setPreferredSize(new java.awt.Dimension(1280, 1000));
+        sell_ShopNameA_Label1.setBackground(java.awt.Color.white);
+        sell_ShopNameA_Label1.setAlignmentX(0.0F);
+        sell_ShopNameA_Label1.setAlignmentY(0.0F);
+        sell_ShopNameA_Label1.setAutoscrolls(true);
+        sell_ShopNameA_Label1.setDoubleBuffered(false);
+        sell_ShopNameA_Label1.setPreferredSize(new java.awt.Dimension(1280, 1000));
 
-        sell_shopeName_label.setAlignment(java.awt.Label.CENTER);
-        sell_shopeName_label.setFont(new java.awt.Font("Ubuntu", 1, 64)); // NOI18N
-        sell_shopeName_label.setText("J");
+        sell_ShopnameJ_Label1.setBackground(new java.awt.Color(250, 250, 250));
+        sell_ShopnameJ_Label1.setFont(new java.awt.Font("Ubuntu", 1, 64)); // NOI18N
+        sell_ShopnameJ_Label1.setText("J");
 
-        sell_shopeName_label2.setAlignment(java.awt.Label.CENTER);
-        sell_shopeName_label2.setFont(new java.awt.Font("Ubuntu", 1, 64)); // NOI18N
-        sell_shopeName_label2.setText("J");
+        sell_ShopnameA_Label2.setBackground(new java.awt.Color(255, 255, 255));
+        sell_ShopnameA_Label2.setFont(new java.awt.Font("Ubuntu", 1, 38)); // NOI18N
+        sell_ShopnameA_Label2.setText("A");
 
-        sell_shopeName_label1.setAlignment(java.awt.Label.CENTER);
-        sell_shopeName_label1.setFont(new java.awt.Font("Ubuntu", 1, 38)); // NOI18N
-        sell_shopeName_label1.setText("A");
+        sell_ShopnameJ2_Label3.setBackground(new java.awt.Color(255, 255, 255));
+        sell_ShopnameJ2_Label3.setFont(new java.awt.Font("Ubuntu", 1, 64)); // NOI18N
+        sell_ShopnameJ2_Label3.setText("J");
 
         sell_entryNavigation_label.setAlignment(java.awt.Label.CENTER);
         sell_entryNavigation_label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
@@ -746,7 +746,7 @@ public class MainWindow extends javax.swing.JFrame {
                 sell_barcodeInput_textFieldActionPerformed(evt);
             }
         });
-        sell_barcodeInput_panel.add(sell_barcodeInput_textField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 13, 140, 50));
+        sell_barcodeInput_panel.add(sell_barcodeInput_textField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 140, 50));
 
         sell_barcodeInput_label.setBackground(java.awt.Color.white);
         sell_barcodeInput_label.setForeground(java.awt.Color.white);
@@ -932,7 +932,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(sell_ornamentName_label, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
                     .addComponent(sell_ornamentNameDetail_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(sell_semicolon3_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(30, 30, 30)
+                .addGap(26, 26, 26)
                 .addGroup(sell_innerWindow_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sell_wtDetail_label, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sell_semicolon4_label, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -953,82 +953,81 @@ public class MainWindow extends javax.swing.JFrame {
                 .addContainerGap(44, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout sell_wrapper_panelLayout = new javax.swing.GroupLayout(sell_wrapper_panel);
-        sell_wrapper_panel.setLayout(sell_wrapper_panelLayout);
-        sell_wrapper_panelLayout.setHorizontalGroup(
-            sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_wrapper_panelLayout.createSequentialGroup()
+        javax.swing.GroupLayout sell_ShopNameA_Label1Layout = new javax.swing.GroupLayout(sell_ShopNameA_Label1);
+        sell_ShopNameA_Label1.setLayout(sell_ShopNameA_Label1Layout);
+        sell_ShopNameA_Label1Layout.setHorizontalGroup(
+            sell_ShopNameA_Label1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_ShopNameA_Label1Layout.createSequentialGroup()
                 .addGap(180, 180, 180)
                 .addComponent(sell_return_label1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(sell_confirm_label)
                 .addGap(180, 180, 180))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_wrapper_panelLayout.createSequentialGroup()
-                .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_ShopNameA_Label1Layout.createSequentialGroup()
+                .addGroup(sell_ShopNameA_Label1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(sell_ShopNameA_Label1Layout.createSequentialGroup()
                         .addGap(496, 496, 496)
                         .addComponent(sell_barcodeInput_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(188, 188, 188)
                         .addComponent(sell_refresh_label)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_wrapper_panelLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(sell_shopeName_label, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(sell_shopeName_label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_ShopNameA_Label1Layout.createSequentialGroup()
+                        .addContainerGap(621, Short.MAX_VALUE)
+                        .addComponent(sell_ShopnameJ_Label1)
                         .addGap(0, 0, 0)
-                        .addComponent(sell_shopeName_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(216, 216, 216)
+                        .addComponent(sell_ShopnameA_Label2)
+                        .addGap(0, 0, 0)
+                        .addComponent(sell_ShopnameJ2_Label3)
+                        .addGap(192, 192, 192)
                         .addComponent(sell_entryNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
+                        .addGap(43, 43, 43)
                         .addComponent(sell_viewNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(40, 40, 40)
+                .addGap(43, 43, 43)
                 .addComponent(sell_sellNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(120, 120, 120))
-            .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
-                .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(sell_innerWindow_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
-                        .addGap(378, 378, 378)
-                        .addComponent(sell_Welcome_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        sell_wrapper_panelLayout.setVerticalGroup(
-            sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
-                .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
-                                .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(sell_viewNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(sell_entryNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(sell_sellNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(16, 16, 16))
-                            .addComponent(sell_shopeName_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sell_shopeName_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(137, 137, 137)
-                        .addComponent(sell_refresh_label, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(sell_shopeName_label, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(sell_Welcome_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(sell_barcodeInput_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(7, 7, 7)
+            .addGroup(sell_ShopNameA_Label1Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
                 .addComponent(sell_innerWindow_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_ShopNameA_Label1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(sell_Welcome_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(412, 412, 412))
+        );
+        sell_ShopNameA_Label1Layout.setVerticalGroup(
+            sell_ShopNameA_Label1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sell_ShopNameA_Label1Layout.createSequentialGroup()
+                .addGroup(sell_ShopNameA_Label1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(sell_ShopNameA_Label1Layout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addGroup(sell_ShopNameA_Label1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(sell_viewNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sell_entryNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sell_sellNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(sell_ShopNameA_Label1Layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addGroup(sell_ShopNameA_Label1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sell_ShopnameJ_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sell_ShopnameA_Label2)
+                            .addComponent(sell_ShopnameJ2_Label3, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(50, 50, 50)
+                .addComponent(sell_Welcome_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(sell_ShopNameA_Label1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(sell_ShopNameA_Label1Layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(sell_refresh_label, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sell_barcodeInput_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(2, 2, 2)
+                .addComponent(sell_innerWindow_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addGroup(sell_ShopNameA_Label1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(sell_return_label1)
                     .addComponent(sell_confirm_label))
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addGap(0, 196, Short.MAX_VALUE))
         );
 
-        sell_scroll_scrollpanel.setViewportView(sell_wrapper_panel);
+        sell_scroll_scrollpanel.setViewportView(sell_ShopNameA_Label1);
 
         javax.swing.GroupLayout sellPageLayout = new javax.swing.GroupLayout(sellPage);
         sellPage.setLayout(sellPageLayout);
@@ -1275,10 +1274,162 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Entry_OrnamentName_jComboboxActionPerformed
      
-    //Checkbox Validation
+   
+    
+    private void Entry_WAS_TextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Entry_WAS_TextFieldKeyPressed
+        // TODO add your handling code here:
+        if (!(Entry_WAS_TextField.getText().length() <= 5)) {
+            Entry_WAS_TextField.setEditable(false);
+        } else {
+            Entry_WAS_TextField.setEditable(true);
+        }
+        if (evt.getExtendedKeyCode() == KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode() == KeyEvent.VK_DELETE) {
+            Entry_WAS_TextField.setEditable(true);
+        }
+    }//GEN-LAST:event_Entry_WAS_TextFieldKeyPressed
+
+    // Navigation to sell page from entry page
+    private void Entry_NavSell_LabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Entry_NavSell_LabelMouseClicked
+        
+        if (!this.navToSell()){
+            JOptionPane.showMessageDialog(null, "There is a problem in Navigation. Kindly close the software, reopen it and try again!");
+        }
+    }//GEN-LAST:event_Entry_NavSell_LabelMouseClicked
+
+    //KeyPressed Event for Quantity Text Field to enter only numbers
+    private void sell_qtyInput_textFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sell_qtyInput_textFieldKeyPressed
+
+        //gets the key press
+        char c = evt.getKeyChar();
+
+        //Characters not allowed
+        if(Character.isLetter(c)){
+            //Can't type as it is a character
+            sell_qtyInput_textField.setEditable(false);
+            //Error Message
+            JOptionPane.showMessageDialog(null, "Please Enter Number Only");
+        }
+
+        //Number only can be entered
+        else{
+            sell_qtyInput_textField.setEditable(true);
+        }
+
+    }//GEN-LAST:event_sell_qtyInput_textFieldKeyPressed
+
+    //Fetches the Barcode Details after the action is performed
+    private void sell_barcodeInput_textFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sell_barcodeInput_textFieldActionPerformed
+
+        try {
+
+            //Fetching Operation
+            Barcode f = new Barcode();
+            rs = f.find(sell_barcodeInput_textField.getText());
+
+            //Displays the barcode details
+            if(rs.next()){
+                sell_chaseNoDetail_label.setText(rs.getString("chase_no"));
+                sell_ornamentNameDetail_label.setText(rs.getString("ornament_name"));
+                sell_wtDetail_label.setText((rs.getString("weight"))+" g");
+                sell_wasDetail_label.setText((rs.getString("wastage"))+" %");
+                sell_mcDetail_label.setText((rs.getString("making_charge"))+" /G");
+            }
+
+            //Incorrect barcode
+            else{
+                JOptionPane.showMessageDialog(null, "Barcode is incorrect, Please do check it");
+            }
+
+        }
+        catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Re-Scan or Re-Enter the Barcode");
+        }
+
+    }//GEN-LAST:event_sell_barcodeInput_textFieldActionPerformed
+
+    //Returns the entry
+    private void sell_return_label1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sell_return_label1MouseClicked
+
+        try{
+            //Return Operations
+            Return r = new Return();
+            rs = r.find(sell_barcodeInput_textField.getText());
+
+            //Resets the page once it returns the entry
+            sell_barcodeInput_textField.setText("");
+            sell_qtyInput_textField.setText("");
+            sell_chaseNoDetail_label.setText("");
+            sell_ornamentNameDetail_label.setText("");
+            sell_wtDetail_label.setText("");
+            sell_wasDetail_label.setText("");
+            sell_mcDetail_label.setText("");
+
+            sell_verify_checkbox.setSelected(false);
+            sell_confirm_label.setEnabled(false);
+            sell_return_label1.setEnabled(false);
+
+        }
+        catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Try again");
+        }
+    }//GEN-LAST:event_sell_return_label1MouseClicked
+
+    //Confirms the entry
+    private void sell_confirm_labelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sell_confirm_labelMouseClicked
+
+        try{
+            //Confirmation Oprations
+            Confirm c = new Confirm();
+            rs = c.find(sell_barcodeInput_textField.getText());
+
+            //Resets the page once it confirms the entry
+            sell_barcodeInput_textField.setText("");
+            sell_qtyInput_textField.setText("");
+            sell_chaseNoDetail_label.setText("");
+            sell_ornamentNameDetail_label.setText("");
+            sell_wtDetail_label.setText("");
+            sell_wasDetail_label.setText("");
+            sell_mcDetail_label.setText("");
+
+            sell_verify_checkbox.setSelected(false);
+            sell_confirm_label.setEnabled(false);
+            sell_return_label1.setEnabled(false);
+
+        }
+        catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Try again");
+        }
+    }//GEN-LAST:event_sell_confirm_labelMouseClicked
+
+    //Refreshes the Page 
+    private void sell_refresh_labelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sell_refresh_labelMouseClicked
+
+        //Resets the Text Fields and Labels
+        sell_barcodeInput_textField.setText("");
+        sell_qtyInput_textField.setText("");
+        sell_chaseNoDetail_label.setText("");
+        sell_ornamentNameDetail_label.setText("");
+        sell_wtDetail_label.setText("");
+        sell_wasDetail_label.setText("");
+        sell_mcDetail_label.setText("");
+
+        //Unchecks the checkbox and disables the confirm, Return Labels
+        sell_verify_checkbox.setSelected(false);
+        sell_confirm_label.setEnabled(false);
+        sell_return_label1.setEnabled(false);
+
+    }//GEN-LAST:event_sell_refresh_labelMouseClicked
+
+    // Navigation to entry page from sell page
+    private void sell_entryNavigation_labelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sell_entryNavigation_labelMouseClicked
+
+        if (!this.navToEntry()){
+            JOptionPane.showMessageDialog(null, "There is a problem in Navigation. Kindly close the software, reopen it and try again!");
+        }
+    }//GEN-LAST:event_sell_entryNavigation_labelMouseClicked
+
     private void sell_verify_checkboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sell_verify_checkboxActionPerformed
-      
-      //If the check box is checked in
+     //If the check box is checked in
       if(sell_verify_checkbox.isSelected()){
         
         //gets quatity inut data
@@ -1300,166 +1451,12 @@ public class MainWindow extends javax.swing.JFrame {
         
       }
       
-      //If the check box is checked in
+      //If the check box is checked out
       else{    
         sell_confirm_label.setEnabled(false);
         sell_return_label1.setEnabled(false);    
       }
-            
     }//GEN-LAST:event_sell_verify_checkboxActionPerformed
-    
-    //KeyPressed Event for Quantity Text Field to enter only numbers
-    private void sell_qtyInput_textFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sell_qtyInput_textFieldKeyPressed
-        
-        //gets the key press
-        char c = evt.getKeyChar();
-        
-        //Characters not allowed
-        if(Character.isLetter(c)){
-            //Can't type as it is a character
-            sell_qtyInput_textField.setEditable(false);
-            //Error Message
-            JOptionPane.showMessageDialog(null, "Please Enter Number Only");
-        }
-        
-        //Number only can be entered
-        else{
-            sell_qtyInput_textField.setEditable(true);
-        }
-        
-    }//GEN-LAST:event_sell_qtyInput_textFieldKeyPressed
-
-    //Fetches the Barcode Details after the action is performed
-    private void sell_barcodeInput_textFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sell_barcodeInput_textFieldActionPerformed
- 
-           try {
-               
-               //Fetching Operation
-               Barcode f = new Barcode();
-               rs = f.find(sell_barcodeInput_textField.getText());
-                
-               //Displays the barcode details
-               if(rs.next()){
-                    sell_chaseNoDetail_label.setText(rs.getString("chase_no"));
-                    sell_ornamentNameDetail_label.setText(rs.getString("ornament_name"));
-                    sell_wtDetail_label.setText((rs.getString("weight"))+" g");
-                    sell_wasDetail_label.setText((rs.getString("wastage"))+" %");
-                    sell_mcDetail_label.setText((rs.getString("making_charge"))+" /G");
-               }  
-               
-               //Incorrect barcode
-               else{
-                    JOptionPane.showMessageDialog(null, "Barcode is incorrect, Please do check it");
-               }
-            
-          } 
-          catch (SQLException ex) {
-             JOptionPane.showMessageDialog(null, "Re-Scan or Re-Enter the Barcode");
-          }
-        
-    }//GEN-LAST:event_sell_barcodeInput_textFieldActionPerformed
-
-    //Refreshes the Page 
-    private void sell_refresh_labelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sell_refresh_labelMouseClicked
-        
-        //Resets the Text Fields and Labels
-        sell_barcodeInput_textField.setText("");
-        sell_qtyInput_textField.setText("");
-        sell_chaseNoDetail_label.setText("");
-        sell_ornamentNameDetail_label.setText("");
-        sell_wtDetail_label.setText("");
-        sell_wasDetail_label.setText("");
-        sell_mcDetail_label.setText("");
-        
-        //Unchecks the checkbox and disables the confirm, Return Labels
-        sell_verify_checkbox.setSelected(false);
-        sell_confirm_label.setEnabled(false);
-        sell_return_label1.setEnabled(false);
-        
-    }//GEN-LAST:event_sell_refresh_labelMouseClicked
-
-    //Returns the entry
-    private void sell_return_label1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sell_return_label1MouseClicked
-        
-        try{
-        //Return Operations
-        Return r = new Return();
-        rs = r.find(sell_barcodeInput_textField.getText());
-        
-        //Resets the page once it returns the entry
-        sell_barcodeInput_textField.setText("");
-        sell_qtyInput_textField.setText("");
-        sell_chaseNoDetail_label.setText("");
-        sell_ornamentNameDetail_label.setText("");
-        sell_wtDetail_label.setText("");
-        sell_wasDetail_label.setText("");
-        sell_mcDetail_label.setText("");
-        
-        sell_verify_checkbox.setSelected(false);
-        sell_confirm_label.setEnabled(false);
-        sell_return_label1.setEnabled(false);
-        
-        }
-        catch (Exception ex) {
-             JOptionPane.showMessageDialog(null, "Try again");
-          }
-    }//GEN-LAST:event_sell_return_label1MouseClicked
-
-    
-    //Confirms the entry
-    private void sell_confirm_labelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sell_confirm_labelMouseClicked
-        
-        try{
-        //Confirmation Oprations
-        Confirm c = new Confirm();
-        rs = c.find(sell_barcodeInput_textField.getText());
-        
-        //Resets the page once it confirms the entry
-        sell_barcodeInput_textField.setText("");
-        sell_qtyInput_textField.setText("");
-        sell_chaseNoDetail_label.setText("");
-        sell_ornamentNameDetail_label.setText("");
-        sell_wtDetail_label.setText("");
-        sell_wasDetail_label.setText("");
-        sell_mcDetail_label.setText("");
-        
-        sell_verify_checkbox.setSelected(false);
-        sell_confirm_label.setEnabled(false);
-        sell_return_label1.setEnabled(false);
-        
-        }
-        catch (Exception ex) {
-             JOptionPane.showMessageDialog(null, "Try again");
-          }
-    }//GEN-LAST:event_sell_confirm_labelMouseClicked
-
-    private void Entry_WAS_TextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Entry_WAS_TextFieldKeyPressed
-        // TODO add your handling code here:
-        if (!(Entry_WAS_TextField.getText().length() <= 5)) {
-            Entry_WAS_TextField.setEditable(false);
-        } else {
-            Entry_WAS_TextField.setEditable(true);
-        }
-        if (evt.getExtendedKeyCode() == KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode() == KeyEvent.VK_DELETE) {
-            Entry_WAS_TextField.setEditable(true);
-        }
-    }//GEN-LAST:event_Entry_WAS_TextFieldKeyPressed
-
-    // Navigation to sell page from entry page
-    private void Entry_NavSell_LabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Entry_NavSell_LabelMouseClicked
-        
-        if (!this.navToSell()){
-            JOptionPane.showMessageDialog(null, "There is a problem in Navigation. Kindly close the software, reopen it and try again!");
-        }
-    }//GEN-LAST:event_Entry_NavSell_LabelMouseClicked
-
-    // Navigation to entry page from sell page
-    private void sell_entryNavigation_labelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sell_entryNavigation_labelMouseClicked
-        
-        if (!this.navToEntry()){
-            JOptionPane.showMessageDialog(null, "There is a problem in Navigation. Kindly close the software, reopen it and try again!");
-        }
-    }//GEN-LAST:event_sell_entryNavigation_labelMouseClicked
 
     //Barcode Fetching Operation
     public class Barcode{
@@ -1621,7 +1618,7 @@ public class MainWindow extends javax.swing.JFrame {
                
            }
            catch(Exception ex){
-               JOptionPane.showMessageDialog(null,"Some error in returning the item");
+               JOptionPane.showMessageDialog(null,ex.getMessage());
            }     
           return rs;     
        }      
@@ -1752,6 +1749,10 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JPanel entryPage;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel sellPage;
+    private javax.swing.JPanel sell_ShopNameA_Label1;
+    private javax.swing.JLabel sell_ShopnameA_Label2;
+    private javax.swing.JLabel sell_ShopnameJ2_Label3;
+    private javax.swing.JLabel sell_ShopnameJ_Label1;
     private java.awt.Label sell_Welcome_label;
     private javax.swing.JLabel sell_barcodeInput_label;
     private javax.swing.JPanel sell_barcodeInput_panel;
@@ -1779,14 +1780,10 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel sell_semicolon4_label;
     private javax.swing.JLabel sell_semicolon5_label;
     private javax.swing.JLabel sell_semicolon6_label;
-    private java.awt.Label sell_shopeName_label;
-    private java.awt.Label sell_shopeName_label1;
-    private java.awt.Label sell_shopeName_label2;
     private javax.swing.JCheckBox sell_verify_checkbox;
     private java.awt.Label sell_viewNavigation_label;
     private javax.swing.JLabel sell_wasDetail_label;
     private javax.swing.JLabel sell_was_label;
-    private javax.swing.JPanel sell_wrapper_panel;
     private javax.swing.JLabel sell_wtDetail_label;
     private javax.swing.JLabel sell_wt_label;
     // End of variables declaration//GEN-END:variables
