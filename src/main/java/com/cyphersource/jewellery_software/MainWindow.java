@@ -33,14 +33,23 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 
+// Packages to set ImagePath  
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileSystemView;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+
 
 
 public class MainWindow extends javax.swing.JFrame {
 
-   
+    // imagePath
+    String defaultPath = null;
+    
     CardLayout mainLayout;
     
-    Connection con=null,con1=null,con2=null;
+    Connection con=null;
     PreparedStatement pat = null;
     Statement stmt=null;
     ResultSet rs = null;
@@ -75,8 +84,25 @@ public class MainWindow extends javax.swing.JFrame {
 
     public MainWindow() {
        
-
+        // ImagePath
+        try {
+            JFileChooser fr = new JFileChooser();
+            FileSystemView fw = fr.getFileSystemView();
+            System.out.println(fw.getDefaultDirectory());
+            String dir_path = fw.getDefaultDirectory().toString();
+            defaultPath = dir_path + "\\JP";
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Oops! Problem in getting default directory");
+        }
         initComponents();
+        
+        // Database Connection
+        try{
+           con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC", "root", ""); 
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Oops..! Please turn on the database");
+        }
 
         // Initialize MainLayout
         mainLayout = (CardLayout) jLayeredPane1.getLayout();
@@ -87,10 +113,10 @@ public class MainWindow extends javax.swing.JFrame {
 
 //      Initialize Image Icon
         // view page print image: view_print.jpg 
-        imageIcon = new ImageIcon("C:\\Users\\Logida\\Documents\\JP\\view_print.jpg");
+        imageIcon = new ImageIcon(defaultPath+"\\view_print.jpg");
         
         // view page print image: view_return.jpg 
-        returnIcon= new ImageIcon("C:\\Users\\Logida\\Documents\\JP\\view_return.png");
+        returnIcon= new ImageIcon(defaultPath+"\\view_return.png");
  
 
 //      Override Cell render of Image column
@@ -674,7 +700,7 @@ public class MainWindow extends javax.swing.JFrame {
         view_overall_datelimit_panel.add(view_overall_to_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, 30));
 
         //view page images : view_datelimiticon.png
-        view_overall_datelimitIcon_label.setIcon(new javax.swing.ImageIcon("C:\\Users\\Logida\\Documents\\JP\\view_datelimiticon.png")); // NOI18N
+        view_overall_datelimitIcon_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\view_datelimiticon.png")); // NOI18N
         view_overall_datelimit_panel.add(view_overall_datelimitIcon_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 314, -1));
 
         javax.swing.GroupLayout view_overallCont_panelLayout = new javax.swing.GroupLayout(view_overallCont_panel);
@@ -854,7 +880,7 @@ public class MainWindow extends javax.swing.JFrame {
         view_sold_datelimit_panel.add(view_sold_to_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, 30));
 
         //view page images : view_datelimiticon.png
-        view_sold_datelimitIcon_label.setIcon(new javax.swing.ImageIcon("C:\\Users\\Logida\\Documents\\JP\\view_datelimiticon.png")); // NOI18N
+        view_sold_datelimitIcon_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\view_datelimiticon.png")); // NOI18N
         view_sold_datelimit_panel.add(view_sold_datelimitIcon_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 314, -1));
 
         javax.swing.GroupLayout view_soldCont_panelLayout = new javax.swing.GroupLayout(view_soldCont_panel);
@@ -1033,7 +1059,7 @@ public class MainWindow extends javax.swing.JFrame {
         view_balance_datelimit_panel.add(view_balance_to_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, 30));
 
         //view page images : view_datelimiticon.png
-        view_balance_datelimitIcon_label.setIcon(new javax.swing.ImageIcon("C:\\Users\\Logida\\Documents\\JP\\view_datelimiticon.png")); // NOI18N
+        view_balance_datelimitIcon_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\view_datelimiticon.png")); // NOI18N
         view_balance_datelimit_panel.add(view_balance_datelimitIcon_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 314, -1));
 
         javax.swing.GroupLayout view_balanceCont_panelLayout = new javax.swing.GroupLayout(view_balanceCont_panel);
@@ -1211,7 +1237,7 @@ public class MainWindow extends javax.swing.JFrame {
         view_return_datelimit_panel.add(view_return_to_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, 30));
 
         //view page images : view_datelimiticon.png
-        view_return_datelimitIcon_label.setIcon(new javax.swing.ImageIcon("C:\\Users\\Logida\\Documents\\JP\\view_datelimiticon.png")); // NOI18N
+        view_return_datelimitIcon_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\view_datelimiticon.png")); // NOI18N
         view_return_datelimit_panel.add(view_return_datelimitIcon_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 314, -1));
 
         javax.swing.GroupLayout view_returnCont_panelLayout = new javax.swing.GroupLayout(view_returnCont_panel);
@@ -1389,7 +1415,7 @@ public class MainWindow extends javax.swing.JFrame {
                     String sql="SELECT date, chase_no, ornament_name, quality,\n" +
                     "weight,buy FROM return_table\n" +
                     "WHERE ornament_type =" + "'"+  view_return_ornament_type_data + "'";
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    
                     pat=con.prepareStatement(sql);
                     rs=pat.executeQuery();
                     DefaultTableModel tm=(DefaultTableModel)view_returnTable_table.getModel();
@@ -1402,15 +1428,15 @@ public class MainWindow extends javax.swing.JFrame {
 
                 }
                 catch(Exception e){
-                       JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                       
                 }
 
                 try{
 
                     //Getting total weight of items acc. to selOrnament.
                     String sql1="SELECT SUM(weight) FROM return_table WHERE ornament_type = " + "'"+  view_return_ornament_type_data + "'";
-                    con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                    PreparedStatement pat1=con1.prepareStatement(sql1);
+                    
+                    PreparedStatement pat1=con.prepareStatement(sql1);
                     ResultSet rs1=pat1.executeQuery();
                     while(rs1.next()){
                         if(rs1.getString(1)==null){
@@ -1423,29 +1449,27 @@ public class MainWindow extends javax.swing.JFrame {
 
                 }
                 catch(Exception e){
-                       JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                       
                 }
 
                 try{
 
                     //Getting total number of items acc. to selOrnament.
                     String sql2="SELECT COUNT(id) FROM return_table WHERE ornament_type = " + "'"+  view_return_ornament_type_data + "'";
-                    con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                    PreparedStatement pat2=con2.prepareStatement(sql2);
+                    
+                    PreparedStatement pat2=con.prepareStatement(sql2);
                     ResultSet rs2=pat2.executeQuery();
                     while(rs2.next()){
                         view_return_totItemInp_label.setText(rs2.getString(1));
                     }
                 }
                 catch(Exception e){
-                     JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                     
                 }
-                con.close();
-                con1.close();
-                con2.close();
+                
             }
             catch(Exception e){
-                 JOptionPane.showMessageDialog(null,"Oops..! Please turn on the database");
+                 
             }
             view_return_combined_display();
         }
@@ -1497,7 +1521,7 @@ public class MainWindow extends javax.swing.JFrame {
                         //Getting table values acc. to selOrnament
                         String sql="SELECT date, chase_no, ornament_name, weight, quantity, barcode FROM balance\n" +
                         "WHERE ornament_type =" + "'"+  view_balance_ornament_type_data + "'";
-                        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                        
                         pat=con.prepareStatement(sql);
                         rs=pat.executeQuery();
                         DefaultTableModel tm=(DefaultTableModel)view_balanceTable_table.getModel();
@@ -1510,15 +1534,15 @@ public class MainWindow extends javax.swing.JFrame {
 
                     } 
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                        
                     }
 
                     try{
 
                        //Getting total weight of items acc. to selOrnament.
                        String sql1="SELECT SUM(weight) FROM balance WHERE ornament_type = " + "'"+ view_balance_ornament_type_data + "'";
-                       con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                       PreparedStatement pat1=con1.prepareStatement(sql1);
+                       
+                       PreparedStatement pat1=con.prepareStatement(sql1);
                        ResultSet rs1=pat1.executeQuery();
                        while(rs1.next()){
                             if(rs1.getString(1)==null){
@@ -1531,29 +1555,27 @@ public class MainWindow extends javax.swing.JFrame {
                       
                     } 
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                        
                     } 
 
                     try{
 
                        //Getting total number of items acc. to selOrnament.
                        String sql2="SELECT COUNT(id) FROM balance WHERE ornament_type = " + "'"+  view_balance_ornament_type_data + "'";
-                       con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                       PreparedStatement pat2=con2.prepareStatement(sql2);
+                       
+                       PreparedStatement pat2=con.prepareStatement(sql2);
                        ResultSet rs2=pat2.executeQuery();
                        while(rs2.next()){
                            view_balance_totItemInp_label.setText(rs2.getString(1)); 
                        }
                     } 
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                        
                     }
-                    con.close();
-                    con1.close();
-                    con2.close();
+                    
                 }
                 catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Oops..! Please turn on the database");
+                        
                 }
               view_balance_combined_display();
             }
@@ -1605,7 +1627,7 @@ public class MainWindow extends javax.swing.JFrame {
                         //Getting table values acc. to selOrnament
                         String sql="SELECT date, chase_no, ornament_name, weight, quantity, barcode FROM sold\n" +
                         "WHERE ornament_type =" + "'"+  view_sold_ornament_type_data  + "'";
-                        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                        
                         pat=con.prepareStatement(sql);
                         rs=pat.executeQuery();
                         DefaultTableModel tm=(DefaultTableModel)view_soldTable_table.getModel();
@@ -1618,15 +1640,15 @@ public class MainWindow extends javax.swing.JFrame {
 
                     } 
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                        
                     }
 
                     try{
 
                        //Getting total weight of items acc. to selOrnament.
                        String sql1="SELECT SUM(weight) FROM sold WHERE ornament_type = " + "'"+  view_sold_ornament_type_data  + "'";
-                       con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                       PreparedStatement pat1=con1.prepareStatement(sql1);
+                       
+                       PreparedStatement pat1=con.prepareStatement(sql1);
                        ResultSet rs1=pat1.executeQuery();
                        while(rs1.next()){
                             if(rs1.getString(1)==null){
@@ -1639,29 +1661,27 @@ public class MainWindow extends javax.swing.JFrame {
                       
                     } 
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                        
                     } 
 
                     try{
 
                        //Getting total number of items acc. to selOrnament.
                        String sql2="SELECT COUNT(id) FROM sold WHERE ornament_type = " + "'"+  view_sold_ornament_type_data  + "'";
-                       con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                       PreparedStatement pat2=con2.prepareStatement(sql2);
+                       
+                       PreparedStatement pat2=con.prepareStatement(sql2);
                        ResultSet rs2=pat2.executeQuery();
                        while(rs2.next()){
                            view_sold_totItemInp_label.setText(rs2.getString(1)); 
                        }
                     } 
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                        
                     }
-                    con.close();
-                    con1.close();
-                    con2.close();
+                    
                 }
                 catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Oops..! Please turn on the database");
+                        
                 }
                 view_sold_combined_display();
             }
@@ -1712,7 +1732,7 @@ public class MainWindow extends javax.swing.JFrame {
                         String sql="SELECT date, chase_no, ornament_type, ornament_name, quality,\n" +
                         "making_charge, weight, wastage, quantity,buy, barcode, status FROM overall\n" +
                         "WHERE ornament_type =" + "'"+  view_overall_ornament_type_data + "'";
-                        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                        
                         pat=con.prepareStatement(sql);
                         rs=pat.executeQuery();
                         DefaultTableModel tm=(DefaultTableModel)view_overallTable_table.getModel();
@@ -1725,15 +1745,15 @@ public class MainWindow extends javax.swing.JFrame {
 
                     } 
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                        
                     }
 
                     try{
 
                        //Getting total weight of items acc. to selOrnament.
                        String sql1="SELECT SUM(weight) FROM overall WHERE ornament_type = " + "'"+ view_overall_ornament_type_data + "'";
-                       con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                       PreparedStatement pat1=con1.prepareStatement(sql1);
+                       
+                       PreparedStatement pat1=con.prepareStatement(sql1);
                        ResultSet rs1=pat1.executeQuery();
                        while(rs1.next()){
                             if(rs1.getString(1)==null){
@@ -1746,29 +1766,27 @@ public class MainWindow extends javax.swing.JFrame {
                       
                     } 
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                        
                     } 
 
                     try{
 
                        //Getting total number of items acc. to selOrnament.
                        String sql2="SELECT COUNT(id) FROM overall WHERE ornament_type = " + "'"+  view_overall_ornament_type_data + "'";
-                       con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                       PreparedStatement pat2=con2.prepareStatement(sql2);
+                       
+                       PreparedStatement pat2=con.prepareStatement(sql2);
                        ResultSet rs2=pat2.executeQuery();
                        while(rs2.next()){
                            view_overall_totItemInp_label.setText(rs2.getString(1)); 
                        }
                     } 
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                        
                     }
-                    con.close();
-                    con1.close();
-                    con2.close();
+                    
                 }
                 catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Oops..! Please turn on the database");
+                        
                 }
                 view_overall_combined_display();
             }
@@ -1940,7 +1958,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void  view_overall_dropdown_display(){  
         try{
             String sql="SELECT type FROM Ornament_type";
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+            
             stmt=con.createStatement();
             rs=stmt.executeQuery(sql);
             while(rs.next()){
@@ -1948,14 +1966,14 @@ public class MainWindow extends javax.swing.JFrame {
             }
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(null,"Couldn't read data. Kindly check your database connection.");
+            
         }  
     }
     
     private void view_sold_dropdown_display(){  
         try{
             String sql="SELECT type FROM Ornament_type";
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+            
             stmt=con.createStatement();
             rs=stmt.executeQuery(sql);
             while(rs.next()){
@@ -1963,14 +1981,14 @@ public class MainWindow extends javax.swing.JFrame {
             }
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(null,"Couldn't read data. Kindly check your database connection.");
+            
         }  
     }
      
     private void view_balance_dropdown_display(){  
         try{
             String sql="SELECT type FROM Ornament_type";
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+            
             stmt=con.createStatement();
             rs=stmt.executeQuery(sql);
             while(rs.next()){
@@ -1978,14 +1996,14 @@ public class MainWindow extends javax.swing.JFrame {
             }
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(null,"Couldn't read data. Kindly check your database connection.");
+            
         }  
     }
     
     private void view_return_dropdown_display(){
          try{
             String sql="SELECT type FROM Ornament_type";
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+            
             stmt=con.createStatement();
             rs=stmt.executeQuery(sql);
             while(rs.next()){
@@ -1993,7 +2011,7 @@ public class MainWindow extends javax.swing.JFrame {
             }
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(null,"Couldn't read data. Kindly check your database connection.");
+            
         } 
     }
     
@@ -2011,7 +2029,7 @@ public class MainWindow extends javax.swing.JFrame {
                 try{
                     //Getting default total weight of items.
                     String sql1="SELECT SUM(weight) FROM overall WHERE date >=" + "'"+  view_overall_from_date + "'  AND date <= " + "'"+  view_overall_to_date + "'";
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    
                     PreparedStatement pat1=con.prepareStatement(sql1);
                     ResultSet rs1=pat1.executeQuery();
                     while(rs1.next()){
@@ -2025,15 +2043,15 @@ public class MainWindow extends javax.swing.JFrame {
                     
                 }
                 catch(Exception e){
-                    JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                    
                 }
                 
                 try{
                     //Getting default overall table values. 
                     String sql2="SELECT date, chase_no, ornament_type, ornament_name, quality,\n" +
                    "making_charge, weight, wastage, quantity,buy, barcode, status FROM overall WHERE date >=" + "'"+  view_overall_from_date + "'  AND date <= " + "'"+  view_overall_to_date + "'";
-                    con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                    PreparedStatement pat2=con1.prepareStatement(sql2);
+                    
+                    PreparedStatement pat2=con.prepareStatement(sql2);
                     ResultSet rs2=pat2.executeQuery();
                     
                     DefaultTableModel tm=(DefaultTableModel)view_overallTable_table.getModel();
@@ -2045,32 +2063,30 @@ public class MainWindow extends javax.swing.JFrame {
                     }
                 }
                 catch(Exception e){
-                    JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                    
                 }
                 
                 try{
                     //Getting default total number of items.
                     String sql3="SELECT COUNT(id) FROM overall WHERE date >=" + "'"+  view_overall_from_date + "'  AND date <= " + "'"+  view_overall_to_date + "'";
-                    con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                    PreparedStatement pat3=con2.prepareStatement(sql3);
+                    
+                    PreparedStatement pat3=con.prepareStatement(sql3);
                     ResultSet rs3=pat3.executeQuery();
                     while(rs3.next()){
                         view_overall_totItemInp_label.setText(rs3.getString(1)); 
                     }
                 }
                 catch(Exception e){
-                    JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                    
                 }
-                con.close(); 
-                con1.close(); 
-                con2.close();
+                
             }
             else{
                 JOptionPane.showMessageDialog(null,"Please check...From date is greater than To date");
             }
         }
         catch(Exception e){
-           JOptionPane.showMessageDialog(null,"Oops..! Please turn on the database");
+           
         }
         
     }
@@ -2092,7 +2108,7 @@ public class MainWindow extends javax.swing.JFrame {
                         try{
                             //Getting default total weight of items.
                             String sql1="SELECT SUM(weight) FROM sold WHERE date >=" + "'"+  view_sold_from_date  + "'  AND date <= " + "'"+ view_sold_to_date + "'";
-                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                            
                             PreparedStatement pat1=con.prepareStatement(sql1);
                             ResultSet rs1=pat1.executeQuery();
                             while(rs1.next()){
@@ -2106,14 +2122,14 @@ public class MainWindow extends javax.swing.JFrame {
 
                         }
                         catch(Exception e){
-                            JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                            
                         }
 
                         try{
                             //Getting default sold table values. 
                             String sql2="SELECT * FROM sold WHERE date >=" + "'"+  view_sold_from_date  + "'  AND date <= " + "'"+  view_sold_to_date+ "'";
-                            con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                            PreparedStatement pat2=con1.prepareStatement(sql2);
+                            
+                            PreparedStatement pat2=con.prepareStatement(sql2);
                             ResultSet rs2=pat2.executeQuery();
                             ResultSetMetaData rsmd = rs2.getMetaData();
                             rs2.last();
@@ -2132,32 +2148,30 @@ public class MainWindow extends javax.swing.JFrame {
                             }
                         }
                         catch(Exception e){
-                            JOptionPane.showMessageDialog(null,e);
+                            //JOptionPane.showMessageDialog(null,e);
                         }
 
                         try{
                             //Getting default total number of items.
                             String sql3="SELECT COUNT(id) FROM sold WHERE date >=" + "'"+  view_sold_from_date  + "'  AND date <= " + "'"+  view_sold_to_date + "'";
-                            con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                            PreparedStatement pat3=con2.prepareStatement(sql3);
+                            
+                            PreparedStatement pat3=con.prepareStatement(sql3);
                             ResultSet rs3=pat3.executeQuery();
                             while(rs3.next()){
                                 view_sold_totItemInp_label.setText(rs3.getString(1)); 
                             }
                         }
                         catch(Exception e){
-                            JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                            
                         }
-                        con.close(); 
-                        con1.close(); 
-                        con2.close(); 
+                         
                     }
                     else{
                         JOptionPane.showMessageDialog(null,"Please check...From date is greater than To date");
                     }
                 }
                 catch(Exception e){
-                      JOptionPane.showMessageDialog(null,"Oops..! Please turn on the database");
+                      
                 }
             }
             else{
@@ -2185,7 +2199,7 @@ public class MainWindow extends javax.swing.JFrame {
                     try{
                         //Getting default total weight of items.
                         String sql1="SELECT SUM(weight) FROM balance WHERE date >=" + "'"+  view_balance_from_date + "'  AND date <= " + "'"+  view_balance_to_date + "'";
-                        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                        
                         PreparedStatement pat1=con.prepareStatement(sql1);
                         ResultSet rs1=pat1.executeQuery();
                         while(rs1.next()){
@@ -2199,14 +2213,14 @@ public class MainWindow extends javax.swing.JFrame {
 
                     }
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                        
                     }
 
                     try{
                         //Getting default balance table values. 
                         String sql2="SELECT date, chase_no, ornament_name, weight, quantity, barcode FROM balance WHERE date >=" + "'"+  view_balance_from_date + "'  AND date <= " + "'"+  view_balance_to_date + "'";
-                        con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                        PreparedStatement pat2=con1.prepareStatement(sql2);
+                        
+                        PreparedStatement pat2=con.prepareStatement(sql2);
                         ResultSet rs2=pat2.executeQuery();
                         DefaultTableModel tm=(DefaultTableModel)view_balanceTable_table.getModel();
                         tm.setRowCount(0);
@@ -2217,32 +2231,30 @@ public class MainWindow extends javax.swing.JFrame {
                         }
                     }
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                        
                     }
 
                     try{
                         //Getting default total number of items.
                         String sql3="SELECT COUNT(id) FROM balance WHERE date >=" + "'"+  view_balance_from_date + "'  AND date <= " + "'"+  view_balance_to_date + "'";
-                        con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                        PreparedStatement pat3=con2.prepareStatement(sql3);
+                        
+                        PreparedStatement pat3=con.prepareStatement(sql3);
                         ResultSet rs3=pat3.executeQuery();
                         while(rs3.next()){
                             view_balance_totItemInp_label.setText(rs3.getString(1)); 
                         }
                     }
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                        
                     }
-                    con.close(); 
-                    con1.close(); 
-                    con2.close(); 
+                    
                 }
                 else{
                     JOptionPane.showMessageDialog(null,"Please check...From date is greater than To date");
                 }
             }
             catch(Exception e){
-                 JOptionPane.showMessageDialog(null,"Oops..! Please turn on the database");
+                 
             }
         }
     }
@@ -2259,7 +2271,7 @@ public class MainWindow extends javax.swing.JFrame {
                 try{
                     //Getting default total weight of items.
                     String sql1="SELECT SUM(weight) FROM return_table WHERE date >=" + "'"+  view_return_from_date + "'  AND date <= " + "'"+  view_return_to_date + "'";
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    
                     PreparedStatement pat1=con.prepareStatement(sql1);
                     ResultSet rs1=pat1.executeQuery();
                     while(rs1.next()){
@@ -2273,14 +2285,14 @@ public class MainWindow extends javax.swing.JFrame {
                     
                 }
                 catch(Exception e){
-                    JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                    
                 }
                 
                 try{
                     //Getting default return table values. 
                     String sql2="SELECT date, chase_no, ornament_name, quality, weight, buy FROM return_table WHERE date >=" + "'"+  view_return_from_date + "'  AND date <= " + "'"+  view_return_to_date + "'";
-                    con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                    PreparedStatement pat2=con1.prepareStatement(sql2);
+                    
+                    PreparedStatement pat2=con.prepareStatement(sql2);
                     ResultSet rs2=pat2.executeQuery();
                     DefaultTableModel tm=(DefaultTableModel)view_returnTable_table.getModel();
                     tm.setRowCount(0);
@@ -2291,32 +2303,30 @@ public class MainWindow extends javax.swing.JFrame {
                     }
                 }
                 catch(Exception e){
-                    JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                    
                 }
                 
                 try{
                     //Getting default total number of items.
                     String sql3="SELECT COUNT(id) FROM return_table WHERE date >=" + "'"+  view_return_from_date + "'  AND date <= " + "'"+  view_return_to_date + "'";
-                    con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                    PreparedStatement pat3=con2.prepareStatement(sql3);
+                    
+                    PreparedStatement pat3=con.prepareStatement(sql3);
                     ResultSet rs3=pat3.executeQuery();
                     while(rs3.next()){
                         view_return_totItemInp_label.setText(rs3.getString(1)); 
                     }
                 }
                 catch(Exception e){
-                    JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                    
                 }
-                con.close(); 
-                con1.close(); 
-                con2.close(); 
+                
             }
             else{
                      JOptionPane.showMessageDialog(null,"Please check...From date is greater than To date");
             }
         }
         catch(Exception e){
-             JOptionPane.showMessageDialog(null,"Oops..! Please turn on the database");
+             
         }
         
     }
@@ -2337,7 +2347,7 @@ public class MainWindow extends javax.swing.JFrame {
                         
                         //Displaying table according to dates
                         String sql1="SELECT * FROM overall WHERE date >=" + "'"+  view_overall_from_date + "'  AND date <= " + "'"+  view_overall_to_date + "'";
-                        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                        
                         PreparedStatement pat1=con.prepareStatement(sql1);
                         ResultSet rs1=pat1.executeQuery();
                         DefaultTableModel tm=(DefaultTableModel)view_overallTable_table.getModel();
@@ -2349,14 +2359,14 @@ public class MainWindow extends javax.swing.JFrame {
                         } 
                     }
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                        
                     }
                     try{
                         
                         //Getting total weight of items acc. to dates.
                         String sql1="SELECT SUM(weight) FROM overall WHERE date >=" + "'"+  view_overall_from_date+ "'  AND date <= " + "'"+  view_overall_to_date + "'";
-                        con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                        PreparedStatement pat1=con1.prepareStatement(sql1);
+                        
+                        PreparedStatement pat1=con.prepareStatement(sql1);
                         ResultSet rs1=pat1.executeQuery();
                         while(rs1.next()){
                              if(rs1.getString(1)==null){
@@ -2368,22 +2378,22 @@ public class MainWindow extends javax.swing.JFrame {
                         }  
                     }
                     catch(Exception e){
-                         JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                         
                     }
                     
                     try{
                         
                         //Getting total number of items acc. to dates.
                         String sql2="SELECT COUNT(id) FROM overall WHERE date >=" + "'"+ view_overall_from_date + "'  AND date <= " + "'"+  view_overall_to_date + "'";
-                        con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                        PreparedStatement pat2=con2.prepareStatement(sql2);
+                        
+                        PreparedStatement pat2=con.prepareStatement(sql2);
                         ResultSet rs2=pat2.executeQuery();
                         while(rs2.next()){
                             view_overall_totItemInp_label.setText(rs2.getString(1)); 
                         }
                     } 
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                        
                     }
                 }
                 else{
@@ -2391,7 +2401,7 @@ public class MainWindow extends javax.swing.JFrame {
                 }
             } 
             catch(Exception e){
-                   JOptionPane.showMessageDialog(null,"Oops..! Please turn on the database");
+                   
             }
     
         }
@@ -2417,7 +2427,7 @@ public class MainWindow extends javax.swing.JFrame {
                         
                         //Displaying table according to dates
                         String sql1="SELECT * FROM sold WHERE date >=" + "'"+  view_sold_from_date+ "'  AND date <= " + "'"+  view_sold_to_date + "'";
-                        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                        
                         PreparedStatement pat1=con.prepareStatement(sql1);
                         ResultSet rs1=pat1.executeQuery();
                         DefaultTableModel tm=(DefaultTableModel)view_soldTable_table.getModel();
@@ -2429,14 +2439,14 @@ public class MainWindow extends javax.swing.JFrame {
                         } 
                     }
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                        
                     }
                     try{
                         
                         //Getting total weight of items acc. to dates.
                         String sql1="SELECT SUM(weight) FROM sold WHERE date >=" + "'"+  view_sold_from_date+ "'  AND date <= " + "'"+  view_sold_to_date + "'";
-                        con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                        PreparedStatement pat1=con1.prepareStatement(sql1);
+                        
+                        PreparedStatement pat1=con.prepareStatement(sql1);
                         ResultSet rs1=pat1.executeQuery();
                         while(rs1.next()){
                              if(rs1.getString(1)==null){
@@ -2448,22 +2458,22 @@ public class MainWindow extends javax.swing.JFrame {
                         }  
                     }
                     catch(Exception e){
-                         JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                         
                     }
                     
                     try{
                         
                         //Getting total number of items acc. to dates.
                         String sql2="SELECT COUNT(id) FROM sold WHERE date >=" + "'"+  view_sold_from_date + "'  AND date <= " + "'"+ view_sold_to_date+ "'";
-                        con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                        PreparedStatement pat2=con2.prepareStatement(sql2);
+                        
+                        PreparedStatement pat2=con.prepareStatement(sql2);
                         ResultSet rs2=pat2.executeQuery();
                         while(rs2.next()){
                             view_sold_totItemInp_label.setText(rs2.getString(1)); 
                         }
                     } 
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                        
                     }
                 }
                 else{
@@ -2471,7 +2481,7 @@ public class MainWindow extends javax.swing.JFrame {
                 }
             }
             catch(Exception e){
-                JOptionPane.showMessageDialog(null,"Oops..! Please turn on the database");
+                
             }
         }
          view_sold_combined_display();
@@ -2495,7 +2505,7 @@ public class MainWindow extends javax.swing.JFrame {
                         
                         //Displaying table according to dates
                         String sql1="SELECT * FROM balance WHERE date >=" + "'"+  view_balance_from_date + "'  AND date <= " + "'"+  view_balance_to_date + "'";
-                        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                        
                         PreparedStatement pat1=con.prepareStatement(sql1);
                         ResultSet rs1=pat1.executeQuery();
                         DefaultTableModel tm=(DefaultTableModel)view_balanceTable_table.getModel();
@@ -2507,14 +2517,14 @@ public class MainWindow extends javax.swing.JFrame {
                         } 
                     }
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                        
                     }
                     try{
                         
                         //Getting total weight of items acc. to dates.
                         String sql1="SELECT SUM(weight) FROM balance WHERE date >=" + "'"+  view_balance_from_date + "'  AND date <= " + "'"+  view_balance_to_date + "'";
-                        con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                        PreparedStatement pat1=con1.prepareStatement(sql1);
+                        
+                        PreparedStatement pat1=con.prepareStatement(sql1);
                         ResultSet rs1=pat1.executeQuery();
                         while(rs1.next()){
                              if(rs1.getString(1)==null){
@@ -2526,22 +2536,22 @@ public class MainWindow extends javax.swing.JFrame {
                         }  
                     }
                     catch(Exception e){
-                         JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                         
                     }
                     
                     try{
                         
                         //Getting total number of items acc. to dates.
                         String sql2="SELECT COUNT(id) FROM balance WHERE date >=" + "'"+  view_balance_from_date + "'  AND date <= " + "'"+  view_balance_to_date + "'";
-                        con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                        PreparedStatement pat2=con2.prepareStatement(sql2);
+                        
+                        PreparedStatement pat2=con.prepareStatement(sql2);
                         ResultSet rs2=pat2.executeQuery();
                         while(rs2.next()){
                             view_balance_totItemInp_label.setText(rs2.getString(1)); 
                         }
                     } 
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                        
                     }
                 }
                 else{
@@ -2549,7 +2559,7 @@ public class MainWindow extends javax.swing.JFrame {
                 }
             }
             catch(Exception e){
-                 JOptionPane.showMessageDialog(null,"Oops..! Please turn on the database");
+                 
             }
         }
        view_balance_combined_display();
@@ -2570,7 +2580,7 @@ public class MainWindow extends javax.swing.JFrame {
                         
                         //Displaying table according to dates
                         String sql1="SELECT * FROM return_table WHERE date >=" + "'"+  view_return_from_date + "'  AND date <= " + "'"+  view_return_to_date + "'";
-                        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                        
                         PreparedStatement pat1=con.prepareStatement(sql1);
                         ResultSet rs1=pat1.executeQuery();
                         DefaultTableModel tm=(DefaultTableModel)view_returnTable_table.getModel();
@@ -2582,14 +2592,14 @@ public class MainWindow extends javax.swing.JFrame {
                         } 
                     }
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                        
                     }
                     try{
                         
                         //Getting total weight of items acc. to dates.
                         String sql1="SELECT SUM(weight) FROM return_table WHERE date >=" + "'"+  view_return_from_date + "'  AND date <= " + "'"+  view_return_to_date + "'";
-                        con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                        PreparedStatement pat1=con1.prepareStatement(sql1);
+                        
+                        PreparedStatement pat1=con.prepareStatement(sql1);
                         ResultSet rs1=pat1.executeQuery();
                         while(rs1.next()){
                              if(rs1.getString(1)==null){
@@ -2601,22 +2611,22 @@ public class MainWindow extends javax.swing.JFrame {
                         }  
                     }
                     catch(Exception e){
-                         JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                         
                     }
                     
                     try{
                         
                         //Getting total number of items acc. to dates.
                         String sql2="SELECT COUNT(id) FROM return_table WHERE date >=" + "'"+  view_return_from_date + "'  AND date <= " + "'"+  view_return_to_date + "'";
-                        con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                        PreparedStatement pat2=con2.prepareStatement(sql2);
+                        
+                        PreparedStatement pat2=con.prepareStatement(sql2);
                         ResultSet rs2=pat2.executeQuery();
                         while(rs2.next()){
                             view_return_totItemInp_label.setText(rs2.getString(1)); 
                         }
                     } 
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                        
                     }
                 }
                 else{
@@ -2624,7 +2634,7 @@ public class MainWindow extends javax.swing.JFrame {
                 }
             }
             catch(Exception e){
-                JOptionPane.showMessageDialog(null,"Oops..! Please turn on the database");
+                
             }
         }
         view_return_combined_display();       
@@ -2648,7 +2658,7 @@ public class MainWindow extends javax.swing.JFrame {
 
                                 //Displaying table according to selOrnament and dates
                                 String sql1="SELECT * FROM overall WHERE ornament_type = " + "'"+  view_overall_ornament_type_data + "' AND date >=" + "'"+  view_overall_from_date + "'  AND date <= " + "'"+  view_overall_to_date+ "'";
-                                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                                
                                 PreparedStatement pat1=con.prepareStatement(sql1);
                                 ResultSet rs1=pat1.executeQuery();
                                 DefaultTableModel tm=(DefaultTableModel)view_overallTable_table.getModel();
@@ -2660,15 +2670,15 @@ public class MainWindow extends javax.swing.JFrame {
                                 } 
                         }
                         catch(Exception e){
-                               JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                               
                         }
 
                         try{
 
                                 //Getting total weight of items acc. to selOrnament and dates.
                                 String sql1="SELECT SUM(weight) FROM overall WHERE ornament_type = " + "'"+  view_overall_ornament_type_data+ "' AND date >=" + "'"+  view_overall_from_date + "'  AND date <= " + "'"+  view_overall_to_date + "'";
-                                con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                                PreparedStatement pat1=con1.prepareStatement(sql1);
+                                
+                                PreparedStatement pat1=con.prepareStatement(sql1);
                                 ResultSet rs1=pat1.executeQuery();
                                 while(rs1.next()){
                                      if(rs1.getString(1)==null){
@@ -2680,22 +2690,22 @@ public class MainWindow extends javax.swing.JFrame {
                                 } 
                         }
                         catch(Exception e){
-                                 JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                                 
                         }
 
                         try{
 
                                 //Getting total number of items acc. to selOrnament and dates.
                                 String sql2="SELECT COUNT(id) FROM overall WHERE ornament_type = " + "'"+  view_overall_ornament_type_data + "' AND date >=" + "'"+  view_overall_from_date + "'  AND date <= " + "'"+  view_overall_to_date + "'";
-                                con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                                PreparedStatement pat2=con2.prepareStatement(sql2);
+                                
+                                PreparedStatement pat2=con.prepareStatement(sql2);
                                 ResultSet rs2=pat2.executeQuery();
                                 while(rs2.next()){
                                     view_overall_totItemInp_label.setText(rs2.getString(1)); 
                                 }
                         } 
                         catch(Exception e){
-                                JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                                
                         }
                     }
                     else{
@@ -2703,7 +2713,7 @@ public class MainWindow extends javax.swing.JFrame {
                     }
                 }
                 catch(Exception e){
-                    JOptionPane.showMessageDialog(null,"Oops..! Please turn on the database");
+                    
                 }
             }
         }
@@ -2729,7 +2739,7 @@ public class MainWindow extends javax.swing.JFrame {
 
                                 //Displaying table according to selOrnament and dates
                                 String sql1="SELECT * FROM sold WHERE ornament_type = " + "'"+  view_sold_ornament_type_data  + "' AND date >=" + "'"+  view_sold_from_date + "'  AND date <= " + "'"+  view_sold_to_date + "'";
-                                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                                
                                 PreparedStatement pat1=con.prepareStatement(sql1);
                                 ResultSet rs1=pat1.executeQuery();
                                 DefaultTableModel tm=(DefaultTableModel)view_soldTable_table.getModel();
@@ -2741,15 +2751,15 @@ public class MainWindow extends javax.swing.JFrame {
                                 } 
                         }
                         catch(Exception e){
-                                JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                                
                         }
 
                         try{
 
                                 //Getting total weight of items acc. to selOrnament and dates.
                                 String sql1="SELECT SUM(weight) FROM sold WHERE ornament_type = " + "'"+  view_sold_ornament_type_data  + "' AND date >=" + "'"+  view_sold_from_date + "'  AND date <= " + "'"+  view_sold_to_date+ "'";
-                                con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                                PreparedStatement pat1=con1.prepareStatement(sql1);
+                                
+                                PreparedStatement pat1=con.prepareStatement(sql1);
                                 ResultSet rs1=pat1.executeQuery();
                                 while(rs1.next()){
                                      if(rs1.getString(1)==null){
@@ -2761,22 +2771,22 @@ public class MainWindow extends javax.swing.JFrame {
                                 } 
                         }
                         catch(Exception e){
-                                 JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                                 
                         }
 
                         try{
 
                                 //Getting total number of items acc. to selOrnament and dates.
                                 String sql2="SELECT COUNT(id) FROM sold WHERE ornament_type = " + "'"+  view_sold_ornament_type_data  + "' AND date >=" + "'"+  view_sold_from_date + "'  AND date <= " + "'"+  view_sold_to_date + "'";
-                                con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                                PreparedStatement pat2=con2.prepareStatement(sql2);
+                                
+                                PreparedStatement pat2=con.prepareStatement(sql2);
                                 ResultSet rs2=pat2.executeQuery();
                                 while(rs2.next()){
                                     view_sold_totItemInp_label.setText(rs2.getString(1)); 
                                 }
                         } 
                         catch(Exception e){
-                                JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                                
                         }
                     }
                     else{
@@ -2784,7 +2794,7 @@ public class MainWindow extends javax.swing.JFrame {
                     }
                 }
                 catch(Exception e){
-                    JOptionPane.showMessageDialog(null,"Oops..! Please turn on the database");
+                    
                 }
             }
         }
@@ -2809,7 +2819,7 @@ public class MainWindow extends javax.swing.JFrame {
 
                                 //Displaying table according to selOrnament and dates
                                 String sql1="SELECT * FROM balance WHERE ornament_type = " + "'"+  view_balance_ornament_type_data + "' AND date >=" + "'"+  view_balance_from_date + "'  AND date <= " + "'"+  view_balance_to_date + "'";
-                                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                                
                                 PreparedStatement pat1=con.prepareStatement(sql1);
                                 ResultSet rs1=pat1.executeQuery();
                                 DefaultTableModel tm=(DefaultTableModel)view_balanceTable_table.getModel();
@@ -2821,15 +2831,15 @@ public class MainWindow extends javax.swing.JFrame {
                                 } 
                         }
                         catch(Exception e){
-                                JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                                
                         }
 
                         try{
 
                                 //Getting total weight of items acc. to selOrnament and dates.
                                 String sql1="SELECT SUM(weight) FROM balance WHERE ornament_type = " + "'"+  view_balance_ornament_type_data + "' AND date >=" + "'"+  view_balance_from_date + "'  AND date <= " + "'"+  view_balance_to_date + "'";
-                                con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                                PreparedStatement pat1=con1.prepareStatement(sql1);
+                                
+                                PreparedStatement pat1=con.prepareStatement(sql1);
                                 ResultSet rs1=pat1.executeQuery();
                                 while(rs1.next()){
                                      if(rs1.getString(1)==null){
@@ -2841,22 +2851,22 @@ public class MainWindow extends javax.swing.JFrame {
                                 } 
                         }
                         catch(Exception e){
-                                 JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                                 
                         }
 
                         try{
 
                                 //Getting total number of items acc. to selOrnament and dates.
                                 String sql2="SELECT COUNT(id) FROM balance WHERE ornament_type = " + "'"+  view_balance_ornament_type_data + "' AND date >=" + "'"+  view_balance_from_date + "'  AND date <= " + "'"+  view_balance_to_date + "'";
-                                con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                                PreparedStatement pat2=con2.prepareStatement(sql2);
+                                
+                                PreparedStatement pat2=con.prepareStatement(sql2);
                                 ResultSet rs2=pat2.executeQuery();
                                 while(rs2.next()){
                                     view_balance_totItemInp_label.setText(rs2.getString(1)); 
                                 }
                         } 
                         catch(Exception e){
-                                JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                                
                         }
                     }
                     else{
@@ -2864,7 +2874,7 @@ public class MainWindow extends javax.swing.JFrame {
                     }
                 }
                 catch(Exception e){
-                       JOptionPane.showMessageDialog(null,"Oops..! Please turn on the database");
+                       
                 }
             }
         }
@@ -2886,7 +2896,7 @@ public class MainWindow extends javax.swing.JFrame {
 
                                 //Displaying table according to selOrnament and dates
                                 String sql1="SELECT * FROM return_table WHERE ornament_type = " + "'"+  view_return_ornament_type_data + "' AND date >=" + "'"+  view_return_from_date + "'  AND date <= " + "'"+  view_return_to_date + "'";
-                                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                                
                                 PreparedStatement pat1=con.prepareStatement(sql1);
                                 ResultSet rs1=pat1.executeQuery();
                                 DefaultTableModel tm=(DefaultTableModel)view_returnTable_table.getModel();
@@ -2898,15 +2908,15 @@ public class MainWindow extends javax.swing.JFrame {
                                 } 
                         }
                         catch(Exception e){
-                                JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                                
                         }
 
                         try{
 
                                 //Getting total weight of items acc. to selOrnament and dates.
                                 String sql1="SELECT SUM(weight) FROM return_table WHERE ornament_type = " + "'"+  view_return_ornament_type_data + "' AND date >=" + "'"+  view_return_from_date + "'  AND date <= " + "'"+  view_return_to_date + "'";
-                                con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                                PreparedStatement pat1=con1.prepareStatement(sql1);
+                                
+                                PreparedStatement pat1=con.prepareStatement(sql1);
                                 ResultSet rs1=pat1.executeQuery();
                                 while(rs1.next()){
                                      if(rs1.getString(1)==null){
@@ -2918,22 +2928,22 @@ public class MainWindow extends javax.swing.JFrame {
                                 } 
                         }
                         catch(Exception e){
-                                 JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                                 
                         }
 
                         try{
 
                                 //Getting total number of items acc. to selOrnament and dates.
                                 String sql2="SELECT COUNT(id) FROM return_table WHERE ornament_type = " + "'"+  view_return_ornament_type_data + "' AND date >=" + "'"+  view_return_from_date + "'  AND date <= " + "'"+  view_return_to_date + "'";
-                                con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
-                                PreparedStatement pat2=con2.prepareStatement(sql2);
+                                
+                                PreparedStatement pat2=con.prepareStatement(sql2);
                                 ResultSet rs2=pat2.executeQuery();
                                 while(rs2.next()){
                                     view_return_totItemInp_label.setText(rs2.getString(1)); 
                                 }
                         } 
                         catch(Exception e){
-                                JOptionPane.showMessageDialog(null,"Can't display data from database. Kindly check the database connection or contact the software vendor");
+                                
                         }
                     }
                     else{
@@ -2941,7 +2951,7 @@ public class MainWindow extends javax.swing.JFrame {
                     }
                 }
                 catch(Exception e){
-                    JOptionPane.showMessageDialog(null,"Oops..! Please turn on the database");
+                    
                 }
             }
         }
@@ -3009,7 +3019,7 @@ public class MainWindow extends javax.swing.JFrame {
         if(view_sold_chaseNo!=null){
             try{                  
                     String sql="SELECT COUNT(chase_no) FROM balance WHERE chase_no = " + "'"+  view_sold_chaseNo + "'";
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ","root","");
+                    
                     pat=con.prepareStatement(sql);
                     ResultSet rs=pat.executeQuery();
                         while(rs.next()){  
@@ -3045,7 +3055,7 @@ public class MainWindow extends javax.swing.JFrame {
 //                                          pat.executeUpdate();
 //                                         
 //                                       String sql2="DELETE FROM sold  WHERE snapshot = " + "'"+  view_sold_snapshot + "'";
-//                                       PreparedStatement pat1=con1.prepareStatement(sql2);
+//                                       PreparedStatement pat1=con.prepareStatement(sql2);
 //                                       pat1.executeUpdate();
 //
 //                                       //For refreshing after returning the item and deleting it from sold table       
