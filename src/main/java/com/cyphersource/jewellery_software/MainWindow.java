@@ -291,6 +291,8 @@ public class MainWindow extends javax.swing.JFrame {
         sell_confirm_label = new javax.swing.JLabel();
         sell_return_label1 = new javax.swing.JLabel();
         sell_barcodeInput_panel = new javax.swing.JPanel();
+        sell_barcodeInput_textField = new javax.swing.JTextField();
+        sell_barcodeInput_label = new javax.swing.JLabel();
         sell_innerWindow_panel = new javax.swing.JPanel();
         sell_qty_label = new javax.swing.JLabel();
         sell_chaseNo_label = new javax.swing.JLabel();
@@ -313,8 +315,6 @@ public class MainWindow extends javax.swing.JFrame {
         sell_qtyInput_panel = new javax.swing.JPanel();
         sell_qtyInput_textField = new javax.swing.JTextField();
         sell_qtyInput_label = new javax.swing.JLabel();
-        sell_barcodeInput_label = new javax.swing.JLabel();
-        sell_barcodeInput_textField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -737,6 +737,22 @@ public class MainWindow extends javax.swing.JFrame {
         sell_barcodeInput_panel.setForeground(java.awt.Color.white);
         sell_barcodeInput_panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        sell_barcodeInput_textField.setBackground(new java.awt.Color(250, 250, 250));
+        sell_barcodeInput_textField.setFont(new java.awt.Font("Ubuntu", 1, 25)); // NOI18N
+        sell_barcodeInput_textField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        sell_barcodeInput_textField.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        sell_barcodeInput_textField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sell_barcodeInput_textFieldActionPerformed(evt);
+            }
+        });
+        sell_barcodeInput_panel.add(sell_barcodeInput_textField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 13, 140, 50));
+
+        sell_barcodeInput_label.setBackground(java.awt.Color.white);
+        sell_barcodeInput_label.setForeground(java.awt.Color.white);
+        //sell page image : sell_barcode.png
+        sell_barcodeInput_panel.add(sell_barcodeInput_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 150, 50));
+
         sell_innerWindow_panel.setBackground(new java.awt.Color(251, 251, 251));
         sell_innerWindow_panel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, new java.awt.Color(245, 245, 245), java.awt.Color.gray, new java.awt.Color(230, 230, 230)));
         sell_innerWindow_panel.setForeground(new java.awt.Color(130, 130, 130));
@@ -937,20 +953,6 @@ public class MainWindow extends javax.swing.JFrame {
                 .addContainerGap(44, Short.MAX_VALUE))
         );
 
-        sell_barcodeInput_label.setBackground(java.awt.Color.white);
-        sell_barcodeInput_label.setForeground(java.awt.Color.white);
-        //sell page image : sell_barcode.png
-
-        sell_barcodeInput_textField.setBackground(new java.awt.Color(250, 250, 250));
-        sell_barcodeInput_textField.setFont(new java.awt.Font("Ubuntu", 1, 25)); // NOI18N
-        sell_barcodeInput_textField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        sell_barcodeInput_textField.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
-        sell_barcodeInput_textField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sell_barcodeInput_textFieldActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout sell_wrapper_panelLayout = new javax.swing.GroupLayout(sell_wrapper_panel);
         sell_wrapper_panel.setLayout(sell_wrapper_panelLayout);
         sell_wrapper_panelLayout.setHorizontalGroup(
@@ -962,34 +964,27 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(sell_confirm_label)
                 .addGap(180, 180, 180))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_wrapper_panelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
+                        .addGap(496, 496, 496)
+                        .addComponent(sell_barcodeInput_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(188, 188, 188)
+                        .addComponent(sell_refresh_label)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_wrapper_panelLayout.createSequentialGroup()
-                        .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sell_barcodeInput_label, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(sell_barcodeInput_textField, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_wrapper_panelLayout.createSequentialGroup()
-                        .addComponent(sell_shopeName_label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(sell_shopeName_label, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(sell_shopeName_label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
                         .addComponent(sell_shopeName_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(205, 205, 205)))
-                .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
+                        .addGap(216, 216, 216)
                         .addComponent(sell_entryNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(64, 64, 64)
-                        .addComponent(sell_viewNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55)
-                        .addComponent(sell_sellNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
-                        .addComponent(sell_barcodeInput_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(3, 3, 3)
-                        .addComponent(sell_refresh_label)))
-                .addGap(197, 197, 197))
+                        .addGap(40, 40, 40)
+                        .addComponent(sell_viewNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(40, 40, 40)
+                .addComponent(sell_sellNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(120, 120, 120))
             .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
                 .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
@@ -1003,36 +998,34 @@ public class MainWindow extends javax.swing.JFrame {
         sell_wrapper_panelLayout.setVerticalGroup(
             sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(sell_viewNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sell_entryNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sell_sellNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(sell_shopeName_label, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(sell_shopeName_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(sell_shopeName_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
-                        .addGap(148, 148, 148)
+                        .addGap(52, 52, 52)
+                        .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
+                                .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(sell_viewNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(sell_entryNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(sell_sellNavigation_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(16, 16, 16))
+                            .addComponent(sell_shopeName_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sell_shopeName_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(137, 137, 137)
                         .addComponent(sell_refresh_label, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
-                        .addGap(49, 49, 49)
+                        .addGap(60, 60, 60)
+                        .addComponent(sell_shopeName_label, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
                         .addComponent(sell_Welcome_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sell_barcodeInput_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sell_barcodeInput_label, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(sell_wrapper_panelLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(sell_barcodeInput_textField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                        .addGap(26, 26, 26)
+                        .addComponent(sell_barcodeInput_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(7, 7, 7)
                 .addComponent(sell_innerWindow_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60)
                 .addGroup(sell_wrapper_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(sell_return_label1)
                     .addComponent(sell_confirm_label))
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
 
         sell_scroll_scrollpanel.setViewportView(sell_wrapper_panel);
@@ -1048,12 +1041,13 @@ public class MainWindow extends javax.swing.JFrame {
         sellPageLayout.setVerticalGroup(
             sellPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sellPageLayout.createSequentialGroup()
-                .addComponent(sell_scroll_scrollpanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1400, Short.MAX_VALUE)
+                .addComponent(sell_scroll_scrollpanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         sell_scroll_scrollpanel.getAccessibleContext().setAccessibleName("");
-        sell_scroll_scrollpanel.getVerticalScrollBar().setUnitIncrement(100);
+        sell_scroll_scrollpanel.getVerticalScrollBar().setUnitIncrement(60);
+        sell_scroll_scrollpanel.getVerticalScrollBar().setPreferredSize(new Dimension(0, Integer.MAX_VALUE));
 
         jLayeredPane1.add(sellPage, "sellPage");
 
@@ -1475,7 +1469,7 @@ public class MainWindow extends javax.swing.JFrame {
            try{
             Class.forName("com.mysql.cj.jdbc.Driver");     
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
-            st = con.prepareStatement("SELECT chase_no, ornament_name, making_charge, weight, wastage FROM balance WHERE barcode = ?");
+            st = con.prepareStatement("SELECT chase_no, ornament_type, ornament_name, quality, making_charge, weight, wastage, buy, barcode, status, quantity FROM balance WHERE barcode = ?");
             st.setString(1,s);
             rs = st.executeQuery();
            }catch(Exception ex){
@@ -1486,95 +1480,6 @@ public class MainWindow extends javax.swing.JFrame {
        
    }
     
-    
-    //Return Operation
-    public class Return{
-
-       //Method to Return the Entry 
-       public ResultSet find(String s){
-           
-           //Updates the overall table status as 2 (balance table status too changes and the retun table is also updated with the entry)
-            try{
-            Class.forName("com.mysql.cj.jdbc.Driver");     
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
-            st = con.prepareStatement("update overall set status=2 WHERE barcode = ?");
-            st.setString(1,s);
-            int updateOverall = st.executeUpdate();
-                
-                //Updates the return table quantity with the input entered
-                try{
-                    int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
-                    Class.forName("com.mysql.cj.jdbc.Driver");     
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
-                    st = con.prepareStatement("UPDATE return_table SET quantity=? WHERE barcode = ?");
-                    st.setInt(1,quantity);
-                    st.setString(2,s);
-                    int updateReturn = st.executeUpdate();
-            
-                   }catch(Exception ex){
-                      JOptionPane.showMessageDialog(null, "Error., in Return updation");
-                   }
-                
-                //Updates the balance table quantity
-                try{
-                    int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
-                    Class.forName("com.mysql.cj.jdbc.Driver");     
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
-                    st = con.prepareStatement("SELECT quantity FROM balance WHERE barcode = ?");
-                    st.setString(1,s);
-                    rs = st.executeQuery();
-                    while(rs.next()){
-                        int qty = rs.getInt("quantity");
-                        int Quantity;
-                        
-                        //Entered_quantity subtracted from DB_quantity
-                        Quantity = qty - quantity;
-                        
-                        //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is greater than zero then it updates the balance table quantity with the decremented value
-                        if(Quantity > 0 ){
-                            try{
-                            Class.forName("com.mysql.cj.jdbc.Driver");     
-                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
-                            st = con.prepareStatement("UPDATE balance SET quantity=? WHERE barcode = ?");
-                            st.setInt(1,Quantity);
-                            st.setString(2,s);
-                            int updateReturnQty = st.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Returned Successfully");
-                           
-
-                           }catch(Exception ex){
-                              JOptionPane.showMessageDialog(null, "Error., in Return updation");
-                           }
-                        }
-                        
-                        //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is equal to zero then it deletes the data from balance table 
-                        else{
-                            try{
-                            Class.forName("com.mysql.cj.jdbc.Driver");     
-                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
-                            st = con.prepareStatement("DELETE FROM balance WHERE barcode =?");
-                            st.setString(1,s);
-                            int updateReturnQty = st.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Returned Successfully");
-
-                           }catch(Exception ex){
-                              JOptionPane.showMessageDialog(null, "Error., in Return updation.");
-                           }
-                    }
-                    
-                    }
-                    
-                   }catch(Exception ex){
-                      JOptionPane.showMessageDialog(null, "Try again");
-                   }
-                
-           }catch(Exception ex){
-              JOptionPane.showMessageDialog(null, "Error., in Return. Please do Check your connection");
-           }
-           return rs;
-     
-       }
-   }
    
    //Confirmation Operation
    public class Confirm{
@@ -1582,86 +1487,144 @@ public class MainWindow extends javax.swing.JFrame {
        //Method to Confirm the Entry
        public ResultSet find(String s){
            
-           //Updates the overall table status as 1 (balance table status too changes and the sold table is also updated with the entry)
-            try{
-            Class.forName("com.mysql.cj.jdbc.Driver");     
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
-            st = con.prepareStatement("update overall set status=1 WHERE barcode = ?");
-            st.setString(1,s);
-            int updateOverall = st.executeUpdate();
-                
-                //Updates the sold table quantity with the input entered
-                try{
-                    int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
-                    Class.forName("com.mysql.cj.jdbc.Driver");     
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
-                    st = con.prepareStatement("UPDATE sold SET quantity=? WHERE barcode = ?");
-                    st.setInt(1,quantity);
-                    st.setString(2,s);
-                    int updateReturn = st.executeUpdate();
-
-                   }catch(Exception ex){
-                      JOptionPane.showMessageDialog(null, "Error., in Confirm updation");
-                   }
-                
-                //Updates the balance table quantity
-                try{
-                    int quantity=Integer.parseInt(sell_qtyInput_textField.getText()); 
-                    Class.forName("com.mysql.cj.jdbc.Driver");     
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
-                    st = con.prepareStatement("SELECT quantity FROM balance WHERE barcode = ?");
-                    st.setString(1,s);
-                    rs = st.executeQuery();
-                    while(rs.next()){
-                        int qty = rs.getInt("quantity");
-                        int Quantity;
-                        
-                        //Entered_quantity subtracted from DB_quantity
-                        Quantity = qty - quantity;
+          //Fetching Operation
+          Barcode f = new Barcode();
+          rs = f.find(sell_barcodeInput_textField.getText());
+           
+           try{
+               int Quantity;
+               int quantity=Integer.parseInt(sell_qtyInput_textField.getText());
+               if(rs.next()){
+             
+                    String chaseNo = rs.getString("chase_no");
+                    String ornament_type = rs.getString("ornament_type");
+                    String ornament_name = rs.getString("ornament_name");
+                    String quality = rs.getString("quality");
+                    String making_charge = rs.getString("making_charge");
+                    String weight = rs.getString("weight");
+                    String wastage = rs.getString("wastage");
+                    String buy = rs.getString("buy");
+                    String barcode = rs.getString("barcode"); 
+                    String status = rs.getString("status");
+                    int qty = rs.getInt("quantity");
+                                        
+                    //Inserts into sold from the balance
+                    st = con.prepareStatement("INSERT INTO sold (date, chase_no, ornament_type, ornament_name, quality, making_charge, weight, wastage, quantity, buy, barcode, status) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+                    st.setString(1,dateDB);
+                    st.setString(2,chaseNo );
+                    st.setString(3,ornament_type);
+                    st.setString(4,ornament_name);
+                    st.setString(5,quality);
+                    st.setString(6,making_charge);   
+                    st.setString(7,weight);
+                    st.setString(8,wastage);
+                    st.setInt(9,quantity);
+                    st.setString(10,buy);
+                    st.setString(11,barcode);
+                    st.setString(12,status);
+                    st.executeUpdate();
                     
-                        //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is greater than zero then it updates the balance table quantity with the decremented value
-                        if(Quantity > 0 ){
-                            try{
-                            Class.forName("com.mysql.cj.jdbc.Driver");     
-                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
-                            st = con.prepareStatement("UPDATE balance SET quantity=? WHERE barcode = ?");
-                            st.setInt(1,Quantity);
-                            st.setString(2,s);
-                            int updateReturnQty = st.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Confirmed Successfully");
-                           }catch(Exception ex){
-                              JOptionPane.showMessageDialog(null, "Error., in Confirm updation");
-                           }
-                        }
+                    //Entered_quantity subtracted from DB_quantity
+                    Quantity = qty - quantity;
+                    
+                    //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is greater than zero then it updates the balance table quantity with the decremented value
+                    if(Quantity > 0 ){
+                        st = con.prepareStatement("UPDATE balance SET quantity=? WHERE barcode = ?");
+                        st.setInt(1,Quantity);
+                        st.setString(2,s);
+                        st.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Confirmed Successfully");
+                    }
                         
                         //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is equal to zero then it deletes the data from balance table 
-                        else{
-                            try{
-                            Class.forName("com.mysql.cj.jdbc.Driver");     
-                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC","root","");
-                            st = con.prepareStatement("DELETE FROM balance WHERE barcode =?");
-                            st.setString(1,s);
-                            int updateReturnQty = st.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Confirmed Successfully");
-                           }catch(Exception ex){
-                              JOptionPane.showMessageDialog(null, "Error., in Confirm updation");
-                           }
-                    }
-                    
-                    }
-                    
-                   }catch(Exception ex){
-                      JOptionPane.showMessageDialog(null, " Try again");
-                   }
-                
-           }catch(Exception ex){
-              JOptionPane.showMessageDialog(null, "Error., in Confirmation. Please do Check your connection");
-           }
+                    else{
+                        st = con.prepareStatement("DELETE FROM balance WHERE barcode =?");
+                        st.setString(1,s);
+                        st.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Confirmed Successfully");
 
-          return rs;
-          
-       }
-       
+                    }
+               }
+               
+           }
+           catch(Exception ex){
+               JOptionPane.showMessageDialog(null,"Some error in confirming the item");
+           }     
+          return rs;     
+       }      
+   }
+   
+   //Return Operation
+   public class Return{
+
+       //Method to Return the Entry
+       public ResultSet find(String s){
+           
+          //Fetching Operation
+          Barcode f = new Barcode();
+          rs = f.find(sell_barcodeInput_textField.getText());
+           
+           try{
+               int Quantity;
+               int quantity=Integer.parseInt(sell_qtyInput_textField.getText());
+               if(rs.next()){
+             
+                    String chaseNo = rs.getString("chase_no");
+                    String ornament_type = rs.getString("ornament_type");
+                    String ornament_name = rs.getString("ornament_name");
+                    String quality = rs.getString("quality");
+                    String making_charge = rs.getString("making_charge");
+                    String weight = rs.getString("weight");
+                    String wastage = rs.getString("wastage");
+                    String buy = rs.getString("buy");
+                    String barcode = rs.getString("barcode"); 
+                    String status = rs.getString("status");
+                    int qty = rs.getInt("quantity");
+                                        
+                    //Inserts into return_table from the balance
+                    st = con.prepareStatement("INSERT INTO return_table (date, chase_no, ornament_type, ornament_name, quality, making_charge, weight, wastage, quantity, buy, barcode, status) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+                    st.setString(1,dateDB);
+                    st.setString(2,chaseNo );
+                    st.setString(3,ornament_type);
+                    st.setString(4,ornament_name);
+                    st.setString(5,quality);
+                    st.setString(6,making_charge);   
+                    st.setString(7,weight);
+                    st.setString(8,wastage);
+                    st.setInt(9,quantity);
+                    st.setString(10,buy);
+                    st.setString(11,barcode);
+                    st.setString(12,status);
+                    st.executeUpdate();
+                    
+                    //Entered_quantity subtracted from DB_quantity
+                    Quantity = qty - quantity;
+                    
+                    //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is greater than zero then it updates the balance table quantity with the decremented value
+                    if(Quantity > 0 ){
+                        st = con.prepareStatement("UPDATE balance SET quantity=? WHERE barcode = ?");
+                        st.setInt(1,Quantity);
+                        st.setString(2,s);
+                        st.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Returned Successfully");
+                    }
+                        
+                        //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is equal to zero then it deletes the data from balance table 
+                    else{
+                        st = con.prepareStatement("DELETE FROM balance WHERE barcode =?");
+                        st.setString(1,s);
+                        st.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Returned Successfully");
+
+                    }
+               }
+               
+           }
+           catch(Exception ex){
+               JOptionPane.showMessageDialog(null,"Some error in returning the item");
+           }     
+          return rs;     
+       }      
    }
    
    //Quantity Verification
