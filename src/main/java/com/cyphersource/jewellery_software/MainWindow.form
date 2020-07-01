@@ -864,9 +864,9 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="496" max="-2" attributes="0"/>
-                                      <Component id="sell_barcodeInput_panel" min="-2" pref="164" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="555" max="-2" attributes="0"/>
+                                      <Component id="sell_barcodeInput_panel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                       <Component id="sell_refresh_label" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
@@ -894,8 +894,8 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="sell_Welcome_label" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="412" max="-2" attributes="0"/>
+                              <Component id="sell_Welcome_label" min="-2" pref="450" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="393" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -920,24 +920,27 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                               <Component id="sell_Welcome_label" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                                      <Component id="sell_refresh_label" min="-2" pref="34" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                                      <Component id="sell_barcodeInput_panel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="sell_barcodeInput_panel" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="sell_refresh_label" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                               <Component id="sell_innerWindow_panel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="sell_return_label1" min="-2" max="-2" attributes="0"/>
                                   <Component id="sell_confirm_label" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="196" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="117" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1023,6 +1026,11 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="sell_refresh_label">
+                      <Properties>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="2" name="C:\Users\Ramya\Documents\JP\sell_refresh.png"/>
+                        </Property>
+                      </Properties>
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sell_refresh_labelMouseClicked"/>
                       </Events>
@@ -1082,7 +1090,7 @@
                           </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="10" y="10" width="140" height="50"/>
+                              <AbsoluteConstraints x="10" y="10" width="150" height="40"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -1094,10 +1102,13 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="//sell page image : sell_barcode.png">
                               <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
                             </Property>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="2" name="C:\Users\Ramya\Documents\JP\sell_barcode.png"/>
+                            </Property>
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="10" y="10" width="150" height="50"/>
+                              <AbsoluteConstraints x="0" y="0" width="170" height="70"/>
                             </Constraint>
                           </Constraints>
                         </Component>
