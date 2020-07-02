@@ -650,7 +650,6 @@ public class MainWindow extends javax.swing.JFrame {
         view_overallTable_table.setRequestFocusEnabled(false);
         view_overallTable_table.setRowHeight(48);
         view_overallTable_table.setRowMargin(0);
-        view_overallTable_table.setShowGrid(true);
         view_overallTable_table.setShowHorizontalLines(false);
         view_overallTable_table.getTableHeader().setReorderingAllowed(false);
         view_overall_tablearea_scrollpane.setViewportView(view_overallTable_table);
@@ -700,7 +699,6 @@ public class MainWindow extends javax.swing.JFrame {
         view_overall_datelimit_panel.add(view_overall_to_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, 30));
 
         //view page images : view_datelimiticon.png
-        view_overall_datelimitIcon_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\view_datelimiticon.png")); // NOI18N
         view_overall_datelimit_panel.add(view_overall_datelimitIcon_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 314, -1));
 
         javax.swing.GroupLayout view_overallCont_panelLayout = new javax.swing.GroupLayout(view_overallCont_panel);
@@ -720,12 +718,9 @@ public class MainWindow extends javax.swing.JFrame {
                             .addComponent(view_overall_itemColon_label, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(view_overallCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(view_overallCont_panelLayout.createSequentialGroup()
-                                .addComponent(view_overall_totWtInp_label, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(146, 146, 146))
-                            .addGroup(view_overallCont_panelLayout.createSequentialGroup()
-                                .addComponent(view_overall_totItemInp_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(142, 142, 142)))
+                            .addComponent(view_overall_totWtInp_label, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                            .addComponent(view_overall_totItemInp_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(47, 47, 47)
                         .addComponent(view_overall_selOrnament_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(view_overall_datelimit_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -831,7 +826,6 @@ public class MainWindow extends javax.swing.JFrame {
         view_soldTable_table.setRequestFocusEnabled(false);
         view_soldTable_table.setRowHeight(48);
         view_soldTable_table.setRowMargin(0);
-        view_soldTable_table.setShowGrid(true);
         view_soldTable_table.setShowHorizontalLines(false);
         view_soldTable_table.getTableHeader().setReorderingAllowed(false);
         view_sold_tablearea_scrollpane.setViewportView(view_soldTable_table);
@@ -880,7 +874,6 @@ public class MainWindow extends javax.swing.JFrame {
         view_sold_datelimit_panel.add(view_sold_to_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, 30));
 
         //view page images : view_datelimiticon.png
-        view_sold_datelimitIcon_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\view_datelimiticon.png")); // NOI18N
         view_sold_datelimit_panel.add(view_sold_datelimitIcon_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 314, -1));
 
         javax.swing.GroupLayout view_soldCont_panelLayout = new javax.swing.GroupLayout(view_soldCont_panel);
@@ -900,12 +893,9 @@ public class MainWindow extends javax.swing.JFrame {
                             .addComponent(view_sold_itemColon_label, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(view_soldCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(view_soldCont_panelLayout.createSequentialGroup()
-                                .addComponent(view_sold_totWtInp_label, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(146, 146, 146))
-                            .addGroup(view_soldCont_panelLayout.createSequentialGroup()
-                                .addComponent(view_sold_totItemInp_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(142, 142, 142)))
+                            .addComponent(view_sold_totItemInp_label, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                            .addComponent(view_sold_totWtInp_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(40, 40, 40)
                         .addComponent(view_sold_selOrnament_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(view_sold_datelimit_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1011,7 +1001,6 @@ public class MainWindow extends javax.swing.JFrame {
         view_balanceTable_table.setRequestFocusEnabled(false);
         view_balanceTable_table.setRowHeight(48);
         view_balanceTable_table.setRowMargin(0);
-        view_balanceTable_table.setShowGrid(true);
         view_balanceTable_table.setShowHorizontalLines(false);
         view_balanceTable_table.getTableHeader().setReorderingAllowed(false);
         view_balance_tablearea_scrollpane.setViewportView(view_balanceTable_table);
@@ -1059,7 +1048,6 @@ public class MainWindow extends javax.swing.JFrame {
         view_balance_datelimit_panel.add(view_balance_to_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, 30));
 
         //view page images : view_datelimiticon.png
-        view_balance_datelimitIcon_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\view_datelimiticon.png")); // NOI18N
         view_balance_datelimit_panel.add(view_balance_datelimitIcon_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 314, -1));
 
         javax.swing.GroupLayout view_balanceCont_panelLayout = new javax.swing.GroupLayout(view_balanceCont_panel);
@@ -1079,12 +1067,9 @@ public class MainWindow extends javax.swing.JFrame {
                             .addComponent(view_balance_itemColon_label, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(view_balanceCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(view_balanceCont_panelLayout.createSequentialGroup()
-                                .addComponent(view_balance_totWtInp_label, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(146, 146, 146))
-                            .addGroup(view_balanceCont_panelLayout.createSequentialGroup()
-                                .addComponent(view_balance_totItemInp_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(142, 142, 142)))
+                            .addComponent(view_balance_totItemInp_label, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                            .addComponent(view_balance_totWtInp_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(45, 45, 45)
                         .addComponent(view_balance_selOrnament_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(view_balance_datelimit_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1190,7 +1175,6 @@ public class MainWindow extends javax.swing.JFrame {
         view_returnTable_table.setRequestFocusEnabled(false);
         view_returnTable_table.setRowHeight(48);
         view_returnTable_table.setRowMargin(0);
-        view_returnTable_table.setShowGrid(true);
         view_returnTable_table.setShowHorizontalLines(false);
         view_returnTable_table.getTableHeader().setReorderingAllowed(false);
         view_return_tablearea_scrollpane.setViewportView(view_returnTable_table);
@@ -1237,7 +1221,6 @@ public class MainWindow extends javax.swing.JFrame {
         view_return_datelimit_panel.add(view_return_to_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, 30));
 
         //view page images : view_datelimiticon.png
-        view_return_datelimitIcon_label.setIcon(new javax.swing.ImageIcon(defaultPath+"\\view_datelimiticon.png")); // NOI18N
         view_return_datelimit_panel.add(view_return_datelimitIcon_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 314, -1));
 
         javax.swing.GroupLayout view_returnCont_panelLayout = new javax.swing.GroupLayout(view_returnCont_panel);
@@ -1257,12 +1240,9 @@ public class MainWindow extends javax.swing.JFrame {
                             .addComponent(view_return_itemColon_label, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(view_returnCont_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(view_returnCont_panelLayout.createSequentialGroup()
-                                .addComponent(view_return_totWtInp_label, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(146, 146, 146))
-                            .addGroup(view_returnCont_panelLayout.createSequentialGroup()
-                                .addComponent(view_return_totItemInp_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(142, 142, 142)))
+                            .addComponent(view_return_totItemInp_label, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
+                            .addComponent(view_return_totWtInp_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(38, 38, 38)
                         .addComponent(view_return_selOrnament_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(view_return_datelimit_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1308,7 +1288,7 @@ public class MainWindow extends javax.swing.JFrame {
         view_areaTwo_panelLayout.setHorizontalGroup(
             view_areaTwo_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(view_contOne_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(view_contTwo_panel, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(view_contTwo_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         view_areaTwo_panelLayout.setVerticalGroup(
             view_areaTwo_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

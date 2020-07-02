@@ -476,15 +476,10 @@
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="view_overall_totWtInp_label" min="-2" pref="59" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="view_overall_totItemInp_label" max="32767" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
-                                                  </Group>
+                                                  <Component id="view_overall_totWtInp_label" pref="158" max="32767" attributes="0"/>
+                                                  <Component id="view_overall_totItemInp_label" max="32767" attributes="0"/>
                                               </Group>
+                                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                                               <Component id="view_overall_selOrnament_dropdown" min="-2" pref="227" max="-2" attributes="0"/>
                                               <EmptySpace max="32767" attributes="0"/>
                                               <Component id="view_overall_datelimit_panel" min="-2" pref="327" max="-2" attributes="0"/>
@@ -703,7 +698,6 @@
                                     <Property name="requestFocusEnabled" type="boolean" value="false"/>
                                     <Property name="rowHeight" type="int" value="48"/>
                                     <Property name="rowMargin" type="int" value="0"/>
-                                    <Property name="showGrid" type="boolean" value="true"/>
                                     <Property name="showHorizontalLines" type="boolean" value="false"/>
                                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                                       <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
@@ -791,11 +785,6 @@
                                   </Constraints>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="view_overall_datelimitIcon_label">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="2" name="C:\Users\Logida\Documents\JP\view_datelimiticon.png"/>
-                                    </Property>
-                                  </Properties>
                                   <AuxValues>
                                     <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="//view page images : view_datelimiticon.png"/>
                                   </AuxValues>
@@ -839,15 +828,10 @@
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="view_sold_totWtInp_label" min="-2" pref="59" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="view_sold_totItemInp_label" max="32767" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
-                                                  </Group>
+                                                  <Component id="view_sold_totItemInp_label" pref="165" max="32767" attributes="0"/>
+                                                  <Component id="view_sold_totWtInp_label" max="32767" attributes="0"/>
                                               </Group>
+                                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                                               <Component id="view_sold_selOrnament_dropdown" min="-2" pref="227" max="-2" attributes="0"/>
                                               <EmptySpace max="32767" attributes="0"/>
                                               <Component id="view_sold_datelimit_panel" min="-2" pref="327" max="-2" attributes="0"/>
@@ -1055,7 +1039,6 @@
                                     <Property name="requestFocusEnabled" type="boolean" value="false"/>
                                     <Property name="rowHeight" type="int" value="48"/>
                                     <Property name="rowMargin" type="int" value="0"/>
-                                    <Property name="showGrid" type="boolean" value="true"/>
                                     <Property name="showHorizontalLines" type="boolean" value="false"/>
                                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                                       <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
@@ -1143,11 +1126,6 @@
                                   </Constraints>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="view_sold_datelimitIcon_label">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="2" name="C:\Users\Logida\Documents\JP\view_datelimiticon.png"/>
-                                    </Property>
-                                  </Properties>
                                   <AuxValues>
                                     <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="//view page images : view_datelimiticon.png"/>
                                   </AuxValues>
@@ -1191,15 +1169,10 @@
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="view_balance_totWtInp_label" min="-2" pref="59" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="view_balance_totItemInp_label" max="32767" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
-                                                  </Group>
+                                                  <Component id="view_balance_totItemInp_label" pref="160" max="32767" attributes="0"/>
+                                                  <Component id="view_balance_totWtInp_label" max="32767" attributes="0"/>
                                               </Group>
+                                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                               <Component id="view_balance_selOrnament_dropdown" min="-2" pref="227" max="-2" attributes="0"/>
                                               <EmptySpace max="32767" attributes="0"/>
                                               <Component id="view_balance_datelimit_panel" min="-2" pref="327" max="-2" attributes="0"/>
@@ -1407,7 +1380,6 @@
                                     <Property name="requestFocusEnabled" type="boolean" value="false"/>
                                     <Property name="rowHeight" type="int" value="48"/>
                                     <Property name="rowMargin" type="int" value="0"/>
-                                    <Property name="showGrid" type="boolean" value="true"/>
                                     <Property name="showHorizontalLines" type="boolean" value="false"/>
                                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                                       <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
@@ -1495,11 +1467,6 @@
                                   </Constraints>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="view_balance_datelimitIcon_label">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="2" name="C:\Users\Logida\Documents\JP\view_datelimiticon.png"/>
-                                    </Property>
-                                  </Properties>
                                   <AuxValues>
                                     <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="//view page images : view_datelimiticon.png"/>
                                   </AuxValues>
@@ -1543,15 +1510,10 @@
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="view_return_totWtInp_label" min="-2" pref="59" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="view_return_totItemInp_label" max="32767" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
-                                                  </Group>
+                                                  <Component id="view_return_totItemInp_label" pref="167" max="32767" attributes="0"/>
+                                                  <Component id="view_return_totWtInp_label" max="32767" attributes="0"/>
                                               </Group>
+                                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                               <Component id="view_return_selOrnament_dropdown" min="-2" pref="227" max="-2" attributes="0"/>
                                               <EmptySpace max="32767" attributes="0"/>
                                               <Component id="view_return_datelimit_panel" min="-2" pref="327" max="-2" attributes="0"/>
@@ -1753,7 +1715,6 @@
                                     <Property name="requestFocusEnabled" type="boolean" value="false"/>
                                     <Property name="rowHeight" type="int" value="48"/>
                                     <Property name="rowMargin" type="int" value="0"/>
-                                    <Property name="showGrid" type="boolean" value="true"/>
                                     <Property name="showHorizontalLines" type="boolean" value="false"/>
                                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                                       <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
@@ -1841,11 +1802,6 @@
                                   </Constraints>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="view_return_datelimitIcon_label">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="2" name="C:\Users\Logida\Documents\JP\view_datelimiticon.png"/>
-                                    </Property>
-                                  </Properties>
                                   <AuxValues>
                                     <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="//view page images : view_datelimiticon.png"/>
                                   </AuxValues>
