@@ -469,7 +469,7 @@ public class MainWindow extends javax.swing.JFrame {
                 Entry_WAS_TextFieldKeyPressed(evt);
             }
         });
-        Entry_InputFields_Panel.add(Entry_WAS_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 620, 470, -1));
+        Entry_InputFields_Panel.add(Entry_WAS_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 620, 300, -1));
 
         Entry_WAS_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WAS_Label_Icon.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
