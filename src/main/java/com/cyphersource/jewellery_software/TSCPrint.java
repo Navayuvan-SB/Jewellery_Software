@@ -32,8 +32,8 @@ public class TSCPrint {
                 || ("".equals(this.chase_no.trim()))
                 || ("".equals(this.orn_name.trim()))) {
             return false;
-        } else if ((this.mc.length() > 5)
-                || (this.was.length() > 5)
+        } else if ((this.mc.length() > 6)
+                || (this.was.length() > 6)
                 || (this.wt.length() > 6)
                 || (this.quality.length() > 6)
                 || (this.chase_no.length() > 7)
