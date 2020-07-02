@@ -39,9 +39,7 @@ public class TSCPrint {
                 || (this.chase_no.length() > 7)
                 || (this.orn_name.length() > 16)) {
             return false;
-        }
-        
-        else {
+        } else {
             return true;
         }
 
@@ -90,8 +88,8 @@ public class TSCPrint {
         if (status != 0) {
             return false;
         }
-        
-        if (!validate()){
+
+        if (!validate()) {
             return false;
         }
 
@@ -105,8 +103,10 @@ public class TSCPrint {
         TscLibDll.INSTANCE.sendcommand("GAP 3 mm, 0 mm");
         TscLibDll.INSTANCE.clearbuffer();
 
-        String str_shop_name = "TEXT 333,102,\"2\",270,2,2,\"" + "JAJ" + "\"";
-        TscLibDll.INSTANCE.sendcommand(str_shop_name);
+        //  Shop Name        
+        TscLibDll.INSTANCE.sendcommand("TEXT 333,102,\"2\",270,2,2,\"J\"");
+        TscLibDll.INSTANCE.sendcommand("TEXT 348,75,\"2\",270,1,1,\"A\"");
+        TscLibDll.INSTANCE.sendcommand("TEXT 333,60,\"2\",270,2,2,\"J\"");
 
         String str_mc = "TEXT 374,24,\"0\",0,8,8,\"MC: " + mc + " /G\"";
         TscLibDll.INSTANCE.sendcommand(str_mc);
