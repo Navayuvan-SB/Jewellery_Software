@@ -57,12 +57,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="EntryPage_jScrollPane" alignment="1" pref="1280" max="32767" attributes="0"/>
+                  <Component id="EntryPage_jScrollPane" alignment="1" pref="1220" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="EntryPage_jScrollPane" alignment="0" pref="900" max="32767" attributes="0"/>
+                  <Component id="EntryPage_jScrollPane" alignment="0" pref="1000" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -126,7 +126,7 @@
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                               <Component id="Entry_InputFields_Panel" min="-2" pref="1080" max="-2" attributes="0"/>
-                              <EmptySpace pref="107" max="32767" attributes="0"/>
+                              <EmptySpace pref="70" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
@@ -993,7 +993,7 @@
                           <Font name="Ubuntu" size="24" style="0"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="8" green="62" red="62" type="rgb"/>
+                          <Color blue="62" green="62" red="62" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Entry"/>
                       </Properties>
@@ -1577,42 +1577,42 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace pref="592" max="32767" attributes="0"/>
-                              <Component id="view_JFirstname_label" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="view_AName_label" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="view_JLastname_label" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="211" max="-2" attributes="0"/>
+                              <EmptySpace pref="593" max="32767" attributes="0"/>
+                              <Component id="Entry_ShopnameJ_Label1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="Entry_ShopNameA_Label1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="Entry_ShopnameJ2_Label1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
                               <Component id="view_entry_label" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                               <Component id="view_view_label" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                               <Component id="view_sell_label" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace pref="47" max="32767" attributes="0"/>
+                              <EmptySpace pref="50" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="view_JFirstname_label" alignment="3" min="-2" pref="54" max="-2" attributes="0"/>
-                                          <Component id="view_AName_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="view_JLastname_label" alignment="3" min="-2" pref="56" max="-2" attributes="0"/>
+                                          <Component id="Entry_ShopNameA_Label1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Entry_ShopnameJ2_Label1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Entry_ShopnameJ_Label1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="view_entry_label" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                                          <Component id="view_view_label" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                                          <Component id="view_entry_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="view_view_label" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="view_sell_label" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -1620,30 +1620,6 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="view_JFirstname_label">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="64" style="1"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="J"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="view_AName_label">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="38" style="1"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="A"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="view_JLastname_label">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="64" style="1"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="J"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="view_entry_label">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1679,6 +1655,39 @@
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="view_sell_labelMouseClicked"/>
                       </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="Entry_ShopnameJ_Label1">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="fa" green="fa" red="fa" type="rgb"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Ubuntu" size="64" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="J"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="Entry_ShopNameA_Label1">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Ubuntu" size="38" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="A"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="Entry_ShopnameJ2_Label1">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Ubuntu" size="64" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="J"/>
+                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -1967,25 +1976,20 @@
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="view_overall_totWtInp_label" min="-2" pref="59" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="view_overall_totItemInp_label" max="32767" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
-                                                  </Group>
+                                                  <Component id="view_overall_totWtInp_label" pref="169" max="32767" attributes="0"/>
+                                                  <Component id="view_overall_totItemInp_label" max="32767" attributes="0"/>
                                               </Group>
+                                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                                               <Component id="view_overall_selOrnament_dropdown" min="-2" pref="227" max="-2" attributes="0"/>
                                               <EmptySpace max="32767" attributes="0"/>
                                               <Component id="view_overall_datelimit_panel" min="-2" pref="327" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace pref="94" max="32767" attributes="0"/>
+                                              <EmptySpace pref="64" max="32767" attributes="0"/>
                                               <Component id="view_overall_tablearea_scrollpane" min="-2" pref="1093" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="93" max="32767" attributes="0"/>
+                                      <EmptySpace pref="63" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -2025,8 +2029,9 @@
                                               <Component id="view_overall_datelimit_panel" min="-2" pref="106" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="104" max="32767" attributes="0"/>
-                                      <Component id="view_overall_tablearea_scrollpane" min="-2" pref="408" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="view_overall_tablearea_scrollpane" pref="595" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -2324,25 +2329,20 @@
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="view_sold_totWtInp_label" min="-2" pref="59" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="view_sold_totItemInp_label" max="32767" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
-                                                  </Group>
+                                                  <Component id="view_sold_totWtInp_label" pref="171" max="32767" attributes="0"/>
+                                                  <Component id="view_sold_totItemInp_label" max="32767" attributes="0"/>
                                               </Group>
+                                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                                               <Component id="view_sold_selOrnament_dropdown" min="-2" pref="227" max="-2" attributes="0"/>
                                               <EmptySpace max="32767" attributes="0"/>
                                               <Component id="view_sold_datelimit_panel" min="-2" pref="327" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace pref="94" max="32767" attributes="0"/>
+                                              <EmptySpace pref="64" max="32767" attributes="0"/>
                                               <Component id="view_sold_tablearea_scrollpane" min="-2" pref="1093" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="93" max="32767" attributes="0"/>
+                                      <EmptySpace pref="63" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -2382,8 +2382,9 @@
                                               <Component id="view_sold_datelimit_panel" min="-2" pref="106" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="104" max="32767" attributes="0"/>
-                                      <Component id="view_sold_tablearea_scrollpane" min="-2" pref="408" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="view_sold_tablearea_scrollpane" pref="595" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -2670,25 +2671,20 @@
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="view_balance_totWtInp_label" min="-2" pref="59" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="view_balance_totItemInp_label" max="32767" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
-                                                  </Group>
+                                                  <Component id="view_balance_totWtInp_label" pref="166" max="32767" attributes="0"/>
+                                                  <Component id="view_balance_totItemInp_label" max="32767" attributes="0"/>
                                               </Group>
+                                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                                               <Component id="view_balance_selOrnament_dropdown" min="-2" pref="227" max="-2" attributes="0"/>
                                               <EmptySpace max="32767" attributes="0"/>
                                               <Component id="view_balance_datelimit_panel" min="-2" pref="327" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace pref="94" max="32767" attributes="0"/>
+                                              <EmptySpace pref="64" max="32767" attributes="0"/>
                                               <Component id="view_balance_tablearea_scrollpane" min="-2" pref="1093" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="93" max="32767" attributes="0"/>
+                                      <EmptySpace pref="63" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -2728,8 +2724,9 @@
                                               <Component id="view_balance_datelimit_panel" min="-2" pref="106" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="104" max="32767" attributes="0"/>
-                                      <Component id="view_balance_tablearea_scrollpane" min="-2" pref="408" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="view_balance_tablearea_scrollpane" pref="595" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -3016,25 +3013,20 @@
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="view_return_totWtInp_label" min="-2" pref="59" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="view_return_totItemInp_label" max="32767" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
-                                                  </Group>
+                                                  <Component id="view_return_totWtInp_label" pref="162" max="32767" attributes="0"/>
+                                                  <Component id="view_return_totItemInp_label" max="32767" attributes="0"/>
                                               </Group>
+                                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                                               <Component id="view_return_selOrnament_dropdown" min="-2" pref="227" max="-2" attributes="0"/>
                                               <EmptySpace max="32767" attributes="0"/>
                                               <Component id="view_return_datelimit_panel" min="-2" pref="327" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
-                                              <EmptySpace pref="94" max="32767" attributes="0"/>
+                                              <EmptySpace pref="64" max="32767" attributes="0"/>
                                               <Component id="view_return_tablearea_scrollpane" min="-2" pref="1093" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="93" max="32767" attributes="0"/>
+                                      <EmptySpace pref="63" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -3074,8 +3066,9 @@
                                               <Component id="view_return_datelimit_panel" min="-2" pref="106" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="104" max="32767" attributes="0"/>
-                                      <Component id="view_return_tablearea_scrollpane" min="-2" pref="408" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="view_return_tablearea_scrollpane" pref="595" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
