@@ -47,7 +47,7 @@ public class TSCPrint {
 
     public interface TscLibDll extends Library {
 
-        TscLibDll INSTANCE = (TscLibDll) Native.loadLibrary("../../../../../../lib/TSCLIB", TscLibDll.class);
+        TscLibDll INSTANCE = (TscLibDll) Native.loadLibrary("../lib/TSCLIB", TscLibDll.class);
 
         int about();
 
