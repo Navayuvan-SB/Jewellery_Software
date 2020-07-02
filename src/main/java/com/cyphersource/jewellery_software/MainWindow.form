@@ -57,12 +57,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="EntryPage_jScrollPane" alignment="1" pref="1280" max="32767" attributes="0"/>
+                  <Component id="EntryPage_jScrollPane" alignment="1" pref="1220" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="EntryPage_jScrollPane" alignment="0" pref="1617" max="32767" attributes="0"/>
+                  <Component id="EntryPage_jScrollPane" alignment="0" pref="1000" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -811,7 +811,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="sell_scroll_scrollpanel" pref="1400" max="32767" attributes="0"/>
+                      <Component id="sell_scroll_scrollpanel" pref="1000" max="32767" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -832,12 +832,12 @@
                 </Property>
               </Properties>
               <AccessibilityProperties>
-                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="" postCode="sell_scroll_scrollpanel.getVerticalScrollBar().setUnitIncrement(100);"/>
+                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="" postCode="sell_scroll_scrollpanel.getVerticalScrollBar().setUnitIncrement(60);&#xa;sell_scroll_scrollpanel.getVerticalScrollBar().setPreferredSize(new Dimension(0, Integer.MAX_VALUE));"/>
               </AccessibilityProperties>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Container class="javax.swing.JPanel" name="sell_wrapper_panel">
+                <Container class="javax.swing.JPanel" name="sell_ShopNameA_Label1">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
@@ -855,136 +855,132 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
                               <Component id="sell_return_label1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="sell_confirm_label" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="220" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="555" max="-2" attributes="0"/>
+                                      <Component id="sell_barcodeInput_panel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                      <Component id="sell_refresh_label" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="sell_ShopnameJ_Label1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                      <Component id="sell_ShopnameA_Label2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                      <Component id="sell_ShopnameJ2_Label3" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="192" max="-2" attributes="0"/>
+                                      <Component id="sell_entryNavigation_label" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                                      <Component id="sell_viewNavigation_label" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                              <Component id="sell_sellNavigation_label" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="sell_barcodeInput_label" min="-2" pref="170" max="-2" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                              <Component id="sell_barcodeInput_textField" min="-2" pref="150" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="sell_shopeName_label" min="-2" pref="30" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                      <Component id="sell_shopeName_label1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                      <Component id="sell_shopeName_label2" min="-2" pref="29" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="205" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="sell_entryNavigation_label" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                                      <Component id="sell_viewNavigation_label" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                                      <Component id="sell_sellNavigation_label" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="sell_barcodeInput_panel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                                      <Component id="sell_refresh_label" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="-2" pref="197" max="-2" attributes="0"/>
+                              <Component id="sell_Welcome_label" min="-2" pref="450" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="393" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                                      <Component id="sell_innerWindow_panel" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="378" max="-2" attributes="0"/>
-                                      <Component id="sell_Welcome_label" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="148" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                              <Component id="sell_innerWindow_panel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="139" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="sell_viewNavigation_label" min="-2" max="-2" attributes="0"/>
-                                  <Component id="sell_entryNavigation_label" min="-2" max="-2" attributes="0"/>
-                                  <Component id="sell_sellNavigation_label" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="sell_shopeName_label" alignment="0" min="-2" pref="63" max="-2" attributes="0"/>
-                                      <Component id="sell_shopeName_label2" alignment="0" min="-2" pref="63" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="sell_shopeName_label1" min="-2" pref="40" max="-2" attributes="0"/>
-                              </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
-                                      <Component id="sell_refresh_label" min="-2" pref="34" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="sell_viewNavigation_label" min="-2" max="-2" attributes="0"/>
+                                          <Component id="sell_entryNavigation_label" min="-2" max="-2" attributes="0"/>
+                                          <Component id="sell_sellNavigation_label" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                                      <Component id="sell_Welcome_label" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="sell_barcodeInput_panel" min="-2" max="-2" attributes="0"/>
-                                          <Component id="sell_barcodeInput_label" min="-2" pref="70" max="-2" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                              <Component id="sell_barcodeInput_textField" min="-2" pref="40" max="-2" attributes="0"/>
-                                          </Group>
+                                      <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="sell_ShopnameJ_Label1" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
+                                          <Component id="sell_ShopnameA_Label2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="sell_ShopnameJ2_Label3" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="72" max="32767" attributes="0"/>
-                              <Component id="sell_innerWindow_panel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="sell_Welcome_label" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="sell_return_label1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="sell_confirm_label" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                      <Component id="sell_barcodeInput_panel" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                                      <Component id="sell_refresh_label" min="-2" pref="34" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace pref="73" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                      <Component id="sell_innerWindow_panel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace pref="102" max="32767" attributes="0"/>
+                                      <Component id="sell_confirm_label" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="sell_return_label1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="java.awt.Label" name="sell_shopeName_label">
+                    <Component class="javax.swing.JLabel" name="sell_ShopnameJ_Label1">
                       <Properties>
-                        <Property name="alignment" type="int" value="1"/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="fa" green="fa" red="fa" type="rgb"/>
+                        </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Ubuntu" size="64" style="1"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="J"/>
                       </Properties>
                     </Component>
-                    <Component class="java.awt.Label" name="sell_shopeName_label2">
+                    <Component class="javax.swing.JLabel" name="sell_ShopnameA_Label2">
                       <Properties>
-                        <Property name="alignment" type="int" value="1"/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="64" style="1"/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="J"/>
-                      </Properties>
-                    </Component>
-                    <Component class="java.awt.Label" name="sell_shopeName_label1">
-                      <Properties>
-                        <Property name="alignment" type="int" value="1"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Ubuntu" size="38" style="1"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="A"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="sell_ShopnameJ2_Label3">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Ubuntu" size="64" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="J"/>
                       </Properties>
                     </Component>
                     <Component class="java.awt.Label" name="sell_entryNavigation_label">
@@ -1028,7 +1024,7 @@
                           <Font name="Ubuntu" size="25" style="0"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="77" green="77" red="7c" type="rgb"/>
+                          <Color blue="33" green="33" red="33" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Welcome,  Please  Scan  OR  Code."/>
                       </Properties>
@@ -1072,6 +1068,47 @@
                       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                         <Property name="useNullLayout" type="boolean" value="false"/>
                       </Layout>
+                      <SubComponents>
+                        <Component class="javax.swing.JTextField" name="sell_barcodeInput_textField">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="fa" green="fa" red="fa" type="rgb"/>
+                            </Property>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Ubuntu" size="24" style="1"/>
+                            </Property>
+                            <Property name="horizontalAlignment" type="int" value="0"/>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                                <EmptyBorder bottom="0" left="0" right="0" top="0"/>
+                              </Border>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sell_barcodeInput_textFieldActionPerformed"/>
+                          </Events>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                              <AbsoluteConstraints x="10" y="10" width="150" height="40"/>
+                            </Constraint>
+                          </Constraints>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="sell_barcodeInput_label">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="//sell page image : sell_barcode.png">
+                              <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                            </Property>
+                          </Properties>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                              <AbsoluteConstraints x="0" y="0" width="170" height="70"/>
+                            </Constraint>
+                          </Constraints>
+                        </Component>
+                      </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="sell_innerWindow_panel">
                       <Properties>
@@ -1097,18 +1134,17 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="242" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="224" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="sell_was_label" pref="167" max="32767" attributes="0"/>
+                                              <Component id="sell_was_label" pref="158" max="32767" attributes="0"/>
                                               <Component id="sell_mc_label" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="sell_semicolon5_label" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="sell_semicolon6_label" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="sell_semicolon4_label" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="sell_semicolon5_label" max="32767" attributes="0"/>
+                                              <Component id="sell_semicolon6_label" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
@@ -1118,29 +1154,35 @@
                                               <Component id="sell_qty_label" alignment="0" max="32767" attributes="0"/>
                                               <Component id="sell_wt_label" alignment="0" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="sell_semicolon2_label" pref="103" max="32767" attributes="0"/>
                                               <Component id="sell_semicolon3_label" max="32767" attributes="0"/>
                                               <Component id="sell_semicolon1_label" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
+                                      <Component id="sell_semicolon4_label" alignment="1" min="-2" pref="103" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="130" pref="130" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="sell_chaseNoDetail_label" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                      <Component id="sell_ornamentNameDetail_label" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                      <Component id="sell_wtDetail_label" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                      <Component id="sell_wasDetail_label" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                      <Component id="sell_mcDetail_label" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                      <Component id="sell_qtyInput_panel" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+                                      <Component id="sell_mcDetail_label" min="-2" pref="227" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="sell_wasDetail_label" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="sell_wtDetail_label" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="sell_ornamentNameDetail_label" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="sell_chaseNoDetail_label" alignment="1" max="32767" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Component id="sell_qtyInput_panel" min="-2" pref="172" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="55" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace pref="181" max="32767" attributes="0"/>
+                                  <EmptySpace pref="101" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="451" max="32767" attributes="0"/>
-                                  <Component id="sell_verify_checkbox" min="-2" pref="256" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="396" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="sell_verify_checkbox" min="-2" pref="269" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="335" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1195,7 +1237,7 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                   <Component id="sell_verify_checkbox" min="-2" pref="31" max="-2" attributes="0"/>
-                                  <EmptySpace pref="44" max="32767" attributes="0"/>
+                                  <EmptySpace pref="45" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1207,7 +1249,7 @@
                               <Font name="Ubuntu" size="22" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="82" green="82" red="82" type="rgb"/>
+                              <Color blue="33" green="33" red="33" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="text" type="java.lang.String" value="QTY"/>
@@ -1219,7 +1261,7 @@
                               <Font name="Ubuntu" size="22" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="82" green="82" red="82" type="rgb"/>
+                              <Color blue="33" green="33" red="33" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="text" type="java.lang.String" value="Chase No"/>
@@ -1231,7 +1273,7 @@
                               <Font name="Ubuntu" size="22" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="82" green="82" red="82" type="rgb"/>
+                              <Color blue="33" green="33" red="33" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="text" type="java.lang.String" value="Ornament Name"/>
@@ -1243,7 +1285,7 @@
                               <Font name="Ubuntu" size="22" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="82" green="82" red="82" type="rgb"/>
+                              <Color blue="33" green="33" red="33" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="text" type="java.lang.String" value="WT"/>
@@ -1255,7 +1297,7 @@
                               <Font name="Ubuntu" size="22" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="82" green="82" red="82" type="rgb"/>
+                              <Color blue="33" green="33" red="33" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="text" type="java.lang.String" value="WAS"/>
@@ -1267,7 +1309,7 @@
                               <Font name="Ubuntu" size="22" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="82" green="82" red="82" type="rgb"/>
+                              <Color blue="33" green="33" red="33" type="rgb"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="MC"/>
                           </Properties>
@@ -1389,10 +1431,10 @@
                               <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Ubuntu" size="20" style="0"/>
+                              <Font name="Ubuntu" size="22" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="79" green="79" red="79" type="rgb"/>
+                              <Color blue="66" green="66" red="66" type="rgb"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value=" Verify  and  Checkout !"/>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -1461,7 +1503,7 @@
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="0" y="0" width="140" height="50"/>
+                                  <AbsoluteConstraints x="0" y="0" width="150" height="50"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -1469,35 +1511,6 @@
                         </Container>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JLabel" name="sell_barcodeInput_label">
-                      <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="//sell page image : sell_barcode.png">
-                          <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="sell_barcodeInput_textField">
-                      <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="fa" green="fa" red="fa" type="rgb"/>
-                        </Property>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="25" style="1"/>
-                        </Property>
-                        <Property name="horizontalAlignment" type="int" value="0"/>
-                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                          <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                            <EmptyBorder bottom="0" left="0" right="0" top="0"/>
-                          </Border>
-                        </Property>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sell_barcodeInput_textFieldActionPerformed"/>
-                      </Events>
-                    </Component>
                   </SubComponents>
                 </Container>
               </SubComponents>

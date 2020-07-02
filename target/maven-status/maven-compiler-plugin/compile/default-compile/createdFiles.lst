@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 com\cyphersource\jewellery_software\TSCPrint$TscLibDll.class
+=======
+>>>>>>> B#3-Test
 com\cyphersource\jewellery_software\MainWindow$10.class
 com\cyphersource\jewellery_software\MainWindow$17.class
 com\cyphersource\jewellery_software\MainWindow$16.class
@@ -10,7 +13,10 @@ com\cyphersource\jewellery_software\MainWindow$Return.class
 com\cyphersource\jewellery_software\MainWindow$11.class
 com\cyphersource\jewellery_software\MainWindow$2.class
 com\cyphersource\jewellery_software\MainWindow.class
+<<<<<<< HEAD
 com\cyphersource\jewellery_software\TSCPrint.class
+=======
+>>>>>>> B#3-Test
 com\cyphersource\jewellery_software\MainWindow$QuantityVerification.class
 com\cyphersource\jewellery_software\MainWindow$1.class
 com\cyphersource\jewellery_software\MainWindow$7.class
