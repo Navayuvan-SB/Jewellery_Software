@@ -262,9 +262,9 @@ public class MainWindow extends javax.swing.JFrame {
                     int view_serial_no = Integer.parseInt(view_balanceTable_table.getModel().getValueAt(setRow, 0).toString());
                     
                     String[] printData = view_balance_raw_data[view_serial_no - 1];
-                    String[] demo = new String[] {printData[6], printData[8], printData[7], printData[5], printData[2], printData[3]};
+                    String[] demo = new String[] {printData[6], printData[8], printData[7], printData[5], printData[2], printData[4]};
                     System.out.println(Arrays.toString(demo));
-                    PrintBarcode(printData[6], printData[8], printData[7], printData[5], printData[2], printData[3]);
+                    PrintBarcode(printData[6], printData[8], printData[7], printData[5], printData[2], printData[4]);
                 }
 
             }

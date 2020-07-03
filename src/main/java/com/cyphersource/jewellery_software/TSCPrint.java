@@ -22,6 +22,7 @@ public class TSCPrint {
             this.quality = quality.trim();
             this.chase_no = chase_no.trim();
             this.orn_name = orn_name.trim();
+            System.out.println(orn_name);
         } catch (Exception e) {
             System.out.println(e);
         }
