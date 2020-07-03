@@ -497,12 +497,12 @@ public class MainWindow extends javax.swing.JFrame {
         sellPage = new javax.swing.JPanel();
         sell_scroll_scrollpanel = new javax.swing.JScrollPane();
         sell_ShopNameA_Label1 = new javax.swing.JPanel();
-        sell_ShopnameJ_Label1 = new javax.swing.JLabel();
-        sell_ShopnameA_Label2 = new javax.swing.JLabel();
-        sell_ShopnameJ2_Label3 = new javax.swing.JLabel();
         sell_entryNavigation_label = new java.awt.Label();
         sell_viewNavigation_label = new java.awt.Label();
         sell_sellNavigation_label = new java.awt.Label();
+        sell_ShopnameJ_Label1 = new javax.swing.JLabel();
+        sell_ShopnameA_Label2 = new javax.swing.JLabel();
+        sell_ShopnameJ2_Label3 = new javax.swing.JLabel();
         sell_Welcome_label = new java.awt.Label();
         sell_refresh_label = new javax.swing.JLabel();
         sell_confirm_label = new javax.swing.JLabel();
@@ -897,7 +897,7 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(EntryPage_WrapperLayout.createSequentialGroup()
                 .addGap(70, 70, 70)
                 .addComponent(Entry_InputFields_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
             .addGroup(EntryPage_WrapperLayout.createSequentialGroup()
                 .addGap(164, 164, 164)
                 .addComponent(Entry_Reset_jLabel)
@@ -954,11 +954,11 @@ public class MainWindow extends javax.swing.JFrame {
         entryPage.setLayout(entryPageLayout);
         entryPageLayout.setHorizontalGroup(
             entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(EntryPage_jScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1220, Short.MAX_VALUE)
+            .addComponent(EntryPage_jScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1280, Short.MAX_VALUE)
         );
         entryPageLayout.setVerticalGroup(
             entryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(EntryPage_jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
+            .addComponent(EntryPage_jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
         );
 
         EntryPage_jScrollPane.getVerticalScrollBar().setUnitIncrement(16);
@@ -983,18 +983,6 @@ public class MainWindow extends javax.swing.JFrame {
         sell_ShopNameA_Label1.setDoubleBuffered(false);
         sell_ShopNameA_Label1.setPreferredSize(new java.awt.Dimension(1280, 1000));
 
-        sell_ShopnameJ_Label1.setBackground(new java.awt.Color(250, 250, 250));
-        sell_ShopnameJ_Label1.setFont(new java.awt.Font("Ubuntu", 1, 64)); // NOI18N
-        sell_ShopnameJ_Label1.setText("J");
-
-        sell_ShopnameA_Label2.setBackground(new java.awt.Color(255, 255, 255));
-        sell_ShopnameA_Label2.setFont(new java.awt.Font("Ubuntu", 1, 38)); // NOI18N
-        sell_ShopnameA_Label2.setText("A");
-
-        sell_ShopnameJ2_Label3.setBackground(new java.awt.Color(255, 255, 255));
-        sell_ShopnameJ2_Label3.setFont(new java.awt.Font("Ubuntu", 1, 64)); // NOI18N
-        sell_ShopnameJ2_Label3.setText("J");
-
         sell_entryNavigation_label.setAlignment(java.awt.Label.CENTER);
         sell_entryNavigation_label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         sell_entryNavigation_label.setForeground(new java.awt.Color(98, 98, 98));
@@ -1016,6 +1004,18 @@ public class MainWindow extends javax.swing.JFrame {
 
         sell_sellNavigation_label.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         sell_sellNavigation_label.setText("Sell");
+
+        sell_ShopnameJ_Label1.setBackground(new java.awt.Color(250, 250, 250));
+        sell_ShopnameJ_Label1.setFont(new java.awt.Font("Ubuntu", 1, 64)); // NOI18N
+        sell_ShopnameJ_Label1.setText("J");
+
+        sell_ShopnameA_Label2.setBackground(new java.awt.Color(255, 255, 255));
+        sell_ShopnameA_Label2.setFont(new java.awt.Font("Ubuntu", 1, 38)); // NOI18N
+        sell_ShopnameA_Label2.setText("A");
+
+        sell_ShopnameJ2_Label3.setBackground(new java.awt.Color(255, 255, 255));
+        sell_ShopnameJ2_Label3.setFont(new java.awt.Font("Ubuntu", 1, 64)); // NOI18N
+        sell_ShopnameJ2_Label3.setText("J");
 
         sell_Welcome_label.setAlignment(java.awt.Label.CENTER);
         sell_Welcome_label.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
@@ -1286,7 +1286,7 @@ public class MainWindow extends javax.swing.JFrame {
                         .addComponent(sell_refresh_label)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sell_ShopNameA_Label1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(626, Short.MAX_VALUE)
                         .addComponent(sell_ShopnameJ_Label1)
                         .addGap(0, 0, 0)
                         .addComponent(sell_ShopnameA_Label2)
@@ -1306,7 +1306,7 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(sell_ShopNameA_Label1Layout.createSequentialGroup()
                 .addGap(68, 68, 68)
                 .addComponent(sell_innerWindow_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         sell_ShopNameA_Label1Layout.setVerticalGroup(
             sell_ShopNameA_Label1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2298,7 +2298,7 @@ public class MainWindow extends javax.swing.JFrame {
         view_areaTwo_panelLayout.setHorizontalGroup(
             view_areaTwo_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(view_contOne_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(view_contTwo_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(view_contTwo_panel, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
         );
         view_areaTwo_panelLayout.setVerticalGroup(
             view_areaTwo_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2685,14 +2685,6 @@ public class MainWindow extends javax.swing.JFrame {
         sell_return_label1.setEnabled(false);
 
     }//GEN-LAST:event_sell_refresh_labelMouseClicked
-
-    // Navigation to entry page from sell page
-    private void sell_entryNavigation_labelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sell_entryNavigation_labelMouseClicked
-
-        if (!this.navToEntry()) {
-            JOptionPane.showMessageDialog(null, "There is a problem in Navigation. Kindly close the software, reopen it and try again!");
-        }
-    }//GEN-LAST:event_sell_entryNavigation_labelMouseClicked
 
     private void sell_verify_checkboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sell_verify_checkboxActionPerformed
         //If the check box is checked in
@@ -3435,6 +3427,14 @@ public class MainWindow extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Try again");
         }
     }//GEN-LAST:event_view_sell_labelMouseClicked
+
+    // Navigation to entry page from sell page
+    private void sell_entryNavigation_labelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sell_entryNavigation_labelMouseClicked
+
+        if (!this.navToEntry()) {
+            JOptionPane.showMessageDialog(null, "There is a problem in Navigation. Kindly close the software, reopen it and try again!");
+        }
+    }//GEN-LAST:event_sell_entryNavigation_labelMouseClicked
 
     /**
      * @param args the command line arguments

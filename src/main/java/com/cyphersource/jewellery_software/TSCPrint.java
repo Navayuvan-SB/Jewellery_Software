@@ -15,12 +15,16 @@ public class TSCPrint {
 
     public TSCPrint(String mc, String was, String wt, String quality, String chase_no, String orn_name) {
 
-        this.mc = mc;
-        this.was = was;
-        this.wt = wt;
-        this.quality = quality;
-        this.chase_no = chase_no;
-        this.orn_name = orn_name;
+        try {
+            this.mc = mc.trim();
+            this.was = was.trim();
+            this.wt = wt.trim();
+            this.quality = quality.trim();
+            this.chase_no = chase_no.trim();
+            this.orn_name = orn_name.trim();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
 
     }
 
@@ -47,7 +51,7 @@ public class TSCPrint {
 
     public interface TscLibDll extends Library {
 
-        TscLibDll INSTANCE = (TscLibDll) Native.loadLibrary("../lib/TSCLIB", TscLibDll.class);
+        TscLibDll INSTANCE = (TscLibDll) Native.loadLibrary("./lib/TSCLIB", TscLibDll.class);
 
         int about();
 
@@ -83,53 +87,57 @@ public class TSCPrint {
 
     public boolean print_barcode() {
 
-        byte status = TscLibDll.INSTANCE.usbportqueryprinter();//0 = idle, 1 = head open, 16 = pause, following <ESC>!? command of TSPL manual
+        try {
 
-        if (status != 0) {
+            byte status = TscLibDll.INSTANCE.usbportqueryprinter();//0 = idle, 1 = head open, 16 = pause, following <ESC>!? command of TSPL manual
+
+            if (status != 0) {
+                return false;
+            }
+
+            if (!validate()) {
+                return false;
+            }
+
+            TscLibDll.INSTANCE.openport("TSC TTP-244 Pro");
+            TscLibDll.INSTANCE.sendcommand("SIZE 100 mm, 14 mm");
+            TscLibDll.INSTANCE.sendcommand("SPEED 4");
+            TscLibDll.INSTANCE.sendcommand("DENSITY 12");
+            TscLibDll.INSTANCE.sendcommand("DIRECTION 1");
+            TscLibDll.INSTANCE.sendcommand("SET TEAR ON");
+            TscLibDll.INSTANCE.sendcommand("CODEPAGE UTF-8");
+            TscLibDll.INSTANCE.sendcommand("GAP 3 mm, 0 mm");
+            TscLibDll.INSTANCE.clearbuffer();
+
+            //  Shop Name        
+            TscLibDll.INSTANCE.sendcommand("TEXT 383,102,\"2\",270,2,2,\"J\"");
+            TscLibDll.INSTANCE.sendcommand("TEXT 398,75,\"2\",270,1,1,\"A\"");
+            TscLibDll.INSTANCE.sendcommand("TEXT 383,60,\"2\",270,2,2,\"J\"");
+
+            String str_mc = "TEXT 434,24,\"0\",0,8,8,\"MC: " + mc + " /G\"";
+            TscLibDll.INSTANCE.sendcommand(str_mc);
+
+            String str_was = "TEXT 434,54,\"0\",0,8,8,\"WAS:" + was + "%\"";
+            TscLibDll.INSTANCE.sendcommand(str_was);
+
+            String str_wt = "TEXT 434,84,\"0\",0,8,8,\"WT: " + wt + "\"";
+            TscLibDll.INSTANCE.sendcommand(str_wt);
+
+            String str_quality = "TEXT 560,124,\"2\",270,1,1,\" " + quality + "\"";
+            TscLibDll.INSTANCE.sendcommand(str_quality);
+
+            String str_barcode = "BARCODE 613,24, \"93\",30,2,0,2,4,\"" + chase_no + "\"";
+            TscLibDll.INSTANCE.sendcommand(str_barcode);
+
+            String str_orn_name = "TEXT 613,84,\"0\",0,9,9,\"" + orn_name + "\"";
+            TscLibDll.INSTANCE.sendcommand(str_orn_name);
+
+            TscLibDll.INSTANCE.printlabel("1", "1");
+            TscLibDll.INSTANCE.closeport();
+
+            return true;
+        } catch (Exception e) {
             return false;
         }
-
-        if (!validate()) {
-            return false;
-        }
-
-        TscLibDll.INSTANCE.openport("TSC TTP-244 Pro");
-        TscLibDll.INSTANCE.sendcommand("SIZE 100 mm, 14 mm");
-        TscLibDll.INSTANCE.sendcommand("SPEED 4");
-        TscLibDll.INSTANCE.sendcommand("DENSITY 12");
-        TscLibDll.INSTANCE.sendcommand("DIRECTION 1");
-        TscLibDll.INSTANCE.sendcommand("SET TEAR ON");
-        TscLibDll.INSTANCE.sendcommand("CODEPAGE UTF-8");
-        TscLibDll.INSTANCE.sendcommand("GAP 3 mm, 0 mm");
-        TscLibDll.INSTANCE.clearbuffer();
-
-        //  Shop Name        
-        TscLibDll.INSTANCE.sendcommand("TEXT 333,102,\"2\",270,2,2,\"J\"");
-        TscLibDll.INSTANCE.sendcommand("TEXT 348,75,\"2\",270,1,1,\"A\"");
-        TscLibDll.INSTANCE.sendcommand("TEXT 333,60,\"2\",270,2,2,\"J\"");
-
-        String str_mc = "TEXT 374,24,\"0\",0,8,8,\"MC: " + mc + " /G\"";
-        TscLibDll.INSTANCE.sendcommand(str_mc);
-
-        String str_was = "TEXT 374,54,\"0\",0,8,8,\"WAS:" + was + "%\"";
-        TscLibDll.INSTANCE.sendcommand(str_was);
-
-        String str_wt = "TEXT 374,84,\"0\",0,8,8,\"WT: " + wt + "\"";
-        TscLibDll.INSTANCE.sendcommand(str_wt);
-
-        String str_quality = "TEXT 500,104,\"2\",270,1,1,\" " + quality + "\"";
-        TscLibDll.INSTANCE.sendcommand(str_quality);
-
-        String str_barcode = "BARCODE 553,24, \"93\",30,2,0,2,4,\" " + chase_no + "\"";
-        TscLibDll.INSTANCE.sendcommand(str_barcode);
-
-        String str_orn_name = "TEXT 553,84,\"0\",0,9,9,\"" + orn_name + "\"";
-        TscLibDll.INSTANCE.sendcommand(str_orn_name);
-
-        TscLibDll.INSTANCE.printlabel("1", "1");
-        TscLibDll.INSTANCE.closeport();
-
-        return true;
     }
-
 }

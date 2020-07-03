@@ -19,11 +19,6 @@
         </repository>
     </repositories>
     <dependencies>
-        <!--        <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>AbsoluteLayout</artifactId>
-            <version>SNAPSHOT</version>
-        </dependency>-->
         
         <dependency>
             <groupId>org.netbeans.external</groupId>
@@ -58,7 +53,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
     
-    <!--    <build>
+    <build>
         <plugins>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -74,8 +69,8 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <id>make-assembly</id>  this is used for inheritance merges 
-                        <phase>package</phase>  bind to the packaging phase 
+                        <id>make-assembly</id>  <!-- this is used for inheritance merges -->
+                        <phase>package</phase>  <!-- bind to the packaging phase  -->
                         <goals>
                             <goal>single</goal>
                         </goals>
@@ -83,7 +78,7 @@
                 </executions>
             </plugin>
         </plugins>
-    </build>-->
+    </build>
     
 
 </project>
