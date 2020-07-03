@@ -92,7 +92,7 @@ public class MainWindow extends javax.swing.JFrame {
     String[][] view_sold_raw_data, view_balance_raw_data;
 
     //  Image Icon instance
-    private ImageIcon imageIcon, returnIcon;
+    private ImageIcon imageIcon, returnIcon, returnStatusIcon;
 
     public MainWindow() {
         // image path
@@ -143,6 +143,10 @@ public class MainWindow extends javax.swing.JFrame {
 //      Override Cell render of Image column
         view_soldTable_table.getColumn("RT").setCellRenderer(new view_myCellRenderer());
         view_balanceTable_table.getColumn("RP").setCellRenderer(new view_myCellRenderer());
+
+        DefaultTableCellRenderer centerRendererReturn = new DefaultTableCellRenderer();
+        centerRendererReturn.setHorizontalAlignment(JLabel.CENTER);
+        view_balanceTable_table.getColumnModel().getColumn(8).setCellRenderer(centerRendererReturn);
 
         //method for displaying dropdown elements from database
         view_overall_dropdown_display();
@@ -235,7 +239,8 @@ public class MainWindow extends javax.swing.JFrame {
         ((DefaultTableCellRenderer) Theaderthree.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
 
         // For setting all the values in  the column to center
-        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        DefaultTableCellRenderer centerRenderer;
+        centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(JLabel.CENTER);
 
         //For table 1
@@ -260,9 +265,9 @@ public class MainWindow extends javax.swing.JFrame {
                 if (col == 7) {
                     int setRow = view_balanceTable_table.getSelectedRow();
                     int view_serial_no = Integer.parseInt(view_balanceTable_table.getModel().getValueAt(setRow, 0).toString());
-                    
+
                     String[] printData = view_balance_raw_data[view_serial_no - 1];
-                    String[] demo = new String[] {printData[6], printData[8], printData[7], printData[5], printData[2], printData[4]};
+                    String[] demo = new String[]{printData[6], printData[8], printData[7], printData[5], printData[2], printData[4]};
                     System.out.println(Arrays.toString(demo));
                     PrintBarcode(printData[6], printData[8], printData[7], printData[5], printData[2], printData[4]);
                 }
@@ -433,7 +438,7 @@ public class MainWindow extends javax.swing.JFrame {
         }
 
     }
-    
+
     private void PrintBarcode(String mc, String was, String wt, String quality, String chase_no, String ornament_name) {
 
         TSCPrint print = new TSCPrint(mc, was, wt, quality, chase_no, ornament_name);
@@ -1979,26 +1984,26 @@ public class MainWindow extends javax.swing.JFrame {
         view_balanceTable_table.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         view_balanceTable_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "No", "Date", "Chase No", "Ornament Name", "WT", "QTY", "BARCODE", "RP"
+                "No", "Date", "Chase No", "Ornament Name", "WT", "QTY", "BARCODE", "RP", "RST"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -3106,15 +3111,26 @@ public class MainWindow extends javax.swing.JFrame {
                 try {
 
                     //Getting table values acc. to selOrnament
-                    String sql = "SELECT date, chase_no, ornament_name, weight, quantity, barcode FROM balance\n"
+                    String sql = "SELECT * FROM balance\n"
                             + "WHERE ornament_type =" + "'" + view_balance_ornament_type_data + "'";
 
                     pat = con.prepareStatement(sql);
                     rs = pat.executeQuery();
                     DefaultTableModel tm = (DefaultTableModel) view_balanceTable_table.getModel();
+                    ResultSetMetaData rsmd = rs.getMetaData();
+                    rs.last();
+                    view_balance_raw_data = new String[rs.getRow()][rsmd.getColumnCount()];
+                    rs.beforeFirst();
                     tm.setRowCount(0);
                     while (rs.next()) {
-                        Object o[] = {count, rs.getString("date"), rs.getString("chase_no"), rs.getString("ornament_name"), rs.getString("weight"), rs.getString("quantity"), rs.getString("barcode"), imageLabel};
+                        String obj[] = {Integer.toString(count), rs.getString("date"), rs.getString("chase_no"), rs.getString("ornament_type"), rs.getString("ornament_name"), rs.getString("quality"), rs.getString("making_charge"), rs.getString("weight"), rs.getString("wastage"), rs.getString("quantity"), rs.getString("buy"), rs.getString("barcode"), rs.getString("status"), rs.getString("snapshot")};
+                        view_balance_raw_data[count - 1] = obj;
+                        Object o[];
+                        if (rs.getInt("return_status") == 1) {
+                            o = new Object[]{count, rs.getString("date"), rs.getString("chase_no"), rs.getString("ornament_name"), rs.getString("weight"), rs.getString("quantity"), rs.getString("barcode"), imageLabel, "\u25CF"};
+                        } else {
+                            o = new Object[]{count, rs.getString("date"), rs.getString("chase_no"), rs.getString("ornament_name"), rs.getString("weight"), rs.getString("quantity"), rs.getString("barcode"), imageLabel};
+                        }
                         tm.addRow(o);
                         count++;
                     }
@@ -3883,9 +3899,9 @@ public class MainWindow extends javax.swing.JFrame {
 
         //Masking the image into jLabel Object
         JLabel imageLabel = new JLabel(this.imageIcon);
+//        JLabel returnStatus = new JLabel(this.returnStatusIcon);
 
         if ((view_balance_from_date != null) && (view_balance_to_date != null)) {
-            System.out.println("======================");
             try {
                 SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd");
                 Date balance_from;
@@ -3927,12 +3943,18 @@ public class MainWindow extends javax.swing.JFrame {
                         while (rs2.next()) {
                             String obj[] = {Integer.toString(count), rs2.getString("date"), rs2.getString("chase_no"), rs2.getString("ornament_type"), rs2.getString("ornament_name"), rs2.getString("quality"), rs2.getString("making_charge"), rs2.getString("weight"), rs2.getString("wastage"), rs2.getString("quantity"), rs2.getString("buy"), rs2.getString("barcode"), rs2.getString("status"), rs2.getString("snapshot")};
                             view_balance_raw_data[count - 1] = obj;
-                            Object o[] = {count, rs2.getString("date"), rs2.getString("chase_no"), rs2.getString("ornament_name"), rs2.getString("weight"), rs2.getString("quantity"), rs2.getString("barcode"), imageLabel};
+                            Object o[];
+                            if (rs2.getInt("return_status") == 1) {
+                                o = new Object[]{count, rs2.getString("date"), rs2.getString("chase_no"), rs2.getString("ornament_name"), rs2.getString("weight"), rs2.getString("quantity"), rs2.getString("barcode"), imageLabel, "\u25CF"};
+                            } else {
+                                o = new Object[]{count, rs2.getString("date"), rs2.getString("chase_no"), rs2.getString("ornament_name"), rs2.getString("weight"), rs2.getString("quantity"), rs2.getString("barcode"), imageLabel};
+                            }
+//                            Object o[] = {count, rs2.getString("date"), rs2.getString("chase_no"), rs2.getString("ornament_name"), rs2.getString("weight"), rs2.getString("quantity"), rs2.getString("barcode"), imageLabel, "\u25CF"};
                             tm.addRow(o);
                             count++;
                         }
                     } catch (Exception e) {
-                           System.out.println(e);
+                        System.out.println(e);
                     }
 
                     try {
@@ -4205,7 +4227,12 @@ public class MainWindow extends javax.swing.JFrame {
                         while (rs1.next()) {
                             String obj[] = {Integer.toString(count), rs1.getString("date"), rs1.getString("chase_no"), rs1.getString("ornament_type"), rs1.getString("ornament_name"), rs1.getString("quality"), rs1.getString("making_charge"), rs1.getString("weight"), rs1.getString("wastage"), rs1.getString("quantity"), rs1.getString("buy"), rs1.getString("barcode"), rs1.getString("status"), rs1.getString("snapshot")};
                             view_balance_raw_data[count - 1] = obj;
-                            Object o[] = {count, rs1.getString("date"), rs1.getString("chase_no"), rs1.getString("ornament_name"), rs1.getString("weight"), rs1.getString("quantity"), rs1.getString("barcode"), imageLabel};
+                            Object o[];
+                            if (rs1.getInt("return_status") == 1) {
+                                o = new Object[]{count, rs1.getString("date"), rs1.getString("chase_no"), rs1.getString("ornament_name"), rs1.getString("weight"), rs1.getString("quantity"), rs1.getString("barcode"), imageLabel, "\u25CF"};
+                            } else {
+                                o = new Object[]{count, rs1.getString("date"), rs1.getString("chase_no"), rs1.getString("ornament_name"), rs1.getString("weight"), rs1.getString("quantity"), rs1.getString("barcode"), imageLabel};
+                            }
                             tm.addRow(o);
                             count++;
                         }
@@ -4506,7 +4533,12 @@ public class MainWindow extends javax.swing.JFrame {
                             while (rs1.next()) {
                                 String obj[] = {Integer.toString(count), rs1.getString("date"), rs1.getString("chase_no"), rs1.getString("ornament_type"), rs1.getString("ornament_name"), rs1.getString("quality"), rs1.getString("making_charge"), rs1.getString("weight"), rs1.getString("wastage"), rs1.getString("quantity"), rs1.getString("buy"), rs1.getString("barcode"), rs1.getString("status"), rs1.getString("snapshot")};
                                 view_balance_raw_data[count - 1] = obj;
-                                Object o[] = {count, rs1.getString("date"), rs1.getString("chase_no"), rs1.getString("ornament_name"), rs1.getString("weight"), rs1.getString("quantity"), rs1.getString("barcode"), imageLabel};
+                                Object o[];
+                                if (rs1.getInt("return_status") == 1) {
+                                    o = new Object[]{count, rs1.getString("date"), rs1.getString("chase_no"), rs1.getString("ornament_name"), rs1.getString("weight"), rs1.getString("quantity"), rs1.getString("barcode"), imageLabel, "\u25CF"};
+                                } else {
+                                    o = new Object[]{count, rs1.getString("date"), rs1.getString("chase_no"), rs1.getString("ornament_name"), rs1.getString("weight"), rs1.getString("quantity"), rs1.getString("barcode"), imageLabel};
+                                }
                                 tm.addRow(o);
                                 count++;
                             }
@@ -4699,8 +4731,8 @@ public class MainWindow extends javax.swing.JFrame {
 //                                        JOptionPane.showMessageDialog(null,"returned successfully");
 
                         String sql1 = "INSERT INTO balance"
-                                + "(date, chase_no, ornament_type,ornament_name,quality,making_charge, weight,wastage, quantity,buy,barcode,status)" //snapshot
-                                + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+                                + "(date, chase_no, ornament_type,ornament_name,quality,making_charge, weight,wastage, quantity,buy,barcode,status, return_status)" //snapshot
+                                + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
 //                                          // + "VALUES(view_sold_date,view_sold_chaseNo,view_sold_ornament_type,view_sold_ornamentName,view_sold_quality,view_sold_making_charge,view_sold_weight,view_sold_wastage,view_sold_quantity,view_sold_buy,view_sold_barcode,view_sold_status,view_sold_snapshot)";
                         pat = con.prepareStatement(sql1);
                         pat.setString(1, view_sold_date);
@@ -4715,6 +4747,7 @@ public class MainWindow extends javax.swing.JFrame {
                         pat.setString(10, view_sold_buy);
                         pat.setString(11, view_sold_barcode);
                         pat.setInt(12, 0);
+                        pat.setInt(13, 1);
 
                         pat.executeUpdate();
 
@@ -4737,6 +4770,10 @@ public class MainWindow extends javax.swing.JFrame {
                     try {
                         String sql2 = "UPDATE balance SET quantity = quantity + " + view_sold_quantity + " WHERE chase_no=" + "'" + view_sold_chaseNo + "'";
                         pat = con.prepareStatement(sql2);
+                        pat.executeUpdate();
+
+                        String sql3 = "UPDATE balance SET return_status = 0 WHERE chase_no=" + "'" + view_sold_chaseNo + "'";
+                        pat = con.prepareStatement(sql3);
                         pat.executeUpdate();
 
                         String sql1 = "DELETE FROM sold  WHERE snapshot = " + "'" + view_sold_snapshot + "'";
