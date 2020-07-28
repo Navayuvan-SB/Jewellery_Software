@@ -2735,7 +2735,7 @@ public class MainWindow extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC", "root", "");
-                st = con.prepareStatement("SELECT chase_no, ornament_name, making_charge, weight, wastage FROM balance WHERE barcode = ?");
+                st = con.prepareStatement("SELECT * FROM balance WHERE barcode = ?");
                 st.setString(1, s);
                 rs = st.executeQuery();
             } catch (Exception ex) {
@@ -2746,89 +2746,72 @@ public class MainWindow extends javax.swing.JFrame {
 
     }
 
-    //Return Operation
     public class Return {
 
-        //Method to Return the Entry 
+        //Method to Return the Entry
         public ResultSet find(String s) {
 
-            //Updates the overall table status as 2 (balance table status too changes and the retun table is also updated with the entry)
+            //Fetching Operation
+            Barcode f = new Barcode();
+            rs = f.find(sell_barcodeInput_textField.getText());
+
             try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC", "root", "");
-                st = con.prepareStatement("update overall set status=2 WHERE barcode = ?");
-                st.setString(1, s);
-                int updateOverall = st.executeUpdate();
+                int Quantity;
+                int quantity = Integer.parseInt(sell_qtyInput_textField.getText());
+                if (rs.next()) {
 
-                //Updates the return table quantity with the input entered
-                try {
-                    int quantity = Integer.parseInt(sell_qtyInput_textField.getText());
-                    Class.forName("com.mysql.cj.jdbc.Driver");
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC", "root", "");
-                    st = con.prepareStatement("UPDATE return_table SET quantity=? WHERE barcode = ?");
-                    st.setInt(1, quantity);
-                    st.setString(2, s);
-                    int updateReturn = st.executeUpdate();
+                    String chaseNo = rs.getString("chase_no");
+                    String ornament_type = rs.getString("ornament_type");
+                    String ornament_name = rs.getString("ornament_name");
+                    String quality = rs.getString("quality");
+                    String making_charge = rs.getString("making_charge");
+                    String weight = rs.getString("weight");
+                    String wastage = rs.getString("wastage");
+                    String buy = rs.getString("buy");
+                    String barcode = rs.getString("barcode");
+                    String status = rs.getString("status");
+                    int qty = rs.getInt("quantity");
 
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Error., in Return updation");
-                }
+                    //Inserts into return_table from the balance
+                    st = con.prepareStatement("INSERT INTO return_table (date, chase_no, ornament_type, ornament_name, quality, making_charge, weight, wastage, quantity, buy, barcode, status) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+                    st.setString(1, dateDB);
+                    st.setString(2, chaseNo);
+                    st.setString(3, ornament_type);
+                    st.setString(4, ornament_name);
+                    st.setString(5, quality);
+                    st.setString(6, making_charge);
+                    st.setString(7, weight);
+                    st.setString(8, wastage);
+                    st.setInt(9, quantity);
+                    st.setString(10, buy);
+                    st.setString(11, barcode);
+                    st.setString(12, status);
+                    st.executeUpdate();
 
-                //Updates the balance table quantity
-                try {
-                    int quantity = Integer.parseInt(sell_qtyInput_textField.getText());
-                    Class.forName("com.mysql.cj.jdbc.Driver");
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC", "root", "");
-                    st = con.prepareStatement("SELECT quantity FROM balance WHERE barcode = ?");
-                    st.setString(1, s);
-                    rs = st.executeQuery();
-                    while (rs.next()) {
-                        int qty = rs.getInt("quantity");
-                        int Quantity;
+                    //Entered_quantity subtracted from DB_quantity
+                    Quantity = qty - quantity;
 
-                        //Entered_quantity subtracted from DB_quantity
-                        Quantity = qty - quantity;
-
-                        //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is greater than zero then it updates the balance table quantity with the decremented value
-                        if (Quantity > 0) {
-                            try {
-                                Class.forName("com.mysql.cj.jdbc.Driver");
-                                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC", "root", "");
-                                st = con.prepareStatement("UPDATE balance SET quantity=? WHERE barcode = ?");
-                                st.setInt(1, Quantity);
-                                st.setString(2, s);
-                                int updateReturnQty = st.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Returned Successfully");
-
-                            } catch (Exception ex) {
-                                JOptionPane.showMessageDialog(null, "Error., in Return updation");
-                            }
-                        } //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is equal to zero then it deletes the data from balance table 
-                        else {
-                            try {
-                                Class.forName("com.mysql.cj.jdbc.Driver");
-                                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC", "root", "");
-                                st = con.prepareStatement("DELETE FROM balance WHERE barcode =?");
-                                st.setString(1, s);
-                                int updateReturnQty = st.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Returned Successfully");
-
-                            } catch (Exception ex) {
-                                JOptionPane.showMessageDialog(null, "Error., in Return updation.");
-                            }
-                        }
+                    //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is greater than zero then it updates the balance table quantity with the decremented value
+                    if (Quantity > 0) {
+                        st = con.prepareStatement("UPDATE balance SET quantity=? WHERE barcode = ?");
+                        st.setInt(1, Quantity);
+                        st.setString(2, s);
+                        st.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Returned Successfully");
+                    } //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is equal to zero then it deletes the data from balance table 
+                    else {
+                        st = con.prepareStatement("DELETE FROM balance WHERE barcode =?");
+                        st.setString(1, s);
+                        st.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Returned Successfully");
 
                     }
-
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Try again");
                 }
 
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, "Error., in Return. Please do Check your connection");
+                JOptionPane.showMessageDialog(null, "Some Error in Returning the item");
             }
             return rs;
-
         }
     }
 
@@ -2838,84 +2821,69 @@ public class MainWindow extends javax.swing.JFrame {
         //Method to Confirm the Entry
         public ResultSet find(String s) {
 
-            //Updates the overall table status as 1 (balance table status too changes and the sold table is also updated with the entry)
+            //Fetching Operation
+            Barcode f = new Barcode();
+            rs = f.find(sell_barcodeInput_textField.getText());
+
             try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC", "root", "");
-                st = con.prepareStatement("update overall set status=1 WHERE barcode = ?");
-                st.setString(1, s);
-                int updateOverall = st.executeUpdate();
+                int Quantity;
+                int quantity = Integer.parseInt(sell_qtyInput_textField.getText());
+                if (rs.next()) {
 
-                //Updates the sold table quantity with the input entered
-                try {
-                    int quantity = Integer.parseInt(sell_qtyInput_textField.getText());
-                    Class.forName("com.mysql.cj.jdbc.Driver");
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC", "root", "");
-                    st = con.prepareStatement("UPDATE sold SET quantity=? WHERE barcode = ?");
-                    st.setInt(1, quantity);
-                    st.setString(2, s);
-                    int updateReturn = st.executeUpdate();
+                    String chaseNo = rs.getString("chase_no");
+                    String ornament_type = rs.getString("ornament_type");
+                    String ornament_name = rs.getString("ornament_name");
+                    String quality = rs.getString("quality");
+                    String making_charge = rs.getString("making_charge");
+                    String weight = rs.getString("weight");
+                    String wastage = rs.getString("wastage");
+                    String buy = rs.getString("buy");
+                    String barcode = rs.getString("barcode");
+                    String status = rs.getString("status");
+                    int qty = rs.getInt("quantity");
 
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Error., in Confirm updation");
-                }
+                    //Inserts into sold from the balance
+                    st = con.prepareStatement("INSERT INTO sold (date, chase_no, ornament_type, ornament_name, quality, making_charge, weight, wastage, quantity, buy, barcode, status) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+                    st.setString(1, dateDB);
+                    st.setString(2, chaseNo);
+                    st.setString(3, ornament_type);
+                    st.setString(4, ornament_name);
+                    st.setString(5, quality);
+                    st.setString(6, making_charge);
+                    st.setString(7, weight);
+                    st.setString(8, wastage);
+                    st.setInt(9, quantity);
+                    st.setString(10, buy);
+                    st.setString(11, barcode);
+                    st.setString(12, status);
+                    st.executeUpdate();
 
-                //Updates the balance table quantity
-                try {
-                    int quantity = Integer.parseInt(sell_qtyInput_textField.getText());
-                    Class.forName("com.mysql.cj.jdbc.Driver");
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC", "root", "");
-                    st = con.prepareStatement("SELECT quantity FROM balance WHERE barcode = ?");
-                    st.setString(1, s);
-                    rs = st.executeQuery();
-                    while (rs.next()) {
-                        int qty = rs.getInt("quantity");
-                        int Quantity;
+                    //Entered_quantity subtracted from DB_quantity
+                    Quantity = qty - quantity;
 
-                        //Entered_quantity subtracted from DB_quantity
-                        Quantity = qty - quantity;
-
-                        //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is greater than zero then it updates the balance table quantity with the decremented value
-                        if (Quantity > 0) {
-                            try {
-                                Class.forName("com.mysql.cj.jdbc.Driver");
-                                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC", "root", "");
-                                st = con.prepareStatement("UPDATE balance SET quantity=? WHERE barcode = ?");
-                                st.setInt(1, Quantity);
-                                st.setString(2, s);
-                                int updateReturnQty = st.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Confirmed Successfully");
-                            } catch (Exception ex) {
-                                JOptionPane.showMessageDialog(null, "Error., in Confirm updation");
-                            }
-                        } //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is equal to zero then it deletes the data from balance table 
-                        else {
-                            try {
-                                Class.forName("com.mysql.cj.jdbc.Driver");
-                                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JAJ?serverTimezone=UTC", "root", "");
-                                st = con.prepareStatement("DELETE FROM balance WHERE barcode =?");
-                                st.setString(1, s);
-                                int updateReturnQty = st.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Confirmed Successfully");
-                            } catch (Exception ex) {
-                                JOptionPane.showMessageDialog(null, "Error., in Confirm updation");
-                            }
-                        }
+                    //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is greater than zero then it updates the balance table quantity with the decremented value
+                    if (Quantity > 0) {
+                        st = con.prepareStatement("UPDATE balance SET quantity=? WHERE barcode = ?");
+                        st.setInt(1, Quantity);
+                        st.setString(2, s);
+                        st.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Confirmed Successfully");
+                    } //If the decremented quantity (Entered_quantity subtracted from DB_quantity) is equal to zero then it deletes the data from balance table 
+                    else {
+                        st = con.prepareStatement("DELETE FROM balance WHERE barcode =?");
+                        st.setString(1, s);
+                        st.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Confirmed Successfully");
 
                     }
-
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, " Try again");
                 }
 
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, "Error., in Confirmation. Please do Check your connection");
+                System.out.println(ex);
+                JOptionPane.showMessageDialog(null, "Some error in confirming the item");
             }
-
             return rs;
-
         }
-
     }
 
     //Quantity Verification
@@ -3014,7 +2982,7 @@ public class MainWindow extends javax.swing.JFrame {
 
                     // Getting table values acc. to selOrnament
                     String sql = "SELECT date, chase_no, ornament_name, quality,\n"
-                            + "weight,buy FROM return_table\n"
+                            + "quantity,buy FROM return_table\n"
                             + "WHERE ornament_type =" + "'" + view_return_ornament_type_data + "'";
 
                     pat = con.prepareStatement(sql);
@@ -3022,7 +2990,7 @@ public class MainWindow extends javax.swing.JFrame {
                     DefaultTableModel tm = (DefaultTableModel) view_returnTable_table.getModel();
                     tm.setRowCount(0);
                     while (rs.next()) {
-                        Object o[] = {count, rs.getString("date"), rs.getString("chase_no"), rs.getString("ornament_name"), rs.getString("quality"), rs.getString("weight"), rs.getString("buy")};
+                        Object o[] = {count, rs.getString("date"), rs.getString("chase_no"), rs.getString("ornament_name"), rs.getString("quality"), rs.getString("quantity"), rs.getString("buy")};
                         tm.addRow(o);
                         count++;
                     }
@@ -4009,14 +3977,14 @@ public class MainWindow extends javax.swing.JFrame {
 
                 try {
                     //Getting default return table values. 
-                    String sql2 = "SELECT date, chase_no, ornament_name, quality, weight, buy FROM return_table WHERE date >=" + "'" + view_return_from_date + "'  AND date <= " + "'" + view_return_to_date + "'";
+                    String sql2 = "SELECT date, chase_no, ornament_name, quantity, quantity, buy FROM return_table WHERE date >=" + "'" + view_return_from_date + "'  AND date <= " + "'" + view_return_to_date + "'";
 
                     PreparedStatement pat2 = con.prepareStatement(sql2);
                     ResultSet rs2 = pat2.executeQuery();
                     DefaultTableModel tm = (DefaultTableModel) view_returnTable_table.getModel();
                     tm.setRowCount(0);
                     while (rs2.next()) {
-                        Object o[] = {count, rs2.getString("date"), rs2.getString("chase_no"), rs2.getString("ornament_name"), rs2.getString("quality"), rs2.getString("weight"), rs2.getString("buy")};
+                        Object o[] = {count, rs2.getString("date"), rs2.getString("chase_no"), rs2.getString("ornament_name"), rs2.getString("quality"), rs2.getString("quantity"), rs2.getString("buy")};
                         tm.addRow(o);
                         count++;
                     }
@@ -4301,7 +4269,7 @@ public class MainWindow extends javax.swing.JFrame {
                         DefaultTableModel tm = (DefaultTableModel) view_returnTable_table.getModel();
                         tm.setRowCount(0);
                         while (rs1.next()) {
-                            Object o[] = {count, rs1.getString("date"), rs1.getString("chase_no"), rs1.getString("ornament_name"), rs1.getString("quality"), rs1.getString("weight"), rs1.getString("buy")};
+                            Object o[] = {count, rs1.getString("date"), rs1.getString("chase_no"), rs1.getString("ornament_name"), rs1.getString("quality"), rs1.getString("quantity"), rs1.getString("buy")};
                             tm.addRow(o);
                             count++;
                         }
@@ -4609,7 +4577,7 @@ public class MainWindow extends javax.swing.JFrame {
                             DefaultTableModel tm = (DefaultTableModel) view_returnTable_table.getModel();
                             tm.setRowCount(0);
                             while (rs1.next()) {
-                                Object o[] = {count, rs1.getString("date"), rs1.getString("chase_no"), rs1.getString("ornament_name"), rs1.getString("quality"), rs1.getString("weight"), rs1.getString("buy")};
+                                Object o[] = {count, rs1.getString("date"), rs1.getString("chase_no"), rs1.getString("ornament_name"), rs1.getString("quality"), rs1.getString("quantity"), rs1.getString("buy")};
                                 tm.addRow(o);
                                 count++;
                             }
@@ -4780,6 +4748,7 @@ public class MainWindow extends javax.swing.JFrame {
                         PreparedStatement pat1 = con.prepareStatement(sql1);
                         pat1.executeUpdate();
 
+                        view_sold_default_display();
                     } catch (Exception e) {
                         JOptionPane.showMessageDialog(null, e);
                     }
