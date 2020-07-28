@@ -726,7 +726,7 @@ public class MainWindow extends javax.swing.JFrame {
         Entry_MC_Label.setForeground(new java.awt.Color(98, 98, 98));
         Entry_MC_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Entry_MC_Label.setText("MC (/G) :");
-        Entry_InputFields_Panel.add(Entry_MC_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
+        Entry_InputFields_Panel.add(Entry_MC_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 620, -1, -1));
 
         Entry_MC_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         Entry_MC_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -736,18 +736,18 @@ public class MainWindow extends javax.swing.JFrame {
                 Entry_MC_TextFieldKeyPressed(evt);
             }
         });
-        Entry_InputFields_Panel.add(Entry_MC_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 460, -1));
+        Entry_InputFields_Panel.add(Entry_MC_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 620, 460, -1));
 
         Entry_MC_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
         //Entry_InputBox_Label Image
-        Entry_InputFields_Panel.add(Entry_MC_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
+        Entry_InputFields_Panel.add(Entry_MC_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 600, -1, -1));
 
         Entry_WT_Lable.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WT_Lable.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         Entry_WT_Lable.setForeground(new java.awt.Color(98, 98, 98));
         Entry_WT_Lable.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Entry_WT_Lable.setText("WT (g) :");
-        Entry_InputFields_Panel.add(Entry_WT_Lable, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 510, -1, -1));
+        Entry_InputFields_Panel.add(Entry_WT_Lable, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
 
         Entry_WT_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         Entry_WT_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -757,17 +757,17 @@ public class MainWindow extends javax.swing.JFrame {
                 Entry_WT_TextFieldKeyPressed(evt);
             }
         });
-        Entry_InputFields_Panel.add(Entry_WT_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 510, 470, -1));
+        Entry_InputFields_Panel.add(Entry_WT_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 400, 470, -1));
 
         Entry_WT_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
-        Entry_InputFields_Panel.add(Entry_WT_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 490, -1, -1));
+        Entry_InputFields_Panel.add(Entry_WT_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
 
         Entry_WAS_Label.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WAS_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         Entry_WAS_Label.setForeground(new java.awt.Color(98, 98, 98));
         Entry_WAS_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Entry_WAS_Label.setText("WAS (%) :");
-        Entry_InputFields_Panel.add(Entry_WAS_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 620, -1, -1));
+        Entry_InputFields_Panel.add(Entry_WAS_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 510, -1, -1));
 
         Entry_WAS_TextField.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         Entry_WAS_TextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -777,12 +777,12 @@ public class MainWindow extends javax.swing.JFrame {
                 Entry_WAS_TextFieldKeyPressed(evt);
             }
         });
-        Entry_InputFields_Panel.add(Entry_WAS_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 620, 300, -1));
+        Entry_InputFields_Panel.add(Entry_WAS_TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 510, 300, -1));
 
         Entry_WAS_Label_Icon.setBackground(new java.awt.Color(255, 255, 255));
         Entry_WAS_Label_Icon.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         //Entry_InputBox_Label Image
-        Entry_InputFields_Panel.add(Entry_WAS_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 600, -1, -1));
+        Entry_InputFields_Panel.add(Entry_WAS_Label_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 490, -1, -1));
 
         Entry_QTY_Label.setBackground(new java.awt.Color(255, 255, 255));
         Entry_QTY_Label.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
